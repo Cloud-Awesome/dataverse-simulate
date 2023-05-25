@@ -1,0 +1,20 @@
+﻿name: $(Year:yyyy).$(Month).$(DayOfMonth).$(Rev:r)
+
+pool:
+  vmImage: 'windows-latest'
+
+trigger:
+  tags:
+    include:
+      - v*
+
+steps:
+
+  - task: NuGetCommand@2
+    displayName: Restore NuGet
+    inputs:
+      command: 'restore'
+      restoreSolution: '**/*.sln'
+      feedsToUse: 'select'
+      
+  ## TODO - build, test, deploy, release, etc...

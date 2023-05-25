@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Xrm.SamplePlugins", "CloudAwesome.Xrm.SamplePlugins\CloudAwesome.Xrm.SamplePlugins.csproj", "{D8D6D4E5-CFB2-4B7A-BDFA-8082EB8E3001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Xrm.SampleLibrary", "CloudAwesome.Xrm.SampleLibrary\CloudAwesome.Xrm.SampleLibrary.csproj", "{9EE6A6A7-631A-4E3E-8B93-D63DA18DC6DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Xrm.SampleFunctions", "CloudAwesome.Xrm.SampleFunctions\CloudAwesome.Xrm.SampleFunctions.csproj", "{3C8ED6AC-1243-4046-B790-92A1DEA4B824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Xrm.SampleFunctions.Test", "CloudAwesome.Xrm.SampleFunctions.Test\CloudAwesome.Xrm.SampleFunctions.Test.csproj", "{53899763-11BF-486A-8B26-D3C03F5C0645}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Xrm.SampleLibrary.Test", "CloudAwesome.Xrm.SampleLibrary.Test\CloudAwesome.Xrm.SampleLibrary.Test.csproj", "{2A51CE2C-68CF-4888-A34B-163A917F2DF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Xrm.SamplePlugins.Test", "CloudAwesome.Xrm.SamplePlugins.Test\CloudAwesome.Xrm.SamplePlugins.Test.csproj", "{E081CE5E-DC70-4B3E-A2C2-03AC74FDBF12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8D6D4E5-CFB2-4B7A-BDFA-8082EB8E3001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8D6D4E5-CFB2-4B7A-BDFA-8082EB8E3001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8D6D4E5-CFB2-4B7A-BDFA-8082EB8E3001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8D6D4E5-CFB2-4B7A-BDFA-8082EB8E3001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE6A6A7-631A-4E3E-8B93-D63DA18DC6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE6A6A7-631A-4E3E-8B93-D63DA18DC6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE6A6A7-631A-4E3E-8B93-D63DA18DC6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE6A6A7-631A-4E3E-8B93-D63DA18DC6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C8ED6AC-1243-4046-B790-92A1DEA4B824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8ED6AC-1243-4046-B790-92A1DEA4B824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C8ED6AC-1243-4046-B790-92A1DEA4B824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C8ED6AC-1243-4046-B790-92A1DEA4B824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53899763-11BF-486A-8B26-D3C03F5C0645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53899763-11BF-486A-8B26-D3C03F5C0645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53899763-11BF-486A-8B26-D3C03F5C0645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53899763-11BF-486A-8B26-D3C03F5C0645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A51CE2C-68CF-4888-A34B-163A917F2DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A51CE2C-68CF-4888-A34B-163A917F2DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A51CE2C-68CF-4888-A34B-163A917F2DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A51CE2C-68CF-4888-A34B-163A917F2DF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E081CE5E-DC70-4B3E-A2C2-03AC74FDBF12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E081CE5E-DC70-4B3E-A2C2-03AC74FDBF12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E081CE5E-DC70-4B3E-A2C2-03AC74FDBF12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E081CE5E-DC70-4B3E-A2C2-03AC74FDBF12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
