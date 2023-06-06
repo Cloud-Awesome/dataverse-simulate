@@ -5,6 +5,7 @@
 
 # Jetbrains files
 /.idea
+*/.idea
 
 # User-specific files
 *.rsuser
