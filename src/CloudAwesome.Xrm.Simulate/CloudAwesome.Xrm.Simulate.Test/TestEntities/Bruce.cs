@@ -1,18 +1,25 @@
-﻿using Microsoft.Xrm.Sdk;
+﻿using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
+using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Simulate.Test.TestEntities;
 
 /// <summary>
 /// Describe usage of the Siobhan persona, so that it's visible as a tool tip in tests... =D
 /// </summary>
-public static class Siobhan
+public static class Bruce
 {
     /// <summary>
     /// Describe usage of the Siobhan contact, so that it's visible as a tool tip in tests... =D
     /// </summary>
-    public static Entity Contact()
+    public static Contact Contact()
     {
-        return new Entity("contact");
+        return new Contact
+        {
+            firstname = "Bruce",
+            lastname = "Purves",
+            gendercode = Contact_gendercode.Male,
+            statuscode = Contact_StatusCode.Active
+        };
     }
 
     /// <summary>

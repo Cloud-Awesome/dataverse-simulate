@@ -13,7 +13,7 @@ public static class QueryExpressionParser
         }
 
         var records = data[query.EntityName].AsQueryable();
-            
+        
         records = Filter.Apply(query.Criteria, records);
         records = Order.Apply(query.Orders, records);
         records = Columns.Apply(query.ColumnSet, records);

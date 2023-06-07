@@ -8,7 +8,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.DataServicesTests;
 [TestFixture]
 public class EntityDataServiceTests
 {
-    private IOrganizationService _organizationService;
+    private readonly IOrganizationService _organizationService = null!;
     
     [Test]
     public void Initialise_Data_Store_Should_Correctly_Save_Entities()

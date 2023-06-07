@@ -27,7 +27,8 @@ public sealed class EntityCreator: IEntityCreator
     {
         var entityDataService = new MockedEntityDataService();
         
-        e.Id = Guid.NewGuid();
+        e.SetAttributeIfEmpty("Id", Guid.NewGuid());
+        //e.Id = Guid.NewGuid();
         e.SetAttributeIfEmpty(EntityConstants.CreatedOn, systemTime);
         e.SetAttributeFromSourceIfPopulated(EntityConstants.CreatedOn, 
             EntityConstants.OverridenCreatedOn);

@@ -11,7 +11,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.BasicServiceRequestTests;
 [TestFixture]
 public class CreateTests
 {
-    private IOrganizationService _organizationService;
+    private readonly IOrganizationService _organizationService = null!;
     
     [Test]
     public void Create_Contact_Saves_Record_To_Data_Store()

@@ -9,7 +9,7 @@ namespace CloudAwesome.Xrm.Simulate.Test;
 [TestFixture]
 public class OrganisationServiceSimulatorTests
 {
-    private IOrganizationService _organizationService;
+    private readonly IOrganizationService _organizationService = null!;
     
     [Test]
     public void Simulate_Org_Service_Returns_Mocked_Instance()
