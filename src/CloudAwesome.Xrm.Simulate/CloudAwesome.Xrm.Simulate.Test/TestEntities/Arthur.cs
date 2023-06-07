@@ -35,6 +35,7 @@ public static class Arthur
         {
             Attributes =
             {
+                ["Id"] = Guid.Parse("9b19f826-6ca7-456a-ae73-3ffbd687cd2b"),
                 ["name"] = "Cloud Awesome Limited"
             }
         };

@@ -355,4 +355,54 @@ public class QueryExpressionParserTests
 
         contacts.Entities.Count.Should().Be(2);
     }
+
+    [Test]
+    public void Retrieve_Multiple_Supports_Basic_LinkEntities_Columns()
+    {
+        var orgService = _organizationService.Simulate();
+        orgService.Data().Reinitialise();
+        
+        orgService.Data().Add(Arthur.Contact());
+        orgService.Data().Add(Arthur.Account());
+
+        var query = new QueryExpression
+        {
+            EntityName = Contact.EntityLogicalName,
+            ColumnSet = new ColumnSet(Contact.Fields.firstname, 
+                Contact.Fields.lastname,
+                Contact.Fields.parentcustomerid),
+            Criteria = new FilterExpression
+            {
+                Conditions =
+                {
+                    new ConditionExpression(Contact.Fields.firstname,
+                        ConditionOperator.Equal, "Arthur"),
+                    new ConditionExpression(Contact.Fields.lastname,
+                        ConditionOperator.Equal, "Nicholson-Gumula")
+                }
+            },
+            LinkEntities =
+            {
+                new LinkEntity
+                {
+                    LinkFromAttributeName = Contact.Fields.parentcustomerid,
+                    LinkFromEntityName = Contact.EntityLogicalName,
+                    LinkToAttributeName = "Id",
+                    LinkToEntityName = "account",
+                    Columns = new ColumnSet("name"),
+                    EntityAlias = "account"
+                }
+            }
+        };
+
+        var contacts = orgService.RetrieveMultiple(query);
+
+        contacts.Entities.Count.Should().Be(1);
+
+        var contact = contacts.Entities.FirstOrDefault();
+        Console.WriteLine($"{contact.Attributes[Contact.Fields.firstname]} " +
+                          $"{contact.Attributes[Contact.Fields.lastname]} - " +
+                          $"{contact.Attributes["account.name"]}");
+        
+    }
 }

@@ -30,7 +30,6 @@ public class EntityMultipleRetriever: IEntityMultipleRetriever
                 It.IsAny<FetchExpression>()))
             .Returns((FetchExpression query) =>
             {
-                    
                 return new EntityCollection();
             });
 
@@ -40,7 +39,6 @@ public class EntityMultipleRetriever: IEntityMultipleRetriever
                 It.IsAny<QueryByAttribute>()))
             .Returns((QueryByAttribute query) =>
             {
-
                 return new EntityCollection();
             });
     }
