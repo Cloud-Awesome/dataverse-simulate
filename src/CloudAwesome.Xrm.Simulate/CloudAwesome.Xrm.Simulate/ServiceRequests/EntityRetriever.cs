@@ -16,14 +16,23 @@ public class EntityRetriever: IEntityRetriever
                 It.IsAny<string>(), It.IsAny<Guid>(), It.IsAny<ColumnSet>()))
             .Returns((string entityName, Guid id, ColumnSet columnSet) =>
             {
+                if (!MockedEntityDataStore.Instance.Data.ContainsKey(entityName))
+                {
+                    // TODO - Confirm the exception thrown by live CRM
+                    throw new InvalidOperationException("No data for this entity");
+                }
+                
                 Entity entity;
                 if (columnSet.AllColumns)
                 {
+                    // TODO - Confirm the exception thrown by live CRM when record not found
                     entity = MockedEntityDataStore.Instance.Data[entityName]
-                        .SingleOrDefault(x => x.Id == id);    
+                        .SingleOrDefault(x => x.Id == id) 
+                             ?? throw new InvalidOperationException("No data for this entity");
                 }
                 else
                 {
+                    // TODO - Confirm the exception thrown by live CRM when record not found
                     entity = MockedEntityDataStore.Instance.Data[entityName]
                         .Select(x =>
                         {
@@ -34,7 +43,8 @@ public class EntityRetriever: IEntityRetriever
                             }
                             return e;
                         })
-                        .FirstOrDefault();
+                        .FirstOrDefault() 
+                             ?? throw new InvalidOperationException("No data for this entity");
                 }
                     
                 return entity;

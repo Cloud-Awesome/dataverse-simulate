@@ -7,6 +7,12 @@ using Moq;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
+/// <summary>
+/// 
+/// </summary>
+/// <remarks>
+/// N.B. Filters and LinkEntity currently only work if you've included the attributes in the ColumnSet
+/// </remarks>
 public class EntityMultipleRetriever: IEntityMultipleRetriever
 {
     public void MockRequest(IOrganizationService organizationService, 
@@ -30,7 +36,10 @@ public class EntityMultipleRetriever: IEntityMultipleRetriever
                 It.IsAny<FetchExpression>()))
             .Returns((FetchExpression query) =>
             {
-                return new EntityCollection();
+                var results = FetchExpressionParser.Parse(query,
+                    MockedEntityDataStore.Instance.Data);
+                
+                return new EntityCollection(results.ToList());
             });
 
         // Handle QueryByAttribute

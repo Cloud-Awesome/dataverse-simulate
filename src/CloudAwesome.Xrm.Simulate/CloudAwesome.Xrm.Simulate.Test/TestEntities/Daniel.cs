@@ -18,7 +18,8 @@ public static class Daniel
             firstname = "Daniel",
             lastname = "Nicholson",
             gendercode = Contact_gendercode.Male,
-            statuscode = Contact_StatusCode.Active
+            statuscode = Contact_StatusCode.Active,
+            parentcustomerid = Account().ToEntityReference()
         };
     }
 

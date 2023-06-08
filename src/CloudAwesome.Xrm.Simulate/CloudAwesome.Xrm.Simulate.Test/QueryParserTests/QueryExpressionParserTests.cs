@@ -11,7 +11,7 @@ using NUnit.Framework;
 
 namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests;
 
-[TestFixture]
+[TestFixture(Description = "N.B. Filters and LinkEntity currently only work if you've included the attributes in the ColumnSet")]
 public class QueryExpressionParserTests
 {
     private readonly IOrganizationService _organizationService = null!;
@@ -398,11 +398,19 @@ public class QueryExpressionParserTests
         var contacts = orgService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(1);
-
-        var contact = contacts.Entities.FirstOrDefault();
-        Console.WriteLine($"{contact.Attributes[Contact.Fields.firstname]} " +
-                          $"{contact.Attributes[Contact.Fields.lastname]} - " +
-                          $"{contact.Attributes["account.name"]}");
-        
+    }
+    
+    [Test]
+    [Ignore("TODO - To be implemented")]
+    public void Retrieve_Multiple_Returns_Valid_Results_If_Filter_Attributes_Are_Not_In_ColumnSet()
+    {
+      
+    }
+    
+    [Test]
+    [Ignore("TODO - To be implemented")]
+    public void Retrieve_Multiple_Returns_Valid_Results_If_LinkEntity_Attributes_Are_Not_In_ColumnSet()
+    {
+      
     }
 }

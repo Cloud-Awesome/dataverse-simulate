@@ -3,6 +3,12 @@ using Microsoft.Xrm.Sdk.Query;
 
 namespace CloudAwesome.Xrm.Simulate.QueryParsers;
 
+/// <summary>
+/// 
+/// </summary>
+/// <remarks>
+/// N.B. Filters and LinkEntity currently only work if you've included the attributes in the ColumnSet
+/// </remarks>
 public static class QueryExpressionParser
 {
     public static IEnumerable<Entity> Parse(QueryExpression query, Dictionary<string, List<Entity>> data)
