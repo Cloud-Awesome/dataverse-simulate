@@ -7,10 +7,7 @@ public static class Filter
 {
     public static IQueryable<Entity> Apply(FilterExpression filter, IQueryable<Entity> records)
     {
-        // A copy of the original records.
         var originalRecords = records;
-    
-        // List to hold the results of each sub-filter.
         List<IQueryable<Entity>> subFilterResults = new List<IQueryable<Entity>>();
 
         // First, handle the conditions at this level of the filter.
@@ -27,7 +24,6 @@ public static class Filter
         // Then, handle all the sub-filters.
         if (filter.Filters is { Count: > 0 })
         {
-            // Process each sub-filter.
             foreach (var subFilter in filter.Filters)
             {
                 var subFilterResult = Apply(subFilter, originalRecords);
