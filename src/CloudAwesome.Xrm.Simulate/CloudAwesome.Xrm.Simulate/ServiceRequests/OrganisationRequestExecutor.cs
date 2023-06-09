@@ -18,7 +18,7 @@ public class OrganisationRequestExecutor: IOrganisationRequestExecutor
             .Setup(x => x.Execute(It.IsAny<CreateRequest>()))
             .Returns((CreateRequest request) => 
             {
-                var createdId = new EntityCreator().Create(request.Target);
+                var createdId = new EntityCreator().Create(request.Target, options);
                 return new CreateResponse
                 {
                     Results = new ParameterCollection { new("id", createdId) },

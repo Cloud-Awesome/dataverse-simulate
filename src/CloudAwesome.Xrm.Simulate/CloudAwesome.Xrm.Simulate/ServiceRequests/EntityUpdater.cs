@@ -25,12 +25,20 @@ public class EntityUpdater: IEntityUpdater
             {
                 var dataService = new MockedEntityDataService();
                 
-                var entityToUpdate = MockedEntityDataStore.Instance.Data[entity.LogicalName]
+                var e = MockedEntityDataStore.Instance.Data[entity.LogicalName]
                     .SingleOrDefault(x => x.Id == entity.Id);
                 
-                if (entityToUpdate != null)
+                if (options?.EntityProcessors?.TryGetValue(e.LogicalName, 
+                        out var entityProcessor) == true && 
+                    entityProcessor.TryGetValue(SimulatorOptions.ProcessorMessage.Update, 
+                        out var processor))
                 {
-                    MockedEntityDataStore.Instance.Data[entity.LogicalName].Remove(entityToUpdate);
+                    processor.Process(e);
+                }
+                
+                if (e != null)
+                {
+                    MockedEntityDataStore.Instance.Data[entity.LogicalName].Remove(e);
                 }
                 else
                 {

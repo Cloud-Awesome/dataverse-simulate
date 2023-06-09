@@ -15,7 +15,7 @@ public sealed class EntityCreator: IEntityCreator
 
         Mock.Get(organizationService)
             .Setup(x => x.Create(It.IsAny<Entity>()))
-            .Returns((Entity e) => this.Create(e));
+            .Returns((Entity e) => this.Create(e, options));
     }
 
     public Entity Initialise(Entity entity)
@@ -23,11 +23,11 @@ public sealed class EntityCreator: IEntityCreator
         return entity;
     }
 
-    internal Guid Create(Entity e)
+    internal Guid Create(Entity e, ISimulatorOptions? options)
     {
         var dataService = new MockedEntityDataService();
         
-        e.SetAttributeIfEmpty("Id", Guid.NewGuid());
+        e.SetAttributeIfEmpty($"{e.LogicalName}id", Guid.NewGuid());
         e.SetAttributeIfEmpty(EntityConstants.CreatedOn, dataService.SystemTime);
         e.SetAttributeFromSourceIfPopulated(EntityConstants.CreatedOn, 
             EntityConstants.OverridenCreatedOn);
@@ -39,19 +39,21 @@ public sealed class EntityCreator: IEntityCreator
         
         /*
          * Validate the entity first... (And decide on the correct Exception to throw if not)
-         * Set createdby, modifiedby - and what to do if/when they aren't populated by test
-         * > By default, the caller becomes the owner for the new record
-         * Are there any entity specific things that Dynamics does on create?
          * Set state and status
          * Anything required with entity.RowVersion?
          * How about entity.FormattedValues? And ExtensionData? KeyAttributes?
          * Does the entity already exist with that GUID? Throw exception.
          * work through e.RelatedEntities
          * Set triggers if plugins are registered
-         * ...
          */
 
-        e = this.Initialise(e);
+        if (options?.EntityProcessors?.TryGetValue(e.LogicalName, 
+                    out var entityProcessor) == true && 
+            entityProcessor.TryGetValue(SimulatorOptions.ProcessorMessage.Create, 
+                out var processor))
+        {
+            processor.Process(e);
+        }
 
         if (MockedEntityDataStore.Instance
             .Data.TryGetValue(e.LogicalName, out var value))

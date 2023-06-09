@@ -78,4 +78,9 @@ public class MockedEntityDataService
         get => MockedEntityDataStore.Instance.SystemTime;
         internal set => MockedEntityDataStore.Instance.SystemTime = value;
     }
+
+    public bool RemoveAttributes(Entity entity, List<string> attributesToDelete)
+    {
+        throw new NotImplementedException();
+    }
 }
