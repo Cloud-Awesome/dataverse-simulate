@@ -11,11 +11,11 @@ public sealed class EntityCreator: IEntityCreator
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
     {
-        var systemTime = options?.ClockSimulator?.Now ?? DateTime.Now;
+        //var systemTime = options?.ClockSimulator?.Now ?? DateTime.Now;
 
         Mock.Get(organizationService)
             .Setup(x => x.Create(It.IsAny<Entity>()))
-            .Returns((Entity e) => this.Create(e, systemTime));
+            .Returns((Entity e) => this.Create(e));
     }
 
     public Entity Initialise(Entity entity)
@@ -23,20 +23,19 @@ public sealed class EntityCreator: IEntityCreator
         return entity;
     }
 
-    internal Guid Create(Entity e, DateTime systemTime)
+    internal Guid Create(Entity e)
     {
-        var entityDataService = new MockedEntityDataService();
+        var dataService = new MockedEntityDataService();
         
         e.SetAttributeIfEmpty("Id", Guid.NewGuid());
-        //e.Id = Guid.NewGuid();
-        e.SetAttributeIfEmpty(EntityConstants.CreatedOn, systemTime);
+        e.SetAttributeIfEmpty(EntityConstants.CreatedOn, dataService.SystemTime);
         e.SetAttributeFromSourceIfPopulated(EntityConstants.CreatedOn, 
             EntityConstants.OverridenCreatedOn);
-        e.SetAttributeIfEmpty(EntityConstants.ModifiedOn, systemTime);
+        e.SetAttributeIfEmpty(EntityConstants.ModifiedOn, dataService.SystemTime);
         
-        e.SetAttributeIfEmpty(EntityConstants.CreatedBy, entityDataService.AuthenticatedUser);
-        e.SetAttributeIfEmpty(EntityConstants.ModifiedBy, entityDataService.AuthenticatedUser);
-        e.SetAttributeIfEmpty(EntityConstants.OwnerId, entityDataService.AuthenticatedUser);
+        e.SetAttributeIfEmpty(EntityConstants.CreatedBy, dataService.AuthenticatedUser);
+        e.SetAttributeIfEmpty(EntityConstants.ModifiedBy, dataService.AuthenticatedUser);
+        e.SetAttributeIfEmpty(EntityConstants.OwnerId, dataService.AuthenticatedUser);
         
         /*
          * Validate the entity first... (And decide on the correct Exception to throw if not)

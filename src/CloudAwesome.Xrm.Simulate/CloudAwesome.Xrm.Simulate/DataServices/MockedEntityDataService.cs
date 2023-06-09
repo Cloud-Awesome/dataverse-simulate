@@ -72,4 +72,10 @@ public class MockedEntityDataService
         get => MockedEntityDataStore.Instance.AuthenticatedUser;
         set => MockedEntityDataStore.Instance.AuthenticatedUser = value;
     }
+
+    public DateTime SystemTime
+    {
+        get => MockedEntityDataStore.Instance.SystemTime;
+        internal set => MockedEntityDataStore.Instance.SystemTime = value;
+    }
 }

@@ -33,7 +33,9 @@ public static class OrganisationServiceSimulator
         EntityDisassociator.MockRequest(Service, options);
         OrganisationRequestExecutor.MockRequest(Service, options);
 
-        ConfigureAuthenticatedUser(options);
+        var dataService = new MockedEntityDataService();
+        ConfigureAuthenticatedUser(options, dataService);
+        SetSystemTime(options, dataService);
         
         return Service;
     }
@@ -43,10 +45,16 @@ public static class OrganisationServiceSimulator
         return new MockedEntityDataService();
     }
 
-    private static EntityReference ConfigureAuthenticatedUser(ISimulatorOptions? options)
+    private static void SetSystemTime(ISimulatorOptions? options, MockedEntityDataService dataService)
     {
-        var dataService = new MockedEntityDataService();
-        
+        if (options?.ClockSimulator is not null)
+        {
+            dataService.SystemTime = options.ClockSimulator.Now;
+        }
+    }
+
+    private static EntityReference ConfigureAuthenticatedUser(ISimulatorOptions? options, MockedEntityDataService dataService)
+    {
         if (options?.AuthenticatedUser is not null)
         {
             dataService.Add(options.AuthenticatedUser);

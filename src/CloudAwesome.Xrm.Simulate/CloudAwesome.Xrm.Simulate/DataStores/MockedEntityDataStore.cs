@@ -13,6 +13,8 @@ internal sealed class MockedEntityDataStore
 
     public EntityReference AuthenticatedUser { get; internal set; } = null!;
     
+    public DateTime SystemTime { get; internal set; } = DateTime.Now;
+    
     private MockedEntityDataStore()
     {
         Data = new Dictionary<string, List<Entity>>();

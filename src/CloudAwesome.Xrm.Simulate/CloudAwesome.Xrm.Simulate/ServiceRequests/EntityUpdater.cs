@@ -1,4 +1,5 @@
-﻿using CloudAwesome.Xrm.Simulate.DataStores;
+﻿using CloudAwesome.Xrm.Simulate.DataServices;
+using CloudAwesome.Xrm.Simulate.DataStores;
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using Microsoft.Xrm.Sdk;
 using Moq;
@@ -18,12 +19,12 @@ public class EntityUpdater: IEntityUpdater
          * - How about entity.FormattedValues? And ExtensionData? KeyAttributes?
          */
         
-        var systemTime = options?.ClockSimulator?.Now ?? DateTime.Now;
-        
         Mock.Get(organizationService)
             .Setup(x => x.Update(It.IsAny<Entity>()))
             .Callback((Entity entity) =>
             {
+                var dataService = new MockedEntityDataService();
+                
                 var entityToUpdate = MockedEntityDataStore.Instance.Data[entity.LogicalName]
                     .SingleOrDefault(x => x.Id == entity.Id);
                 
@@ -38,7 +39,7 @@ public class EntityUpdater: IEntityUpdater
                     throw new InvalidOperationException("Record not found in database ...");
                 }
                 
-                entity.Attributes[EntityConstants.ModifiedOn] = systemTime;
+                entity.Attributes[EntityConstants.ModifiedOn] = dataService.SystemTime;
                 
                 // TODO - This won't work, just deleting and re-creating.
                 //      - Need to loop through those attributes passed through,

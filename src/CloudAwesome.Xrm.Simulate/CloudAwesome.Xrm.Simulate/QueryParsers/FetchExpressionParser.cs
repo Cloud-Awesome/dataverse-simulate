@@ -96,10 +96,12 @@ public static class FetchExpressionParser
         var attributeName = conditionNode.Attributes["attribute"].Value;
         var operatorName = conditionNode.Attributes["operator"].Value;
         var valueNode = conditionNode.Attributes["value"];
-
+        
         object value = null;
         if (valueNode != null)
         {
+            // Fetch uses '%' for multiple characters, replace with '*' for RegEx
+            valueNode.Value = valueNode.Value.Replace('%', '*');
             value = valueNode.Value;
         }
 
@@ -120,7 +122,6 @@ public static class FetchExpressionParser
 
         return new OrderExpression(attributeName, orderType);
     }
-
     
     private static LinkEntity? ParseLinkEntity(XmlNode linkEntityNode, string baseEntityName)
     {
@@ -161,13 +162,28 @@ public static class FetchExpressionParser
     private static readonly Dictionary<string, ConditionOperator> OperatorMappings = new Dictionary<string, ConditionOperator>(StringComparer.OrdinalIgnoreCase)
     {
         { "eq", ConditionOperator.Equal },
-        { "ne", ConditionOperator.NotEqual },
-        { "gt", ConditionOperator.GreaterThan },
         { "ge", ConditionOperator.GreaterEqual },
-        { "lt", ConditionOperator.LessThan },
+        { "gt", ConditionOperator.GreaterThan },
+        { "last-seven-days", ConditionOperator.Last7Days},
+        { "last-week", ConditionOperator.LastWeek},
+        { "last-x-days", ConditionOperator.LastXDays},
+        { "last-x-hours", ConditionOperator.LastXHours},
+        { "last-year", ConditionOperator.LastYear},
         { "le", ConditionOperator.LessEqual },
+        { "lt", ConditionOperator.LessThan },
         { "like", ConditionOperator.Like },
+        { "ne", ConditionOperator.NotEqual },
         { "not-like", ConditionOperator.NotLike },
+        { "not-null", ConditionOperator.NotNull },
+        { "on", ConditionOperator.On },
+        { "on-or-after", ConditionOperator.OnOrAfter },
+        { "on-or-before", ConditionOperator.OnOrBefore },
+        { "null", ConditionOperator.Null },
+        { "today", ConditionOperator.Today },
+        { "tomorrow", ConditionOperator.Tomorrow },
+        { "yesterday", ConditionOperator.Yesterday },
+        
+        
         // etc., add all needed mappings here
     };
 }

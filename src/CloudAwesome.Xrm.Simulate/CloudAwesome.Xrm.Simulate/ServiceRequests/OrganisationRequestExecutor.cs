@@ -13,14 +13,12 @@ public class OrganisationRequestExecutor: IOrganisationRequestExecutor
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
     {
-        var systemTime = options?.ClockSimulator?.Now ?? DateTime.Now;
-
         // CreateRequest
         Mock.Get(organizationService)
             .Setup(x => x.Execute(It.IsAny<CreateRequest>()))
             .Returns((CreateRequest request) => 
             {
-                var createdId = new EntityCreator().Create(request.Target, systemTime);
+                var createdId = new EntityCreator().Create(request.Target);
                 return new CreateResponse
                 {
                     Results = new ParameterCollection { new("id", createdId) },
@@ -28,7 +26,7 @@ public class OrganisationRequestExecutor: IOrganisationRequestExecutor
                 };
             });
         
-        // Retrieve Multiple -> TODO - Only QueryExpression is supported atm...
+        // Retrieve Multiple -> TODO - QueryByAttribute is not yet supported
         Mock.Get(organizationService)
             .Setup(x => x.Execute(It.IsAny<RetrieveMultipleRequest>()))
             .Returns((RetrieveMultipleRequest request) =>
