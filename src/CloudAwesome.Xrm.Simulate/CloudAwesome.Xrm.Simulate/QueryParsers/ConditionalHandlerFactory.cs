@@ -35,9 +35,17 @@ public static class ConditionHandlerFactory
             { ConditionOperator.LastWeek, new LastWeekConditionHandler() },
             { ConditionOperator.LastXDays, new LastXDaysConditionHandler() },
             { ConditionOperator.LastXHours, new LastXHoursConditionHandler() },
+            { ConditionOperator.LastYear, new LastYearConditionHandler() },
             { ConditionOperator.LessEqual, new LessEqualConditionHandler() },
             { ConditionOperator.LessThan, new LessThanConditionHandler() },
             { ConditionOperator.Like, new LikeConditionHandler() },
+            { ConditionOperator.NextWeek, new NextWeekConditionHandler() },
+            { ConditionOperator.NextXDays, new NextXDaysConditionHandler() },
+            { ConditionOperator.NextXHours, new NextXHoursConditionHandler() },
+            { ConditionOperator.NextXMonths, new NextXMonthsConditionHandler() },
+            { ConditionOperator.NextXWeeks, new NextXWeeksConditionHandler() },
+            { ConditionOperator.NextXYears, new NextXYearsConditionHandler() },
+            { ConditionOperator.NextYear, new NextYearConditionHandler() },
             { ConditionOperator.NotEqual, new NotEqualConditionHandler() },
             { ConditionOperator.NotLike, new NotLikeConditionHandler() },
             { ConditionOperator.NotNull, new NotNullConditionHandler() },
@@ -46,13 +54,42 @@ public static class ConditionHandlerFactory
             { ConditionOperator.On, new OnConditionHandler() },
             { ConditionOperator.OnOrAfter, new OnOrAfterConditionHandler() },
             { ConditionOperator.OnOrBefore, new OnOrBeforeConditionHandler() },
+            { ConditionOperator.ThisMonth, new ThisMonthConditionHandler() },
+            { ConditionOperator.ThisWeek, new ThisWeekConditionHandler() },
+            { ConditionOperator.ThisYear, new ThisYearConditionHandler() },
             { ConditionOperator.Today, new TodayConditionHandler() },
             { ConditionOperator.Tomorrow, new TomorrowConditionHandler() },
             { ConditionOperator.Yesterday, new YesterdayConditionHandler() },
-            { ConditionOperator.LastYear, new LastYearConditionHandler() },
-            
-            
-            // ... Add other condition handler instances as needed
         };
     }
 }
+
+/*
+ * Still to do...
+ * --------------
+ *
+ * older than ... *6
+ *
+ * next 7 days
+ * between
+ * not between
+ *
+ * equal User Id
+ * not equal user id
+ *
+ * --------------
+ * 
+ * containsValues
+ * doesNotContainValues
+ * in
+ * mask
+ *
+ * --------------
+ * 
+ * Team, User, BusinessUnit conditions
+ *
+ * --------------
+ * 
+ * FiscalPeriod conditions
+ * 
+ */

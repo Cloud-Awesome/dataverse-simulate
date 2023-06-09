@@ -5,9 +5,9 @@ using Microsoft.Xrm.Sdk.Query;
 
 namespace CloudAwesome.Xrm.Simulate.QueryParsers.ConditionHandlers;
 
-public class LastXHoursConditionHandler : IConditionHandler
+public class NextXHoursConditionHandler : IConditionHandler
 {
-    public ConditionOperator Operator => ConditionOperator.LastXHours;
+    public ConditionOperator Operator => ConditionOperator.NextXHours;
 
     public bool Evaluate(Entity entity, ConditionExpression condition)
     {
@@ -15,7 +15,7 @@ public class LastXHoursConditionHandler : IConditionHandler
         var attributeValue = entity.GetAttributeValue<DateTime>(condition.AttributeName);
         var hours = Convert.ToInt32(condition.Values[0]);
         
-        return attributeValue.Date >= dataStore.SystemTime.AddHours(-hours) 
-               && attributeValue.Date <= dataStore.SystemTime;
+        return attributeValue.Date <= dataStore.SystemTime.AddHours(hours) 
+               && attributeValue.Date >= dataStore.SystemTime;
     }
 }

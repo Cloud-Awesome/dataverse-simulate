@@ -5,17 +5,17 @@ using Microsoft.Xrm.Sdk.Query;
 
 namespace CloudAwesome.Xrm.Simulate.QueryParsers.ConditionHandlers;
 
-public class LastXHoursConditionHandler : IConditionHandler
+public class NextXDaysConditionHandler : IConditionHandler
 {
-    public ConditionOperator Operator => ConditionOperator.LastXHours;
+    public ConditionOperator Operator => ConditionOperator.NextXDays;
 
     public bool Evaluate(Entity entity, ConditionExpression condition)
     {
         var dataStore = new MockedEntityDataService();
         var attributeValue = entity.GetAttributeValue<DateTime>(condition.AttributeName);
-        var hours = Convert.ToInt32(condition.Values[0]);
+        var days = Convert.ToInt32(condition.Values[0]);
         
-        return attributeValue.Date >= dataStore.SystemTime.AddHours(-hours) 
-               && attributeValue.Date <= dataStore.SystemTime;
+        return attributeValue.Date <= dataStore.SystemTime.Date.AddDays(days) 
+               && attributeValue.Date >= dataStore.SystemTime.Date;
     }
 }
