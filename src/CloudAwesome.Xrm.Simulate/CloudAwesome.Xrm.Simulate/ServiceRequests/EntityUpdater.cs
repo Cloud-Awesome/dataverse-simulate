@@ -28,12 +28,10 @@ public class EntityUpdater: IEntityUpdater
                 var e = MockedEntityDataStore.Instance.Data[entity.LogicalName]
                     .SingleOrDefault(x => x.Id == entity.Id);
                 
-                if (options?.EntityProcessors?.TryGetValue(e.LogicalName, 
-                        out var entityProcessor) == true && 
-                    entityProcessor.TryGetValue(SimulatorOptions.ProcessorMessage.Update, 
-                        out var processor))
+                var processorType = new ProcessorType(e.LogicalName, ProcessorMessage.Create);
+                if (options?.EntityProcessors?.TryGetValue(processorType, out var processor) == true)
                 {
-                    processor.Process(e);
+                    e = processor.Process(e);
                 }
                 
                 if (e != null)
@@ -54,10 +52,5 @@ public class EntityUpdater: IEntityUpdater
                 //      - As only 1 attribute could be updated in the message...  
                 MockedEntityDataStore.Instance.Data[entity.LogicalName].Add(entity);
             });
-    }
-
-    public Entity Initialise(Entity entity)
-    {
-        return entity;
     }
 }

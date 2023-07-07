@@ -18,25 +18,8 @@ public sealed class EntityCreator: IEntityCreator
             .Returns((Entity e) => this.Create(e, options));
     }
 
-    public Entity Initialise(Entity entity)
-    {
-        return entity;
-    }
-
     internal Guid Create(Entity e, ISimulatorOptions? options)
     {
-        var dataService = new MockedEntityDataService();
-        
-        e.SetAttributeIfEmpty($"{e.LogicalName}id", Guid.NewGuid());
-        e.SetAttributeIfEmpty(EntityConstants.CreatedOn, dataService.SystemTime);
-        e.SetAttributeFromSourceIfPopulated(EntityConstants.CreatedOn, 
-            EntityConstants.OverridenCreatedOn);
-        e.SetAttributeIfEmpty(EntityConstants.ModifiedOn, dataService.SystemTime);
-        
-        e.SetAttributeIfEmpty(EntityConstants.CreatedBy, dataService.AuthenticatedUser);
-        e.SetAttributeIfEmpty(EntityConstants.ModifiedBy, dataService.AuthenticatedUser);
-        e.SetAttributeIfEmpty(EntityConstants.OwnerId, dataService.AuthenticatedUser);
-        
         /*
          * Validate the entity first... (And decide on the correct Exception to throw if not)
          * Set state and status
@@ -46,15 +29,18 @@ public sealed class EntityCreator: IEntityCreator
          * work through e.RelatedEntities
          * Set triggers if plugins are registered
          */
-
-        if (options?.EntityProcessors?.TryGetValue(e.LogicalName, 
-                    out var entityProcessor) == true && 
-            entityProcessor.TryGetValue(SimulatorOptions.ProcessorMessage.Create, 
-                out var processor))
+        
+        // Pre-process
+        e = this.PreProcess(e, options);
+        
+        // Custom processing
+        var processorType = new ProcessorType(e.LogicalName, ProcessorMessage.Create);
+        if (options?.EntityProcessors?.TryGetValue(processorType, out var processor) == true)
         {
-            processor.Process(e);
+            e = processor.Process(e);
         }
 
+        // Submit to data store
         if (MockedEntityDataStore.Instance
             .Data.TryGetValue(e.LogicalName, out var value))
         {
@@ -67,5 +53,24 @@ public sealed class EntityCreator: IEntityCreator
         }
 
         return e.Id;
+    }
+    
+    internal Entity PreProcess(Entity e, ISimulatorOptions? options)
+    {
+        var dataService = new MockedEntityDataService();
+
+        e.SetAttributeIfEmpty($"{e.LogicalName}id", Guid.NewGuid());
+        e.Id = (Guid)e.Attributes[$"{e.LogicalName}id"];
+        
+        e.SetAttributeIfEmpty(EntityConstants.CreatedOn, dataService.SystemTime);
+        e.SetAttributeFromSourceIfPopulated(EntityConstants.CreatedOn, 
+            EntityConstants.OverridenCreatedOn);
+        e.SetAttributeIfEmpty(EntityConstants.ModifiedOn, dataService.SystemTime);
+        
+        e.SetAttributeIfEmpty(EntityConstants.CreatedBy, dataService.AuthenticatedUser);
+        e.SetAttributeIfEmpty(EntityConstants.ModifiedBy, dataService.AuthenticatedUser);
+        e.SetAttributeIfEmpty(EntityConstants.OwnerId, dataService.AuthenticatedUser);
+
+        return e;
     }
 }

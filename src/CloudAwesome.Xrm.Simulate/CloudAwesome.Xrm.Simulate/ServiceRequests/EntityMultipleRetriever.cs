@@ -51,9 +51,4 @@ public class EntityMultipleRetriever: IEntityMultipleRetriever
                 return new EntityCollection();
             });
     }
-
-    public Entity Initialise(Entity entity)
-    {
-        return entity;
-    }
 }

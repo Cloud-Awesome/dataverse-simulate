@@ -20,9 +20,4 @@ public class EntityDisassociator: IEntityDisassociator
                 // Set entity.RelatedEntities? or probably entity.SetRelatedEntities?
             });
     }
-
-    public Entity Initialise(Entity entity)
-    {
-        return entity;
-    }
 }

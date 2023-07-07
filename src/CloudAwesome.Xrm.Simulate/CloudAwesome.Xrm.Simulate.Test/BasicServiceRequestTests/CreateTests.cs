@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using CloudAwesome.Xrm.Simulate.Interfaces;
+using CloudAwesome.Xrm.Simulate.ServiceRequests;
+using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
+using CloudAwesome.Xrm.Simulate.Test.EntityProcessors;
 using CloudAwesome.Xrm.Simulate.Test.TestEntities;
 using FluentAssertions;
 using Microsoft.Xrm.Sdk;
@@ -96,5 +101,35 @@ public class CreateTests
         contact.Attributes["createdby"].Should().BeOfType<EntityReference>();
         var retrievedContact = (EntityReference) contact.Attributes["createdby"];
         retrievedContact.Id.Should().Be(authenticatedUser.Id);
+    }
+
+    [Test]
+    public void Create_Method_Implements_Injected_Custom_Processor_Method()
+    {
+        var contactOnCreateProcessorType = new ProcessorType(Contact.EntityLogicalName, ProcessorMessage.Create);
+        var options = new SimulatorOptions
+        {
+            EntityProcessors = new Dictionary<ProcessorType, IEntityProcessor>
+            {
+                { contactOnCreateProcessorType, new ContactOnCreateProcessor() }
+            }
+        };
+
+        var orgService = _organizationService.Simulate(options);
+        orgService.Data().Reinitialise();
+
+        orgService.Create(Arthur.Contact());
+
+        var contacts = orgService.Data().Get(Contact.EntityLogicalName);
+
+        contacts.Count.Should().Be(1);
+
+        var contact = contacts.Cast<Contact>().FirstOrDefault()!;
+        contact.creditonhold.Should().Be(true);
+        
+        contact.employeeid.Should().NotBeNull();
+        contact.employeeid.Length.Should().Be(5);
+        
+        contact.lastname.Should().Be(Arthur.Contact().lastname.ToUpper());
     }
 }

@@ -21,9 +21,4 @@ public class EntityDeleter: IEntityDeleter
                 MockedEntityDataStore.Instance.Data[entityName].Remove(entity);
             });
     }
-
-    public Entity Initialise(Entity entity)
-    {
-        return entity;
-    }
 }

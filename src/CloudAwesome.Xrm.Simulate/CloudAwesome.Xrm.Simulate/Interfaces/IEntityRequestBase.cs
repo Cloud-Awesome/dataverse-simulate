@@ -5,6 +5,4 @@ namespace CloudAwesome.Xrm.Simulate.Interfaces;
 public interface IEntityRequestBase
 {
     void MockRequest(IOrganizationService organizationService, ISimulatorOptions? simulatorOptions = null);
-
-    Entity Initialise(Entity entity);
 }

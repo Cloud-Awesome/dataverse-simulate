@@ -20,9 +20,4 @@ public class EntityAssociator: IEntityAssociator
                 // Set entity.RelatedEntities? or probably entity.SetRelatedEntities?
             });
     }
-
-    public virtual Entity Initialise(Entity entity)
-    {
-        return entity;
-    }
 }

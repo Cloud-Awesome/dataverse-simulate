@@ -67,20 +67,24 @@ public class MockedEntityDataService
         MockedEntityDataStore.Instance.Data.Clear();
     }
 
+    /// <summary>
+    /// Contains a reference to the mocked SystemUser authenticated in to Dynamics.
+    /// This will be used as the reference for metadata such as CreatedBy, ModifiedBy, etc.
+    /// </summary>
     public EntityReference AuthenticatedUser
     {
         get => MockedEntityDataStore.Instance.AuthenticatedUser;
         set => MockedEntityDataStore.Instance.AuthenticatedUser = value;
     }
 
+    /// <summary>
+    /// Stores a mocked DateTime used as the Dynamics system time.
+    /// This will be used for CreatedOn, ModifiedOn, etc. 
+    /// as well as the basis for datetime filters and queries (e.g. Today, LastYear)
+    /// </summary>
     public DateTime SystemTime
     {
         get => MockedEntityDataStore.Instance.SystemTime;
         internal set => MockedEntityDataStore.Instance.SystemTime = value;
-    }
-
-    public bool RemoveAttributes(Entity entity, List<string> attributesToDelete)
-    {
-        throw new NotImplementedException();
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xrm.Sdk;
+﻿using CloudAwesome.Xrm.Simulate.ServiceRequests;
+using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Simulate.Interfaces;
 
@@ -8,6 +9,5 @@ public interface ISimulatorOptions
     
     public Entity? AuthenticatedUser { get; set; }
     
-    public Dictionary<string, 
-        Dictionary<SimulatorOptions.ProcessorMessage, IEntityProcessor>>? EntityProcessors { get; set; }
+    public Dictionary<ProcessorType, IEntityProcessor>? EntityProcessors { get; set; }
 }

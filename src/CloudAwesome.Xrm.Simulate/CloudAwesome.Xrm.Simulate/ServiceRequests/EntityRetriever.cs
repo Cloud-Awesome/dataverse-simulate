@@ -50,9 +50,4 @@ public class EntityRetriever: IEntityRetriever
                 return entity;
             });
     }
-
-    public Entity Initialise(Entity entity)
-    {
-        return entity;
-    }
 }
