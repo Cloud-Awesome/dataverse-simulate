@@ -19,7 +19,7 @@ namespace CloudAwesome.Xrm.Simulate.Gather;
 /// 
 /// </summary>
 [TestFixture]
-public class InitialTestDeleteMe
+public class InitialTestDeleteMe: IntegrationBaseFixture
 {
     private readonly IOrganizationService _mockService = null!; 
     
@@ -33,7 +33,6 @@ public class InitialTestDeleteMe
         var retrievedArthur = 
             service.Retrieve(_arthur.LogicalName, arthurId, new ColumnSet("firstname", "lastname"));
         service.Delete(_arthur.LogicalName, arthurId);
-        DataverseConnectionManager.Instance.DisposeConnection();
 
         // Mocked
         var mockService = _mockService.Simulate();
@@ -47,10 +46,23 @@ public class InitialTestDeleteMe
         arthurId.Should().NotBeEmpty();
         mockedArthurId.Should().NotBeEmpty();
 
-        mockRetrievedArthur.Attributes.Should().BeEquivalentTo(retrievedArthur.Attributes);
         // TODO - fails - need to always return the primary key, even if it isn't asked for in the column set!
+        mockRetrievedArthur.Attributes.Should().BeEquivalentTo(retrievedArthur.Attributes);
         //mockRetrievedArthur.FormattedValues.Should().BeEquivalentTo(retrievedArthur.FormattedValues);
         
+        /*
+            TODO - This should replace the assertions above, so it checks the whole object, 
+                    (excluding those items we expect to be different)
+                    
+            mockRetrievedArthur.Should().BeEquivalentTo(retrievedArthur,
+                options => options.Excluding(o => o.Id));
+        */
+        
+        /*
+            CONSIDER - breaking the `arrange` section out into a separate method,
+                taking an IOrganizationService input, then calling twice, once with 
+                mock, the other with the live and compare exact results in `assert`
+         */
     }
     
     private readonly Entity _arthur = new Entity("contact")

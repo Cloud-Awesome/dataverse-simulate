@@ -48,7 +48,10 @@ public class EntityMultipleRetriever: IEntityMultipleRetriever
                 It.IsAny<QueryByAttribute>()))
             .Returns((QueryByAttribute query) =>
             {
-                return new EntityCollection();
+                var results = QueryByAttributeParser.Parse(query,
+                    MockedEntityDataStore.Instance.Data);
+                
+                return new EntityCollection(results.ToList());
             });
     }
 }

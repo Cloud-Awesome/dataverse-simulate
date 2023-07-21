@@ -41,6 +41,10 @@ public class EntityRetriever: IEntityRetriever
                             {
                                 e[column] = x[column];
                             }
+
+                            // Always return the primary GUID, even if it's not requested
+                            e[$"{x.LogicalName}id"] = x.Id; 
+                            
                             return e;
                         })
                         .FirstOrDefault() 
