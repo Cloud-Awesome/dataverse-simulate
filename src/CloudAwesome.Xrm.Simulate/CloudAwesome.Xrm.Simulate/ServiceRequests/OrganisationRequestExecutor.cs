@@ -4,7 +4,7 @@ using CloudAwesome.Xrm.Simulate.QueryParsers;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
-using Moq;
+using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
@@ -14,10 +14,11 @@ public class OrganisationRequestExecutor: IOrganisationRequestExecutor
         ISimulatorOptions? options = null)
     {
         // CreateRequest
-        Mock.Get(organizationService)
-            .Setup(x => x.Execute(It.IsAny<CreateRequest>()))
-            .Returns((CreateRequest request) => 
+        organizationService.Execute(Arg.Any<CreateRequest>())
+            .Returns(x =>
             {
+                var request = x.Arg<CreateRequest>();
+
                 var createdId = new EntityCreator().Create(request.Target, options);
                 return new CreateResponse
                 {
@@ -27,10 +28,11 @@ public class OrganisationRequestExecutor: IOrganisationRequestExecutor
             });
         
         // Retrieve Multiple -> TODO - QueryByAttribute is not yet supported
-        Mock.Get(organizationService)
-            .Setup(x => x.Execute(It.IsAny<RetrieveMultipleRequest>()))
-            .Returns((RetrieveMultipleRequest request) =>
+        organizationService.Execute(Arg.Any<RetrieveMultipleRequest>())
+            .Returns(x =>
             {
+                var request = x.Arg<RetrieveMultipleRequest>();
+                
                 var results = QueryExpressionParser.Parse(
                     (QueryExpression) request.Query,
                     MockedEntityDataStore.Instance.Data);
@@ -44,5 +46,5 @@ public class OrganisationRequestExecutor: IOrganisationRequestExecutor
                     ResponseName = "RetrieveMultiple"
                 };
             });
-}
+    }
 }

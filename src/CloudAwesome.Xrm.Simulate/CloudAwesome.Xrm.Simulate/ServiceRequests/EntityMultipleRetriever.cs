@@ -3,7 +3,7 @@ using CloudAwesome.Xrm.Simulate.Interfaces;
 using CloudAwesome.Xrm.Simulate.QueryParsers;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
-using Moq;
+using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
@@ -19,39 +19,37 @@ public class EntityMultipleRetriever: IEntityMultipleRetriever
         ISimulatorOptions? options = null)
     {
         // Handle QueryExpression
-        Mock.Get(organizationService)
-            .Setup(x => x.RetrieveMultiple(
-                It.IsAny<QueryExpression>()))
-            .Returns((QueryExpression query) =>
-            {
-                var results = QueryExpressionParser.Parse(query,
-                    MockedEntityDataStore.Instance.Data);
-                    
-                return new EntityCollection(results.ToList());
-            });
-            
+        organizationService.RetrieveMultiple(Arg.Is<QueryExpression>(x => x != null))
+            .Returns(
+                x =>
+                {
+                    var query = x.Arg<QueryExpression>();
+                    var results = QueryExpressionParser.Parse(query, MockedEntityDataStore.Instance.Data);
+                    return new EntityCollection(results.ToList());
+                });
+        
         // Handle FetchExpression
-        Mock.Get(organizationService)
-            .Setup(x => x.RetrieveMultiple(
-                It.IsAny<FetchExpression>()))
-            .Returns((FetchExpression query) =>
-            {
-                var results = FetchExpressionParser.Parse(query,
-                    MockedEntityDataStore.Instance.Data);
+        organizationService.RetrieveMultiple(Arg.Is<FetchExpression>(x => x != null))
+            .Returns(
+                x =>
+                {
+                    var query = x.Arg<FetchExpression>();
+                    var results = FetchExpressionParser.Parse(query,
+                        MockedEntityDataStore.Instance.Data);
                 
-                return new EntityCollection(results.ToList());
-            });
+                    return new EntityCollection(results.ToList()); 
+                });
 
         // Handle QueryByAttribute
-        Mock.Get(organizationService)
-            .Setup(x => x.RetrieveMultiple(
-                It.IsAny<QueryByAttribute>()))
-            .Returns((QueryByAttribute query) =>
-            {
-                var results = QueryByAttributeParser.Parse(query,
-                    MockedEntityDataStore.Instance.Data);
+        organizationService.RetrieveMultiple(Arg.Is<QueryByAttribute>(x => x != null))
+            .Returns(
+                x =>
+                {
+                    var query = x.Arg<QueryByAttribute>();
+                    var results = QueryByAttributeParser.Parse(query,
+                        MockedEntityDataStore.Instance.Data);
                 
-                return new EntityCollection(results.ToList());
-            });
+                    return new EntityCollection(results.ToList());    
+                });
     }
 }

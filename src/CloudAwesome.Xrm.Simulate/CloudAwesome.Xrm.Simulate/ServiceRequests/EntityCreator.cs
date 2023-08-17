@@ -2,7 +2,7 @@
 using CloudAwesome.Xrm.Simulate.DataStores;
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using Microsoft.Xrm.Sdk;
-using Moq;
+using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
@@ -11,11 +11,12 @@ public sealed class EntityCreator: IEntityCreator
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
     {
-        //var systemTime = options?.ClockSimulator?.Now ?? DateTime.Now;
-
-        Mock.Get(organizationService)
-            .Setup(x => x.Create(It.IsAny<Entity>()))
-            .Returns((Entity e) => this.Create(e, options));
+        organizationService.Create(Arg.Any<Entity>())
+            .Returns(x =>
+            {
+                var entity = x.Arg<Entity>();
+                return this.Create(entity, options);
+            });
     }
 
     internal Guid Create(Entity e, ISimulatorOptions? options)

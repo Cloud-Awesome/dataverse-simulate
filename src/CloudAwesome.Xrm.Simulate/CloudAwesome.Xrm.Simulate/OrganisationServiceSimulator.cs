@@ -2,14 +2,14 @@
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using CloudAwesome.Xrm.Simulate.ServiceRequests;
 using Microsoft.Xrm.Sdk;
-using Moq;
+using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate;
 
 public static class OrganisationServiceSimulator
 {
-    private static readonly IOrganizationService Service = Mock.Of<IOrganizationService>();
-
+    private static readonly IOrganizationService Service = Substitute.For<IOrganizationService>();
+    
     private static readonly IEntityCreator EntityCreator = new EntityCreator();
     private static readonly IEntityUpdater EntityUpdater = new EntityUpdater();
     private static readonly IEntityRetriever EntityRetriever = new EntityRetriever();

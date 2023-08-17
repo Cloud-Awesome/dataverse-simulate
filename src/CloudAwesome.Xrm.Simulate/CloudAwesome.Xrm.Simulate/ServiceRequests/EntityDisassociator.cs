@@ -1,6 +1,6 @@
 ﻿using CloudAwesome.Xrm.Simulate.Interfaces;
 using Microsoft.Xrm.Sdk;
-using Moq;
+using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
@@ -9,12 +9,10 @@ public class EntityDisassociator: IEntityDisassociator
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
     {
-        Mock.Get(organizationService)
-            .Setup(x => x.Disassociate(
-                It.IsAny<string>(), It.IsAny<Guid>(), 
-                It.IsAny<Relationship>(), It.IsAny<EntityReferenceCollection>()))
-            .Callback((string entityName, Guid entityId, 
-                Relationship relationship, EntityReferenceCollection relatedEntities) =>
+        organizationService.When(x => 
+            x.Disassociate(Arg.Any<string>(), Arg.Any<Guid>(), 
+                Arg.Any<Relationship>(), Arg.Any<EntityReferenceCollection>()))
+            .Do(x =>
             {
                 // Implement Mock
                 // Set entity.RelatedEntities? or probably entity.SetRelatedEntities?

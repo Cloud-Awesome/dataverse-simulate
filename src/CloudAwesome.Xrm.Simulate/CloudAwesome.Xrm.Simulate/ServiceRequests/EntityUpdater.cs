@@ -2,7 +2,7 @@
 using CloudAwesome.Xrm.Simulate.DataStores;
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using Microsoft.Xrm.Sdk;
-using Moq;
+using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
@@ -18,11 +18,13 @@ public class EntityUpdater: IEntityUpdater
          * -  Anything required with entity.RowVersion?
          * - How about entity.FormattedValues? And ExtensionData? KeyAttributes?
          */
-        
-        Mock.Get(organizationService)
-            .Setup(x => x.Update(It.IsAny<Entity>()))
-            .Callback((Entity entity) =>
+
+        organizationService.When(x =>
+            x.Update(Arg.Any<Entity>()))
+            .Do(x =>
             {
+                var entity = x.Arg<Entity>();
+                
                 var dataService = new MockedEntityDataService();
                 
                 var e = MockedEntityDataStore.Instance.Data[entity.LogicalName]
@@ -52,5 +54,6 @@ public class EntityUpdater: IEntityUpdater
                 //      - As only 1 attribute could be updated in the message...  
                 MockedEntityDataStore.Instance.Data[entity.LogicalName].Add(entity);
             });
+        
     }
 }
