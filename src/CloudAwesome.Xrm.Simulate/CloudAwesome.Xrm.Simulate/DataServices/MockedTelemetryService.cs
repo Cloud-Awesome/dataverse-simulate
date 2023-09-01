@@ -1,5 +1,5 @@
 ﻿using CloudAwesome.Xrm.Simulate.DataStores;
-using Microsoft.Extensions.Logging;
+using Microsoft.Xrm.Sdk.PluginTelemetry;
 
 namespace CloudAwesome.Xrm.Simulate.DataServices;
 

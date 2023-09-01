@@ -6,7 +6,7 @@ using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using NUnit.Framework;
 
-namespace CloudAwesome.Xrm.Simulate.Test;
+namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests;
 
 [TestFixture]
 public class QueryByAttributeTests

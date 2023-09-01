@@ -11,7 +11,7 @@ internal sealed class MockedEntityDataStore
 
     public Dictionary<string, List<Entity>> Data { get; private set; }
 
-    public EntityReference AuthenticatedUser { get; internal set; } = null!;
+    public EntityReference AuthenticatedUser { get; internal set; } = new EntityReference("systemuser", Guid.NewGuid());
     
     public DateTime SystemTime { get; internal set; } = DateTime.Now;
     
@@ -20,7 +20,7 @@ internal sealed class MockedEntityDataStore
         Data = new Dictionary<string, List<Entity>>();
     }
 
-    public void Set(Dictionary<string, List<Entity>> data)
+    internal void Set(Dictionary<string, List<Entity>> data)
     {
         Data = data;
     }

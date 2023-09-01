@@ -1,17 +1,33 @@
-﻿using CloudAwesome.Xrm.Simulate.Interfaces;
+﻿using System.ComponentModel;
+using CloudAwesome.Xrm.Simulate.Interfaces;
+using CloudAwesome.Xrm.Simulate.ServiceProviders;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.PluginTelemetry;
 using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate;
 
 public static class ServiceProviderSimulator
 {
-    private static readonly IServiceProvider ServiceProvider = Substitute.For<IServiceProvider>();
-    
     public static IServiceProvider Simulate(this IServiceProvider serviceProvider,
         ISimulatorOptions? options = null)
-    {
-        /* TODO - Set up the other mocks for ITracingService, IPluginExecutionContext, and IOrganizationServiceFactory */
+    { 
+        var localServiceProvider = Substitute.For<IServiceProvider>();
+    
+        localServiceProvider.GetService(Arg.Any<Type>())
+            .Returns(callInfo =>
+            {
+                var argType = callInfo.Arg<Type>();
+                return argType switch
+                {
+                    _ when argType == typeof(IPluginExecutionContext) => PluginExecutionContextSimulator.Create(options),
+                    _ when argType == typeof(IOrganizationServiceFactory) => OrganisationServiceFactorySimulator.Create(options),
+                    _ when argType == typeof(ITracingService) => TracingServiceSimulator.Create(options),
+                    _ when argType == typeof(ILogger) => TelemetrySimulator.Create(options),
+                    _ => throw new ArgumentException("Type of Service requested is not supported")
+                };
+            });
         
-        return ServiceProvider;
+        return localServiceProvider;
     }
 }

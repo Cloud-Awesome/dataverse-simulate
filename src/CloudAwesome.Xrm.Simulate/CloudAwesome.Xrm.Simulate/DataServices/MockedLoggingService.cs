@@ -13,6 +13,11 @@ public class MockedLoggingService
         MockedLoggingStore.Instance.Logs.Add(message);
     }
 
+    public void Add(string message, params object[] args)
+    {
+        MockedLoggingStore.Instance.Logs.Add(string.Format(message, args));
+    }
+
     /// <summary>
     /// Clears all logs from the in memory store.
     /// Call this during test set up if the test requires a fresh run. 
