@@ -87,4 +87,7 @@ public class MockedEntityDataService
         get => MockedEntityDataStore.Instance.SystemTime;
         internal set => MockedEntityDataStore.Instance.SystemTime = value;
     }
+
+    public Entity BusinessUnit => throw new NotImplementedException();
+    public EntityReference Organization => throw new NotImplementedException();
 }

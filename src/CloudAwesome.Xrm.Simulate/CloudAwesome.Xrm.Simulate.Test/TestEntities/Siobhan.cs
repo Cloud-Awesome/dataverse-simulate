@@ -1,4 +1,5 @@
-﻿using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
+﻿using System;
+using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
 using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Simulate.Test.TestEntities;
@@ -15,6 +16,7 @@ public static class Siobhan
     {
         return new Contact
         {
+            contactid = Guid.NewGuid(),
             firstname = "Siobhan",
             lastname = "Nicholson",
             gendercode = Contact_gendercode.Female,

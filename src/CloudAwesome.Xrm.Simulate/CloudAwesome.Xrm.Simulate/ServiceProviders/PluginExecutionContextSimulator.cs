@@ -7,7 +7,9 @@ namespace CloudAwesome.Xrm.Simulate.ServiceProviders;
 
 public static class PluginExecutionContextSimulator
 {
-    public static IPluginExecutionContext Create(ISimulatorOptions? options)
+    public static IPluginExecutionContext Create(ISimulatorOptions? options) 
+        //PluginExecutionContextMock executionContextMockDetails) 
+        // TODO - ^^ Consider best how to inject this. We don't want it to be at the service level, or in the simulator options? ...
     {
         var pluginExecutionContext = Substitute.For<IPluginExecutionContext>();
         var dataService = new MockedEntityDataService();
@@ -17,7 +19,13 @@ public static class PluginExecutionContextSimulator
         // pluginExecutionContext.InputParameters
         // pluginExecutionContext.PreEntityImages
         
-        pluginExecutionContext.UserId.Returns(x => options?.AuthenticatedUser?.Id ?? dataService.AuthenticatedUser.Id);
+        pluginExecutionContext.UserId.Returns(x => 
+            options?.AuthenticatedUser?.Id ?? 
+            dataService.AuthenticatedUser.Id);
+        
+        pluginExecutionContext.InitiatingUserId.Returns(x => 
+            options?.AuthenticatedUser?.Id ?? 
+            dataService.AuthenticatedUser.Id);
 
         return pluginExecutionContext;
     }

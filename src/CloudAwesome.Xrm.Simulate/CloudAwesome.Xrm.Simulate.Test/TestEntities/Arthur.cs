@@ -16,7 +16,7 @@ public static class Arthur
     {
         return new Contact
         {
-            //contactid = Guid.Parse("22c4ba07-5df0-4bed-aacf-276270b75f2f"),
+            contactid = Guid.Parse("22c4ba07-5df0-4bed-aacf-276270b75f2f"),
             firstname = "Arthur",
             lastname = "Nicholson-Gumula",
             birthdate = new DateTime(1984, 12, 14),

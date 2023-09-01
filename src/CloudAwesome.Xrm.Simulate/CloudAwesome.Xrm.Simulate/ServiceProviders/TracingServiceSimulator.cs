@@ -7,27 +7,19 @@ namespace CloudAwesome.Xrm.Simulate.ServiceProviders;
 
 public static class TracingServiceSimulator
 {
+    private static readonly MockedLoggingService MockedLoggingService = new MockedLoggingService();
+    
     public static ITracingService Create(ISimulatorOptions? options)
     {
         var tracingService = Substitute.For<ITracingService>();
 
-        tracingService
-            .When(x => x.Trace(Arg.Any<string>()))
-            .Do(t =>
-            {
-                var trace = t.Arg<string>();
-                var loggingService = new MockedLoggingService();
-                loggingService.Add(trace);
-            });
-        
         tracingService
             .When(x => x.Trace(Arg.Any<string>(), Arg.Any<object[]>()))
             .Do(t =>
             {
                 var trace = t.Arg<string>();
                 var args = t.Arg<object[]>();
-                var loggingService = new MockedLoggingService();
-                loggingService.Add(trace, args);
+                MockedLoggingService.Add(trace, args);
             });
 
         return tracingService;
