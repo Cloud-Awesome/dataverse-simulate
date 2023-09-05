@@ -5,7 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
-// Created via this command line: "C:\Users\ArthurNicholson-Gumu\AppData\Roaming\MscrmTools\XrmToolBox\Plugins\DLaB.EarlyBoundGenerator\CrmSvcUtil.exe" /url:"https://awesome.api.crm11.dynamics.com" /namespace:"CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities" /SuppressGeneratedCodeAttribute /out:"C:\Source\Cloud-Awesome\dataverse-simulate\src\CloudAwesome.Xrm.Simulate\CloudAwesome.Xrm.Simulate.Test\EarlyBoundEntities\CrmServiceContext.cs" /servicecontextname:"CrmServiceContext" /codecustomization:"DLaB.CrmSvcUtilExtensions.Entity.CustomizeCodeDomService,DLaB.CrmSvcUtilExtensions" /codegenerationservice:"DLaB.CrmSvcUtilExtensions.Entity.CustomCodeGenerationService,DLaB.CrmSvcUtilExtensions" /codewriterfilter:"DLaB.CrmSvcUtilExtensions.Entity.CodeWriterFilterService,DLaB.CrmSvcUtilExtensions" /namingservice:"DLaB.CrmSvcUtilExtensions.NamingService,DLaB.CrmSvcUtilExtensions" /metadataproviderservice:"DLaB.CrmSvcUtilExtensions.Entity.MetadataProviderService,DLaB.CrmSvcUtilExtensions" 
+// Created via this command line: "C:\Users\ArthurNicholson-Gumu\AppData\Roaming\MscrmTools\XrmToolBox\Plugins\DLaB.EarlyBoundGenerator\CrmSvcUtil.exe" /url:"https://sandbox-awesome.api.crm11.dynamics.com" /namespace:"CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities" /SuppressGeneratedCodeAttribute /out:"C:\Source\Cloud-Awesome\dataverse-simulate\src\CloudAwesome.Xrm.Simulate\CloudAwesome.Xrm.Simulate.Test\EarlyBoundEntities\CrmServiceContext.cs" /servicecontextname:"CrmServiceContext" /codecustomization:"DLaB.CrmSvcUtilExtensions.Entity.CustomizeCodeDomService,DLaB.CrmSvcUtilExtensions" /codegenerationservice:"DLaB.CrmSvcUtilExtensions.Entity.CustomCodeGenerationService,DLaB.CrmSvcUtilExtensions" /codewriterfilter:"DLaB.CrmSvcUtilExtensions.Entity.CodeWriterFilterService,DLaB.CrmSvcUtilExtensions" /namingservice:"DLaB.CrmSvcUtilExtensions.NamingService,DLaB.CrmSvcUtilExtensions" /metadataproviderservice:"DLaB.CrmSvcUtilExtensions.Entity.MetadataProviderService,DLaB.CrmSvcUtilExtensions" 
 //------------------------------------------------------------------------------
 
 [assembly: Microsoft.Xrm.Sdk.Client.ProxyTypesAssemblyAttribute()]
@@ -38,6 +38,18 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			get
 			{
 				return this.CreateQuery<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact>();
+			}
+		}
+		
+		/// <summary>
+		/// Gets a binding to the set of all <see cref="CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep"/> entities.
+		/// </summary>
+		public System.Linq.IQueryable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep> SdkMessageProcessingStepSet
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.CreateQuery<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep>();
 			}
 		}
 	}

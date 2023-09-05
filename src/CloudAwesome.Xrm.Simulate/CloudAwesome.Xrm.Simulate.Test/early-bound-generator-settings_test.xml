@@ -4,7 +4,7 @@
   <CrmSvcUtilRelativePath>C:\Users\ArthurNicholson-Gumu\AppData\Roaming\MscrmTools\XrmToolBox\Plugins\DLaB.EarlyBoundGenerator\CrmSvcUtil.exe</CrmSvcUtilRelativePath>
   <IncludeCommandLine>true</IncludeCommandLine>
   <MaskPassword>true</MaskPassword>
-  <SettingsVersion>1.2022.5.3</SettingsVersion>
+  <SettingsVersion>1.2022.9.22</SettingsVersion>
   <Version>1.2022.9.22</Version>
   <ExtensionConfig>
     <ActionPrefixesWhitelist />
@@ -20,7 +20,8 @@
     <CreateOneFilePerOptionSet>false</CreateOneFilePerOptionSet>
     <DeleteFilesFromOutputFolders>true</DeleteFilesFromOutputFolders>
     <EntitiesToSkip />
-    <EntitiesWhitelist>contact</EntitiesWhitelist>
+    <EntitiesWhitelist>contact|
+sdkmessageprocessingstep</EntitiesWhitelist>
     <EntityAttributeSpecifiedNames />
     <EntityPrefixesToSkip />
     <EntityPrefixesWhitelist />

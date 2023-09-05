@@ -9,8 +9,14 @@ public static class TelemetrySimulator
 {
     private static readonly MockedTelemetryService Telemetry = new MockedTelemetryService();
     
-    public static ILogger Create(ISimulatorOptions? options)
+    public static ILogger? Create(ISimulatorOptions? options)
     {
+        var dataService = new MockedEntityDataService();
+        if (dataService.FakeServiceFailureSettings is { TelemetryService: true })
+        {
+            return null;
+        }
+        
         var telemetryService = Substitute.For<ILogger>();
         
         telemetryService

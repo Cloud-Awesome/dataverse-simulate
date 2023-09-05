@@ -6,7 +6,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
-// Created via this command line: "C:\Users\ArthurNicholson-Gumu\AppData\Roaming\MscrmTools\XrmToolBox\Plugins\DLaB.EarlyBoundGenerator\CrmSvcUtil.exe" /url:"https://awesome.api.crm11.dynamics.com" /namespace:"CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities" /SuppressGeneratedCodeAttribute /out:"C:\Source\Cloud-Awesome\dataverse-simulate\src\CloudAwesome.Xrm.Simulate\CloudAwesome.Xrm.Simulate.Test\EarlyBoundEntities\OptionSets.cs" /codecustomization:"DLaB.CrmSvcUtilExtensions.OptionSet.CustomizeCodeDomService,DLaB.CrmSvcUtilExtensions" /codegenerationservice:"DLaB.CrmSvcUtilExtensions.OptionSet.CustomCodeGenerationService,DLaB.CrmSvcUtilExtensions" /codewriterfilter:"DLaB.CrmSvcUtilExtensions.OptionSet.CodeWriterFilterService,DLaB.CrmSvcUtilExtensions" /namingservice:"DLaB.CrmSvcUtilExtensions.NamingService,DLaB.CrmSvcUtilExtensions" /metadataproviderservice:"DLaB.CrmSvcUtilExtensions.BaseMetadataProviderService,DLaB.CrmSvcUtilExtensions" 
+// Created via this command line: "C:\Users\ArthurNicholson-Gumu\AppData\Roaming\MscrmTools\XrmToolBox\Plugins\DLaB.EarlyBoundGenerator\CrmSvcUtil.exe" /url:"https://sandbox-awesome.api.crm11.dynamics.com" /namespace:"CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities" /SuppressGeneratedCodeAttribute /out:"C:\Source\Cloud-Awesome\dataverse-simulate\src\CloudAwesome.Xrm.Simulate\CloudAwesome.Xrm.Simulate.Test\EarlyBoundEntities\OptionSets.cs" /codecustomization:"DLaB.CrmSvcUtilExtensions.OptionSet.CustomizeCodeDomService,DLaB.CrmSvcUtilExtensions" /codegenerationservice:"DLaB.CrmSvcUtilExtensions.OptionSet.CustomCodeGenerationService,DLaB.CrmSvcUtilExtensions" /codewriterfilter:"DLaB.CrmSvcUtilExtensions.OptionSet.CodeWriterFilterService,DLaB.CrmSvcUtilExtensions" /namingservice:"DLaB.CrmSvcUtilExtensions.NamingService,DLaB.CrmSvcUtilExtensions" /metadataproviderservice:"DLaB.CrmSvcUtilExtensions.BaseMetadataProviderService,DLaB.CrmSvcUtilExtensions" 
 //------------------------------------------------------------------------------
 
 namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
@@ -14,16 +14,24 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum awe_doyouwanttoaddextrainformation
+	public enum ComponentState
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("No", 0)]
-		No = 124210000,
+		[OptionSetMetadataAttribute("Deleted", 2)]
+		Deleted = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Yes", 1)]
-		Yes = 124210001,
+		[OptionSetMetadataAttribute("Deleted Unpublished", 3)]
+		DeletedUnpublished = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Published", 0)]
+		Published = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Unpublished", 1)]
+		Unpublished = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
@@ -52,12 +60,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		BillTo = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Home", 2)]
-		Home = 3,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		[OptionSetMetadataAttribute("Other", 3)]
 		Other = 4,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Primary", 2)]
+		Primary = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		[OptionSetMetadataAttribute("Ship To", 1)]
@@ -213,99 +221,6 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_baggageguidancestatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Reading Complete", 0, "#0000ff")]
-		ReadingComplete = 805500000,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_carloanguidancestatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Reading Complete", 0, "#0000ff")]
-		ReadingComplete = 805500000,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_continuityofeducationguidancestatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Reading Complete", 0, "#0000ff")]
-		ReadingComplete = 805500000,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_financialguidancestatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Completed", 0, "#0000ff")]
-		Completed = 805500000,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_headofmission
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("No", 1, "#0000ff")]
-		No = 805500001,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Yes", 0, "#0000ff")]
-		Yes = 805500000,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_howwillyousendyourbaggage
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("I will carry my items as excess baggage", 1, "#0000ff")]
-		Iwillcarrymyitemsasexcessbaggage = 805500001,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Via unaccompanied air freight", 0, "#0000ff")]
-		Viaunaccompaniedairfreight = 805500000,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_languagetrainingstatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Not applicable", 0, "#0000ff")]
-		Notapplicable = 805500000,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Reading complete", 1, "#0000ff")]
-		Readingcomplete = 805500001,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_shippingvehicleguidancestatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Reading Complete", 0, "#0000ff")]
-		ReadingComplete = 805500000,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_visaguidancestatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Reading complete", 0, "#0000ff")]
-		Readingcomplete = 805500000,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum Contact_gendercode
 	{
 		
@@ -334,44 +249,6 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_msdyn_decisioninfluencetag
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Blocker", 2, "#FF0000")]
-		Blocker = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Decision maker", 0, "#32C100")]
-		Decisionmaker = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Influencer", 1, "#FFD74B")]
-		Influencer = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Unknown", 3, "#E1DFDD")]
-		Unknown = 3,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_msdyn_orgchangestatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Ignore", 2, "#0000ff")]
-		Ignore = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("No Feedback", 0, "#0000ff")]
-		NoFeedback = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Not at Company", 1, "#0000ff")]
-		NotatCompany = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
@@ -502,50 +379,305 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum fco_CreatedByProcess
+	public enum powerpagelanguages
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Automated Testing", 0, "#0000ff")]
-		AutomatedTesting = 805500000,
+		[OptionSetMetadataAttribute("Arabic", 0, "#0000ff")]
+		Arabic = 1025,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Data Import", 1, "#0000ff")]
-		DataImport = 805500001,
+		[OptionSetMetadataAttribute("Basque - Basque", 1, "#0000ff")]
+		BasqueBasque = 1069,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Manual by User", 2, "#0000ff")]
-		ManualbyUser = 805500002,
+		[OptionSetMetadataAttribute("Bulgarian - Bulgaria", 2, "#0000ff")]
+		BulgarianBulgaria = 1026,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("System Workflow", 3, "#0000ff")]
-		SystemWorkflow = 805500003,
+		[OptionSetMetadataAttribute("Catalan - Catalan", 3, "#0000ff")]
+		CatalanCatalan = 1027,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Chinese - China", 4, "#0000ff")]
+		ChineseChina = 2052,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Chinese - Hong Kong SAR", 5, "#0000ff")]
+		ChineseHongKongSAR = 3076,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Chinese - Traditional", 6, "#0000ff")]
+		ChineseTraditional = 1028,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Croatian - Croatia", 7, "#0000ff")]
+		CroatianCroatia = 1050,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Czech - Czech Republic", 8, "#0000ff")]
+		CzechCzechRepublic = 1029,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Danish - Denmark", 9, "#0000ff")]
+		DanishDenmark = 1030,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Dutch - Netherlands", 10, "#0000ff")]
+		DutchNetherlands = 1043,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("English", 11, "#0000ff")]
+		English = 1033,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Estonian - Estonia", 12, "#0000ff")]
+		EstonianEstonia = 1061,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Finnish - Finland", 13, "#0000ff")]
+		FinnishFinland = 1035,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("French - France", 14, "#0000ff")]
+		FrenchFrance = 1036,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Galician - Spain", 15, "#0000ff")]
+		GalicianSpain = 1110,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("German - Germany", 16, "#0000ff")]
+		GermanGermany = 1031,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Greek - Greece", 17, "#0000ff")]
+		GreekGreece = 1032,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Hebrew", 18, "#0000ff")]
+		Hebrew = 1037,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Hindi - India", 19, "#0000ff")]
+		HindiIndia = 1081,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Hungarian - Hungary", 20, "#0000ff")]
+		HungarianHungary = 1038,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Indonesian - Indonesia", 21, "#0000ff")]
+		IndonesianIndonesia = 1057,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Italian - Italy", 22, "#0000ff")]
+		ItalianItaly = 1040,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Japanese - Japan", 23, "#0000ff")]
+		JapaneseJapan = 1041,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Kazakh - Kazakhstan", 24, "#0000ff")]
+		KazakhKazakhstan = 1087,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Korean - Korea", 25, "#0000ff")]
+		KoreanKorea = 1042,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Latvian - Latvia", 26, "#0000ff")]
+		LatvianLatvia = 1062,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Lithuanian - Lithuania", 27, "#0000ff")]
+		LithuanianLithuania = 1063,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Malay - Malaysia", 28, "#0000ff")]
+		MalayMalaysia = 1086,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Norwegian (Bokmål) - Norway", 29, "#0000ff")]
+		Norwegian_BokmlNorway = 1044,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Polish - Poland", 30, "#0000ff")]
+		PolishPoland = 1045,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Portuguese - Brazil", 31, "#0000ff")]
+		PortugueseBrazil = 1046,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Portuguese - Portugal", 32, "#0000ff")]
+		PortuguesePortugal = 2070,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Romanian - Romania", 33, "#0000ff")]
+		RomanianRomania = 1048,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Russian - Russia", 34, "#0000ff")]
+		RussianRussia = 1049,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Serbian (Cyrillic) - Serbia", 35, "#0000ff")]
+		Serbian_CyrillicSerbia = 3098,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Serbian (Latin) - Serbia", 36, "#0000ff")]
+		Serbian_LatinSerbia = 2074,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Slovak - Slovakia", 37, "#0000ff")]
+		SlovakSlovakia = 1051,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Slovenian - Slovenia", 38, "#0000ff")]
+		SlovenianSlovenia = 1060,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Spanish (Traditional Sort) - Spain", 39, "#0000ff")]
+		Spanish_TraditionalSortSpain = 3082,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Swedish - Sweden", 40, "#0000ff")]
+		SwedishSweden = 1053,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Thai - Thailand", 41, "#0000ff")]
+		ThaiThailand = 1054,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Turkish - Türkiye", 42, "#0000ff")]
+		TurkishTrkiye = 1055,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Ukrainian - Ukraine", 43, "#0000ff")]
+		UkrainianUkraine = 1058,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Vietnamese - Vietnam", 44, "#0000ff")]
+		VietnameseVietnam = 1066,
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum fco_Parentdepartment
+	public enum SdkMessageProcessingStep_invocationsource
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("FCO", 0, "#0000ff")]
-		FCO = 805500000,
+		[OptionSetMetadataAttribute("Child", 2)]
+		Child = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Internal", 0)]
+		Internal = -1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Parent", 1)]
+		Parent = 0,
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum fco_TypeofPerson
+	public enum SdkMessageProcessingStep_mode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Child", 2, "#0000ff")]
-		Child = 805500002,
+		[OptionSetMetadataAttribute("Asynchronous", 1)]
+		Asynchronous = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Spouse/Partner", 1, "#0000ff")]
-		SpousePartner = 805500001,
+		[OptionSetMetadataAttribute("Synchronous", 0)]
+		Synchronous = 0,
+	}
+	
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum SdkMessageProcessingStep_stage
+	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("The overall applicant", 0, "#0000ff")]
-		Theoverallapplicant = 805500000,
+		[OptionSetMetadataAttribute("Final Post-operation (For internal use only)", 10)]
+		FinalPostoperation_Forinternaluseonly = 55,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Initial Pre-operation (For internal use only)", 0)]
+		InitialPreoperation_Forinternaluseonly = 5,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Internal Post-operation After External Plugins (For internal use only)", 8)]
+		InternalPostoperationAfterExternalPlugins_Forinternaluseonly = 45,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Internal Post-operation Before External Plugins (For internal use only)", 6)]
+		InternalPostoperationBeforeExternalPlugins_Forinternaluseonly = 35,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Internal Pre-operation After External Plugins (For internal use only)", 4)]
+		InternalPreoperationAfterExternalPlugins_Forinternaluseonly = 25,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Internal Pre-operation Before External Plugins (For internal use only)", 2)]
+		InternalPreoperationBeforeExternalPlugins_Forinternaluseonly = 15,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Main Operation (For internal use only)", 5)]
+		MainOperation_Forinternaluseonly = 30,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Post-Commit stage fired after transaction commit (For internal use only)", 12)]
+		PostCommitstagefiredaftertransactioncommit_Forinternaluseonly = 90,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Post-operation", 7)]
+		Postoperation = 40,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Post-operation (Deprecated)", 9)]
+		Postoperation_Deprecated = 50,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Pre-Commit stage fired before transaction commit (For internal use only)", 11)]
+		PreCommitstagefiredbeforetransactioncommit_Forinternaluseonly = 80,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Pre-operation", 3)]
+		Preoperation = 20,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Pre-validation", 1)]
+		Prevalidation = 10,
+	}
+	
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum SdkMessageProcessingStep_StatusCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Disabled", 1)]
+		Disabled = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Enabled", 0)]
+		Enabled = 1,
+	}
+	
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum SdkMessageProcessingStep_supporteddeployment
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Both", 2)]
+		Both = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Microsoft Dynamics 365 Client for Outlook Only", 1)]
+		MicrosoftDynamics365ClientforOutlookOnly = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Server Only", 0)]
+		ServerOnly = 0,
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
@@ -583,40 +715,6 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum fco_travelandfinancial_fco_Whathasbeenpaid
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Single", 0, "#0000ff")]
-		Single = 805500000,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Nothing", 1, "#0000ff")]
-		Nothing = 805500001,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Everything", 2, "#0000ff")]
-		Everything = 805500002,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum msdyn_forecastsettingsandsummary_msdyn_ForecastJobStatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Success", 0, "#0000ff")]
-		Success = 192350000,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Data Failure", 1, "#0000ff")]
-		DataFailure = 192350001,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Pipeline Failure", 2, "#0000ff")]
-		PipelineFailure = 192350002,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum msdyn_knowledgemanagementsetting_msdyn_actionlist
 	{
 		
@@ -635,38 +733,5 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		[OptionSetMetadataAttribute("Link article and send article content", 3, "#0000ff")]
 		Linkarticleandsendarticlecontent = 3,
-	}
-	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum msdyn_oc_daysofweek
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Sun", 0, "#0000ff", "Sunday")]
-		Sun = 192350000,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Mon", 1, "#0000ff", "Monday")]
-		Mon = 192350001,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Tue", 2, "#0000ff", "Tuesday")]
-		Tue = 192350002,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Wed", 3, "#0000ff", "Wednesday")]
-		Wed = 192350003,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Thu", 4, "#0000ff", "Thursday")]
-		Thu = 192350004,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Fri", 5, "#0000ff", "Friday")]
-		Fri = 192350005,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Sat", 6, "#0000ff", "Saturday")]
-		Sat = 192350006,
 	}
 }

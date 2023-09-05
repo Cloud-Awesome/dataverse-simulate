@@ -1,5 +1,6 @@
 ﻿using System;
 using CloudAwesome.Xrm.Simulate.DataServices;
+using CloudAwesome.Xrm.Simulate.DataStores;
 using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.PluginTelemetry;
@@ -31,6 +32,25 @@ public class ServiceProviderSimulatorTests
         executionContext.Should().NotBeNull();
         executionContext.UserId.Should().Be(dataService.AuthenticatedUser.Id);
     }
+    
+    [Test]
+    public void Faking_Service_Failure_With_Execution_Context_Returns_Null()
+    {
+        var options = new SimulatorOptions
+        {
+            FakeServiceFailureSettings = new FakeServiceFailureSettings
+            {
+                PluginExecutionContext = true
+            }
+        };
+
+        var serviceProvider = _serviceProvider.Simulate(options);
+        
+        var executionContext = (IPluginExecutionContext)
+            serviceProvider.GetService(typeof(IPluginExecutionContext))!;
+
+        executionContext.Should().BeNull();
+    }
 
     [Test]
     public void GetService_Can_Return_Mocked_IOrganizationServiceFactory()
@@ -42,7 +62,26 @@ public class ServiceProviderSimulatorTests
 
         factory.Should().NotBeNull();
     }
+    
+    [Test]
+    public void Faking_Service_Failure_With_IOrganizationServiceFactory_Returns_Null()
+    {
+        var options = new SimulatorOptions
+        {
+            FakeServiceFailureSettings = new FakeServiceFailureSettings
+            {
+                OrganizationServiceFactory = true
+            }
+        };
 
+        var serviceProvider = _serviceProvider.Simulate(options);
+        
+        var executionContext = (IOrganizationServiceFactory)
+            serviceProvider.GetService(typeof(IOrganizationServiceFactory))!;
+
+        executionContext.Should().BeNull();
+    }
+    
     [Test]
     public void GetService_Can_Return_Mocked_ILogger()
     {
@@ -52,6 +91,25 @@ public class ServiceProviderSimulatorTests
             serviceProvider.GetService(typeof(ILogger))!;
 
         logger.Should().NotBeNull();
+    }
+    
+    [Test]
+    public void Faking_Service_Failure_With_ILogger_Returns_Null()
+    {
+        var options = new SimulatorOptions
+        {
+            FakeServiceFailureSettings = new FakeServiceFailureSettings
+            {
+                TelemetryService = true
+            }
+        };
+
+        var serviceProvider = _serviceProvider.Simulate(options);
+        
+        var logger = (ILogger)
+            serviceProvider.GetService(typeof(ILogger))!;
+
+        logger.Should().BeNull();
     }
 
     [Test]
@@ -64,7 +122,26 @@ public class ServiceProviderSimulatorTests
 
         tracingService.Should().NotBeNull();
     }
+    
+    [Test]
+    public void Faking_Service_Failure_With_ITracingService_Returns_Null()
+    {
+        var options = new SimulatorOptions
+        {
+            FakeServiceFailureSettings = new FakeServiceFailureSettings
+            {
+                TracingService = true
+            }
+        };
 
+        var serviceProvider = _serviceProvider.Simulate(options);
+        
+        var executionContext = (ITracingService)
+            serviceProvider.GetService(typeof(ITracingService))!;
+
+        executionContext.Should().BeNull();
+    }
+    
     [Test]
     public void GetService_Requesting_Unsupported_Service_Should_Throw_Error()
     {
@@ -76,4 +153,5 @@ public class ServiceProviderSimulatorTests
             .Throw<ArgumentException>()
             .WithMessage("Type of Service requested is not supported");
     }
+    
 }

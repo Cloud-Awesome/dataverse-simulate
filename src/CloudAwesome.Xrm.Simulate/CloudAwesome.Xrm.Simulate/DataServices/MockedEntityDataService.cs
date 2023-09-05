@@ -1,4 +1,6 @@
 ﻿using CloudAwesome.Xrm.Simulate.DataStores;
+using CloudAwesome.Xrm.Simulate.Interfaces;
+using CloudAwesome.Xrm.Simulate.ServiceProviders;
 using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Simulate.DataServices;
@@ -53,10 +55,19 @@ public class MockedEntityDataService
     }
 
     /// <summary>
-    /// Clears data created, updated or deleted in a test and resets to the original configuration 
-    /// (Either an empty dataset, or initialised from base mock)
+    /// Clears all data created, updated or deleted in a test and resets the in memory database to an empty set
     /// </summary>
     public void Reinitialise()
+    {
+        MockedEntityDataStore.Instance.Data.Clear();
+    }
+    
+    /// <summary>
+    /// Clears data created, updated or deleted in a test and resets to the original configuration,
+    /// including reference data set up, such as Business Unit, Fiscal Periods, etc. 
+    /// </summary>
+    /// <param name="options"></param>
+    public void Reinitialise(ISimulatorOptions options)
     {
         /*
          * TODO - Clear and then reload stuff we want to keep
@@ -65,6 +76,16 @@ public class MockedEntityDataService
          */
         
         MockedEntityDataStore.Instance.Data.Clear();
+    }
+
+    /// <summary>
+    /// Resets the plugin execution context while maintaining all in memory data and configuration
+    /// </summary>
+    /// <param name="executionContextMock">Mocked plugin execution context, e.g. Target entity, Entity images</param>
+    public void Reinitialise(PluginExecutionContextMock executionContextMock)
+    {
+        // TODO - What else needs doing to trigger this? It needs to get into the service provider/context mock
+        MockedEntityDataStore.Instance.ExecutionContextMock = executionContextMock;
     }
 
     /// <summary>
@@ -88,6 +109,18 @@ public class MockedEntityDataService
         internal set => MockedEntityDataStore.Instance.SystemTime = value;
     }
 
+    public PluginExecutionContextMock? ExecutionContext
+    {
+        get => MockedEntityDataStore.Instance.ExecutionContextMock;
+        set => MockedEntityDataStore.Instance.ExecutionContextMock = value?? new PluginExecutionContextMock();
+    }
+
     public Entity BusinessUnit => throw new NotImplementedException();
     public EntityReference Organization => throw new NotImplementedException();
+
+    public FakeServiceFailureSettings? FakeServiceFailureSettings
+    {
+        get => MockedEntityDataStore.Instance.FakeServiceFailureSettings;
+        set => MockedEntityDataStore.Instance.FakeServiceFailureSettings = value?? new FakeServiceFailureSettings();
+    }
 }

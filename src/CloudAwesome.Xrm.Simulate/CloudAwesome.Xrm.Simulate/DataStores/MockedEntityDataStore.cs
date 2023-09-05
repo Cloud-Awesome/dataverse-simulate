@@ -1,4 +1,5 @@
-﻿using Microsoft.Xrm.Sdk;
+﻿using CloudAwesome.Xrm.Simulate.ServiceProviders;
+using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Simulate.DataStores;
 
@@ -14,6 +15,10 @@ internal sealed class MockedEntityDataStore
     public EntityReference AuthenticatedUser { get; internal set; } = new EntityReference("systemuser", Guid.NewGuid());
     
     public DateTime SystemTime { get; internal set; } = DateTime.Now;
+    
+    public PluginExecutionContextMock ExecutionContextMock { get; internal set; }
+    
+    public FakeServiceFailureSettings FakeServiceFailureSettings { get; internal set; }
     
     private MockedEntityDataStore()
     {

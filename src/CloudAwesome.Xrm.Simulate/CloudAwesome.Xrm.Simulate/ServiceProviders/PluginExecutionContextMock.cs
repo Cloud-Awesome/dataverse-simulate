@@ -9,29 +9,29 @@ public class PluginExecutionContextMock: IPluginExecutionContext
     
     public int Mode { get; set; }
     public int IsolationMode { get; set; }
-    public int Depth { get; set; }
-    public string MessageName { get; set; }
-    public string PrimaryEntityName { get; set; }
-    public Guid? RequestId { get; set; }
-    public string SecondaryEntityName { get; set; }
-    public ParameterCollection InputParameters { get; set; }
+    public int Depth { get; set; } = 0;
+    public string MessageName { get; set; } = "Not Set";
+    public string PrimaryEntityName { get; set; } = "Not Set";
+    public Guid? RequestId { get; set; } = Guid.NewGuid();
+    public string SecondaryEntityName { get; set; } = "Not Set";
+    public ParameterCollection InputParameters { get; set; } = new ParameterCollection();
     public ParameterCollection OutputParameters { get; set; }
     public ParameterCollection SharedVariables { get; set; }
-    public Guid UserId { get; }
-    public Guid InitiatingUserId { get; }
+    public Guid UserId => _dataService.AuthenticatedUser.Id;
+    public Guid InitiatingUserId { get; set; }
     public Guid BusinessUnitId => _dataService.BusinessUnit.Id;
     public Guid OrganizationId => _dataService.Organization.Id;
     public string OrganizationName => _dataService.Organization.Name;
-    public Guid PrimaryEntityId { get; }
+    public Guid PrimaryEntityId { get; } = Guid.NewGuid();
     public EntityImageCollection PreEntityImages { get; }
     public EntityImageCollection PostEntityImages { get; }
     public EntityReference OwningExtension { get; }
-    public Guid CorrelationId { get; }
-    public bool IsExecutingOffline { get; }
-    public bool IsOfflinePlayback { get; }
-    public bool IsInTransaction { get; }
-    public Guid OperationId { get; }
-    public DateTime OperationCreatedOn { get; }
-    public int Stage { get; }
+    public Guid CorrelationId { get; } = Guid.NewGuid();
+    public bool IsExecutingOffline { get; } = false;
+    public bool IsOfflinePlayback { get; } = false;
+    public bool IsInTransaction { get; } = false;
+    public Guid OperationId { get; } = Guid.NewGuid();
+    public DateTime OperationCreatedOn => _dataService.SystemTime;
+    public int Stage { get; set; } = 20; // Defaults to PreOperation
     public IPluginExecutionContext ParentContext { get; }
 }
