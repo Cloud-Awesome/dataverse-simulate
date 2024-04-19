@@ -116,7 +116,6 @@ public class PluginExecutionContextSimulatorTests
     [Test]
     public void Reinitialising_Execution_Context_Works_With_Valid_Mock()
     {
-        var dataService = new MockedEntityDataService();
         var options = new SimulatorOptions
         {
             PluginExecutionContextMock = new PluginExecutionContextMock
@@ -138,7 +137,7 @@ public class PluginExecutionContextSimulatorTests
             }
         };
         
-        dataService.Reinitialise(executionContextMock);
+        _serviceProvider.Data().Reinitialise(executionContextMock);
         
         var executionContext = (IPluginExecutionContext)service.GetService(typeof(IPluginExecutionContext))!;
 
@@ -153,7 +152,6 @@ public class PluginExecutionContextSimulatorTests
     [Test]
     public void Reinitialising_Execution_Context_Works_With_Valid_Mock_If_EntityT_Type_Is_The_Same()
     {
-        var dataService = new MockedEntityDataService();
         var options = new SimulatorOptions
         {
             PluginExecutionContextMock = new PluginExecutionContextMock
@@ -175,7 +173,7 @@ public class PluginExecutionContextSimulatorTests
             }
         };
         
-        dataService.Reinitialise(executionContextMock);
+        _serviceProvider.Data().Reinitialise(executionContextMock);
         
         var executionContext = (IPluginExecutionContext)service.GetService(typeof(IPluginExecutionContext))!;
 

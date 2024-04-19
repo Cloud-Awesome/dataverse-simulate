@@ -1,11 +1,11 @@
-﻿using CloudAwesome.Xrm.Simulate.DataStores;
+﻿using CloudAwesome.Xrm.Simulate.DataServices;
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using Microsoft.Xrm.Sdk;
 using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
-public class EntityDeleter: IEntityDeleter
+public class EntityDeleter(MockedEntityDataService dataService) : IEntityDeleter
 {
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
@@ -17,8 +17,7 @@ public class EntityDeleter: IEntityDeleter
                 var entityName = x.Arg<string>();
                 var id = x.Arg<Guid>();
                 
-                var entity = MockedEntityDataStore.Instance.Data[entityName].SingleOrDefault(x => x.Id == id);
-                MockedEntityDataStore.Instance.Data[entityName].Remove(entity);
+                dataService.Delete(entityName, id);
             });
     }
 }

@@ -9,9 +9,8 @@ public static class OrganisationServiceFactorySimulator
 {
     private static readonly IOrganizationService Service = null!;
     
-    public static IOrganizationServiceFactory? Create(ISimulatorOptions? options)
+    public static IOrganizationServiceFactory? Create(MockedEntityDataService dataService, ISimulatorOptions? options)
     {
-        var dataService = new MockedEntityDataService();
         if (dataService.FakeServiceFailureSettings is { OrganizationServiceFactory: true })
         {
             return null;

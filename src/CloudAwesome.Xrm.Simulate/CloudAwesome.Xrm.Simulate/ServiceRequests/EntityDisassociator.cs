@@ -1,10 +1,11 @@
-﻿using CloudAwesome.Xrm.Simulate.Interfaces;
+﻿using CloudAwesome.Xrm.Simulate.DataServices;
+using CloudAwesome.Xrm.Simulate.Interfaces;
 using Microsoft.Xrm.Sdk;
 using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
-public class EntityDisassociator: IEntityDisassociator
+public class EntityDisassociator(MockedEntityDataService dataService): IEntityDisassociator
 {
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)

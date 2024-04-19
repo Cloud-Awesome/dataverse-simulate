@@ -24,6 +24,7 @@ public class InitialTestDeleteMe: IntegrationBaseFixture
     private readonly IOrganizationService _mockService = null!; 
     
     [Test]
+    [Ignore("In progress sandbox")]
     public void Temp()
     {
         // Live

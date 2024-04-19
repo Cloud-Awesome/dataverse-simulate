@@ -2,11 +2,14 @@
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using CloudAwesome.Xrm.Simulate.ServiceProviders;
 using Microsoft.Xrm.Sdk;
+using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.DataServices;
 
 public class MockedEntityDataService
 {
+    private readonly MockedEntityDataStore _dataStore = new();
+    
     /// <summary>
     /// Initialise the in memory store with multiple entities and records.
     /// This overwrites any previously set data
@@ -14,7 +17,7 @@ public class MockedEntityDataService
     /// <param name="data"></param>
     public void Add(Dictionary<string, List<Entity>> data)
     {
-        MockedEntityDataStore.Instance.Set(data);
+        _dataStore.Set(data);
     }
     
     /// <summary>
@@ -23,14 +26,14 @@ public class MockedEntityDataService
     /// <param name="entity"></param>
     public void Add(Entity entity)
     {
-        if (MockedEntityDataStore.Instance.Data
+        if (_dataStore.Data
             .TryGetValue(entity.LogicalName, out var value))
         {
             value.Add(entity);
         }
         else
         {
-            MockedEntityDataStore.Instance.Data.Add(entity.LogicalName, new List<Entity>{ entity });
+            _dataStore.Data.Add(entity.LogicalName, new List<Entity>{ entity });
         }
     }
 
@@ -40,7 +43,7 @@ public class MockedEntityDataService
     /// <returns></returns>
     public Dictionary<string, List<Entity>> Get()
     {
-        return MockedEntityDataStore.Instance.Data;
+        return _dataStore.Data;
     }
 
     /// <summary>
@@ -50,8 +53,27 @@ public class MockedEntityDataService
     /// <returns></returns>
     public List<Entity> Get(string logicalName)
     {
-        MockedEntityDataStore.Instance.Data.TryGetValue(logicalName, out var entities);
+        _dataStore.Data.TryGetValue(logicalName, out var entities);
         return entities ?? new List<Entity>();
+    }
+
+    public void Delete(Entity entity)
+    {
+        _dataStore.Data[entity.LogicalName].Remove(entity);
+    }
+    
+    public void Delete(string logicalName, Guid id)
+    {
+        var entity = _dataStore.Data[logicalName].SingleOrDefault(x => x.Id == id);
+
+        if (entity == null)
+        {
+            // TODO - Handle if the entity doesn't exist in memory
+            //      - Check the exact exception that would be thrown in .gather
+            throw new InvalidOperationException("Record not found in database ...");
+        }
+        
+        _dataStore.Data[logicalName].Remove(entity);
     }
 
     /// <summary>
@@ -59,7 +81,7 @@ public class MockedEntityDataService
     /// </summary>
     public void Reinitialise()
     {
-        MockedEntityDataStore.Instance.Data.Clear();
+        _dataStore.Data.Clear();
     }
     
     /// <summary>
@@ -75,7 +97,7 @@ public class MockedEntityDataService
          *  - BUs, Teams, Fiscal Periods, etc...
          */
         
-        MockedEntityDataStore.Instance.Data.Clear();
+        _dataStore.Data.Clear();
     }
 
     /// <summary>
@@ -85,7 +107,7 @@ public class MockedEntityDataService
     public void Reinitialise(PluginExecutionContextMock executionContextMock)
     {
         // TODO - What else needs doing to trigger this? It needs to get into the service provider/context mock
-        MockedEntityDataStore.Instance.ExecutionContextMock = executionContextMock;
+        _dataStore.ExecutionContextMock = executionContextMock;
     }
 
     /// <summary>
@@ -94,8 +116,8 @@ public class MockedEntityDataService
     /// </summary>
     public EntityReference AuthenticatedUser
     {
-        get => MockedEntityDataStore.Instance.AuthenticatedUser;
-        set => MockedEntityDataStore.Instance.AuthenticatedUser = value;
+        get => _dataStore.AuthenticatedUser;
+        set => _dataStore.AuthenticatedUser = value;
     }
 
     /// <summary>
@@ -105,14 +127,14 @@ public class MockedEntityDataService
     /// </summary>
     public DateTime SystemTime
     {
-        get => MockedEntityDataStore.Instance.SystemTime;
-        internal set => MockedEntityDataStore.Instance.SystemTime = value;
+        get => _dataStore.SystemTime;
+        internal set => _dataStore.SystemTime = value;
     }
 
     public PluginExecutionContextMock? ExecutionContext
     {
-        get => MockedEntityDataStore.Instance.ExecutionContextMock;
-        set => MockedEntityDataStore.Instance.ExecutionContextMock = value?? new PluginExecutionContextMock();
+        get => _dataStore.ExecutionContextMock;
+        set => _dataStore.ExecutionContextMock = value?? new PluginExecutionContextMock();
     }
 
     public Entity BusinessUnit => throw new NotImplementedException();
@@ -120,7 +142,7 @@ public class MockedEntityDataService
 
     public FakeServiceFailureSettings? FakeServiceFailureSettings
     {
-        get => MockedEntityDataStore.Instance.FakeServiceFailureSettings;
-        set => MockedEntityDataStore.Instance.FakeServiceFailureSettings = value?? new FakeServiceFailureSettings();
+        get => _dataStore.FakeServiceFailureSettings;
+        set => _dataStore.FakeServiceFailureSettings = value?? new FakeServiceFailureSettings();
     }
 }

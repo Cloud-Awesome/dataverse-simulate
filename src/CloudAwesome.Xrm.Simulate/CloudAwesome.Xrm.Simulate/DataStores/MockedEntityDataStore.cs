@@ -3,12 +3,12 @@ using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Simulate.DataStores;
 
-internal sealed class MockedEntityDataStore
+internal class MockedEntityDataStore
 {
-    private static readonly Lazy<MockedEntityDataStore> _instance =
+    /*private static readonly Lazy<MockedEntityDataStore> _instance =
         new Lazy<MockedEntityDataStore>(() => new MockedEntityDataStore());
 
-    public static MockedEntityDataStore Instance => _instance.Value;
+    public static MockedEntityDataStore Instance => _instance.Value;*/
 
     public Dictionary<string, List<Entity>> Data { get; private set; }
 
@@ -20,7 +20,7 @@ internal sealed class MockedEntityDataStore
     
     public FakeServiceFailureSettings FakeServiceFailureSettings { get; internal set; }
     
-    private MockedEntityDataStore()
+    internal MockedEntityDataStore()
     {
         Data = new Dictionary<string, List<Entity>>();
     }

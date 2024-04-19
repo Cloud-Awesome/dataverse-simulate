@@ -6,7 +6,7 @@ using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
-public sealed class EntityCreator: IEntityCreator
+public sealed class EntityCreator(MockedEntityDataService dataService) : IEntityCreator
 {
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
@@ -42,24 +42,13 @@ public sealed class EntityCreator: IEntityCreator
         }
 
         // Submit to data store
-        if (MockedEntityDataStore.Instance
-            .Data.TryGetValue(e.LogicalName, out var value))
-        {
-            value.Add(e);
-        }
-        else
-        {
-            MockedEntityDataStore.Instance
-                .Data.Add(e.LogicalName, new List<Entity>() { e });
-        }
-
+        dataService.Add(e);
+        
         return e.Id;
     }
     
     internal Entity PreProcess(Entity e, ISimulatorOptions? options)
     {
-        var dataService = new MockedEntityDataService();
-
         e.SetAttributeIfEmpty($"{e.LogicalName}id", Guid.NewGuid());
         e.Id = (Guid)e.Attributes[$"{e.LogicalName}id"];
         

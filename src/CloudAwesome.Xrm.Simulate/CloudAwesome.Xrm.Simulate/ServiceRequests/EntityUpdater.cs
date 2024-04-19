@@ -6,7 +6,7 @@ using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
-public class EntityUpdater: IEntityUpdater
+public class EntityUpdater(MockedEntityDataService dataService) : IEntityUpdater
 {
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
@@ -25,9 +25,7 @@ public class EntityUpdater: IEntityUpdater
             {
                 var entity = x.Arg<Entity>();
                 
-                var dataService = new MockedEntityDataService();
-                
-                var e = MockedEntityDataStore.Instance.Data[entity.LogicalName]
+                var e = dataService.Get(entity.LogicalName)
                     .SingleOrDefault(x => x.Id == entity.Id);
                 
                 var processorType = new ProcessorType(e.LogicalName, ProcessorMessage.Create);
@@ -38,7 +36,7 @@ public class EntityUpdater: IEntityUpdater
                 
                 if (e != null)
                 {
-                    MockedEntityDataStore.Instance.Data[entity.LogicalName].Remove(e);
+                    dataService.Delete(e);
                 }
                 else
                 {
@@ -52,7 +50,8 @@ public class EntityUpdater: IEntityUpdater
                 // TODO - This won't work, just deleting and re-creating.
                 //      - Need to loop through those attributes passed through,
                 //      - As only 1 attribute could be updated in the message...  
-                MockedEntityDataStore.Instance.Data[entity.LogicalName].Add(entity);
+                // Also need to handle createdon date etc... 
+                dataService.Add(e);
             });
         
     }
