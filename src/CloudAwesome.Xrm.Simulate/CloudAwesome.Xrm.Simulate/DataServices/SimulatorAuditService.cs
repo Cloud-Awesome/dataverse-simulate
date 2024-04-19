@@ -5,32 +5,34 @@ namespace CloudAwesome.Xrm.Simulate.DataServices;
 
 public class SimulatorAuditService
 {
+    private readonly SimulatorAuditStore _simulatorAuditStore = new();
+    
     public void Add(string message, string? entityLogicalName, Guid? id)
     {
-        SimulatorAuditStore.Instance.Logs.Add(
+        _simulatorAuditStore.Logs.Add(
             new SimulatorAudit(message, entityLogicalName, id));
     }
     
     public void Clear()
     {
-        SimulatorAuditStore.Instance.Logs.Clear();
+        _simulatorAuditStore.Logs.Clear();
     }
 
     public List<SimulatorAudit> Get()
     {
-        return SimulatorAuditStore.Instance.Logs;
+        return _simulatorAuditStore.Logs;
     }
 
     public List<SimulatorAudit> Get(string message)
     {
-        return SimulatorAuditStore.Instance.Logs
+        return _simulatorAuditStore.Logs
             .Where(x => x.Message == message)
             .ToList();
     }
     
     public List<SimulatorAudit> Get(Guid id)
     {
-        return SimulatorAuditStore.Instance.Logs
+        return _simulatorAuditStore.Logs
             .Where(x => x.Id == id)
             .ToList();
     }

@@ -4,18 +4,20 @@ namespace CloudAwesome.Xrm.Simulate.DataServices;
 
 public class MockedLoggingService
 {
+    private readonly MockedLoggingStore _loggingStore = new();
+    
     /// <summary>
     /// Adds a new log message to the in memory logging store
     /// </summary>
     /// <param name="message"></param>
     public void Add(string message)
     {
-        MockedLoggingStore.Instance.Logs.Add(message);
+        _loggingStore.Logs.Add(message);
     }
 
     public void Add(string message, params object[] args)
     {
-        MockedLoggingStore.Instance.Logs.Add(string.Format(message, args));
+        _loggingStore.Logs.Add(string.Format(message, args));
     }
 
     /// <summary>
@@ -24,7 +26,7 @@ public class MockedLoggingService
     /// </summary>
     public void Clear()
     {
-        MockedLoggingStore.Instance.Logs.Clear();
+        _loggingStore.Logs.Clear();
     }
     
     /// <summary>
@@ -33,7 +35,7 @@ public class MockedLoggingService
     /// <returns></returns>
     public List<string> Get()
     {
-        return MockedLoggingStore.Instance.Logs;
+        return _loggingStore.Logs;
     }
     
     /// <summary>
@@ -43,7 +45,7 @@ public class MockedLoggingService
     /// <returns>List of string logs</returns>
     public List<string> Get(string containing)
     {
-        var logs = MockedLoggingStore.Instance.Logs
+        var logs = _loggingStore.Logs
             .Where(x => x.Contains(containing))
             .ToList();
         

@@ -12,9 +12,7 @@ public class TracingServiceSimulatorTests
 {
     private readonly IServiceProvider _serviceProvider = null!;
     private ITracingService _tracingService = null!;
-
-    private readonly MockedLoggingService _loggingService = new MockedLoggingService();
-
+    
     private const string TraceMessage = "This is a test plugin trace"; 
     private const string MessageFormat = "Record created with ID {0} at {1}";
     private readonly Guid _id = Guid.NewGuid();
@@ -23,14 +21,12 @@ public class TracingServiceSimulatorTests
     [Test]
     public void Standard_Trace_Is_Saved_To_Logging_Store()
     {
-        _loggingService.Clear();
-        
         var service = _serviceProvider.Simulate();
         _tracingService = (ITracingService) service.GetService(typeof(ITracingService))!;
 
         _tracingService.Trace(TraceMessage);
 
-        var traces = _loggingService.Get();
+        var traces = _serviceProvider.Logs().Get();
 
         traces.Count.Should().Be(1);
         traces.FirstOrDefault()!.Should().Be(TraceMessage);
@@ -39,15 +35,13 @@ public class TracingServiceSimulatorTests
     [Test]
     public void Multiple_Traces_Is_Saved_To_Logging_Store()
     {
-        _loggingService.Clear();
-        
         var service = _serviceProvider.Simulate();
         _tracingService = (ITracingService) service.GetService(typeof(ITracingService))!;
         
         _tracingService.Trace(TraceMessage);
         _tracingService.Trace($"Second logging: {TraceMessage}");
 
-        var traces = _loggingService.Get();
+        var traces = _serviceProvider.Logs().Get();
 
         traces.Count.Should().Be(2);
     }
@@ -55,14 +49,12 @@ public class TracingServiceSimulatorTests
     [Test]
     public void Structured_Logging_Is_Supported_In_The_Trace()
     {
-        _loggingService.Clear();
-        
         var service = _serviceProvider.Simulate();
         _tracingService = (ITracingService) service.GetService(typeof(ITracingService))!;
         
         _tracingService.Trace(MessageFormat, _id, _dateTime);
         
-        var traces = _loggingService.Get();
+        var traces = _serviceProvider.Logs().Get();
 
         traces.Count.Should().Be(1);
         traces.FirstOrDefault()!.Should().Be(String.Format(MessageFormat, _id, _dateTime));

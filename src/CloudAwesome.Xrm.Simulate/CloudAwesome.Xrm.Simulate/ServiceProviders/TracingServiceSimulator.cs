@@ -7,9 +7,10 @@ namespace CloudAwesome.Xrm.Simulate.ServiceProviders;
 
 public static class TracingServiceSimulator
 {
-    private static readonly MockedLoggingService MockedLoggingService = new MockedLoggingService();
+    private static MockedLoggingService _mockedLoggingService = null!;
     
-    public static ITracingService? Create(MockedEntityDataService dataService, ISimulatorOptions? options)
+    public static ITracingService? Create(MockedEntityDataService dataService, MockedLoggingService loggingService, 
+        ISimulatorOptions? options)
     {
         if (dataService.FakeServiceFailureSettings is { TracingService: true })
         {
@@ -17,6 +18,7 @@ public static class TracingServiceSimulator
         }
         
         var tracingService = Substitute.For<ITracingService>();
+        _mockedLoggingService = loggingService;
 
         tracingService
             .When(x => x.Trace(Arg.Any<string>(), Arg.Any<object[]>()))
@@ -24,7 +26,7 @@ public static class TracingServiceSimulator
             {
                 var trace = t.Arg<string>();
                 var args = t.Arg<object[]>();
-                MockedLoggingService.Add(trace, args);
+                _mockedLoggingService.Add(trace, args);
             });
 
         return tracingService;

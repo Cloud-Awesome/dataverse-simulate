@@ -11,9 +11,7 @@ public class TelemetrySimulatorTests
 {
     private readonly IServiceProvider _serviceProvider = null!;
     private ILogger _logger = null!;
-
-    private readonly MockedTelemetryService _telemetry = new MockedTelemetryService();
-
+    
     private const string MessageFormat = "Record created with ID {0} at {1}";
     private readonly Guid _id = Guid.NewGuid();
     private readonly DateTime _dateTime = DateTime.Now;
@@ -23,12 +21,11 @@ public class TelemetrySimulatorTests
     {
         var service = _serviceProvider.Simulate();
         _logger = (ILogger) service.GetService(typeof(ILogger))!;
-        _telemetry.Clear();
         
         _logger.Log(LogLevel.Information, 
             MessageFormat, _id, _dateTime);
-
-        var logs = _telemetry.Get(LogLevel.Information);
+        
+        var logs = service.Telemetry().Get(LogLevel.Information);
 
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Information);
@@ -42,12 +39,11 @@ public class TelemetrySimulatorTests
     {
         var service = _serviceProvider.Simulate();
         _logger = (ILogger) service.GetService(typeof(ILogger))!;
-        _telemetry.Clear();
         
         _logger.LogCritical(
             MessageFormat, _id, _dateTime);
 
-        var logs = _telemetry.Get(LogLevel.Critical);
+        var logs = service.Telemetry().Get(LogLevel.Critical);
         
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Critical);
@@ -61,12 +57,11 @@ public class TelemetrySimulatorTests
     {
         var service = _serviceProvider.Simulate();
         _logger = (ILogger) service.GetService(typeof(ILogger))!;
-        _telemetry.Clear();
         
         _logger.LogError(
             MessageFormat, _id, _dateTime);
 
-        var logs = _telemetry.Get(LogLevel.Error);
+        var logs = service.Telemetry().Get(LogLevel.Error);
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Error);
     }
@@ -76,12 +71,11 @@ public class TelemetrySimulatorTests
     {
         var service = _serviceProvider.Simulate();
         _logger = (ILogger) service.GetService(typeof(ILogger))!;
-        _telemetry.Clear();
         
         _logger.LogDebug(
             MessageFormat, _id, _dateTime);
 
-        var logs = _telemetry.Get(LogLevel.Debug);
+        var logs = service.Telemetry().Get(LogLevel.Debug);
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Debug);
     }
@@ -91,12 +85,11 @@ public class TelemetrySimulatorTests
     {
         var service = _serviceProvider.Simulate();
         _logger = (ILogger) service.GetService(typeof(ILogger))!;
-        _telemetry.Clear();
         
         _logger.LogInformation(
             MessageFormat, _id, _dateTime);
 
-        var logs = _telemetry.Get(LogLevel.Information);
+        var logs = service.Telemetry().Get(LogLevel.Information);
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Information);
     }
@@ -106,12 +99,11 @@ public class TelemetrySimulatorTests
     {
         var service = _serviceProvider.Simulate();
         _logger = (ILogger) service.GetService(typeof(ILogger))!;
-        _telemetry.Clear();
         
         _logger.LogWarning(
             MessageFormat, _id, _dateTime);
 
-        var logs = _telemetry.Get(LogLevel.Warning);
+        var logs = service.Telemetry().Get(LogLevel.Warning);
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Warning);
     }
