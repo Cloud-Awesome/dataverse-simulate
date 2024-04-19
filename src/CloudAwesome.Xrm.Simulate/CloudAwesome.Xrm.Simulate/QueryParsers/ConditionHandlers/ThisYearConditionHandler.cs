@@ -9,13 +9,11 @@ public class ThisYearConditionHandler : IConditionHandler
 {
     public ConditionOperator Operator => ConditionOperator.ThisYear;
 
-    public bool Evaluate(Entity entity, ConditionExpression condition)
+    public bool Evaluate(Entity entity, ConditionExpression condition, MockedEntityDataService dataService)
     {
-        var dataStore = new MockedEntityDataService();
-        
         var attributeValue = entity.GetAttributeValue<DateTime>(condition.AttributeName);
-        var thisMonthStart = new DateTime(dataStore.SystemTime.Year, 1, 1);
-        var thisMonthEnd = new DateTime(dataStore.SystemTime.Year, 12, 31);
+        var thisMonthStart = new DateTime(dataService.SystemTime.Year, 1, 1);
+        var thisMonthEnd = new DateTime(dataService.SystemTime.Year, 12, 31);
         
         return attributeValue.Date >= thisMonthStart && attributeValue.Date < thisMonthEnd;
     }

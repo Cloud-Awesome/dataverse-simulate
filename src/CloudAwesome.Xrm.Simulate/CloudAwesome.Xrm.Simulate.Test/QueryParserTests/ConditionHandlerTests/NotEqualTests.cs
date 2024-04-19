@@ -10,16 +10,15 @@ using NUnit.Framework;
 namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 
 [TestFixture]
-public class DoesEndWithTests
+public class NotEqualTests
 {
     private IOrganizationService _organizationService = null!;
     private IOrganizationService? orgService;
 
     [SetUp]
-    public void DoesNotContainTestsSetUp()
+    public void SetUp()
     {
         orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
     }
     
     [Test]
@@ -37,7 +36,7 @@ public class DoesEndWithTests
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Arthur.Contact());
+        orgService.Data().Add(Siobhan.Contact());
 
         var contacts = orgService.RetrieveMultiple(queryExpression);
 
@@ -59,7 +58,7 @@ public class DoesEndWithTests
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Arthur.Contact());
+        orgService.Data().Add(Siobhan.Contact());
 
         var contacts = orgService.RetrieveMultiple(fetchQuery);
 
@@ -69,8 +68,8 @@ public class DoesEndWithTests
     [Test]
     public void Correct_ConditionOperator_Is_Set()
     {
-        var handler = new DoesNotEndWithConditionHandler();
-        handler.Operator.Should().Be(ConditionOperator.DoesNotEndWith);
+        var handler = new NotEqualConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.NotEqual);
     }
 
     private QueryExpression queryExpression = new QueryExpression
@@ -81,7 +80,7 @@ public class DoesEndWithTests
             Conditions =
             {
                 new ConditionExpression(Contact.Fields.lastname, 
-                    ConditionOperator.DoesNotEndWith, "umula")
+                    ConditionOperator.NotEqual, "Nicholson")
             }
         },
         ColumnSet = new ColumnSet(
@@ -97,7 +96,7 @@ public class DoesEndWithTests
                     <attribute name=""lastname"" />
                     <order attribute=""fullname"" descending=""false"" />
                     <filter type=""and"">
-                      <condition attribute=""lastname"" operator=""not-like"" value=""%umula"" />
+                      <condition attribute=""lastname"" operator=""ne"" value=""Nicholson"" />
                     </filter>
                   </entity>
                 </fetch>" 

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using CloudAwesome.Xrm.Simulate.QueryParsers.ConditionHandlers;
 using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
 using CloudAwesome.Xrm.Simulate.Test.TestEntities;
@@ -10,36 +11,46 @@ using NUnit.Framework;
 namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 
 [TestFixture]
-public class DoesEndWithTests
+public class LastXYearsTests
 {
     private IOrganizationService _organizationService = null!;
     private IOrganizationService? orgService;
+    
+    private readonly Contact _positiveContact = Arthur.Contact();
+    private readonly Contact _negativeContact = Bruce.Contact();
 
     [SetUp]
-    public void DoesNotContainTestsSetUp()
+    public void Last7DaysTestsSetUp()
     {
-        orgService = _organizationService.Simulate();
+        _positiveContact.overriddencreatedon = new DateTime(2020, 04, 06);
+        _negativeContact.overriddencreatedon = new DateTime(2015, 03, 27);
+        
+        var options = new SimulatorOptions
+        {
+            ClockSimulator = new MockSystemTime(new DateTime(2023, 04, 24))
+        };
+        
+        orgService = _organizationService.Simulate(options);
         orgService.Data().Reinitialise();
     }
-    
+
     [Test]
     public void QueryExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        orgService!.Data().Add(_positiveContact);
+        orgService!.Data().Add(_negativeContact);
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = orgService!.RetrieveMultiple(_queryExpression);
 
-        contacts.Entities.Count().Should().Be(2);
+        contacts.Entities.Count().Should().Be(1);
     }
-
+    
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Arthur.Contact());
+        orgService!.Data().Add(_negativeContact);
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = orgService!.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -47,21 +58,20 @@ public class DoesEndWithTests
     [Test]
     public void FetchExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        orgService!.Data().Add(_positiveContact);
+        orgService!.Data().Add(_negativeContact);
 
-        var contacts = orgService.RetrieveMultiple(fetchQuery);
+        var contacts = orgService!.RetrieveMultiple(fetchQuery);
 
-        contacts.Entities.Count().Should().Be(2);
+        contacts.Entities.Count().Should().Be(1);
     }
-
+    
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Arthur.Contact());
+        orgService!.Data().Add(_negativeContact);
 
-        var contacts = orgService.RetrieveMultiple(fetchQuery);
+        var contacts = orgService!.RetrieveMultiple(fetchQuery);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -69,26 +79,26 @@ public class DoesEndWithTests
     [Test]
     public void Correct_ConditionOperator_Is_Set()
     {
-        var handler = new DoesNotEndWithConditionHandler();
-        handler.Operator.Should().Be(ConditionOperator.DoesNotEndWith);
+        var handler = new LastXYearsConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.LastXYears);
     }
-
-    private QueryExpression queryExpression = new QueryExpression
+    
+    private readonly QueryExpression _queryExpression = new QueryExpression
     {
         EntityName = Contact.EntityLogicalName,
         Criteria = new FilterExpression
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.lastname, 
-                    ConditionOperator.DoesNotEndWith, "umula")
+                new ConditionExpression(Contact.Fields.overriddencreatedon, 
+                    ConditionOperator.LastXYears, 5)
             }
         },
         ColumnSet = new ColumnSet(
             Contact.Fields.firstname, 
             Contact.Fields.lastname)
     };
-
+    
     private FetchExpression fetchQuery = new FetchExpression
     { 
         Query = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""false"">
@@ -97,7 +107,7 @@ public class DoesEndWithTests
                     <attribute name=""lastname"" />
                     <order attribute=""fullname"" descending=""false"" />
                     <filter type=""and"">
-                      <condition attribute=""lastname"" operator=""not-like"" value=""%umula"" />
+                      <condition attribute=""overriddencreatedon"" operator=""last-x-years"" value=""5"" />
                     </filter>
                   </entity>
                 </fetch>" 

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using CloudAwesome.Xrm.Simulate.QueryParsers.ConditionHandlers;
 using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
 using CloudAwesome.Xrm.Simulate.Test.TestEntities;
 using FluentAssertions;
@@ -63,6 +64,20 @@ public class DoesNotBeginWithTests
         var contacts = orgService.RetrieveMultiple(fetchQuery);
 
         contacts.Entities.Count().Should().Be(0);
+    }
+    
+    [Test]
+    public void Correct_ConditionOperator_Is_Set()
+    {
+        var handler = new DoesNotBeginWithConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.DoesNotBeginWith);
+    }
+    
+    [Test]
+    public void Correct_ConditionOperator_Is_Set_For_Not_Like()
+    {
+        var handler = new NotLikeConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.NotLike);
     }
 
     private QueryExpression queryExpression = new QueryExpression

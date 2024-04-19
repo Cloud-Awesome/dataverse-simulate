@@ -10,16 +10,15 @@ using NUnit.Framework;
 namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 
 [TestFixture]
-public class DoesEndWithTests
+public class GreaterEqualTests
 {
     private IOrganizationService _organizationService = null!;
     private IOrganizationService? orgService;
 
     [SetUp]
-    public void DoesNotContainTestsSetUp()
+    public void BeginsWithSetUp()
     {
         orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
     }
     
     [Test]
@@ -69,8 +68,8 @@ public class DoesEndWithTests
     [Test]
     public void Correct_ConditionOperator_Is_Set()
     {
-        var handler = new DoesNotEndWithConditionHandler();
-        handler.Operator.Should().Be(ConditionOperator.DoesNotEndWith);
+        var handler = new GreaterEqualConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.GreaterEqual);
     }
 
     private QueryExpression queryExpression = new QueryExpression
@@ -80,8 +79,8 @@ public class DoesEndWithTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.lastname, 
-                    ConditionOperator.DoesNotEndWith, "umula")
+                new ConditionExpression(Contact.Fields.numberofchildren, 
+                    ConditionOperator.GreaterEqual, 1)
             }
         },
         ColumnSet = new ColumnSet(
@@ -97,7 +96,7 @@ public class DoesEndWithTests
                     <attribute name=""lastname"" />
                     <order attribute=""fullname"" descending=""false"" />
                     <filter type=""and"">
-                      <condition attribute=""lastname"" operator=""not-like"" value=""%umula"" />
+                      <condition attribute=""numberofchildren"" operator=""ge"" value=""1"" />
                     </filter>
                   </entity>
                 </fetch>" 

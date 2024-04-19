@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using CloudAwesome.Xrm.Simulate.DataServices;
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
@@ -9,7 +10,7 @@ public class NotLikeConditionHandler : IConditionHandler
 {
     public ConditionOperator Operator => ConditionOperator.NotLike;
 
-    public bool Evaluate(Entity entity, ConditionExpression condition)
+    public bool Evaluate(Entity entity, ConditionExpression condition, MockedEntityDataService dataService)
     {
         var attributeValue = entity.GetAttributeValue<string>(condition.AttributeName);
         if (attributeValue == null) return false;

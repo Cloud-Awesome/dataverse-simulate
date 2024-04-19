@@ -9,11 +9,10 @@ public class TomorrowConditionHandler : IConditionHandler
 {
     public ConditionOperator Operator => ConditionOperator.Tomorrow;
 
-    public bool Evaluate(Entity entity, ConditionExpression condition)
+    public bool Evaluate(Entity entity, ConditionExpression condition, MockedEntityDataService dataService)
     {
-        var dataStore = new MockedEntityDataService();
         var attributeValue = entity.GetAttributeValue<DateTime>(condition.AttributeName);
 
-        return attributeValue.Date == dataStore.SystemTime.Date.AddDays(1);
+        return attributeValue.Date == dataService.SystemTime.Date.AddDays(1);
     }
 }

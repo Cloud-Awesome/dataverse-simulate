@@ -25,7 +25,7 @@ public class EntityMultipleRetriever(MockedEntityDataService dataService) : IEnt
                 {
                     var query = x.Arg<QueryExpression>();
                     var results = QueryExpressionParser.Parse(query, 
-                        dataService.Get());
+                        dataService.Get(), dataService);
                     return new EntityCollection(results.ToList());
                 });
         
@@ -36,7 +36,7 @@ public class EntityMultipleRetriever(MockedEntityDataService dataService) : IEnt
                 {
                     var query = x.Arg<FetchExpression>();
                     var results = FetchExpressionParser.Parse(query,
-                        dataService.Get());
+                        dataService.Get(), dataService);
                 
                     return new EntityCollection(results.ToList()); 
                 });
@@ -48,7 +48,7 @@ public class EntityMultipleRetriever(MockedEntityDataService dataService) : IEnt
                 {
                     var query = x.Arg<QueryByAttribute>();
                     var results = QueryByAttributeParser.Parse(query,
-                        dataService.Get());
+                        dataService.Get(), dataService);
                 
                     return new EntityCollection(results.ToList());    
                 });

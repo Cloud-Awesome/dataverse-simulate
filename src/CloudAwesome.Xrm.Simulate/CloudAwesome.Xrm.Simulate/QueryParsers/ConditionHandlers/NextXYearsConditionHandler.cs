@@ -9,13 +9,12 @@ public class NextXYearsConditionHandler : IConditionHandler
 {
     public ConditionOperator Operator => ConditionOperator.NextXYears;
 
-    public bool Evaluate(Entity entity, ConditionExpression condition)
+    public bool Evaluate(Entity entity, ConditionExpression condition, MockedEntityDataService dataService)
     {
-        var dataStore = new MockedEntityDataService();
         var attributeValue = entity.GetAttributeValue<DateTime>(condition.AttributeName);
         var years = Convert.ToInt32(condition.Values[0]);
         
-        return attributeValue.Date <= dataStore.SystemTime.Date.AddYears(years) 
-               && attributeValue.Date >= dataStore.SystemTime.Date;
+        return attributeValue.Date <= dataService.SystemTime.Date.AddYears(years) 
+               && attributeValue.Date >= dataService.SystemTime.Date;
     }
 }

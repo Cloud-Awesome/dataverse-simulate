@@ -1,4 +1,5 @@
-﻿using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
+﻿using System;
+using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
 using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Simulate.Test.TestEntities;
@@ -18,7 +19,9 @@ public static class Bruce
             firstname = "Bruce",
             lastname = "Purves",
             gendercode = Contact_gendercode.Male,
-            statuscode = Contact_StatusCode.Active
+            statuscode = Contact_StatusCode.Active,
+            overriddencreatedon = new DateTime(2008, 01, 06),
+            numberofchildren = 2
         };
     }
 

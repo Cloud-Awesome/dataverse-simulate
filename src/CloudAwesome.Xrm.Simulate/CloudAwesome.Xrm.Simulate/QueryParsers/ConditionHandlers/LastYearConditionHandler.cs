@@ -9,13 +9,11 @@ public class LastYearConditionHandler : IConditionHandler
 {
     public ConditionOperator Operator => ConditionOperator.LastYear;
 
-    public bool Evaluate(Entity entity, ConditionExpression condition)
+    public bool Evaluate(Entity entity, ConditionExpression condition, MockedEntityDataService dataService)
     {
-        var dataStore = new MockedEntityDataService();
-        
         var attributeValue = entity.GetAttributeValue<DateTime>(condition.AttributeName);
-        var lastYearStart = new DateTime(dataStore.SystemTime.Year - 1, 1, 1);
-        var lastYearEnd = new DateTime(dataStore.SystemTime.Year - 1, 12, 31);
+        var lastYearStart = new DateTime(dataService.SystemTime.Year - 1, 1, 1);
+        var lastYearEnd = new DateTime(dataService.SystemTime.Year - 1, 12, 31);
         
         return attributeValue.Date >= lastYearStart && attributeValue.Date < lastYearEnd;
     }

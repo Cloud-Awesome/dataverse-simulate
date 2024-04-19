@@ -1,11 +1,13 @@
-﻿using Microsoft.Xrm.Sdk;
+﻿using CloudAwesome.Xrm.Simulate.DataServices;
+using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace CloudAwesome.Xrm.Simulate.QueryParsers;
 
 public static class Filter
 {
-    public static IQueryable<Entity> Apply(FilterExpression filter, IQueryable<Entity> records)
+    public static IQueryable<Entity> Apply(FilterExpression filter, IQueryable<Entity> records, 
+        MockedEntityDataService dataService)
     {
         var originalRecords = records;
         List<IQueryable<Entity>> subFilterResults = new List<IQueryable<Entity>>();
@@ -16,7 +18,8 @@ public static class Filter
             foreach (var condition in filter.Conditions)
             {
                 var handler = ConditionHandlerFactory.GetHandler(condition.Operator);
-                var conditionResults = originalRecords.Where(entity => handler.Evaluate(entity, condition));
+                var conditionResults = originalRecords.
+                    Where(entity => handler.Evaluate(entity, condition, dataService));
                 subFilterResults.Add(conditionResults);
             }
         }
@@ -26,7 +29,7 @@ public static class Filter
         {
             foreach (var subFilter in filter.Filters)
             {
-                var subFilterResult = Apply(subFilter, originalRecords);
+                var subFilterResult = Apply(subFilter, originalRecords, dataService);
                 subFilterResults.Add(subFilterResult);
             }
         }

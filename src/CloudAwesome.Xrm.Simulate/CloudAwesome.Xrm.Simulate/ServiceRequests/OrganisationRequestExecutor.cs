@@ -38,7 +38,7 @@ public class OrganisationRequestExecutor(MockedEntityDataService dataService): I
                 
                 var results = QueryExpressionParser.Parse(
                     (QueryExpression) request.Query,
-                    dataService.Get());
+                    dataService.Get(), dataService);
                 
                 return new RetrieveMultipleResponse
                 {
