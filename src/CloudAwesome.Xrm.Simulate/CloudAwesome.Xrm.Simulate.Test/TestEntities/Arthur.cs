@@ -22,7 +22,9 @@ public static class Arthur
             birthdate = new DateTime(1984, 12, 14),
             parentcustomerid = Account().ToEntityReference(),
             gendercode = Contact_gendercode.Male,
-            statuscode = Contact_StatusCode.Active
+            statuscode = Contact_StatusCode.Active,
+            overriddencreatedon = new DateTime(2023, 04, 18),
+            numberofchildren = 0
         };
     }
 

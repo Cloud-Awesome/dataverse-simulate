@@ -1,4 +1,5 @@
-﻿using Microsoft.Xrm.Sdk;
+﻿using CloudAwesome.Xrm.Simulate.DataServices;
+using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace CloudAwesome.Xrm.Simulate.QueryParsers;
@@ -6,7 +7,7 @@ namespace CloudAwesome.Xrm.Simulate.QueryParsers;
 public static class LinkedEntities
 {
     public static IQueryable<Entity> Apply(List<LinkEntity>? linkedEntities, List<Entity> records, 
-        Dictionary<string, List<Entity>> data)
+        Dictionary<string, List<Entity>> data, MockedEntityDataService dataService)
     {
         if (linkedEntities == null || !linkedEntities.Any())
         {
@@ -22,8 +23,8 @@ public static class LinkedEntities
 
             var linkedRecords = data[linkedEntity.LinkToEntityName];
 
-            linkedRecords = Filter.Apply(linkedEntity.LinkCriteria, linkedRecords.AsQueryable()).ToList();
-            linkedRecords = Apply(linkedEntity.LinkEntities.ToList(), linkedRecords, data).ToList();
+            linkedRecords = Filter.Apply(linkedEntity.LinkCriteria, linkedRecords.AsQueryable(), dataService).ToList();
+            linkedRecords = Apply(linkedEntity.LinkEntities.ToList(), linkedRecords, data, dataService).ToList();
             records = JoinEntities(records, linkedRecords, 
                 linkedEntity.LinkFromAttributeName, linkedEntity.LinkToAttributeName,
                 linkedEntity.EntityAlias).ToList();

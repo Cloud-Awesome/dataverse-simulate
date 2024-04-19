@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using CloudAwesome.Xrm.Simulate.QueryParsers.ConditionHandlers;
 using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
 using CloudAwesome.Xrm.Simulate.Test.TestEntities;
 using FluentAssertions;
@@ -63,6 +64,13 @@ public class ContainsTests
         var contacts = orgService.RetrieveMultiple(fetchQuery);
 
         contacts.Entities.Count().Should().Be(0);
+    }
+    
+    [Test]
+    public void Correct_ConditionOperator_Is_Set()
+    {
+        var handler = new ContainsConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.Contains);
     }
 
     private QueryExpression queryExpression = new QueryExpression

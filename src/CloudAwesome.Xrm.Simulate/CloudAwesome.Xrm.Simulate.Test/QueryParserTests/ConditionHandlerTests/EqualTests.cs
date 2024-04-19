@@ -10,16 +10,15 @@ using NUnit.Framework;
 namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 
 [TestFixture]
-public class DoesEndWithTests
+public class EqualTests
 {
     private IOrganizationService _organizationService = null!;
     private IOrganizationService? orgService;
 
     [SetUp]
-    public void DoesNotContainTestsSetUp()
+    public void BeginsWithSetUp()
     {
         orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
     }
     
     [Test]
@@ -31,13 +30,13 @@ public class DoesEndWithTests
 
         var contacts = orgService.RetrieveMultiple(queryExpression);
 
-        contacts.Entities.Count().Should().Be(2);
+        contacts.Entities.Count().Should().Be(1);
     }
 
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Arthur.Contact());
+        orgService.Data().Add(Bruce.Contact());
 
         var contacts = orgService.RetrieveMultiple(queryExpression);
 
@@ -53,13 +52,13 @@ public class DoesEndWithTests
 
         var contacts = orgService.RetrieveMultiple(fetchQuery);
 
-        contacts.Entities.Count().Should().Be(2);
+        contacts.Entities.Count().Should().Be(1);
     }
 
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Arthur.Contact());
+        orgService.Data().Add(Bruce.Contact());
 
         var contacts = orgService.RetrieveMultiple(fetchQuery);
 
@@ -69,8 +68,8 @@ public class DoesEndWithTests
     [Test]
     public void Correct_ConditionOperator_Is_Set()
     {
-        var handler = new DoesNotEndWithConditionHandler();
-        handler.Operator.Should().Be(ConditionOperator.DoesNotEndWith);
+        var handler = new EqualConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.Equal);
     }
 
     private QueryExpression queryExpression = new QueryExpression
@@ -81,7 +80,7 @@ public class DoesEndWithTests
             Conditions =
             {
                 new ConditionExpression(Contact.Fields.lastname, 
-                    ConditionOperator.DoesNotEndWith, "umula")
+                    ConditionOperator.Equal, "Nicholson")
             }
         },
         ColumnSet = new ColumnSet(
@@ -97,7 +96,7 @@ public class DoesEndWithTests
                     <attribute name=""lastname"" />
                     <order attribute=""fullname"" descending=""false"" />
                     <filter type=""and"">
-                      <condition attribute=""lastname"" operator=""not-like"" value=""%umula"" />
+                      <condition attribute=""lastname"" operator=""equal"" value=""Nicholson"" />
                     </filter>
                   </entity>
                 </fetch>" 

@@ -9,13 +9,12 @@ public class LastXHoursConditionHandler : IConditionHandler
 {
     public ConditionOperator Operator => ConditionOperator.LastXHours;
 
-    public bool Evaluate(Entity entity, ConditionExpression condition)
+    public bool Evaluate(Entity entity, ConditionExpression condition, MockedEntityDataService dataService)
     {
-        var dataStore = new MockedEntityDataService();
         var attributeValue = entity.GetAttributeValue<DateTime>(condition.AttributeName);
         var hours = Convert.ToInt32(condition.Values[0]);
         
-        return attributeValue.Date >= dataStore.SystemTime.AddHours(-hours) 
-               && attributeValue.Date <= dataStore.SystemTime;
+        return attributeValue >= dataService.SystemTime.AddHours(-hours) 
+               && attributeValue <= dataService.SystemTime;
     }
 }

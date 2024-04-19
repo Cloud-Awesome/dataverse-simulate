@@ -9,12 +9,11 @@ public class Last7DaysConditionHandler : IConditionHandler
 {
     public ConditionOperator Operator => ConditionOperator.Last7Days;
 
-    public bool Evaluate(Entity entity, ConditionExpression condition)
+    public bool Evaluate(Entity entity, ConditionExpression condition, MockedEntityDataService dataService)
     {
-        var dataStore = new MockedEntityDataService();
         var attributeValue = entity.GetAttributeValue<DateTime>(condition.AttributeName);
         
-        return attributeValue.Date >= dataStore.SystemTime.Date.AddDays(-7) && 
-               attributeValue.Date <= dataStore.SystemTime.Date;
+        return attributeValue.Date >= dataService.SystemTime.Date.AddDays(-7) && 
+               attributeValue.Date <= dataService.SystemTime.Date;
     }
 }

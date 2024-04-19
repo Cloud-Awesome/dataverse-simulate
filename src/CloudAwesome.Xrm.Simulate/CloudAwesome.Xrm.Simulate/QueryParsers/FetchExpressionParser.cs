@@ -1,4 +1,5 @@
 ﻿using System.Xml;
+using CloudAwesome.Xrm.Simulate.DataServices;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
@@ -12,7 +13,8 @@ namespace CloudAwesome.Xrm.Simulate.QueryParsers;
 /// </remarks>
 public static class FetchExpressionParser
 {
-    public static IEnumerable<Entity> Parse(FetchExpression query, Dictionary<string, List<Entity>> data)
+    public static IEnumerable<Entity> Parse(FetchExpression query, Dictionary<string, 
+        List<Entity>> data, MockedEntityDataService dataService)
     {
         if (query == null || query.Query == null)
         {
@@ -20,16 +22,16 @@ public static class FetchExpressionParser
         }
 
         var queryExpression = ConvertFetchXmlToQueryExpression(query.Query);
-        return QueryExpressionParser.Parse(queryExpression, data);
+        return QueryExpressionParser.Parse(queryExpression, data, dataService);
     }
     
-    public static QueryExpression? ConvertFetchXmlToQueryExpression(string fetchXml)
+    public static QueryExpression ConvertFetchXmlToQueryExpression(string fetchXml)
     {
         var doc = new XmlDocument();
         doc.LoadXml(fetchXml);
 
         var fetchNode = doc.DocumentElement;
-        if (fetchNode == null) return null;
+        if (fetchNode == null) return new QueryExpression();
 
         try
         {
@@ -70,7 +72,7 @@ public static class FetchExpressionParser
         }
         catch (Exception e)
         {
-            // Return the correct exception CRM would throw if it wasn't a valid Fetch query
+            // TODO - Return the correct exception CRM would throw if it wasn't a valid Fetch query
             throw;
         }
     }

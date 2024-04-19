@@ -20,7 +20,8 @@ public static class Siobhan
             firstname = "Siobhan",
             lastname = "Nicholson",
             gendercode = Contact_gendercode.Female,
-            statuscode = Contact_StatusCode.Active
+            statuscode = Contact_StatusCode.Active,
+            numberofchildren = 1
         };
     }
 

@@ -1,4 +1,5 @@
-﻿using CloudAwesome.Xrm.Simulate.Interfaces;
+﻿using CloudAwesome.Xrm.Simulate.DataServices;
+using CloudAwesome.Xrm.Simulate.Interfaces;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
@@ -8,7 +9,7 @@ public class DoesNotContainConditionHandler : IConditionHandler
 {
     public ConditionOperator Operator => ConditionOperator.DoesNotContain;
 
-    public bool Evaluate(Entity entity, ConditionExpression condition)
+    public bool Evaluate(Entity entity, ConditionExpression condition, MockedEntityDataService dataService)
     {
         var attributeValue = entity.GetAttributeValue<string>(condition.AttributeName);
         return attributeValue == null || !attributeValue.Contains(condition.Values[0].ToString());

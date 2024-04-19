@@ -1,4 +1,5 @@
-﻿using Microsoft.Xrm.Sdk;
+﻿using CloudAwesome.Xrm.Simulate.DataServices;
+using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace CloudAwesome.Xrm.Simulate.QueryParsers;
@@ -11,7 +12,8 @@ namespace CloudAwesome.Xrm.Simulate.QueryParsers;
 /// </remarks>
 public static class QueryExpressionParser
 {
-    public static IEnumerable<Entity> Parse(QueryExpression query, Dictionary<string, List<Entity>> data)
+    public static IEnumerable<Entity> Parse(QueryExpression query, Dictionary<string, 
+        List<Entity>> data, MockedEntityDataService dataService)
     {
         if (query == null || data == null || !data.ContainsKey(query.EntityName))
         {
@@ -20,10 +22,10 @@ public static class QueryExpressionParser
 
         var records = data[query.EntityName].AsQueryable();
 
-        records = Filter.Apply(query.Criteria, records);
+        records = Filter.Apply(query.Criteria, records, dataService);
         records = Order.Apply(query.Orders, records);
         records = Columns.Apply(query.ColumnSet, records);
-        records = LinkedEntities.Apply(query.LinkEntities.ToList(), records.ToList(), data);
+        records = LinkedEntities.Apply(query.LinkEntities.ToList(), records.ToList(), data, dataService);
 
         return records;
     }

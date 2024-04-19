@@ -1,11 +1,13 @@
-﻿using Microsoft.Xrm.Sdk;
+﻿using CloudAwesome.Xrm.Simulate.DataServices;
+using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace CloudAwesome.Xrm.Simulate.QueryParsers;
 
 public static class QueryByAttributeParser
 {
-    public static IEnumerable<Entity> Parse(QueryByAttribute query, Dictionary<string, List<Entity>> data)
+    public static IEnumerable<Entity> Parse(QueryByAttribute query, Dictionary<string, 
+        List<Entity>> data, MockedEntityDataService dataService)
     {
         if (query.Values == null 
             || query.Attributes == null
@@ -26,7 +28,7 @@ public static class QueryByAttributeParser
         queryExpression.Orders.AddRange(query.Orders);
         queryExpression.Criteria = ConstructFilters(query.Attributes, query.Values);
 
-        return QueryExpressionParser.Parse(queryExpression, data);
+        return QueryExpressionParser.Parse(queryExpression, data, dataService);
     }
 
     private static FilterExpression ConstructFilters(DataCollection<string> attributes,
