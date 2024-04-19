@@ -1,4 +1,5 @@
 ﻿using CloudAwesome.Xrm.Simulate.DataServices;
+using CloudAwesome.Xrm.Simulate.DataStores;
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using Microsoft.Xrm.Sdk;
 using NSubstitute;
@@ -7,9 +8,8 @@ namespace CloudAwesome.Xrm.Simulate.ServiceProviders;
 
 public static class PluginExecutionContextSimulator
 {
-    public static IPluginExecutionContext? Create(ISimulatorOptions? options)
+    public static IPluginExecutionContext? Create(MockedEntityDataService dataService, ISimulatorOptions? options)
     {
-        var dataService = new MockedEntityDataService();
         if (dataService.FakeServiceFailureSettings is { PluginExecutionContext: true })
         {
             return null;

@@ -8,22 +8,26 @@ namespace CloudAwesome.Xrm.Simulate;
 
 public static class OrganisationServiceSimulator
 {
+    private static readonly MockedEntityDataService DataService = new();
+    
     private static readonly IOrganizationService Service = Substitute.For<IOrganizationService>();
     
-    private static readonly IEntityCreator EntityCreator = new EntityCreator();
-    private static readonly IEntityUpdater EntityUpdater = new EntityUpdater();
-    private static readonly IEntityRetriever EntityRetriever = new EntityRetriever();
-    private static readonly IEntityMultipleRetriever EntityMultipleRetriever = new EntityMultipleRetriever();
-    private static readonly IEntityDeleter EntityDeleter = new EntityDeleter();
-    private static readonly IEntityAssociator EntityAssociator = new EntityAssociator();
-    private static readonly IEntityDisassociator EntityDisassociator = new EntityDisassociator();
+    private static readonly IEntityCreator EntityCreator = new EntityCreator(DataService);
+    private static readonly IEntityUpdater EntityUpdater = new EntityUpdater(DataService);
+    private static readonly IEntityRetriever EntityRetriever = new EntityRetriever(DataService);
+    private static readonly IEntityMultipleRetriever EntityMultipleRetriever = new EntityMultipleRetriever(DataService);
+    private static readonly IEntityDeleter EntityDeleter = new EntityDeleter(DataService);
+    private static readonly IEntityAssociator EntityAssociator = new EntityAssociator(DataService);
+    private static readonly IEntityDisassociator EntityDisassociator = new EntityDisassociator(DataService);
 
     private static readonly IOrganisationRequestExecutor OrganisationRequestExecutor =
-        new OrganisationRequestExecutor();
+        new OrganisationRequestExecutor(DataService);
     
     public static IOrganizationService Simulate(this IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
     {
+        DataService.Reinitialise();
+        
         EntityCreator.MockRequest(Service, options);
         EntityRetriever.MockRequest(Service, options);
         EntityMultipleRetriever.MockRequest(Service, options);
@@ -33,32 +37,31 @@ public static class OrganisationServiceSimulator
         EntityDisassociator.MockRequest(Service, options);
         OrganisationRequestExecutor.MockRequest(Service, options);
 
-        var dataService = new MockedEntityDataService();
-        ConfigureAuthenticatedUser(options, dataService);
-        SetSystemTime(options, dataService);
+        ConfigureAuthenticatedUser(options);
+        SetSystemTime(options);
         
         return Service;
     }
 
     public static MockedEntityDataService Data(this IOrganizationService organizationService)
     {
-        return new MockedEntityDataService();
+        return DataService;
     }
 
-    private static void SetSystemTime(ISimulatorOptions? options, MockedEntityDataService dataService)
+    private static void SetSystemTime(ISimulatorOptions? options)
     {
         if (options?.ClockSimulator is not null)
         {
-            dataService.SystemTime = options.ClockSimulator.Now;
+            DataService.SystemTime = options.ClockSimulator.Now;
         }
     }
 
-    private static EntityReference ConfigureAuthenticatedUser(ISimulatorOptions? options, MockedEntityDataService dataService)
+    private static EntityReference ConfigureAuthenticatedUser(ISimulatorOptions? options)
     {
         if (options?.AuthenticatedUser is not null)
         {
-            dataService.Add(options.AuthenticatedUser);
-            dataService.AuthenticatedUser = options.AuthenticatedUser.ToEntityReference();
+            DataService.Add(options.AuthenticatedUser);
+            DataService.AuthenticatedUser = options.AuthenticatedUser.ToEntityReference();
             return options.AuthenticatedUser.ToEntityReference();    
         }
         
@@ -71,8 +74,8 @@ public static class OrganisationServiceSimulator
             }
         };
         
-        dataService.Add(user);
-        dataService.AuthenticatedUser = user.ToEntityReference();
+        DataService.Add(user);
+        DataService.AuthenticatedUser = user.ToEntityReference();
         return user.ToEntityReference();
     }
 }

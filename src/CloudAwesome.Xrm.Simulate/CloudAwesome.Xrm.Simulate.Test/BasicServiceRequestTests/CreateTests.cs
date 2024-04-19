@@ -22,7 +22,6 @@ public class CreateTests
     public void Create_Contact_Saves_Record_To_Data_Store()
     {
         var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
         
         var contactId = orgService.Create(Arthur.Contact());
         contactId.Should().NotBeEmpty();
@@ -37,7 +36,6 @@ public class CreateTests
     public void Calling_Create_Method_Via_Execute_Method_Should_Save_To_Data_Store()
     {
         var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
 
         var createRequest = new CreateRequest
         {
@@ -64,7 +62,6 @@ public class CreateTests
         };
         
         var orgService = _organizationService.Simulate(options);
-        orgService.Data().Reinitialise();
 
         var contactId = orgService.Create(Arthur.Contact());
         var contact = orgService.Data().Get(Arthur.Contact().LogicalName).FirstOrDefault();
@@ -89,7 +86,6 @@ public class CreateTests
         var authenticatedUser = options.AuthenticatedUser.ToEntityReference();
         
         var orgService = _organizationService.Simulate(options);
-        orgService.Data().Reinitialise();
         
         var contactId = orgService.Create(Arthur.Contact());
         var contact = orgService.Data().Get(Arthur.Contact().LogicalName).FirstOrDefault();
@@ -116,7 +112,6 @@ public class CreateTests
         };
 
         var orgService = _organizationService.Simulate(options);
-        orgService.Data().Reinitialise();
 
         orgService.Create(Arthur.Contact());
 

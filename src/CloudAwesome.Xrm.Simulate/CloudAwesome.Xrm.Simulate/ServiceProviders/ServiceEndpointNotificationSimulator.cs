@@ -7,9 +7,8 @@ namespace CloudAwesome.Xrm.Simulate.ServiceProviders;
 
 public static class ServiceEndpointNotificationSimulator
 {
-    public static IServiceEndpointNotificationService? Create(ISimulatorOptions? options)
+    public static IServiceEndpointNotificationService? Create(MockedEntityDataService dataService, ISimulatorOptions? options)
     {
-        var dataService = new MockedEntityDataService();
         if (dataService.FakeServiceFailureSettings is { ServiceEndpointNotificationService: true })
         {
             return null;

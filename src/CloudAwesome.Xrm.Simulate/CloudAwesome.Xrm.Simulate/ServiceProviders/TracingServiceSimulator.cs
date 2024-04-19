@@ -9,9 +9,8 @@ public static class TracingServiceSimulator
 {
     private static readonly MockedLoggingService MockedLoggingService = new MockedLoggingService();
     
-    public static ITracingService? Create(ISimulatorOptions? options)
+    public static ITracingService? Create(MockedEntityDataService dataService, ISimulatorOptions? options)
     {
-        var dataService = new MockedEntityDataService();
         if (dataService.FakeServiceFailureSettings is { TracingService: true })
         {
             return null;

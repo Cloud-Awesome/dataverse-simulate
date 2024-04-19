@@ -1,4 +1,4 @@
-﻿using CloudAwesome.Xrm.Simulate.DataStores;
+﻿using CloudAwesome.Xrm.Simulate.DataServices;
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using CloudAwesome.Xrm.Simulate.QueryParsers;
 using Microsoft.Xrm.Sdk;
@@ -13,7 +13,7 @@ namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 /// <remarks>
 /// N.B. Filters and LinkEntity currently only work if you've included the attributes in the ColumnSet
 /// </remarks>
-public class EntityMultipleRetriever: IEntityMultipleRetriever
+public class EntityMultipleRetriever(MockedEntityDataService dataService) : IEntityMultipleRetriever
 {
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
@@ -24,7 +24,8 @@ public class EntityMultipleRetriever: IEntityMultipleRetriever
                 x =>
                 {
                     var query = x.Arg<QueryExpression>();
-                    var results = QueryExpressionParser.Parse(query, MockedEntityDataStore.Instance.Data);
+                    var results = QueryExpressionParser.Parse(query, 
+                        dataService.Get());
                     return new EntityCollection(results.ToList());
                 });
         
@@ -35,7 +36,7 @@ public class EntityMultipleRetriever: IEntityMultipleRetriever
                 {
                     var query = x.Arg<FetchExpression>();
                     var results = FetchExpressionParser.Parse(query,
-                        MockedEntityDataStore.Instance.Data);
+                        dataService.Get());
                 
                     return new EntityCollection(results.ToList()); 
                 });
@@ -47,7 +48,7 @@ public class EntityMultipleRetriever: IEntityMultipleRetriever
                 {
                     var query = x.Arg<QueryByAttribute>();
                     var results = QueryByAttributeParser.Parse(query,
-                        MockedEntityDataStore.Instance.Data);
+                        dataService.Get());
                 
                     return new EntityCollection(results.ToList());    
                 });
