@@ -5,9 +5,11 @@ namespace CloudAwesome.Xrm.Simulate.DataServices;
 
 public class MockedTelemetryService
 {
+    private readonly MockedTelemetryStore _telemetryStore = new(); 
+    
     public void Add(LogLevel logLevel, string message, params object[] args)
     {
-        MockedTelemetryStore.Instance.Logs.Add(new TelemetryMock
+        _telemetryStore.Logs.Add(new TelemetryMock
         {
             LogLevel = logLevel,
             MessageFormat = message,
@@ -17,24 +19,24 @@ public class MockedTelemetryService
     
     public void Clear()
     {
-        MockedTelemetryStore.Instance.Logs.Clear();
+        _telemetryStore.Logs.Clear();
     }
 
     public List<TelemetryMock> Get()
     {
-        return MockedTelemetryStore.Instance.Logs;
+        return _telemetryStore.Logs;
     }
 
     public List<TelemetryMock> Get(LogLevel logLevel)
     {
-        return MockedTelemetryStore.Instance.Logs
+        return _telemetryStore.Logs
             .Where(x => x.LogLevel == logLevel)
             .ToList();
     }
 
     public List<TelemetryMock> Get(string messageTemplate)
     {
-        return MockedTelemetryStore.Instance.Logs
+        return _telemetryStore.Logs
             .Where(x => x.MessageFormat == messageTemplate)
             .ToList();
     }

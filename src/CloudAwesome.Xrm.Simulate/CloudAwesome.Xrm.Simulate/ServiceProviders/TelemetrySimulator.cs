@@ -7,15 +7,17 @@ namespace CloudAwesome.Xrm.Simulate.ServiceProviders;
 
 public static class TelemetrySimulator
 {
-    private static readonly MockedTelemetryService Telemetry = new MockedTelemetryService();
+    private static MockedTelemetryService _mockedTelemetryService = null!;
     
-    public static ILogger? Create(MockedEntityDataService dataService, ISimulatorOptions? options)
+    public static ILogger? Create(MockedEntityDataService dataService, MockedTelemetryService mockedTelemetryService,
+        ISimulatorOptions? options)
     {
         if (dataService.FakeServiceFailureSettings is { TelemetryService: true })
         {
             return null;
         }
-        
+
+        _mockedTelemetryService = mockedTelemetryService;
         var telemetryService = Substitute.For<ILogger>();
         
         telemetryService
@@ -26,7 +28,7 @@ public static class TelemetrySimulator
                 var message = callInfo.Arg<string>();
                 var parameters = callInfo.Arg<object[]>();
                 
-                Telemetry.Add(logLevel, message, parameters);
+                mockedTelemetryService.Add(logLevel, message, parameters);
             });
         
         ConfigureTelemetryMock(telemetryService, telemetryService.LogCritical, LogLevel.Critical);
@@ -47,7 +49,7 @@ public static class TelemetrySimulator
             {
                 var message = callInfo.Arg<string>();
                 var parameters = callInfo.Arg<object[]>();
-                Telemetry.Add(logLevel, message, parameters);
+                _mockedTelemetryService.Add(logLevel, message, parameters);
             });
     }
 }

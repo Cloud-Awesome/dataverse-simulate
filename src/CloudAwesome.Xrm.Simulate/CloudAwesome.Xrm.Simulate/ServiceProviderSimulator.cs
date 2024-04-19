@@ -9,17 +9,22 @@ namespace CloudAwesome.Xrm.Simulate;
 
 public static class ServiceProviderSimulator
 {
-    private static MockedEntityDataService _dataService = null!;
+    private static readonly MockedEntityDataService DataService = new();
+    private static readonly MockedLoggingService LoggingService = new();
+    private static readonly MockedTelemetryService TelemetryService = new();
     
     public static IServiceProvider Simulate(this IServiceProvider serviceProvider,
         ISimulatorOptions? options = null)
     {
-        _dataService = new MockedEntityDataService();
+        DataService.Reinitialise();
+        LoggingService.Clear();
+        TelemetryService.Clear();
+        
         var localServiceProvider = Substitute.For<IServiceProvider>();
         
         // TODO - Process the rest of the simulator options
-        _dataService.FakeServiceFailureSettings = options?.FakeServiceFailureSettings;
-        _dataService.ExecutionContext = options?.PluginExecutionContextMock;
+        DataService.FakeServiceFailureSettings = options?.FakeServiceFailureSettings;
+        DataService.ExecutionContext = options?.PluginExecutionContextMock;
         
         localServiceProvider.GetService(Arg.Any<Type>())
             .Returns(callInfo =>
@@ -28,15 +33,15 @@ public static class ServiceProviderSimulator
                 return argType switch
                 {
                     _ when argType == typeof(IPluginExecutionContext) => 
-                        PluginExecutionContextSimulator.Create(_dataService, options),
+                        PluginExecutionContextSimulator.Create(DataService, options),
                     _ when argType == typeof(IOrganizationServiceFactory) => 
-                        OrganisationServiceFactorySimulator.Create(_dataService, options),
+                        OrganisationServiceFactorySimulator.Create(DataService, options),
                     _ when argType == typeof(ITracingService) => 
-                        TracingServiceSimulator.Create(_dataService, options),
+                        TracingServiceSimulator.Create(DataService, LoggingService, options),
                     _ when argType == typeof(ILogger) => 
-                        TelemetrySimulator.Create(_dataService, options),
+                        TelemetrySimulator.Create(DataService, TelemetryService, options),
                     _ when argType == typeof(IServiceEndpointNotificationService) => 
-                        ServiceEndpointNotificationSimulator.Create(_dataService, options),
+                        ServiceEndpointNotificationSimulator.Create(DataService, options),
                     _ => throw new ArgumentException("Type of Service requested is not supported")
                 };
             });
@@ -44,8 +49,18 @@ public static class ServiceProviderSimulator
         return localServiceProvider;
     }
     
-    public static MockedEntityDataService Data(this IServiceProvider organizationService)
+    public static MockedEntityDataService Data(this IServiceProvider serviceProvider)
     {
-        return _dataService;
+        return DataService;
+    }
+
+    public static MockedLoggingService Logs(this IServiceProvider serviceProvider)
+    {
+        return LoggingService;
+    }
+
+    public static MockedTelemetryService Telemetry(this IServiceProvider serviceProvider)
+    {
+        return TelemetryService;
     }
 }
