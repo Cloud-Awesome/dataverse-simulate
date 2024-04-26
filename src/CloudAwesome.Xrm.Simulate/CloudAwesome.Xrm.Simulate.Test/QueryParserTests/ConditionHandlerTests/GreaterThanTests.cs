@@ -10,10 +10,8 @@ using NUnit.Framework;
 namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 
 [TestFixture]
-public class EqualTests
+public class GreaterThanTests
 {
-    // TODO - We need more test cases in here for different data types (e.g. int, lookup, currency, datetime, etc...)
-    
     private IOrganizationService _organizationService = null!;
     private IOrganizationService? orgService;
 
@@ -26,9 +24,9 @@ public class EqualTests
     [Test]
     public void QueryExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(Arthur.Contact()); // 0
+        orgService.Data().Add(Siobhan.Contact()); // 1
+        orgService.Data().Add(Bruce.Contact()); // 2
 
         var contacts = orgService.RetrieveMultiple(queryExpression);
 
@@ -38,7 +36,8 @@ public class EqualTests
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(Arthur.Contact()); // 0
+        orgService.Data().Add(Siobhan.Contact()); // 1
 
         var contacts = orgService.RetrieveMultiple(queryExpression);
 
@@ -48,9 +47,9 @@ public class EqualTests
     [Test]
     public void FetchExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(Arthur.Contact()); // 0
+        orgService.Data().Add(Siobhan.Contact()); // 1
+        orgService.Data().Add(Bruce.Contact()); // 2
 
         var contacts = orgService.RetrieveMultiple(fetchQuery);
 
@@ -60,7 +59,8 @@ public class EqualTests
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(Arthur.Contact()); // 0
+        orgService.Data().Add(Siobhan.Contact()); // 1
 
         var contacts = orgService.RetrieveMultiple(fetchQuery);
 
@@ -70,8 +70,8 @@ public class EqualTests
     [Test]
     public void Correct_ConditionOperator_Is_Set()
     {
-        var handler = new EqualConditionHandler();
-        handler.Operator.Should().Be(ConditionOperator.Equal);
+        var handler = new GreaterThanConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.GreaterThan);
     }
 
     private QueryExpression queryExpression = new QueryExpression
@@ -81,8 +81,8 @@ public class EqualTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.lastname, 
-                    ConditionOperator.Equal, "Nicholson")
+                new ConditionExpression(Contact.Fields.numberofchildren, 
+                    ConditionOperator.GreaterThan, 1)
             }
         },
         ColumnSet = new ColumnSet(
@@ -98,7 +98,7 @@ public class EqualTests
                     <attribute name=""lastname"" />
                     <order attribute=""fullname"" descending=""false"" />
                     <filter type=""and"">
-                      <condition attribute=""lastname"" operator=""equal"" value=""Nicholson"" />
+                      <condition attribute=""numberofchildren"" operator=""gt"" value=""1"" />
                     </filter>
                   </entity>
                 </fetch>" 

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using CloudAwesome.Xrm.Simulate.QueryParsers.ConditionHandlers;
 using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
 using CloudAwesome.Xrm.Simulate.Test.TestEntities;
@@ -10,37 +11,50 @@ using NUnit.Framework;
 namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 
 [TestFixture]
-public class EqualTests
+public class NextWeekTests
 {
-    // TODO - We need more test cases in here for different data types (e.g. int, lookup, currency, datetime, etc...)
-    
     private IOrganizationService _organizationService = null!;
     private IOrganizationService? orgService;
 
-    [SetUp]
-    public void BeginsWithSetUp()
-    {
-        orgService = _organizationService.Simulate();
-    }
+    private readonly Contact _positiveContact = Arthur.Contact();
+    private readonly Contact _oldNegativeContact = Bruce.Contact();
+    private readonly Contact _futureNegativeContact = Daniel.Contact();
     
+    [SetUp]
+    public void SetUp()
+    {
+        _positiveContact.overriddencreatedon = new DateTime(2023, 04, 26);
+        _oldNegativeContact.overriddencreatedon = new DateTime(2023, 04, 18);
+        _futureNegativeContact.overriddencreatedon = new DateTime(2023, 05, 01);
+        
+        var options = new SimulatorOptions
+        {
+            ClockSimulator = new MockSystemTime(new DateTime(2023, 04, 19))
+        };
+        
+        orgService = _organizationService.Simulate(options);
+        orgService.Data().Reinitialise();
+    }
+
     [Test]
     public void QueryExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        orgService!.Data().Add(_positiveContact);
+        orgService!.Data().Add(_oldNegativeContact);
+        orgService!.Data().Add(_futureNegativeContact);
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = orgService!.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(1);
     }
-
+    
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Bruce.Contact());
+        orgService!.Data().Add(_oldNegativeContact);
+        orgService!.Data().Add(_futureNegativeContact);
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = orgService!.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -48,19 +62,20 @@ public class EqualTests
     [Test]
     public void FetchExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        orgService!.Data().Add(_positiveContact);
+        orgService!.Data().Add(_oldNegativeContact);
+        orgService!.Data().Add(_futureNegativeContact);
 
-        var contacts = orgService.RetrieveMultiple(fetchQuery);
+        var contacts = orgService!.RetrieveMultiple(fetchQuery);
 
         contacts.Entities.Count().Should().Be(1);
     }
-
+    
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Bruce.Contact());
+        orgService!.Data().Add(_oldNegativeContact);
+        orgService!.Data().Add(_futureNegativeContact);
 
         var contacts = orgService.RetrieveMultiple(fetchQuery);
 
@@ -70,26 +85,26 @@ public class EqualTests
     [Test]
     public void Correct_ConditionOperator_Is_Set()
     {
-        var handler = new EqualConditionHandler();
-        handler.Operator.Should().Be(ConditionOperator.Equal);
+        var handler = new NextWeekConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.NextWeek);
     }
-
-    private QueryExpression queryExpression = new QueryExpression
+    
+    private readonly QueryExpression _queryExpression = new QueryExpression
     {
         EntityName = Contact.EntityLogicalName,
         Criteria = new FilterExpression
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.lastname, 
-                    ConditionOperator.Equal, "Nicholson")
+                new ConditionExpression(Contact.Fields.overriddencreatedon, 
+                    ConditionOperator.NextWeek)
             }
         },
         ColumnSet = new ColumnSet(
             Contact.Fields.firstname, 
             Contact.Fields.lastname)
     };
-
+    
     private FetchExpression fetchQuery = new FetchExpression
     { 
         Query = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""false"">
@@ -98,7 +113,7 @@ public class EqualTests
                     <attribute name=""lastname"" />
                     <order attribute=""fullname"" descending=""false"" />
                     <filter type=""and"">
-                      <condition attribute=""lastname"" operator=""equal"" value=""Nicholson"" />
+                      <condition attribute=""overriddencreatedon"" operator=""next-week"" />
                     </filter>
                   </entity>
                 </fetch>" 

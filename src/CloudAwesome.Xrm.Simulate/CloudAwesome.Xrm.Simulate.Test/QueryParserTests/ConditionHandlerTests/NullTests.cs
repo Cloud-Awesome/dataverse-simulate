@@ -10,27 +10,28 @@ using NUnit.Framework;
 namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 
 [TestFixture]
-public class EqualTests
+public class NullTests
 {
-    // TODO - We need more test cases in here for different data types (e.g. int, lookup, currency, datetime, etc...)
-    
     private IOrganizationService _organizationService = null!;
     private IOrganizationService? orgService;
 
+    private readonly Contact _negativeContact = Daniel.Contact();
+    private readonly Contact _positiveContact = Arthur.Contact();
+
     [SetUp]
-    public void BeginsWithSetUp()
+    public void SetUp()
     {
+        _positiveContact.lastname = null;
         orgService = _organizationService.Simulate();
     }
     
     [Test]
     public void QueryExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(_negativeContact);
+        orgService.Data().Add(_positiveContact);
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = orgService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(1);
     }
@@ -38,9 +39,9 @@ public class EqualTests
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(_negativeContact);
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = orgService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -48,11 +49,10 @@ public class EqualTests
     [Test]
     public void FetchExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(_negativeContact);
+        orgService.Data().Add(_positiveContact);
 
-        var contacts = orgService.RetrieveMultiple(fetchQuery);
+        var contacts = orgService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(1);
     }
@@ -60,9 +60,8 @@ public class EqualTests
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Bruce.Contact());
-
-        var contacts = orgService.RetrieveMultiple(fetchQuery);
+        orgService.Data().Add(_negativeContact);
+        var contacts = orgService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -70,11 +69,40 @@ public class EqualTests
     [Test]
     public void Correct_ConditionOperator_Is_Set()
     {
-        var handler = new EqualConditionHandler();
-        handler.Operator.Should().Be(ConditionOperator.Equal);
+        var handler = new NullConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.Null);
+    }
+    
+    [Test]
+    public void QueryExpression_Returns_Positive_Results_On_OptionSet()
+    {
+        var query = new QueryExpression()
+        {
+            EntityName = Contact.EntityLogicalName,
+            Criteria = new FilterExpression
+            {
+                Conditions =
+                {
+                    new ConditionExpression(Contact.Fields.customertypecode, 
+                        ConditionOperator.Null)
+                }
+            },
+            ColumnSet = new ColumnSet(
+                Contact.Fields.firstname, 
+                Contact.Fields.lastname)
+        };
+
+        _negativeContact.customertypecode = Contact_customertypecode.DefaultValue;
+    
+        orgService.Data().Add(_negativeContact);
+        orgService.Data().Add(_positiveContact);
+
+        var contacts = orgService.RetrieveMultiple(query);
+
+        contacts.Entities.Count().Should().Be(1);
     }
 
-    private QueryExpression queryExpression = new QueryExpression
+    private readonly QueryExpression _queryExpression = new()
     {
         EntityName = Contact.EntityLogicalName,
         Criteria = new FilterExpression
@@ -82,7 +110,7 @@ public class EqualTests
             Conditions =
             {
                 new ConditionExpression(Contact.Fields.lastname, 
-                    ConditionOperator.Equal, "Nicholson")
+                    ConditionOperator.Null)
             }
         },
         ColumnSet = new ColumnSet(
@@ -90,7 +118,7 @@ public class EqualTests
             Contact.Fields.lastname)
     };
 
-    private FetchExpression fetchQuery = new FetchExpression
+    private readonly FetchExpression _fetchQuery = new()
     { 
         Query = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""false"">
                   <entity name=""contact"">
@@ -98,7 +126,7 @@ public class EqualTests
                     <attribute name=""lastname"" />
                     <order attribute=""fullname"" descending=""false"" />
                     <filter type=""and"">
-                      <condition attribute=""lastname"" operator=""equal"" value=""Nicholson"" />
+                      <condition attribute=""lastname"" operator=""null"" />
                     </filter>
                   </entity>
                 </fetch>" 

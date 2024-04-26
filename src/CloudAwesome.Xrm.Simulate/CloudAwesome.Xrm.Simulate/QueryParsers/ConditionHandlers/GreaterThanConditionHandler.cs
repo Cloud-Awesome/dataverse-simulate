@@ -12,6 +12,8 @@ public class GreaterThanConditionHandler : IConditionHandler
     public bool Evaluate(Entity entity, ConditionExpression condition, MockedEntityDataService dataService)
     {
         var attributeValue = entity.GetAttributeValue<IComparable>(condition.AttributeName);
-        return attributeValue.CompareTo(condition.Values[0]) > 0;
+        var conditionValue = ConditionExpressionParser.ParseIntCondition(condition.Values[0]);
+        
+        return attributeValue.CompareTo(conditionValue) > 0;
     }
 }

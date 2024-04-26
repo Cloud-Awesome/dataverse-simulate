@@ -10,10 +10,8 @@ using NUnit.Framework;
 namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 
 [TestFixture]
-public class EqualTests
+public class LessEqualTests
 {
-    // TODO - We need more test cases in here for different data types (e.g. int, lookup, currency, datetime, etc...)
-    
     private IOrganizationService _organizationService = null!;
     private IOrganizationService? orgService;
 
@@ -26,19 +24,19 @@ public class EqualTests
     [Test]
     public void QueryExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(Arthur.Contact()); // 0
+        orgService.Data().Add(Siobhan.Contact()); // 1
+        orgService.Data().Add(Bruce.Contact()); // 2
 
         var contacts = orgService.RetrieveMultiple(queryExpression);
 
-        contacts.Entities.Count().Should().Be(1);
+        contacts.Entities.Count().Should().Be(2);
     }
 
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(Bruce.Contact()); // 2
 
         var contacts = orgService.RetrieveMultiple(queryExpression);
 
@@ -54,7 +52,7 @@ public class EqualTests
 
         var contacts = orgService.RetrieveMultiple(fetchQuery);
 
-        contacts.Entities.Count().Should().Be(1);
+        contacts.Entities.Count().Should().Be(2);
     }
 
     [Test]
@@ -70,8 +68,8 @@ public class EqualTests
     [Test]
     public void Correct_ConditionOperator_Is_Set()
     {
-        var handler = new EqualConditionHandler();
-        handler.Operator.Should().Be(ConditionOperator.Equal);
+        var handler = new LessEqualConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.LessEqual);
     }
 
     private QueryExpression queryExpression = new QueryExpression
@@ -81,8 +79,8 @@ public class EqualTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.lastname, 
-                    ConditionOperator.Equal, "Nicholson")
+                new ConditionExpression(Contact.Fields.numberofchildren, 
+                    ConditionOperator.LessEqual, 1)
             }
         },
         ColumnSet = new ColumnSet(
@@ -98,7 +96,7 @@ public class EqualTests
                     <attribute name=""lastname"" />
                     <order attribute=""fullname"" descending=""false"" />
                     <filter type=""and"">
-                      <condition attribute=""lastname"" operator=""equal"" value=""Nicholson"" />
+                      <condition attribute=""numberofchildren"" operator=""le"" value=""1"" />
                     </filter>
                   </entity>
                 </fetch>" 

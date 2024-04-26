@@ -14,7 +14,7 @@ public class NextXHoursConditionHandler : IConditionHandler
         var attributeValue = entity.GetAttributeValue<DateTime>(condition.AttributeName);
         var hours = Convert.ToInt32(condition.Values[0]);
         
-        return attributeValue.Date <= dataService.SystemTime.AddHours(hours) 
-               && attributeValue.Date >= dataService.SystemTime;
+        return attributeValue <= dataService.SystemTime.AddHours(hours) 
+               && attributeValue >= dataService.SystemTime;
     }
 }

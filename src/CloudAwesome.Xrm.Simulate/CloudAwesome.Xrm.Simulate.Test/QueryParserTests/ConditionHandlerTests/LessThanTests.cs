@@ -10,10 +10,8 @@ using NUnit.Framework;
 namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 
 [TestFixture]
-public class EqualTests
+public class LessThanTests
 {
-    // TODO - We need more test cases in here for different data types (e.g. int, lookup, currency, datetime, etc...)
-    
     private IOrganizationService _organizationService = null!;
     private IOrganizationService? orgService;
 
@@ -26,21 +24,21 @@ public class EqualTests
     [Test]
     public void QueryExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(Arthur.Contact()); // 0
+        orgService.Data().Add(Siobhan.Contact()); // 1
+        orgService.Data().Add(Bruce.Contact()); // 2
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = orgService.RetrieveMultiple(_queryExpression);
 
-        contacts.Entities.Count().Should().Be(1);
+        contacts.Entities.Count().Should().Be(2);
     }
 
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(Bruce.Contact()); // 0
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = orgService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -48,19 +46,19 @@ public class EqualTests
     [Test]
     public void FetchExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(Arthur.Contact()); // 0
+        orgService.Data().Add(Siobhan.Contact()); // 1
+        orgService.Data().Add(Bruce.Contact()); // 2
 
         var contacts = orgService.RetrieveMultiple(fetchQuery);
 
-        contacts.Entities.Count().Should().Be(1);
+        contacts.Entities.Count().Should().Be(2);
     }
 
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Bruce.Contact());
+        orgService.Data().Add(Bruce.Contact()); // 2
 
         var contacts = orgService.RetrieveMultiple(fetchQuery);
 
@@ -70,19 +68,19 @@ public class EqualTests
     [Test]
     public void Correct_ConditionOperator_Is_Set()
     {
-        var handler = new EqualConditionHandler();
-        handler.Operator.Should().Be(ConditionOperator.Equal);
+        var handler = new LessThanConditionHandler();
+        handler.Operator.Should().Be(ConditionOperator.LessThan);
     }
 
-    private QueryExpression queryExpression = new QueryExpression
+    private readonly QueryExpression _queryExpression = new QueryExpression
     {
         EntityName = Contact.EntityLogicalName,
         Criteria = new FilterExpression
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.lastname, 
-                    ConditionOperator.Equal, "Nicholson")
+                new ConditionExpression(Contact.Fields.numberofchildren, 
+                    ConditionOperator.LessThan, 2)
             }
         },
         ColumnSet = new ColumnSet(
@@ -98,7 +96,7 @@ public class EqualTests
                     <attribute name=""lastname"" />
                     <order attribute=""fullname"" descending=""false"" />
                     <filter type=""and"">
-                      <condition attribute=""lastname"" operator=""equal"" value=""Nicholson"" />
+                      <condition attribute=""numberofchildren"" operator=""lt"" value=""2"" />
                     </filter>
                   </entity>
                 </fetch>" 

@@ -7,7 +7,7 @@ namespace CloudAwesome.Xrm.Simulate.QueryParsers.ConditionHandlers;
 
 public class OnOrBeforeConditionHandler : IConditionHandler
 {
-    public ConditionOperator Operator => ConditionOperator.OnOrAfter;
+    public ConditionOperator Operator => ConditionOperator.OnOrBefore;
 
     public bool Evaluate(Entity entity, ConditionExpression condition, MockedEntityDataService dataService)
     {
