@@ -1,5 +1,4 @@
 ﻿using CloudAwesome.Xrm.Simulate.DataStores;
-using Microsoft.Extensions.Logging;
 
 namespace CloudAwesome.Xrm.Simulate.DataServices;
 

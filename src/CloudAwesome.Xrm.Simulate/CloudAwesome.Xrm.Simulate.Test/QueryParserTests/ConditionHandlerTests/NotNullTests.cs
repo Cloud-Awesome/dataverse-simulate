@@ -13,7 +13,6 @@ namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 public class NotNullTests
 {
     private IOrganizationService _organizationService = null!;
-    private IOrganizationService? orgService;
 
     private readonly Contact _positiveContact = Daniel.Contact();
     private readonly Contact _negativeContact = Arthur.Contact();
@@ -22,16 +21,16 @@ public class NotNullTests
     public void SetUp()
     {
         _negativeContact.lastname = null;
-        orgService = _organizationService.Simulate();
+        _organizationService = _organizationService.Simulate();
     }
     
     [Test]
     public void QueryExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(_positiveContact);
-        orgService.Data().Add(_negativeContact);
+        _organizationService.Simulated().Data().Add(_positiveContact);
+        _organizationService.Simulated().Data().Add(_negativeContact);
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = _organizationService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(1);
     }
@@ -39,9 +38,9 @@ public class NotNullTests
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(_negativeContact);
+        _organizationService.Simulated().Data().Add(_negativeContact);
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = _organizationService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -49,10 +48,10 @@ public class NotNullTests
     [Test]
     public void FetchExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(_positiveContact);
-        orgService.Data().Add(_negativeContact);
+        _organizationService.Simulated().Data().Add(_positiveContact);
+        _organizationService.Simulated().Data().Add(_negativeContact);
 
-        var contacts = orgService.RetrieveMultiple(_fetchQuery);
+        var contacts = _organizationService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(1);
     }
@@ -60,8 +59,8 @@ public class NotNullTests
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(_negativeContact);
-        var contacts = orgService.RetrieveMultiple(_fetchQuery);
+        _organizationService.Simulated().Data().Add(_negativeContact);
+        var contacts = _organizationService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -94,16 +93,16 @@ public class NotNullTests
 
         _positiveContact.customertypecode = Contact_customertypecode.DefaultValue;
     
-        orgService.Data().Add(_negativeContact);
-        orgService.Data().Add(Bruce.Contact());
-        orgService.Data().Add(_positiveContact);
+        _organizationService.Simulated().Data().Add(_negativeContact);
+        _organizationService.Simulated().Data().Add(Bruce.Contact());
+        _organizationService.Simulated().Data().Add(_positiveContact);
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count().Should().Be(1);
     }
 
-    private QueryExpression queryExpression = new QueryExpression
+    private readonly QueryExpression _queryExpression = new()
     {
         EntityName = Contact.EntityLogicalName,
         Criteria = new FilterExpression

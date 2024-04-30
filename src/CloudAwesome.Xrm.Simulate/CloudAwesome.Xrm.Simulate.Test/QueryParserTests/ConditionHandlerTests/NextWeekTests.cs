@@ -14,7 +14,6 @@ namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 public class NextWeekTests
 {
     private IOrganizationService _organizationService = null!;
-    private IOrganizationService? orgService;
 
     private readonly Contact _positiveContact = Arthur.Contact();
     private readonly Contact _oldNegativeContact = Bruce.Contact();
@@ -32,18 +31,17 @@ public class NextWeekTests
             ClockSimulator = new MockSystemTime(new DateTime(2023, 04, 19))
         };
         
-        orgService = _organizationService.Simulate(options);
-        orgService.Data().Reinitialise();
+        _organizationService = _organizationService.Simulate(options);
     }
 
     [Test]
     public void QueryExpression_Returns_Positive_Results()
     {
-        orgService!.Data().Add(_positiveContact);
-        orgService!.Data().Add(_oldNegativeContact);
-        orgService!.Data().Add(_futureNegativeContact);
+        _organizationService.Simulated().Data().Add(_positiveContact);
+        _organizationService.Simulated().Data().Add(_oldNegativeContact);
+        _organizationService.Simulated().Data().Add(_futureNegativeContact);
 
-        var contacts = orgService!.RetrieveMultiple(_queryExpression);
+        var contacts = _organizationService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(1);
     }
@@ -51,10 +49,10 @@ public class NextWeekTests
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService!.Data().Add(_oldNegativeContact);
-        orgService!.Data().Add(_futureNegativeContact);
+        _organizationService.Simulated().Data().Add(_oldNegativeContact);
+        _organizationService.Simulated().Data().Add(_futureNegativeContact);
 
-        var contacts = orgService!.RetrieveMultiple(_queryExpression);
+        var contacts = _organizationService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -62,11 +60,11 @@ public class NextWeekTests
     [Test]
     public void FetchExpression_Returns_Positive_Results()
     {
-        orgService!.Data().Add(_positiveContact);
-        orgService!.Data().Add(_oldNegativeContact);
-        orgService!.Data().Add(_futureNegativeContact);
+        _organizationService.Simulated().Data().Add(_positiveContact);
+        _organizationService.Simulated().Data().Add(_oldNegativeContact);
+        _organizationService.Simulated().Data().Add(_futureNegativeContact);
 
-        var contacts = orgService!.RetrieveMultiple(fetchQuery);
+        var contacts = _organizationService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(1);
     }
@@ -74,10 +72,10 @@ public class NextWeekTests
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService!.Data().Add(_oldNegativeContact);
-        orgService!.Data().Add(_futureNegativeContact);
+        _organizationService.Simulated().Data().Add(_oldNegativeContact);
+        _organizationService.Simulated().Data().Add(_futureNegativeContact);
 
-        var contacts = orgService.RetrieveMultiple(fetchQuery);
+        var contacts = _organizationService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -89,7 +87,7 @@ public class NextWeekTests
         handler.Operator.Should().Be(ConditionOperator.NextWeek);
     }
     
-    private readonly QueryExpression _queryExpression = new QueryExpression
+    private readonly QueryExpression _queryExpression = new()
     {
         EntityName = Contact.EntityLogicalName,
         Criteria = new FilterExpression
@@ -105,7 +103,7 @@ public class NextWeekTests
             Contact.Fields.lastname)
     };
     
-    private FetchExpression fetchQuery = new FetchExpression
+    private readonly FetchExpression _fetchQuery = new()
     { 
         Query = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""false"">
                   <entity name=""contact"">

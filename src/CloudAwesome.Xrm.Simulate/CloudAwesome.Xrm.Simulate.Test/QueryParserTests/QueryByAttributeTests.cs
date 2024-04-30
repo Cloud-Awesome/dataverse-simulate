@@ -11,15 +11,18 @@ namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests;
 [TestFixture]
 public class QueryByAttributeTests
 {
-    private readonly IOrganizationService _organizationService = null!;
+    private IOrganizationService _organizationService = null!;
+
+    [SetUp]
+    public void SetUp()
+    {
+        _organizationService = _organizationService.Simulate();
+    }
     
     [Test]
     public void Query_By_Attribute_Returns_Valid_Single_Result()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
 
         var query = new QueryByAttribute(Contact.EntityLogicalName)
         {
@@ -27,7 +30,7 @@ public class QueryByAttributeTests
             Values = { Arthur.Contact().lastname }
         };
         
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(1);
         contacts.Entities.FirstOrDefault()?.Attributes["firstname"].Should().Be("Arthur");
@@ -36,11 +39,8 @@ public class QueryByAttributeTests
     [Test]
     public void Query_By_Attribute_Returns_Valid_Results()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Daniel.Contact());
+        _organizationService.Simulated().Data().Add(Siobhan.Contact());
+        _organizationService.Simulated().Data().Add(Daniel.Contact());
 
         var query = new QueryByAttribute(Contact.EntityLogicalName)
         {
@@ -48,7 +48,7 @@ public class QueryByAttributeTests
             Values = { Siobhan.Contact().lastname }
         };
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
         
         contacts.Entities.Count.Should().Be(2);
     }
@@ -56,11 +56,8 @@ public class QueryByAttributeTests
     [Test]
     public void Query_By_Attribute_With_Multiple_Conditions_Returns_Valid_Results()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Daniel.Contact());
+        _organizationService.Simulated().Data().Add(Siobhan.Contact());
+        _organizationService.Simulated().Data().Add(Daniel.Contact());
 
         var query = new QueryByAttribute(Contact.EntityLogicalName)
         {
@@ -68,7 +65,7 @@ public class QueryByAttributeTests
             Values = { Siobhan.Contact().lastname, Siobhan.Contact().firstname }
         };
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
         
         contacts.Entities.Count.Should().Be(1);
     }

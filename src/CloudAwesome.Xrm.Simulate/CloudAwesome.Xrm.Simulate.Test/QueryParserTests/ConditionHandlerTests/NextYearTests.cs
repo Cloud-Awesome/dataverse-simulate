@@ -14,7 +14,6 @@ namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 public class NextYearTests
 {
     private IOrganizationService _organizationService = null!;
-    private IOrganizationService? orgService;
     
     private readonly Contact _positiveContact = Arthur.Contact();
     private readonly Contact _tooOldNegativeContact = Bruce.Contact();
@@ -32,17 +31,17 @@ public class NextYearTests
             ClockSimulator = new MockSystemTime(new DateTime(2023, 04, 24))
         };
         
-        orgService = _organizationService.Simulate(options);
+        _organizationService = _organizationService.Simulate(options);
     }
 
     [Test]
     public void QueryExpression_Returns_Positive_Results()
     {
-        orgService!.Data().Add(_positiveContact);
-        orgService!.Data().Add(_tooOldNegativeContact);
-        orgService!.Data().Add(_tooNewNegativeContact);
+        _organizationService.Simulated().Data().Add(_positiveContact);
+        _organizationService.Simulated().Data().Add(_tooOldNegativeContact);
+        _organizationService.Simulated().Data().Add(_tooNewNegativeContact);
 
-        var contacts = orgService!.RetrieveMultiple(_queryExpression);
+        var contacts = _organizationService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(1);
     }
@@ -50,10 +49,10 @@ public class NextYearTests
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService!.Data().Add(_tooOldNegativeContact);
-        orgService!.Data().Add(_tooNewNegativeContact);
+        _organizationService.Simulated().Data().Add(_tooOldNegativeContact);
+        _organizationService.Simulated().Data().Add(_tooNewNegativeContact);
 
-        var contacts = orgService!.RetrieveMultiple(_queryExpression);
+        var contacts = _organizationService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -61,11 +60,11 @@ public class NextYearTests
     [Test]
     public void FetchExpression_Returns_Positive_Results()
     {
-        orgService!.Data().Add(_positiveContact);
-        orgService!.Data().Add(_tooOldNegativeContact);
-        orgService!.Data().Add(_tooNewNegativeContact);
+        _organizationService.Simulated().Data().Add(_positiveContact);
+        _organizationService.Simulated().Data().Add(_tooOldNegativeContact);
+        _organizationService.Simulated().Data().Add(_tooNewNegativeContact);
 
-        var contacts = orgService!.RetrieveMultiple(_fetchQuery);
+        var contacts = _organizationService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(1);
     }
@@ -73,10 +72,10 @@ public class NextYearTests
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService!.Data().Add(_tooOldNegativeContact);
-        orgService!.Data().Add(_tooNewNegativeContact);
+        _organizationService.Simulated().Data().Add(_tooOldNegativeContact);
+        _organizationService.Simulated().Data().Add(_tooNewNegativeContact);
 
-        var contacts = orgService!.RetrieveMultiple(_fetchQuery);
+        var contacts = _organizationService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -88,7 +87,7 @@ public class NextYearTests
         handler.Operator.Should().Be(ConditionOperator.NextYear);
     }
     
-    private readonly QueryExpression _queryExpression = new QueryExpression
+    private readonly QueryExpression _queryExpression = new()
     {
         EntityName = Contact.EntityLogicalName,
         Criteria = new FilterExpression

@@ -1,6 +1,4 @@
-﻿using System.Linq.Expressions;
-
-namespace CloudAwesome.Xrm.Simulate.QueryParsers;
+﻿namespace CloudAwesome.Xrm.Simulate.QueryParsers;
 
 internal static class ConditionExpressionParser
 {

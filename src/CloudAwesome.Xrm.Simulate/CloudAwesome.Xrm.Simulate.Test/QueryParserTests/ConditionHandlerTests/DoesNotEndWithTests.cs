@@ -13,23 +13,21 @@ namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 public class DoesEndWithTests
 {
     private IOrganizationService _organizationService = null!;
-    private IOrganizationService? orgService;
 
     [SetUp]
     public void DoesNotContainTestsSetUp()
     {
-        orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
+        _organizationService = _organizationService.Simulate();
     }
     
     [Test]
     public void QueryExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Siobhan.Contact());
+        _organizationService.Simulated().Data().Add(Bruce.Contact());
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = _organizationService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(2);
     }
@@ -37,9 +35,9 @@ public class DoesEndWithTests
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
 
-        var contacts = orgService.RetrieveMultiple(queryExpression);
+        var contacts = _organizationService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -47,11 +45,11 @@ public class DoesEndWithTests
     [Test]
     public void FetchExpression_Returns_Positive_Results()
     {
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Siobhan.Contact());
+        _organizationService.Simulated().Data().Add(Bruce.Contact());
 
-        var contacts = orgService.RetrieveMultiple(fetchQuery);
+        var contacts = _organizationService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(2);
     }
@@ -59,9 +57,9 @@ public class DoesEndWithTests
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService.Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
 
-        var contacts = orgService.RetrieveMultiple(fetchQuery);
+        var contacts = _organizationService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -73,7 +71,7 @@ public class DoesEndWithTests
         handler.Operator.Should().Be(ConditionOperator.DoesNotEndWith);
     }
 
-    private QueryExpression queryExpression = new QueryExpression
+    private readonly QueryExpression _queryExpression = new()
     {
         EntityName = Contact.EntityLogicalName,
         Criteria = new FilterExpression
@@ -89,7 +87,7 @@ public class DoesEndWithTests
             Contact.Fields.lastname)
     };
 
-    private FetchExpression fetchQuery = new FetchExpression
+    private readonly FetchExpression _fetchQuery = new()
     { 
         Query = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""false"">
                   <entity name=""contact"">

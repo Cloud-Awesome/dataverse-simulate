@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using CloudAwesome.Xrm.Simulate.DataServices;
 using CloudAwesome.Xrm.Simulate.ServiceProviders;
 using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
 using CloudAwesome.Xrm.Simulate.Test.TestEntities;
@@ -137,7 +135,7 @@ public class PluginExecutionContextSimulatorTests
             }
         };
         
-        _serviceProvider.Data().Reinitialise(executionContextMock);
+        _serviceProvider.Simulated().Data().Reinitialise(executionContextMock);
         
         var executionContext = (IPluginExecutionContext)service.GetService(typeof(IPluginExecutionContext))!;
 
@@ -173,7 +171,7 @@ public class PluginExecutionContextSimulatorTests
             }
         };
         
-        _serviceProvider.Data().Reinitialise(executionContextMock);
+        _serviceProvider.Simulated().Data().Reinitialise(executionContextMock);
         
         var executionContext = (IPluginExecutionContext)service.GetService(typeof(IPluginExecutionContext))!;
 

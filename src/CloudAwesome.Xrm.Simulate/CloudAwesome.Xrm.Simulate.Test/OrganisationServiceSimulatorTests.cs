@@ -22,7 +22,7 @@ public class OrganisationServiceSimulatorTests
     public void Simulate_Org_Service_Should_Initiate_Data_Store()
     {
         var orgService = _organizationService.Simulate();
-        orgService.Data().Should().NotBeNull();
+        orgService.Simulated().Data().Should().NotBeNull();
     }
 
     [Test]
@@ -41,8 +41,8 @@ public class OrganisationServiceSimulatorTests
 
         var orgService = _organizationService.Simulate(options);
 
-        orgService.Data().AuthenticatedUser.Should().NotBeNull();
-        orgService.Data().AuthenticatedUser.Id.Should().Be(options.AuthenticatedUser.Id);
+        orgService.Simulated().Data().AuthenticatedUser.Should().NotBeNull();
+        orgService.Simulated().Data().AuthenticatedUser.Id.Should().Be(options.AuthenticatedUser.Id);
     }
 
     [Test]
@@ -60,9 +60,9 @@ public class OrganisationServiceSimulatorTests
         };
 
         var orgService = _organizationService.Simulate(options);
-
-        var users = orgService.Data().Get("systemuser");
+        
+        var users = orgService.Simulated().Data().Get("systemuser");
         users.Count.Should().Be(1);
-        users.FirstOrDefault().Attributes["fullname"].Should().Be("Gemma Armstrong");
+        users.FirstOrDefault()!.Attributes["fullname"].Should().Be("Gemma Armstrong");
     }
 }

@@ -37,7 +37,7 @@ public class InitialTestDeleteMe: IntegrationBaseFixture
 
         // Mocked
         var mockService = _mockService.Simulate();
-        mockService.Data().Reinitialise();
+        mockService.Simulated().Data().Reinitialise();
         
         var mockedArthurId = mockService.Create(_arthur);
         var mockRetrievedArthur = 

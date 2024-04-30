@@ -12,6 +12,7 @@ public static class ServiceProviderSimulator
     private static readonly MockedEntityDataService DataService = new();
     private static readonly MockedLoggingService LoggingService = new();
     private static readonly MockedTelemetryService TelemetryService = new();
+    private static readonly SimulatorAuditService SimulatorAuditService = new();
     
     public static IServiceProvider Simulate(this IServiceProvider serviceProvider,
         ISimulatorOptions? options = null)
@@ -19,6 +20,7 @@ public static class ServiceProviderSimulator
         DataService.Reinitialise();
         LoggingService.Clear();
         TelemetryService.Clear();
+        SimulatorAuditService.Clear();
         
         var localServiceProvider = Substitute.For<IServiceProvider>();
         
@@ -48,19 +50,9 @@ public static class ServiceProviderSimulator
         
         return localServiceProvider;
     }
-    
-    public static MockedEntityDataService Data(this IServiceProvider serviceProvider)
-    {
-        return DataService;
-    }
 
-    public static MockedLoggingService Logs(this IServiceProvider serviceProvider)
+    public static ServiceProviderSimulated Simulated(this IServiceProvider serviceProvider)
     {
-        return LoggingService;
-    }
-
-    public static MockedTelemetryService Telemetry(this IServiceProvider serviceProvider)
-    {
-        return TelemetryService;
+        return new ServiceProviderSimulated(DataService, LoggingService, TelemetryService, SimulatorAuditService);
     }
 }

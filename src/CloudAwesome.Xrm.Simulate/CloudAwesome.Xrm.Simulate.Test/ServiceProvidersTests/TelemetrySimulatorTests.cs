@@ -1,5 +1,4 @@
 ﻿using System;
-using CloudAwesome.Xrm.Simulate.DataServices;
 using FluentAssertions;
 using Microsoft.Xrm.Sdk.PluginTelemetry;
 using NUnit.Framework;
@@ -25,7 +24,7 @@ public class TelemetrySimulatorTests
         _logger.Log(LogLevel.Information, 
             MessageFormat, _id, _dateTime);
         
-        var logs = service.Telemetry().Get(LogLevel.Information);
+        var logs = service.Simulated().Telemetry().Get(LogLevel.Information);
 
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Information);
@@ -43,7 +42,7 @@ public class TelemetrySimulatorTests
         _logger.LogCritical(
             MessageFormat, _id, _dateTime);
 
-        var logs = service.Telemetry().Get(LogLevel.Critical);
+        var logs = service.Simulated().Telemetry().Get(LogLevel.Critical);
         
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Critical);
@@ -61,7 +60,7 @@ public class TelemetrySimulatorTests
         _logger.LogError(
             MessageFormat, _id, _dateTime);
 
-        var logs = service.Telemetry().Get(LogLevel.Error);
+        var logs = service.Simulated().Telemetry().Get(LogLevel.Error);
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Error);
     }
@@ -75,7 +74,7 @@ public class TelemetrySimulatorTests
         _logger.LogDebug(
             MessageFormat, _id, _dateTime);
 
-        var logs = service.Telemetry().Get(LogLevel.Debug);
+        var logs = service.Simulated().Telemetry().Get(LogLevel.Debug);
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Debug);
     }
@@ -89,7 +88,7 @@ public class TelemetrySimulatorTests
         _logger.LogInformation(
             MessageFormat, _id, _dateTime);
 
-        var logs = service.Telemetry().Get(LogLevel.Information);
+        var logs = service.Simulated().Telemetry().Get(LogLevel.Information);
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Information);
     }
@@ -103,7 +102,7 @@ public class TelemetrySimulatorTests
         _logger.LogWarning(
             MessageFormat, _id, _dateTime);
 
-        var logs = service.Telemetry().Get(LogLevel.Warning);
+        var logs = service.Simulated().Telemetry().Get(LogLevel.Warning);
         logs.Count.Should().Be(1);
         logs[0].LogLevel.Should().Be(LogLevel.Warning);
     }

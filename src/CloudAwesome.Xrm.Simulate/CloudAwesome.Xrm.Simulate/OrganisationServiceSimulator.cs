@@ -43,9 +43,9 @@ public static class OrganisationServiceSimulator
         return Service;
     }
 
-    public static MockedEntityDataService Data(this IOrganizationService organizationService)
+    public static OrganisationServiceSimulated Simulated(this IOrganizationService organizationService)
     {
-        return DataService;
+        return new OrganisationServiceSimulated(DataService);
     }
 
     private static void SetSystemTime(ISimulatorOptions? options)

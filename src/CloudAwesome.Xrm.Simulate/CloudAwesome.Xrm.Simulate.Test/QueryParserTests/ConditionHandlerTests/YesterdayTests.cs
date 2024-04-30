@@ -14,7 +14,6 @@ namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests.ConditionHandlerTests;
 public class YesterdayTests
 {
     private IOrganizationService _organizationService = null!;
-    private IOrganizationService? orgService;
     
     private readonly Contact _earlyPositiveContact = Arthur.Contact();
     private readonly Contact _earlyNegativeContact = Bruce.Contact();
@@ -34,18 +33,18 @@ public class YesterdayTests
             ClockSimulator = new MockSystemTime(new DateTime(2023, 04, 19, 14, 00, 00))
         };
         
-        orgService = _organizationService.Simulate(options);
+        _organizationService = _organizationService.Simulate(options);
     }
 
     [Test]
     public void QueryExpression_Returns_Positive_Results()
     {
-        orgService!.Data().Add(_earlyPositiveContact);
-        orgService!.Data().Add(_latePositiveContact);
-        orgService!.Data().Add(_earlyNegativeContact);
-        orgService!.Data().Add(_lateNegativeContact);
+        _organizationService.Simulated().Data().Add(_earlyPositiveContact);
+        _organizationService.Simulated().Data().Add(_latePositiveContact);
+        _organizationService.Simulated().Data().Add(_earlyNegativeContact);
+        _organizationService.Simulated().Data().Add(_lateNegativeContact);
 
-        var contacts = orgService!.RetrieveMultiple(_queryExpression);
+        var contacts = _organizationService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(2);
     }
@@ -53,10 +52,10 @@ public class YesterdayTests
     [Test]
     public void QueryExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService!.Data().Add(_earlyNegativeContact);
-        orgService!.Data().Add(_lateNegativeContact);
+        _organizationService.Simulated().Data().Add(_earlyNegativeContact);
+        _organizationService.Simulated().Data().Add(_lateNegativeContact);
 
-        var contacts = orgService!.RetrieveMultiple(_queryExpression);
+        var contacts = _organizationService.RetrieveMultiple(_queryExpression);
 
         contacts.Entities.Count().Should().Be(0);
     }
@@ -64,12 +63,12 @@ public class YesterdayTests
     [Test]
     public void FetchExpression_Returns_Positive_Results()
     {
-        orgService!.Data().Add(_earlyPositiveContact);
-        orgService!.Data().Add(_latePositiveContact);
-        orgService!.Data().Add(_earlyNegativeContact);
-        orgService!.Data().Add(_lateNegativeContact);
+        _organizationService.Simulated().Data().Add(_earlyPositiveContact);
+        _organizationService.Simulated().Data().Add(_latePositiveContact);
+        _organizationService.Simulated().Data().Add(_earlyNegativeContact);
+        _organizationService.Simulated().Data().Add(_lateNegativeContact);
 
-        var contacts = orgService!.RetrieveMultiple(_fetchQuery);
+        var contacts = _organizationService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(2);
     }
@@ -77,10 +76,10 @@ public class YesterdayTests
     [Test]
     public void FetchExpression_Returns_Empty_Set_If_None_Found()
     {
-        orgService!.Data().Add(_earlyNegativeContact);
-        orgService!.Data().Add(_lateNegativeContact);
+        _organizationService.Simulated().Data().Add(_earlyNegativeContact);
+        _organizationService.Simulated().Data().Add(_lateNegativeContact);
 
-        var contacts = orgService!.RetrieveMultiple(_fetchQuery);
+        var contacts = _organizationService.RetrieveMultiple(_fetchQuery);
 
         contacts.Entities.Count().Should().Be(0);
     }

@@ -16,17 +16,21 @@ namespace CloudAwesome.Xrm.Simulate.Test.BasicServiceRequestTests;
 [TestFixture]
 public class CreateTests
 {
-    private readonly IOrganizationService _organizationService = null!;
+    private IOrganizationService _organizationService = null!;
+
+    [SetUp]
+    public void SetUp()
+    {
+        _organizationService = _organizationService.Simulate();
+    }
     
     [Test]
     public void Create_Contact_Saves_Record_To_Data_Store()
     {
-        var orgService = _organizationService.Simulate();
-        
-        var contactId = orgService.Create(Arthur.Contact());
+        var contactId = _organizationService.Create(Arthur.Contact());
         contactId.Should().NotBeEmpty();
 
-        var contacts = orgService.Data().Get(Arthur.Contact().LogicalName);
+        var contacts = _organizationService.Simulated().Data().Get(Arthur.Contact().LogicalName);
         contacts.Count.Should().Be(1);
 
         contacts.FirstOrDefault()?.Id.Should().Be(contactId);
@@ -35,18 +39,16 @@ public class CreateTests
     [Test]
     public void Calling_Create_Method_Via_Execute_Method_Should_Save_To_Data_Store()
     {
-        var orgService = _organizationService.Simulate();
-
         var createRequest = new CreateRequest
         {
             Target = Arthur.Contact()
         };
 
-        var createResponse = (CreateResponse) orgService.Execute(createRequest);
+        var createResponse = (CreateResponse) _organizationService.Execute(createRequest);
         createResponse.id.Should().NotBeEmpty();
         createResponse.ResponseName.Should().Be("Create");
         
-        var contacts = orgService.Data().Get(Arthur.Contact().LogicalName);
+        var contacts = _organizationService.Simulated().Data().Get(Arthur.Contact().LogicalName);
         contacts.Count.Should().Be(1);
 
         contacts.FirstOrDefault()?.Id.Should().Be(createResponse.id);
@@ -64,7 +66,7 @@ public class CreateTests
         var orgService = _organizationService.Simulate(options);
 
         var contactId = orgService.Create(Arthur.Contact());
-        var contact = orgService.Data().Get(Arthur.Contact().LogicalName).FirstOrDefault();
+        var contact = orgService.Simulated().Data().Get(Arthur.Contact().LogicalName).FirstOrDefault();
 
         contact.Attributes["createdon"].Should().Be(mockSystemTime.Now);
         contact.Attributes["modifiedon"].Should().Be(mockSystemTime.Now);
@@ -84,13 +86,14 @@ public class CreateTests
             }
         };
         var authenticatedUser = options.AuthenticatedUser.ToEntityReference();
-        
         var orgService = _organizationService.Simulate(options);
         
         var contactId = orgService.Create(Arthur.Contact());
-        var contact = orgService.Data().Get(Arthur.Contact().LogicalName).FirstOrDefault();
+        var contact = orgService.Simulated().Data().Get(Arthur.Contact().LogicalName).FirstOrDefault();
 
-        contact.Attributes["createdby"].Should().Be(authenticatedUser);
+        contact.Should().NotBeNull();
+        
+        contact!.Attributes["createdby"].Should().Be(authenticatedUser);
         contact.Attributes["modifiedby"].Should().Be(authenticatedUser);
         contact.Attributes["ownerid"].Should().Be(authenticatedUser);
 
@@ -110,12 +113,11 @@ public class CreateTests
                 { contactOnCreateProcessorType, new ContactOnCreateProcessor() }
             }
         };
-
         var orgService = _organizationService.Simulate(options);
 
         orgService.Create(Arthur.Contact());
 
-        var contacts = orgService.Data().Get(Contact.EntityLogicalName);
+        var contacts = orgService.Simulated().Data().Get(Contact.EntityLogicalName);
 
         contacts.Count.Should().Be(1);
 

@@ -13,7 +13,6 @@ namespace CloudAwesome.Xrm.Simulate.Test.BasicServiceRequestTests;
 public class RetrieveTests
 {
     private IOrganizationService _organizationService = null!;
-    private IOrganizationService orgService;
     
     private Guid _contactId = Guid.NewGuid();
     private Entity _contactRecord = Arthur.Contact();
@@ -23,17 +22,15 @@ public class RetrieveTests
     {
         _contactRecord.Id = _contactId;
         
-        orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(_contactRecord);
+        _organizationService = _organizationService.Simulate();
+        _organizationService.Simulated().Data().Add(_contactRecord);
     }
     
     [Test]
     public void Retrieve_Existing_Record_Returns_Valid_Entity()
     {
         var retrievedContact = 
-            orgService.Retrieve(Contact.EntityLogicalName, _contactId, new ColumnSet(true));
+            _organizationService.Retrieve(Contact.EntityLogicalName, _contactId, new ColumnSet(true));
 
         retrievedContact.Id.Should().Be(_contactId);
     }
@@ -42,7 +39,7 @@ public class RetrieveTests
     public void Retrieve_Existing_Record_Returns_All_Columns()
     {
         var retrievedContact = (Contact)
-            orgService.Retrieve("contact", _contactId, new ColumnSet(true));
+            _organizationService.Retrieve("contact", _contactId, new ColumnSet(true));
 
         retrievedContact.firstname.Should().Be(Arthur.Contact().firstname);
         retrievedContact.lastname.Should().Be(Arthur.Contact().lastname);
@@ -53,7 +50,7 @@ public class RetrieveTests
     public void Retrieve_Existing_Record_Returns_Defined_ColumnSet()
     {
         var retrievedContact =
-            orgService.Retrieve("contact", _contactId, 
+            _organizationService.Retrieve("contact", _contactId, 
                 new ColumnSet(Contact.Fields.firstname));
 
         retrievedContact.Attributes["firstname"].Should().Be(Arthur.Contact().firstname);
@@ -66,7 +63,7 @@ public class RetrieveTests
     public void Retrieve_Existing_Record_Always_Returns_Primary_Guid()
     {
         var retrievedContact =
-            orgService.Retrieve("contact", _contactId, 
+            _organizationService.Retrieve("contact", _contactId, 
                 new ColumnSet(Contact.Fields.firstname));
 
         retrievedContact.Attributes["firstname"].Should().Be(Arthur.Contact().firstname);

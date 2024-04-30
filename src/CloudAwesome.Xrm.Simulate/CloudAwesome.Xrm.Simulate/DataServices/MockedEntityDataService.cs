@@ -2,7 +2,6 @@
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using CloudAwesome.Xrm.Simulate.ServiceProviders;
 using Microsoft.Xrm.Sdk;
-using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.DataServices;
 

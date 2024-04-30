@@ -14,15 +14,18 @@ namespace CloudAwesome.Xrm.Simulate.Test.QueryParserTests;
 [TestFixture(Description = "N.B. Filters and LinkEntity currently only work if you've included the attributes in the ColumnSet")]
 public class QueryExpressionParserTests
 {
-    private readonly IOrganizationService _organizationService = null!;
+    private IOrganizationService _organizationService = null!;
+
+    [SetUp]
+    public void SetUp()
+    {
+        _organizationService = _organizationService.Simulate();
+    }
 
     [Test]
     public void Retrieve_Multiple_With_Equals_Operator_On_String_Returns_Valid_Results()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
 
         var query = new QueryExpression
         {
@@ -37,7 +40,7 @@ public class QueryExpressionParserTests
             }
         };
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(1);
         contacts.Entities.FirstOrDefault()?.Attributes["firstname"].Should().Be("Arthur");
@@ -46,10 +49,7 @@ public class QueryExpressionParserTests
     [Test]
     public void Retrieve_Multiple_Via_OrgService_Execute_Method_Returns_Valid_Results()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
 
         var query = new QueryExpression
         {
@@ -65,7 +65,7 @@ public class QueryExpressionParserTests
         };
 
         var retrieveMultipleRequest = new RetrieveMultipleRequest { Query = query };
-        var response = (RetrieveMultipleResponse) orgService.Execute(retrieveMultipleRequest);
+        var response = (RetrieveMultipleResponse) _organizationService.Execute(retrieveMultipleRequest);
 
         response.EntityCollection.Entities.Count.Should().Be(1);
         response.EntityCollection.Entities.FirstOrDefault()?.Attributes["firstname"].Should().Be("Arthur");
@@ -74,10 +74,7 @@ public class QueryExpressionParserTests
     [Test]
     public void Retrieve_Multiple_With_NotEquals_Operator_On_String_Returns_Valid_Results()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
 
         var query = new QueryExpression
         {
@@ -92,7 +89,7 @@ public class QueryExpressionParserTests
             }
         };
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(0);
     }
@@ -101,10 +98,7 @@ public class QueryExpressionParserTests
     public void Retrieve_Multiple_On_String_Returns_Valid_Columns()
     {
         // Arrange
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
 
         var query = new QueryExpression
         {
@@ -121,7 +115,7 @@ public class QueryExpressionParserTests
         };
 
         // Act
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         // Assert
         contacts.Entities.Count.Should().Be(1);
@@ -136,11 +130,8 @@ public class QueryExpressionParserTests
     public void Retrieve_Multiple_On_String_Returns_Valid_Order()
     {
         // Arrange
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Bruce.Contact());
-        orgService.Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Bruce.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
 
         var query = new QueryExpression
         {
@@ -152,7 +143,7 @@ public class QueryExpressionParserTests
         };
         
         // Act
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
         
         // Assert
         contacts.Entities.Count.Should().Be(2);
@@ -164,10 +155,7 @@ public class QueryExpressionParserTests
     [Test]
     public void Retrieve_Multiple_On_DateTime_Returns_Valid_Results()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
 
         var query = new QueryExpression
         {
@@ -182,7 +170,7 @@ public class QueryExpressionParserTests
             }
         };
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(1);
         contacts.Entities.Cast<Contact>().FirstOrDefault()?
@@ -192,10 +180,7 @@ public class QueryExpressionParserTests
     [Test]
     public void Retrieve_Multiple_On_EntityReference_Returns_Valid_Results()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
 
         var query = new QueryExpression
         {
@@ -210,7 +195,7 @@ public class QueryExpressionParserTests
             }
         };
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(1);
         contacts.Entities.Cast<Contact>().FirstOrDefault()?
@@ -220,11 +205,8 @@ public class QueryExpressionParserTests
     [Test]
     public void Retrieve_Multiple_On_OptionSet_Returns_Valid_Results()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Siobhan.Contact());
 
         var query = new QueryExpression
         {
@@ -239,7 +221,7 @@ public class QueryExpressionParserTests
             }
         };
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(1);
         contacts.Entities.Cast<Contact>().FirstOrDefault()?
@@ -249,11 +231,8 @@ public class QueryExpressionParserTests
     [Test]
     public void Retrieve_Multiple_On_OptionSet_NotEqual_Returns_Valid_Results()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Siobhan.Contact());
 
         var query = new QueryExpression
         {
@@ -268,7 +247,7 @@ public class QueryExpressionParserTests
             }
         };
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(1);
         contacts.Entities.Cast<Contact>().FirstOrDefault()?
@@ -278,10 +257,7 @@ public class QueryExpressionParserTests
     [Test]
     public void Retrieve_Multiple_On_OptionSet_When_No_Results_Found_Returns_Valid_Results()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Siobhan.Contact());
+        _organizationService.Simulated().Data().Add(Siobhan.Contact());
 
         var query = new QueryExpression
         {
@@ -296,7 +272,7 @@ public class QueryExpressionParserTests
             }
         };
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(0);
     }
@@ -304,13 +280,10 @@ public class QueryExpressionParserTests
     [Test]
     public void Retrieve_Multiple_Supports_Multiple_Child_FilterExpressions_With_OR_Clauses()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Siobhan.Contact());
-        orgService.Data().Add(Bruce.Contact());
-        orgService.Data().Add(Daniel.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Siobhan.Contact());
+        _organizationService.Simulated().Data().Add(Bruce.Contact());
+        _organizationService.Simulated().Data().Add(Daniel.Contact());
 
         // Query for contacts where
         //      (status is active AND gender is male) AND (lastname is 'Nicholson' OR 'Nicholson-Gumula')
@@ -351,7 +324,7 @@ public class QueryExpressionParserTests
             }
         };
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(2);
     }
@@ -359,11 +332,8 @@ public class QueryExpressionParserTests
     [Test]
     public void Retrieve_Multiple_Supports_Basic_LinkEntities_Columns()
     {
-        var orgService = _organizationService.Simulate();
-        orgService.Data().Reinitialise();
-        
-        orgService.Data().Add(Arthur.Contact());
-        orgService.Data().Add(Arthur.Account());
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Arthur.Account());
 
         var query = new QueryExpression
         {
@@ -395,7 +365,7 @@ public class QueryExpressionParserTests
             }
         };
 
-        var contacts = orgService.RetrieveMultiple(query);
+        var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(1);
     }

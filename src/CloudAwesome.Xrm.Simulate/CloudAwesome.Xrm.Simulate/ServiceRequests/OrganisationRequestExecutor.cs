@@ -14,7 +14,7 @@ public class OrganisationRequestExecutor(MockedEntityDataService dataService): I
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
     {
-        dataService = organizationService.Data();
+        dataService = organizationService.Simulated().Data();
         
         // CreateRequest
         organizationService.Execute(Arg.Any<CreateRequest>())

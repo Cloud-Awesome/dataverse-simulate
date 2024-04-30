@@ -7,6 +7,7 @@ public static class Order
 {
     public static IQueryable<Entity> Apply(IList<OrderExpression> orders, IQueryable<Entity> records)
     {
+        // TODO - Need more robust tests for the different paths of this method
         if (orders == null || orders.Count == 0)
         {
             return records;
@@ -17,6 +18,10 @@ public static class Order
         for (var i = 0; i < orders.Count; i++)
         {
             var order = orders[i];
+            if (string.IsNullOrWhiteSpace(order.AttributeName))
+            {
+                throw new ArgumentException("AttributeName cannot be null or empty", nameof(order.AttributeName));
+            }
 
             if (i == 0)
             {
@@ -30,10 +35,8 @@ public static class Order
                     ? orderedRecords.ThenBy(entity => entity.GetAttributeValue<object>(order.AttributeName))
                     : orderedRecords.ThenByDescending(entity => entity.GetAttributeValue<object>(order.AttributeName));
             }
-
-            return orderedRecords;
         }
             
-        return records;
+        return orderedRecords ?? records;
     }
 }
