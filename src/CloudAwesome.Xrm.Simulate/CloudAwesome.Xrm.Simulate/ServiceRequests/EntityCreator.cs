@@ -2,12 +2,16 @@
 using CloudAwesome.Xrm.Simulate.DataStores;
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Messages;
 using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
-public sealed class EntityCreator(MockedEntityDataService dataService) : IEntityCreator
+public sealed class EntityCreator
+    (MockedEntityDataService dataService, SimulatorAuditService auditService) : IEntityCreator
 {
+    private const string RequestMessage = "Create";
+    
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
     {
@@ -43,6 +47,7 @@ public sealed class EntityCreator(MockedEntityDataService dataService) : IEntity
 
         // Submit to data store
         dataService.Add(e);
+        auditService.Add(RequestMessage, e.LogicalName, e.Id);
         
         return e.Id;
     }

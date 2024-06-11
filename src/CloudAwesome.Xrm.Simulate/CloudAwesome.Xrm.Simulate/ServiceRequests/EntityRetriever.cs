@@ -6,8 +6,11 @@ using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
-public class EntityRetriever(MockedEntityDataService dataService) : IEntityRetriever
+public class EntityRetriever
+    (MockedEntityDataService dataService, SimulatorAuditService auditService) : IEntityRetriever
 {
+    private const string RequestMessage = "Retrieve";
+    
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
     {
@@ -53,6 +56,8 @@ public class EntityRetriever(MockedEntityDataService dataService) : IEntityRetri
                              ?? throw new InvalidOperationException("No data for this entity");
                 }
                     
+                auditService.Add(RequestMessage, entity.LogicalName, entity.Id);
+                
                 return entity;
             });
     }
