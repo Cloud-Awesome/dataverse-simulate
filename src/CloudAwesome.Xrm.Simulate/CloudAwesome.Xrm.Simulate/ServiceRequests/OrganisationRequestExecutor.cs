@@ -9,7 +9,8 @@ using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate.ServiceRequests;
 
-public class OrganisationRequestExecutor(MockedEntityDataService dataService): IOrganisationRequestExecutor
+public class OrganisationRequestExecutor
+    (MockedEntityDataService dataService, SimulatorAuditService auditService): IOrganisationRequestExecutor
 {
     public void MockRequest(IOrganizationService organizationService, 
         ISimulatorOptions? options = null)
@@ -22,7 +23,7 @@ public class OrganisationRequestExecutor(MockedEntityDataService dataService): I
             {
                 var request = x.Arg<CreateRequest>();
 
-                var createdId = new EntityCreator(dataService).Create(request.Target, options);
+                var createdId = new EntityCreator(dataService, auditService).Create(request.Target, options);
                 return new CreateResponse
                 {
                     Results = new ParameterCollection { new("id", createdId) },
