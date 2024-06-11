@@ -16,4 +16,6 @@ public interface ISimulatorOptions
     public PluginExecutionContextMock? PluginExecutionContextMock { get; set; }
     
     public FakeServiceFailureSettings? FakeServiceFailureSettings { get; set; }
+    
+    public Dictionary<string, List<Entity>>? InitialiseData { get; set; }
 }

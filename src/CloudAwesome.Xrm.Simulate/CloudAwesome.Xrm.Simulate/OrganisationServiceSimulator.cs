@@ -39,6 +39,7 @@ public static class OrganisationServiceSimulator
         EntityDisassociator.MockRequest(Service, options);
         OrganisationRequestExecutor.MockRequest(Service, options);
 
+        InitialiseMockedData(options);
         ConfigureAuthenticatedUser(options);
         SetSystemTime(options);
         
@@ -55,6 +56,14 @@ public static class OrganisationServiceSimulator
         if (options?.ClockSimulator is not null)
         {
             DataService.SystemTime = options.ClockSimulator.Now;
+        }
+    }
+
+    private static void InitialiseMockedData(ISimulatorOptions? options)
+    {
+        if (options?.InitialiseData is not null)
+        {
+            DataService.Add(options.InitialiseData);
         }
     }
 

@@ -15,6 +15,7 @@ public class SimulatorOptions: ISimulatorOptions
     
     public FakeServiceFailureSettings? FakeServiceFailureSettings { get; set; }
 
+    public Dictionary<string, List<Entity>>? InitialiseData { get; set; }
 
     // TODO - Inject things like business unit and organisation etc.
 }

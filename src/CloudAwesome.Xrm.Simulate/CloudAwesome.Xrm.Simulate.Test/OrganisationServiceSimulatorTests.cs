@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities;
+using CloudAwesome.Xrm.Simulate.Test.TestEntities;
 using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
@@ -64,5 +67,38 @@ public class OrganisationServiceSimulatorTests
         var users = orgService.Simulated().Data().Get("systemuser");
         users.Count.Should().Be(1);
         users.FirstOrDefault()!.Attributes["fullname"].Should().Be("Gemma Armstrong");
+    }
+
+    [Test]
+    public void Simulating_Service_With_PreInitialised_Data_Is_Correctly_Initialised()
+    {
+        var options = new SimulatorOptions
+        {
+            InitialiseData = new Dictionary<string, List<Entity>>
+            {
+                {
+                    Contact.EntityLogicalName,
+                    [
+                        Arthur.Contact(),
+                        Bruce.Contact()
+                    ]
+                },
+                {
+                    "account",
+                    [
+                        Arthur.Account()
+                    ]
+                }
+            }
+        };
+
+        var orgService = _organizationService.Simulate(options);
+        var contacts = orgService.Simulated().Data().Get("contact");
+        var accounts = orgService.Simulated().Data().Get("account");
+        var leads = orgService.Simulated().Data().Get("lead");
+
+        contacts.Count.Should().Be(2);
+        accounts.Count.Should().Be(1);
+        leads.Count.Should().Be(0);
     }
 }
