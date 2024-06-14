@@ -1,5 +1,6 @@
 ﻿using System;
 using CloudAwesome.Xrm.Simulate.DataStores;
+using CloudAwesome.Xrm.Simulate.ServiceProviders;
 using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.PluginTelemetry;
@@ -150,6 +151,48 @@ public class ServiceProviderSimulatorTests
         sut.Should()
             .Throw<ArgumentException>()
             .WithMessage("Type of Service requested is not supported");
+    }
+
+    [Test]
+    public void DataService_From_Plugin_Correctly_Consumes_Organisation_Service_Requests()
+    {
+        var accountId = Guid.NewGuid();
+        var options = new SimulatorOptions
+        {
+            PluginExecutionContextMock = new PluginExecutionContextMock
+            {
+                InputParameters = new ParameterCollection
+                {
+                    new ("Target", new Entity("account", accountId))
+                },
+                PrimaryEntityName = "account",
+                OutputParameters = new ParameterCollection()
+            }
+        };
+        
+        var serviceProvider = _serviceProvider.Simulate(options);
+        var tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
+        var executionContext = (IPluginExecutionContext) serviceProvider.GetService(typeof(IPluginExecutionContext));
+        
+        var serviceFactory = 
+            (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
+        var service = serviceFactory.CreateOrganizationService(executionContext.UserId);
+        
+        Entity followup = new Entity("task");
+        followup["subject"] = "Send e-mail to the new customer.";
+        followup["description"] =
+            "Follow up with the customer. Check if there are any new issues that need resolution.";
+        followup["scheduledstart"] = DateTime.Now.AddDays(7);
+        followup["scheduledend"] = DateTime.Now.AddDays(7);
+        
+        tracingService.Trace("FollowupPlugin: Successfully created the task activity.");
+        service.Create(followup);
+        
+        var traces = serviceProvider.Simulated().Logs().Get();
+        var tasks = serviceProvider.Simulated().Data().Get("task");
+        
+        traces.Count.Should().Be(1);
+        tasks.Count.Should().Be(1);
     }
     
 }

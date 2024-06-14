@@ -15,17 +15,17 @@ public class PluginExecutionContextMock: IPluginExecutionContext
     public Guid? RequestId { get; set; } = Guid.NewGuid();
     public string SecondaryEntityName { get; set; } = "Not Set";
     public ParameterCollection InputParameters { get; set; } = new ParameterCollection();
-    public ParameterCollection OutputParameters { get; set; }
-    public ParameterCollection SharedVariables { get; set; }
+    public ParameterCollection OutputParameters { get; set; } = new ParameterCollection();
+    public ParameterCollection SharedVariables { get; set; } = new ParameterCollection();
     public Guid UserId => _dataService.AuthenticatedUser.Id;
     public Guid InitiatingUserId { get; set; }
     public Guid BusinessUnitId => _dataService.BusinessUnit.Id;
     public Guid OrganizationId => _dataService.Organization.Id;
     public string OrganizationName => _dataService.Organization.Name;
     public Guid PrimaryEntityId { get; } = Guid.NewGuid();
-    public EntityImageCollection PreEntityImages { get; }
-    public EntityImageCollection PostEntityImages { get; }
-    public EntityReference OwningExtension { get; }
+    public EntityImageCollection PreEntityImages { get; set; } = new EntityImageCollection();
+    public EntityImageCollection PostEntityImages { get; set; } = new EntityImageCollection();
+    public EntityReference OwningExtension { get; set; } = new EntityReference();
     public Guid CorrelationId { get; } = Guid.NewGuid();
     public bool IsExecutingOffline { get; } = false;
     public bool IsOfflinePlayback { get; } = false;

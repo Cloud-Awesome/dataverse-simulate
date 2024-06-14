@@ -5,6 +5,10 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>12</LangVersion>
+        <PackageId>CloudAwesome.Xrm.Simulate</PackageId>
+        <Version>1.0.4</Version>
+        <Authors>Arthur Nicholson-Gumuła</Authors>
+        <Company>Cloud Awesome</Company>
     </PropertyGroup>
 
     <ItemGroup>

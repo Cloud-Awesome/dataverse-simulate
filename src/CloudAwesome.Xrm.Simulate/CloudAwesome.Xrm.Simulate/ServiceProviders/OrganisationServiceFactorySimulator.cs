@@ -19,7 +19,7 @@ public static class OrganisationServiceFactorySimulator
         var serviceFactory = Substitute.For<IOrganizationServiceFactory>();
 
         serviceFactory.CreateOrganizationService(Arg.Any<Guid>())
-            .Returns(x => Service.Simulate(options));
+            .Returns(x => Service.Simulate(options, dataService));
 
         return serviceFactory;
     }
