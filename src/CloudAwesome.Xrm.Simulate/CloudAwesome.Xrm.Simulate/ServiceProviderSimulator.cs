@@ -44,6 +44,7 @@ public static class ServiceProviderSimulator
                         TelemetrySimulator.Create(DataService, TelemetryService, options),
                     _ when argType == typeof(IServiceEndpointNotificationService) => 
                         ServiceEndpointNotificationSimulator.Create(DataService, options),
+                    // QUESTION - Has ITransactionCurrencyService been removed?
                     _ => throw new ArgumentException("Type of Service requested is not supported")
                 };
             });

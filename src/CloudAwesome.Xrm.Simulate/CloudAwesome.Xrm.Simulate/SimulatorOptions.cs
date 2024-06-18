@@ -9,12 +9,15 @@ namespace CloudAwesome.Xrm.Simulate;
 public class SimulatorOptions: ISimulatorOptions
 {
     public IClockSimulator? ClockSimulator { get; set; }
+    
     public Entity? AuthenticatedUser { get; set; }
+    
     public Dictionary<ProcessorType, IEntityProcessor>? EntityProcessors { get; set; }
+    
     public PluginExecutionContextMock? PluginExecutionContextMock { get; set; }
     
     public FakeServiceFailureSettings? FakeServiceFailureSettings { get; set; }
-
+    
     public Dictionary<string, List<Entity>>? InitialiseData { get; set; }
 
     // TODO - Inject things like business unit and organisation etc.
