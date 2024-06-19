@@ -291,6 +291,42 @@ public class FetchExpressionParserTests
       contacts[0].firstname.Should().Be(Siobhan.Contact().firstname);
       contacts[1].firstname.Should().Be(Daniel.Contact().firstname);
     }
+
+    [Test]
+    public void Fetch_Query_Accurately_Respects_Distinct_Equals_True()
+    {
+      _organizationService.Simulated().Data().Add(Daniel.Contact());
+      _organizationService.Simulated().Data().Add(Daniel.Contact());
+        
+      var fetch = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""true"">
+                        <entity name=""contact"">
+                          <order attribute=""firstname"" descending=""true"" />
+                        </entity>
+                      </fetch>";
+      
+      var query = new FetchExpression { Query = fetch };
+      var contacts = _organizationService.RetrieveMultiple(query).Entities.Cast<Contact>().ToList();
+
+      contacts.Count().Should().Be(1);
+    }
+    
+    [Test]
+    public void Fetch_Query_Accurately_Respects_Distinct_Equals_False()
+    {
+      _organizationService.Simulated().Data().Add(Daniel.Contact());
+      _organizationService.Simulated().Data().Add(Daniel.Contact());
+        
+      var fetch = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""false"">
+                        <entity name=""contact"">
+                          <order attribute=""firstname"" descending=""true"" />
+                        </entity>
+                      </fetch>";
+        
+      var query = new FetchExpression { Query = fetch };
+      var contacts = _organizationService.RetrieveMultiple(query).Entities.Cast<Contact>().ToList();
+
+      contacts.Count().Should().Be(2);
+    }
     
     #region Functionality To Be Implemented
     

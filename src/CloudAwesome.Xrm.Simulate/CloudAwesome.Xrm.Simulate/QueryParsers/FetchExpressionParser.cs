@@ -50,6 +50,11 @@ public static class FetchExpressionParser
                 query.TopCount = topCount;
             }
 
+            if (bool.TryParse(fetchNode.Attributes["distinct"]?.Value, out bool distinct))
+            {
+                query.Distinct = distinct;
+            }
+
             if (entityNode?.SelectSingleNode("filter") is not null)
             {
                 query.Criteria = ParseFilter(entityNode.SelectSingleNode("filter"));

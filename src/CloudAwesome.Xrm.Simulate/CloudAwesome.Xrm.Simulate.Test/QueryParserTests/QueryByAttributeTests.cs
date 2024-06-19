@@ -93,5 +93,4 @@ public class QueryByAttributeTests
         contacts[0].firstname.Should().Be(Siobhan.Contact().firstname);
         contacts[1].firstname.Should().Be(Daniel.Contact().firstname);
     }
-    
 }

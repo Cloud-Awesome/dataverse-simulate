@@ -26,6 +26,7 @@ public static class QueryExpressionParser
         records = Order.Apply(query.Orders, records);
         records = Columns.Apply(query.ColumnSet, records);
         records = LinkedEntities.Apply(query.LinkEntities.ToList(), records.ToList(), data, dataService);
+        records = Distinct.Apply(query.Distinct, records);
         records = TopCount.Apply(query.TopCount, records.ToList());
 
         return records;

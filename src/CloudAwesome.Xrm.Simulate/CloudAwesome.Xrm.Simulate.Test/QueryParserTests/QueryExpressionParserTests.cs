@@ -446,4 +446,38 @@ public class QueryExpressionParserTests
         contacts[0].firstname.Should().Be(Siobhan.Contact().firstname);
         contacts[1].firstname.Should().Be(Daniel.Contact().firstname);
     } 
+    
+    [Test]
+    public void Retrieve_Multiple_Accurately_Respects_Distinct_Equals_True()
+    {
+        _organizationService.Simulated().Data().Add(Daniel.Contact());
+        _organizationService.Simulated().Data().Add(Daniel.Contact());
+
+        var query = new QueryExpression
+        {
+            EntityName = Contact.EntityLogicalName,
+            Distinct = true
+        };
+            
+        var contacts = _organizationService.RetrieveMultiple(query).Entities.Cast<Contact>().ToList();
+
+        contacts.Count().Should().Be(1);
+    }
+    
+    [Test]
+    public void Retrieve_Multiple_Accurately_Respects_Distinct_Equals_False()
+    {
+        _organizationService.Simulated().Data().Add(Daniel.Contact());
+        _organizationService.Simulated().Data().Add(Daniel.Contact());
+
+        var query = new QueryExpression
+        {
+            EntityName = Contact.EntityLogicalName,
+            Distinct = false
+        };
+            
+        var contacts = _organizationService.RetrieveMultiple(query).Entities.Cast<Contact>().ToList();
+
+        contacts.Count().Should().Be(2);
+    }
 }
