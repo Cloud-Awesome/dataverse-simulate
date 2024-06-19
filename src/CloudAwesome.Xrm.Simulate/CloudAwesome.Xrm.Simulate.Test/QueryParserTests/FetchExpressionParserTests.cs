@@ -248,6 +248,50 @@ public class FetchExpressionParserTests
         contacts.Entities.Count.Should().Be(1);
     }
     
+    [Test]
+    public void Fetch_Query_Returns_Top_x_Results()
+    {
+      _organizationService.Simulated().Data().Add(Arthur.Contact());
+      _organizationService.Simulated().Data().Add(Bruce.Contact());
+      _organizationService.Simulated().Data().Add(Daniel.Contact());
+      _organizationService.Simulated().Data().Add(Siobhan.Contact());
+        
+      var fetch = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""true"" top=""2"">
+                        <entity name=""contact"">
+                          <attribute name=""lastname"" />
+                          <attribute name=""firstname"" />
+                          <order attribute=""firstname"" descending=""false"" />
+                        </entity>
+                      </fetch>";
+        
+      var query = new FetchExpression { Query = fetch };
+      var contacts = _organizationService.RetrieveMultiple(query);
+
+      contacts.Entities.Count.Should().Be(2);
+    }
+    
+    [Test]
+    public void Fetch_Query_With_Top_x_Returns_Correct_Results()
+    {
+      _organizationService.Simulated().Data().Add(Arthur.Contact());
+      _organizationService.Simulated().Data().Add(Bruce.Contact());
+      _organizationService.Simulated().Data().Add(Daniel.Contact());
+      _organizationService.Simulated().Data().Add(Siobhan.Contact());
+        
+      var fetch = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""true"" top=""2"">
+                        <entity name=""contact"">
+                          <order attribute=""firstname"" descending=""true"" />
+                        </entity>
+                      </fetch>";
+        
+      var query = new FetchExpression { Query = fetch };
+      var contacts = _organizationService.RetrieveMultiple(query).Entities.Cast<Contact>().ToList();
+
+      contacts.Count().Should().Be(2);
+      contacts[0].firstname.Should().Be(Siobhan.Contact().firstname);
+      contacts[1].firstname.Should().Be(Daniel.Contact().firstname);
+    }
+    
     #region Functionality To Be Implemented
     
     [Test]
@@ -260,13 +304,6 @@ public class FetchExpressionParserTests
     [Test]
     [Ignore("TODO - To be implemented")]
     public void Fetch_Query_Returns_Valid_Results_If_LinkEntity_Attributes_Are_Not_In_ColumnSet()
-    {
-      
-    }
-    
-    [Test]
-    [Ignore("To be implemented")]
-    public void Fetch_Query_Returns_Top_x_Results()
     {
       
     }

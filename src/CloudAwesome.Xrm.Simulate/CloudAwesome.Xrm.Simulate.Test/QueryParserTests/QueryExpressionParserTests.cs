@@ -383,4 +383,67 @@ public class QueryExpressionParserTests
     {
       
     }
+
+    [Test]
+    public void Retrieve_Multiple_With_TopCount_Returns_Correct_Number_Of_Results()
+    {
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Bruce.Contact());
+        _organizationService.Simulated().Data().Add(Daniel.Contact());
+        _organizationService.Simulated().Data().Add(Siobhan.Contact());
+
+        var query = new QueryExpression
+        {
+            EntityName = Arthur.Contact().LogicalName,
+            TopCount = 2
+        };
+
+        var contacts = _organizationService.RetrieveMultiple(query);
+
+        contacts.Entities.Count.Should().Be(2);
+    }
+    
+    [Test]
+    public void Retrieve_Multiple_With_TopCount_Returns_All_Results_If_Too_Many()
+    {
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Bruce.Contact());
+        _organizationService.Simulated().Data().Add(Daniel.Contact());
+        _organizationService.Simulated().Data().Add(Siobhan.Contact());
+
+        var query = new QueryExpression
+        {
+            EntityName = Arthur.Contact().LogicalName,
+            TopCount = 10
+        };
+
+        var contacts = _organizationService.RetrieveMultiple(query);
+
+        contacts.Entities.Count.Should().Be(4);
+    } 
+    
+    [Test]
+    public void Retrieve_Multiple_With_TopCount_Returns_Correctly_Ordered_Results()
+    {
+        _organizationService.Simulated().Data().Add(Arthur.Contact());
+        _organizationService.Simulated().Data().Add(Bruce.Contact());
+        _organizationService.Simulated().Data().Add(Daniel.Contact());
+        _organizationService.Simulated().Data().Add(Siobhan.Contact());
+
+        var query = new QueryExpression
+        {
+            EntityName = Arthur.Contact().LogicalName,
+            TopCount = 2,
+            Orders =
+            {
+                new OrderExpression(Contact.Fields.firstname, OrderType.Descending)
+            }
+        };
+
+        var contacts = _organizationService.RetrieveMultiple(query).Entities.Cast<Contact>().ToList();
+
+        contacts.Count().Should().Be(2);
+        contacts[0].firstname.Should().Be(Siobhan.Contact().firstname);
+        contacts[1].firstname.Should().Be(Daniel.Contact().firstname);
+    } 
 }

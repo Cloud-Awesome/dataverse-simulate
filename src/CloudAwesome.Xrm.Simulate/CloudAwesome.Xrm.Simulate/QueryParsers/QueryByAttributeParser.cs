@@ -25,6 +25,7 @@ public static class QueryByAttributeParser
             ColumnSet = query.ColumnSet
         };
 
+        queryExpression.TopCount = query.TopCount;
         queryExpression.Orders.AddRange(query.Orders);
         queryExpression.Criteria = ConstructFilters(query.Attributes, query.Values);
 

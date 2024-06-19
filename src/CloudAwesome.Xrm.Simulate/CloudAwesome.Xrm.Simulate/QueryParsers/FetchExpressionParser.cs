@@ -32,7 +32,7 @@ public static class FetchExpressionParser
 
         var fetchNode = doc.DocumentElement;
         if (fetchNode == null) return new QueryExpression();
-
+        
         try
         {
             var entityNode = fetchNode.SelectSingleNode("entity");
@@ -44,6 +44,11 @@ public static class FetchExpressionParser
                         .Select(x => x.Attributes?["name"]?.Value)
                         .ToArray())
             };
+
+            if (int.TryParse(fetchNode.Attributes["top"]?.Value, out int topCount))
+            {
+                query.TopCount = topCount;
+            }
 
             if (entityNode?.SelectSingleNode("filter") is not null)
             {
