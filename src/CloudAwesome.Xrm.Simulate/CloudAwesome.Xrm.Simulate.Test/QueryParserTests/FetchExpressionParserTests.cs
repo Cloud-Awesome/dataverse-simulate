@@ -328,6 +328,56 @@ public class FetchExpressionParserTests
       contacts.Count().Should().Be(2);
     }
     
+    [Test]
+    public void Fetch_Query_Defaults_Distinct_To_False_If_Not_Provided()
+    {
+      _organizationService.Simulated().Data().Add(Daniel.Contact());
+      _organizationService.Simulated().Data().Add(Daniel.Contact());
+        
+      var fetch = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"">
+                        <entity name=""contact"">
+                          <order attribute=""firstname"" descending=""true"" />
+                        </entity>
+                      </fetch>";
+        
+      var query = new FetchExpression { Query = fetch };
+      var contacts = _organizationService.RetrieveMultiple(query).Entities.Cast<Contact>().ToList();
+
+      contacts.Count().Should().Be(2);
+    }
+    
+    [Test]
+    [TestCase(true, 1)]
+    [TestCase(false, 2)]
+    public void Fetch_Query_With_Linked_Filters_Respects_Distinct(bool distinct, int expectedNumberOfResults)
+    {
+      _organizationService.Simulated().Data().Add(Arthur.Contact());
+      _organizationService.Simulated().Data().Add(Arthur.Contact()); 
+      _organizationService.Simulated().Data().Add(Arthur.Account());
+      _organizationService.Simulated().Data().Add(Daniel.Contact()); // Should not be returned in results
+        
+      var fetch = $@"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""{distinct}"">
+                        <entity name=""contact"">
+                          <attribute name=""lastname"" />
+                          <attribute name=""firstname"" />
+                          <attribute name=""parentcustomerid"" />
+                          <order attribute=""firstname"" descending=""false"" />
+                          <link-entity name=""account"" to=""Id"" from=""parentcustomerid"" visible=""false"" link-type=""outer"" alias=""account"">
+                            <attribute name=""name"" />
+                            <attribute name=""Id"" />
+                            <filter type=""and"">
+                              <condition attribute=""name"" operator=""eq"" value=""Cloud Awesome Limited"" />
+                            </filter>
+                          </link-entity>
+                        </entity>
+                      </fetch>";
+        
+      var query = new FetchExpression { Query = fetch };
+      var contacts = _organizationService.RetrieveMultiple(query);
+
+      contacts.Entities.Count.Should().Be(expectedNumberOfResults);
+    }
+    
     #region Functionality To Be Implemented
     
     [Test]
