@@ -21,8 +21,8 @@ public class LastXMonthsTests
     [SetUp]
     public void Last7DaysTestsSetUp()
     {
-        _positiveContact.overriddencreatedon = new DateTime(2023, 02, 12);
-        _negativeContact.overriddencreatedon = new DateTime(2023, 01, 12);
+        _positiveContact.OverriddenCreatedOn = new DateTime(2023, 02, 12);
+        _negativeContact.OverriddenCreatedOn = new DateTime(2023, 01, 12);
         
         var options = new SimulatorOptions
         {
@@ -88,13 +88,13 @@ public class LastXMonthsTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.overriddencreatedon, 
+                new ConditionExpression(Contact.Fields.OverriddenCreatedOn, 
                     ConditionOperator.LastXMonths, 4)
             }
         },
         ColumnSet = new ColumnSet(
-            Contact.Fields.firstname, 
-            Contact.Fields.lastname)
+            Contact.Fields.FirstName, 
+            Contact.Fields.LastName)
     };
     
     private readonly FetchExpression _fetchQuery = new()

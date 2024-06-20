@@ -16,15 +16,15 @@ public static class Arthur
     {
         return new Contact
         {
-            contactid = Guid.Parse("22c4ba07-5df0-4bed-aacf-276270b75f2f"),
-            firstname = "Arthur",
-            lastname = "Nicholson-Gumula",
-            birthdate = new DateTime(1984, 12, 14),
-            parentcustomerid = Account().ToEntityReference(),
-            gendercode = Contact_gendercode.Male,
-            statuscode = Contact_StatusCode.Active,
-            overriddencreatedon = new DateTime(2023, 04, 18),
-            numberofchildren = 0
+            ContactId = Guid.Parse("22c4ba07-5df0-4bed-aacf-276270b75f2f"),
+            FirstName = "Arthur",
+            LastName = "Nicholson-Gumula",
+            BirthDate = new DateTime(1984, 12, 14),
+            ParentCustomerId = Account().ToEntityReference(),
+            GenderCode = Contact_GenderCode.Male,
+            StatusCode = Contact_StatusCode.Active,
+            OverriddenCreatedOn = new DateTime(2023, 04, 18),
+            NumberOfChildren = 0
         };
     }
 

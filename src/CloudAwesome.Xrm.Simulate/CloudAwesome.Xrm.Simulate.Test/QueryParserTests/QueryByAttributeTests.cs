@@ -26,8 +26,8 @@ public class QueryByAttributeTests
 
         var query = new QueryByAttribute(Contact.EntityLogicalName)
         {
-            Attributes = { Contact.Fields.lastname },
-            Values = { Arthur.Contact().lastname }
+            Attributes = { Contact.Fields.LastName },
+            Values = { Arthur.Contact().LastName }
         };
         
         var contacts = _organizationService.RetrieveMultiple(query);
@@ -44,8 +44,8 @@ public class QueryByAttributeTests
 
         var query = new QueryByAttribute(Contact.EntityLogicalName)
         {
-            Attributes = { Contact.Fields.lastname },
-            Values = { Siobhan.Contact().lastname }
+            Attributes = { Contact.Fields.LastName },
+            Values = { Siobhan.Contact().LastName }
         };
 
         var contacts = _organizationService.RetrieveMultiple(query);
@@ -61,8 +61,8 @@ public class QueryByAttributeTests
 
         var query = new QueryByAttribute(Contact.EntityLogicalName)
         {
-            Attributes = { Contact.Fields.lastname, Contact.Fields.firstname },
-            Values = { Siobhan.Contact().lastname, Siobhan.Contact().firstname }
+            Attributes = { Contact.Fields.LastName, Contact.Fields.FirstName },
+            Values = { Siobhan.Contact().LastName, Siobhan.Contact().FirstName }
         };
 
         var contacts = _organizationService.RetrieveMultiple(query);
@@ -83,14 +83,14 @@ public class QueryByAttributeTests
             TopCount = 2,
             Orders =
             {
-                new OrderExpression(Contact.Fields.firstname, OrderType.Descending)
+                new OrderExpression(Contact.Fields.FirstName, OrderType.Descending)
             }
         };
 
         var contacts = _organizationService.RetrieveMultiple(query).Entities.Cast<Contact>().ToList();
 
         contacts.Count.Should().Be(2);
-        contacts[0].firstname.Should().Be(Siobhan.Contact().firstname);
-        contacts[1].firstname.Should().Be(Daniel.Contact().firstname);
+        contacts[0].FirstName.Should().Be(Siobhan.Contact().FirstName);
+        contacts[1].FirstName.Should().Be(Daniel.Contact().FirstName);
     }
 }

@@ -16,12 +16,12 @@ public static class Siobhan
     {
         return new Contact
         {
-            contactid = Guid.Parse("c9db861c-d362-4c54-8687-14d05d1d8f92"),
-            firstname = "Siobhan",
-            lastname = "Nicholson",
-            gendercode = Contact_gendercode.Female,
-            statuscode = Contact_StatusCode.Active,
-            numberofchildren = 1
+            ContactId = Guid.Parse("c9db861c-d362-4c54-8687-14d05d1d8f92"),
+            FirstName = "Siobhan",
+            LastName = "Nicholson",
+            GenderCode = Contact_GenderCode.Female,
+            StatusCode = Contact_StatusCode.Active,
+            NumberOfChildren = 1
         };
     }
 

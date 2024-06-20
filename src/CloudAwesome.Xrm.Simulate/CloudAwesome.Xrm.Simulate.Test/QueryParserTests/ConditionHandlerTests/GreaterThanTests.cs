@@ -80,13 +80,13 @@ public class GreaterThanTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.numberofchildren, 
+                new ConditionExpression(Contact.Fields.NumberOfChildren, 
                     ConditionOperator.GreaterThan, 1)
             }
         },
         ColumnSet = new ColumnSet(
-            Contact.Fields.firstname, 
-            Contact.Fields.lastname)
+            Contact.Fields.FirstName, 
+            Contact.Fields.LastName)
     };
 
     private readonly FetchExpression _fetchQuery = new()

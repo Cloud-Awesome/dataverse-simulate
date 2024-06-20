@@ -22,9 +22,9 @@ public class NextXDaysTests
     [SetUp]
     public void SetUp()
     {
-        _positiveContact.overriddencreatedon = new DateTime(2023, 04, 15);
-        _oldNegativeContact.overriddencreatedon = new DateTime(2023, 04, 10);
-        _futureNegativeContact.overriddencreatedon = new DateTime(2023, 05, 16);
+        _positiveContact.OverriddenCreatedOn = new DateTime(2023, 04, 15);
+        _oldNegativeContact.OverriddenCreatedOn = new DateTime(2023, 04, 10);
+        _futureNegativeContact.OverriddenCreatedOn = new DateTime(2023, 05, 16);
         
         var options = new SimulatorOptions
         {
@@ -94,13 +94,13 @@ public class NextXDaysTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.overriddencreatedon, 
+                new ConditionExpression(Contact.Fields.OverriddenCreatedOn, 
                     ConditionOperator.NextXDays, 2)
             }
         },
         ColumnSet = new ColumnSet(
-            Contact.Fields.firstname, 
-            Contact.Fields.lastname)
+            Contact.Fields.FirstName, 
+            Contact.Fields.LastName)
     };
     
     private readonly FetchExpression _fetchQuery = new()

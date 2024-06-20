@@ -80,13 +80,13 @@ public class EqualTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.lastname, 
+                new ConditionExpression(Contact.Fields.LastName, 
                     ConditionOperator.Equal, "Nicholson")
             }
         },
         ColumnSet = new ColumnSet(
-            Contact.Fields.firstname, 
-            Contact.Fields.lastname)
+            Contact.Fields.FirstName, 
+            Contact.Fields.LastName)
     };
 
     private readonly FetchExpression _fetchQuery = new()

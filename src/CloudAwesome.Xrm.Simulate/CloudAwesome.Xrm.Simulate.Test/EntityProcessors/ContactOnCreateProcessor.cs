@@ -12,14 +12,14 @@ public class ContactOnCreateProcessor: IEntityProcessor
         var e = (Contact)entity;
 
         // Default all new contacts to Credit On Hold
-        e.creditonhold = true;
+        e.CreditOnHold = true;
 
         // Generate some random employee id on create
         Random random = new Random();
-        e.employeeid = random.Next(11111, 99999).ToString();
+        e.EmployeeId = random.Next(11111, 99999).ToString();
 
         // Default Surname to uppercase
-        if (e.lastname is not null) e.lastname = e.lastname.ToUpper();
+        if (e.LastName is not null) e.LastName = e.LastName.ToUpper();
 
         return e;
     }

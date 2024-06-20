@@ -23,10 +23,10 @@ public class TomorrowTests
     [SetUp]
     public void SetUp()
     {
-        _earlyNegativeContact.overriddencreatedon = new DateTime(2023, 04, 19, 09, 45, 00);
-        _earlyPositiveContact.overriddencreatedon = new DateTime(2023, 04, 20, 07, 45, 00);
-        _latePositiveContact.overriddencreatedon = new DateTime(2023, 04, 20, 22, 10, 32);
-        _lateNegativeContact.overriddencreatedon = new DateTime(2023, 04, 21);
+        _earlyNegativeContact.OverriddenCreatedOn = new DateTime(2023, 04, 19, 09, 45, 00);
+        _earlyPositiveContact.OverriddenCreatedOn = new DateTime(2023, 04, 20, 07, 45, 00);
+        _latePositiveContact.OverriddenCreatedOn = new DateTime(2023, 04, 20, 22, 10, 32);
+        _lateNegativeContact.OverriddenCreatedOn = new DateTime(2023, 04, 21);
         
         var options = new SimulatorOptions
         {
@@ -98,13 +98,13 @@ public class TomorrowTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.overriddencreatedon, 
+                new ConditionExpression(Contact.Fields.OverriddenCreatedOn, 
                     ConditionOperator.Tomorrow)
             }
         },
         ColumnSet = new ColumnSet(
-            Contact.Fields.firstname, 
-            Contact.Fields.lastname)
+            Contact.Fields.FirstName, 
+            Contact.Fields.LastName)
     };
     
     private readonly FetchExpression _fetchQuery = new()

@@ -23,10 +23,10 @@ public class ThisWeekTests
     [SetUp]
     public void SetUp()
     {
-        _earlyPositiveContact.overriddencreatedon = new DateTime(2023, 06, 12);
-        _latePositiveContact.overriddencreatedon = new DateTime(2023, 06, 15);
-        _oldNegativeContact.overriddencreatedon = new DateTime(2023, 06, 09);
-        _futureNegativeContact.overriddencreatedon = new DateTime(2023, 06, 20);
+        _earlyPositiveContact.OverriddenCreatedOn = new DateTime(2023, 06, 12);
+        _latePositiveContact.OverriddenCreatedOn = new DateTime(2023, 06, 15);
+        _oldNegativeContact.OverriddenCreatedOn = new DateTime(2023, 06, 09);
+        _futureNegativeContact.OverriddenCreatedOn = new DateTime(2023, 06, 20);
         
         var options = new SimulatorOptions
         {
@@ -98,13 +98,13 @@ public class ThisWeekTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.overriddencreatedon, 
+                new ConditionExpression(Contact.Fields.OverriddenCreatedOn, 
                     ConditionOperator.ThisWeek)
             }
         },
         ColumnSet = new ColumnSet(
-            Contact.Fields.firstname, 
-            Contact.Fields.lastname)
+            Contact.Fields.FirstName, 
+            Contact.Fields.LastName)
     };
     
     private readonly FetchExpression _fetchQuery = new()

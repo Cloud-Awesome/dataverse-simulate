@@ -16,12 +16,12 @@ public static class Bruce
     {
         return new Contact
         {
-            firstname = "Bruce",
-            lastname = "Purves",
-            gendercode = Contact_gendercode.Male,
-            statuscode = Contact_StatusCode.Active,
-            overriddencreatedon = new DateTime(2008, 01, 06),
-            numberofchildren = 2
+            FirstName = "Bruce",
+            LastName = "Purves",
+            GenderCode = Contact_GenderCode.Male,
+            StatusCode = Contact_StatusCode.Active,
+            OverriddenCreatedOn = new DateTime(2008, 01, 06),
+            NumberOfChildren = 2
         };
     }
 

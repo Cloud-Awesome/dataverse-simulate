@@ -20,7 +20,7 @@ public class NotNullTests
     [SetUp]
     public void SetUp()
     {
-        _negativeContact.lastname = null;
+        _negativeContact.LastName = null;
         _organizationService = _organizationService.Simulate();
     }
     
@@ -82,16 +82,16 @@ public class NotNullTests
             {
                 Conditions =
                 {
-                    new ConditionExpression(Contact.Fields.customertypecode, 
+                    new ConditionExpression(Contact.Fields.CustomerTypeCode, 
                         ConditionOperator.NotNull)
                 }
             },
             ColumnSet = new ColumnSet(
-                Contact.Fields.firstname, 
-                Contact.Fields.lastname)
+                Contact.Fields.FirstName, 
+                Contact.Fields.LastName)
         };
 
-        _positiveContact.customertypecode = Contact_customertypecode.DefaultValue;
+        _positiveContact.CustomerTypeCode = Contact_CustomerTypeCode.DefaultValue;
     
         _organizationService.Simulated().Data().Add(_negativeContact);
         _organizationService.Simulated().Data().Add(Bruce.Contact());
@@ -109,13 +109,13 @@ public class NotNullTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.lastname, 
+                new ConditionExpression(Contact.Fields.LastName, 
                     ConditionOperator.NotNull)
             }
         },
         ColumnSet = new ColumnSet(
-            Contact.Fields.firstname, 
-            Contact.Fields.lastname)
+            Contact.Fields.FirstName, 
+            Contact.Fields.LastName)
     };
 
     private readonly FetchExpression _fetchQuery = new()

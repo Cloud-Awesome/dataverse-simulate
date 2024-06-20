@@ -51,7 +51,7 @@ public class PluginExecutionContextSimulatorTests
         {
             PluginExecutionContextMock = new PluginExecutionContextMock
             {
-                Stage = (int) SdkMessageProcessingStep_stage.Postoperation
+                Stage = (int) SdkMessageProcessingStep_Stage.PostOperation
             }
         };
 

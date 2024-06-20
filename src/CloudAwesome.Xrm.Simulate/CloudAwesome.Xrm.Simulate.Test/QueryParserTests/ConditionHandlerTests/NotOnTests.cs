@@ -22,9 +22,9 @@ public class NotOnTests
     [SetUp]
     public void SetUp()
     {
-        _earlyPositiveContact.overriddencreatedon = new DateTime(2023, 04, 18);
-        _negativeContact.overriddencreatedon = new DateTime(2023, 04, 19);
-        _latePositiveContact.overriddencreatedon = new DateTime(2023, 04, 20);
+        _earlyPositiveContact.OverriddenCreatedOn = new DateTime(2023, 04, 18);
+        _negativeContact.OverriddenCreatedOn = new DateTime(2023, 04, 19);
+        _latePositiveContact.OverriddenCreatedOn = new DateTime(2023, 04, 20);
         
         var options = new SimulatorOptions
         {
@@ -70,12 +70,12 @@ public class NotOnTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.overriddencreatedon, 
+                new ConditionExpression(Contact.Fields.OverriddenCreatedOn, 
                     ConditionOperator.NotOn, new DateTime(2023, 04, 19))
             }
         },
         ColumnSet = new ColumnSet(
-            Contact.Fields.firstname, 
-            Contact.Fields.lastname)
+            Contact.Fields.FirstName, 
+            Contact.Fields.LastName)
     };
 }

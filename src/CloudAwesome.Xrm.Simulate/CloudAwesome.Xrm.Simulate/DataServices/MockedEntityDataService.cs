@@ -56,6 +56,29 @@ public class MockedEntityDataService
         return entities ?? new List<Entity>();
     }
 
+    public Entity Get(string logicalName, Guid id)
+    {
+        var entities = this.Get(logicalName);
+        if (entities.Count == 0)
+        {
+            throw new Exception("Entity collection not found");
+        }
+        
+        var entity = entities.SingleOrDefault(x => x.Id == id);
+
+        if (entity is null)
+        {
+            throw new Exception("Entity not found");
+        }
+
+        return entity;
+    }
+
+    public Entity Get(EntityReference entityReference)
+    {
+        return this.Get(entityReference.LogicalName, entityReference.Id);
+    }
+
     public void Delete(Entity entity)
     {
         _dataStore.Data[entity.LogicalName].Remove(entity);
@@ -73,6 +96,37 @@ public class MockedEntityDataService
         }
         
         _dataStore.Data[logicalName].Remove(entity);
+    }
+
+    public void Update(EntityReference entityReference, Entity entity)
+    {
+        this.Update(entity);
+    }
+
+    public void Update(Entity entity)
+    {
+        if (_dataStore.Data.TryGetValue(entity.LogicalName, out var entities))
+        {
+            var existingEntity = entities.FirstOrDefault(e => e.Id == entity.Id);
+            if (existingEntity != null)
+            {
+                foreach (var attribute in entity.Attributes)
+                {
+                    existingEntity[attribute.Key] = attribute.Value;
+                }
+
+                existingEntity["modifiedon"] = _dataStore.SystemTime;
+                existingEntity["modifiedby"] = _dataStore.AuthenticatedUser;
+            }
+            else
+            {
+                throw new Exception("Entity not found.");
+            }
+        }
+        else
+        {
+            throw new Exception("Entity collection not found.");
+        }
     }
 
     /// <summary>

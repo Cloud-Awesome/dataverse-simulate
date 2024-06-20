@@ -1,7 +1,10 @@
 ﻿using CloudAwesome.Xrm.Simulate.DataServices;
 using CloudAwesome.Xrm.Simulate.Interfaces;
 using CloudAwesome.Xrm.Simulate.ServiceRequests;
+using CloudAwesome.Xrm.Simulate.ServiceRequests.OrganizationRequests;
+using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Messages;
 using NSubstitute;
 
 namespace CloudAwesome.Xrm.Simulate;
@@ -28,7 +31,9 @@ public static class OrganisationServiceSimulator
         new EntityDeleter(_dataService).MockRequest(Service, options);
         new EntityAssociator(_dataService).MockRequest(Service, options);
         new EntityDisassociator(_dataService).MockRequest(Service, options);
-        new OrganisationRequestExecutor(_dataService, AuditService).MockRequest(Service, options);
+
+        var organizationRequestRegistry = RegisterServiceRequests();
+        new OrganisationRequestExecutor(_dataService, AuditService, organizationRequestRegistry).MockRequest(Service, options);
         
         InitialiseMockedData(options);
         ConfigureAuthenticatedUser(options);
@@ -87,5 +92,16 @@ public static class OrganisationServiceSimulator
         _dataService.Add(user);
         _dataService.AuthenticatedUser = user.ToEntityReference();
         return user.ToEntityReference();
+    }
+
+    private static RequestHandlerRegistry RegisterServiceRequests()
+    {
+        var handlerRegistry = new RequestHandlerRegistry();
+
+        handlerRegistry.RegisterHandler<CreateRequest>(new CreateRequestHandler());
+        handlerRegistry.RegisterHandler<AssignRequest>(new AssignRequestHandler());
+        handlerRegistry.RegisterHandler<RetrieveMultipleRequest>(new RetrieveMultipleHandler());
+        
+        return handlerRegistry;
     }
 }

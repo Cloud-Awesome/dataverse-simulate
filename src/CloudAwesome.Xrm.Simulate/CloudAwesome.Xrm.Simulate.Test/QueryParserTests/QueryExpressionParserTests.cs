@@ -164,7 +164,7 @@ public class QueryExpressionParserTests
             {
                 Conditions =
                 {
-                    new ConditionExpression(Contact.Fields.birthdate,
+                    new ConditionExpression(Contact.Fields.BirthDate,
                         ConditionOperator.Equal, new DateTime(1984, 12, 14))
                 }
             }
@@ -174,7 +174,7 @@ public class QueryExpressionParserTests
 
         contacts.Entities.Count.Should().Be(1);
         contacts.Entities.Cast<Contact>().FirstOrDefault()?
-            .firstname.Should().Be(Arthur.Contact().firstname);
+            .FirstName.Should().Be(Arthur.Contact().FirstName);
     }
 
     [Test]
@@ -189,8 +189,8 @@ public class QueryExpressionParserTests
             {
                 Conditions =
                 {
-                    new ConditionExpression(Contact.Fields.parentcustomerid,
-                        ConditionOperator.Equal, Arthur.Contact().parentcustomerid)
+                    new ConditionExpression(Contact.Fields.ParentCustomerId,
+                        ConditionOperator.Equal, Arthur.Contact().ParentCustomerId)
                 }
             }
         };
@@ -199,7 +199,7 @@ public class QueryExpressionParserTests
 
         contacts.Entities.Count.Should().Be(1);
         contacts.Entities.Cast<Contact>().FirstOrDefault()?
-            .firstname.Should().Be(Arthur.Contact().firstname);
+            .FirstName.Should().Be(Arthur.Contact().FirstName);
     }
     
     [Test]
@@ -215,8 +215,8 @@ public class QueryExpressionParserTests
             {
                 Conditions =
                 {
-                    new ConditionExpression(Contact.Fields.gendercode,
-                        ConditionOperator.Equal, (int) Contact_gendercode.Male)
+                    new ConditionExpression(Contact.Fields.GenderCode,
+                        ConditionOperator.Equal, (int) Contact_GenderCode.Male)
                 }
             }
         };
@@ -225,7 +225,7 @@ public class QueryExpressionParserTests
 
         contacts.Entities.Count.Should().Be(1);
         contacts.Entities.Cast<Contact>().FirstOrDefault()?
-            .firstname.Should().Be(Arthur.Contact().firstname);
+            .FirstName.Should().Be(Arthur.Contact().FirstName);
     }
     
     [Test]
@@ -241,8 +241,8 @@ public class QueryExpressionParserTests
             {
                 Conditions =
                 {
-                    new ConditionExpression(Contact.Fields.gendercode,
-                        ConditionOperator.NotEqual, (int) Contact_gendercode.Male)
+                    new ConditionExpression(Contact.Fields.GenderCode,
+                        ConditionOperator.NotEqual, (int) Contact_GenderCode.Male)
                 }
             }
         };
@@ -251,7 +251,7 @@ public class QueryExpressionParserTests
 
         contacts.Entities.Count.Should().Be(1);
         contacts.Entities.Cast<Contact>().FirstOrDefault()?
-            .firstname.Should().Be(Siobhan.Contact().firstname);
+            .FirstName.Should().Be(Siobhan.Contact().FirstName);
     }
     
     [Test]
@@ -266,8 +266,8 @@ public class QueryExpressionParserTests
             {
                 Conditions =
                 {
-                    new ConditionExpression(Contact.Fields.gendercode,
-                        ConditionOperator.Equal, (int) Contact_gendercode.Male)
+                    new ConditionExpression(Contact.Fields.GenderCode,
+                        ConditionOperator.Equal, (int) Contact_GenderCode.Male)
                 }
             }
         };
@@ -286,9 +286,9 @@ public class QueryExpressionParserTests
         _organizationService.Simulated().Data().Add(Daniel.Contact());
 
         // Query for contacts where
-        //      (status is active AND gender is male) AND (lastname is 'Nicholson' OR 'Nicholson-Gumula')
-        // So should include Arthur and Daniel (gender and lastnames),
-        //      and exclude Siobhan (gender) and Bruce (lastname)  
+        //      (status is active AND gender is male) AND (LastName is 'Nicholson' OR 'Nicholson-Gumula')
+        // So should include Arthur and Daniel (gender and LastNames),
+        //      and exclude Siobhan (gender) and Bruce (LastName)  
         var query = new QueryExpression
         {
             EntityName = Contact.EntityLogicalName,
@@ -300,19 +300,19 @@ public class QueryExpressionParserTests
                     {
                         Conditions =
                         {
-                            new ConditionExpression(Contact.Fields.statuscode, 
+                            new ConditionExpression(Contact.Fields.StatusCode, 
                                 ConditionOperator.Equal, (int) Contact_StatusCode.Active),
-                            new ConditionExpression(Contact.Fields.gendercode,
-                                ConditionOperator.Equal, (int) Contact_gendercode.Male)
+                            new ConditionExpression(Contact.Fields.GenderCode,
+                                ConditionOperator.Equal, (int) Contact_GenderCode.Male)
                         }
                     },
                     new FilterExpression(LogicalOperator.Or)
                     {
                         Conditions =
                         {
-                            new ConditionExpression(Contact.Fields.lastname,
+                            new ConditionExpression(Contact.Fields.LastName,
                                 ConditionOperator.Equal, "Nicholson"),
-                            new ConditionExpression(Contact.Fields.lastname,
+                            new ConditionExpression(Contact.Fields.LastName,
                                 ConditionOperator.Equal, "Nicholson-Gumula")
                         }
                     }
@@ -320,7 +320,7 @@ public class QueryExpressionParserTests
             },
             Orders =
             {
-                new OrderExpression(Contact.Fields.firstname, OrderType.Ascending)
+                new OrderExpression(Contact.Fields.FirstName, OrderType.Ascending)
             }
         };
 
@@ -338,16 +338,16 @@ public class QueryExpressionParserTests
         var query = new QueryExpression
         {
             EntityName = Contact.EntityLogicalName,
-            ColumnSet = new ColumnSet(Contact.Fields.firstname, 
-                Contact.Fields.lastname,
-                Contact.Fields.parentcustomerid),
+            ColumnSet = new ColumnSet(Contact.Fields.FirstName, 
+                Contact.Fields.LastName,
+                Contact.Fields.ParentCustomerId),
             Criteria = new FilterExpression
             {
                 Conditions =
                 {
-                    new ConditionExpression(Contact.Fields.firstname,
+                    new ConditionExpression(Contact.Fields.FirstName,
                         ConditionOperator.Equal, "Arthur"),
-                    new ConditionExpression(Contact.Fields.lastname,
+                    new ConditionExpression(Contact.Fields.LastName,
                         ConditionOperator.Equal, "Nicholson-Gumula")
                 }
             },
@@ -355,7 +355,7 @@ public class QueryExpressionParserTests
             {
                 new LinkEntity
                 {
-                    LinkFromAttributeName = Contact.Fields.parentcustomerid,
+                    LinkFromAttributeName = Contact.Fields.ParentCustomerId,
                     LinkFromEntityName = Contact.EntityLogicalName,
                     LinkToAttributeName = "Id",
                     LinkToEntityName = "account",
@@ -436,15 +436,15 @@ public class QueryExpressionParserTests
             TopCount = 2,
             Orders =
             {
-                new OrderExpression(Contact.Fields.firstname, OrderType.Descending)
+                new OrderExpression(Contact.Fields.FirstName, OrderType.Descending)
             }
         };
 
         var contacts = _organizationService.RetrieveMultiple(query).Entities.Cast<Contact>().ToList();
 
         contacts.Count().Should().Be(2);
-        contacts[0].firstname.Should().Be(Siobhan.Contact().firstname);
-        contacts[1].firstname.Should().Be(Daniel.Contact().firstname);
+        contacts[0].FirstName.Should().Be(Siobhan.Contact().FirstName);
+        contacts[1].FirstName.Should().Be(Daniel.Contact().FirstName);
     } 
     
     [Test]

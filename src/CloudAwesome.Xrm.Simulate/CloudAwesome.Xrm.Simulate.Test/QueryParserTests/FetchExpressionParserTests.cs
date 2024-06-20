@@ -26,11 +26,11 @@ public class FetchExpressionParserTests
     {
         var fetch = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""false"">
                        <entity name=""contact"">
-                        <attribute name=""lastname"" />
-                        <attribute name=""firstname"" />
-                        <order attribute=""firstname"" descending=""false"" />
+                        <attribute name=""LastName"" />
+                        <attribute name=""FirstName"" />
+                        <order attribute=""FirstName"" descending=""false"" />
                         <filter type=""and"">
-                          <condition attribute=""lastname"" operator=""eq"" value=""Nicholson"" />
+                          <condition attribute=""LastName"" operator=""eq"" value=""Nicholson"" />
                         </filter>
                       </entity>
                     </fetch>";
@@ -50,10 +50,10 @@ public class FetchExpressionParserTests
     {
       var fetch = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""true"">
                       <entity name=""contact"">
-                        <attribute name=""lastname"" />
-                        <attribute name=""firstname"" />
+                        <attribute name=""LastName"" />
+                        <attribute name=""FirstName"" />
                         <filter type=""and"">
-                          <condition attribute=""lastname"" operator=""eq"" value=""Nicholson-Gumula"" />
+                          <condition attribute=""LastName"" operator=""eq"" value=""Nicholson-Gumula"" />
                         </filter>
                         <link-entity name=""account"" from=""Id"" to=""parentcustomerid"" visible=""false"" link-type=""outer"" alias=""account"">
                           <attribute name=""name"" />
@@ -100,10 +100,10 @@ public class FetchExpressionParserTests
     {
         var fetch = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""false"">
                          <entity name=""contact"">
-                          <attribute name=""lastname"" />
-                          <attribute name=""firstname"" />
+                          <attribute name=""LastName"" />
+                          <attribute name=""FirstName"" />
                           <filter type=""and"">
-                            <condition attribute=""lastname"" operator=""eq"" value=""Nicholson"" />
+                            <condition attribute=""LastName"" operator=""eq"" value=""Nicholson"" />
                           </filter>
                         </entity>
                       </fetch>";
@@ -158,10 +158,10 @@ public class FetchExpressionParserTests
 
         contacts.Entities.Count.Should().Be(1);
 
-        contacts.Entities.FirstOrDefault()?.Attributes[Contact.Fields.firstname].Should().Be(Siobhan.Contact().firstname);
-        contacts.Entities.FirstOrDefault()?.Attributes[Contact.Fields.lastname].Should().Be(Siobhan.Contact().lastname);
+        contacts.Entities.FirstOrDefault()?.Attributes[Contact.Fields.FirstName].Should().Be(Siobhan.Contact().FirstName);
+        contacts.Entities.FirstOrDefault()?.Attributes[Contact.Fields.LastName].Should().Be(Siobhan.Contact().LastName);
 
-        var sut = () => contacts.Entities.FirstOrDefault()?.Attributes[Contact.Fields.birthdate];
+        var sut = () => contacts.Entities.FirstOrDefault()?.Attributes[Contact.Fields.BirthDate];
         sut.Should().Throw<KeyNotFoundException>();
     }
 
@@ -186,8 +186,8 @@ public class FetchExpressionParserTests
         var contacts = _organizationService.RetrieveMultiple(query);
 
         contacts.Entities.Count.Should().Be(2);
-        contacts.Entities[0].Attributes[Contact.Fields.firstname].Should().Be(Daniel.Contact().firstname);
-        contacts.Entities[1].Attributes[Contact.Fields.firstname].Should().Be(Siobhan.Contact().firstname);
+        contacts.Entities[0].Attributes[Contact.Fields.FirstName].Should().Be(Daniel.Contact().FirstName);
+        contacts.Entities[1].Attributes[Contact.Fields.FirstName].Should().Be(Siobhan.Contact().FirstName);
     }
 
     [Test]
@@ -288,8 +288,8 @@ public class FetchExpressionParserTests
       var contacts = _organizationService.RetrieveMultiple(query).Entities.Cast<Contact>().ToList();
 
       contacts.Count().Should().Be(2);
-      contacts[0].firstname.Should().Be(Siobhan.Contact().firstname);
-      contacts[1].firstname.Should().Be(Daniel.Contact().firstname);
+      contacts[0].FirstName.Should().Be(Siobhan.Contact().FirstName);
+      contacts[1].FirstName.Should().Be(Daniel.Contact().FirstName);
     }
 
     [Test]
@@ -318,7 +318,7 @@ public class FetchExpressionParserTests
         
       var fetch = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""false"">
                         <entity name=""contact"">
-                          <order attribute=""firstname"" descending=""true"" />
+                          <order attribute=""FirstName"" descending=""true"" />
                         </entity>
                       </fetch>";
         
@@ -336,7 +336,7 @@ public class FetchExpressionParserTests
         
       var fetch = @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"">
                         <entity name=""contact"">
-                          <order attribute=""firstname"" descending=""true"" />
+                          <order attribute=""FirstName"" descending=""true"" />
                         </entity>
                       </fetch>";
         

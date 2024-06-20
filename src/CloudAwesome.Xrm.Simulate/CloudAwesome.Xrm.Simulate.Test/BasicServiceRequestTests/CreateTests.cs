@@ -122,11 +122,11 @@ public class CreateTests
         contacts.Count.Should().Be(1);
 
         var contact = contacts.Cast<Contact>().FirstOrDefault()!;
-        contact.creditonhold.Should().Be(true);
+        contact.CreditOnHold.Should().Be(true);
         
-        contact.employeeid.Should().NotBeNull();
-        contact.employeeid.Length.Should().Be(5);
+        contact.EmployeeId.Should().NotBeNull();
+        contact.EmployeeId.Length.Should().Be(5);
         
-        contact.lastname.Should().Be(Arthur.Contact().lastname.ToUpper());
+        contact.LastName.Should().Be(Arthur.Contact().LastName.ToUpper());
     }
 }

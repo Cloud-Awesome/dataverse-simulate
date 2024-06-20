@@ -22,9 +22,9 @@ public class NextXYearsTests
     [SetUp]
     public void SetUp()
     {
-        _positiveContact.overriddencreatedon = new DateTime(2024, 04, 06);
-        _oldNegativeContact.overriddencreatedon = new DateTime(2020, 03, 27);
-        _futureNegativeContact.overriddencreatedon = new DateTime(2028, 05, 27);
+        _positiveContact.OverriddenCreatedOn = new DateTime(2024, 04, 06);
+        _oldNegativeContact.OverriddenCreatedOn = new DateTime(2020, 03, 27);
+        _futureNegativeContact.OverriddenCreatedOn = new DateTime(2028, 05, 27);
         
         var options = new SimulatorOptions
         {
@@ -94,13 +94,13 @@ public class NextXYearsTests
         {
             Conditions =
             {
-                new ConditionExpression(Contact.Fields.overriddencreatedon, 
+                new ConditionExpression(Contact.Fields.OverriddenCreatedOn, 
                     ConditionOperator.NextXYears, 5)
             }
         },
         ColumnSet = new ColumnSet(
-            Contact.Fields.firstname, 
-            Contact.Fields.lastname)
+            Contact.Fields.FirstName, 
+            Contact.Fields.LastName)
     };
     
     private readonly FetchExpression _fetchQuery = new()

@@ -15,11 +15,11 @@ public static class Daniel
     {
         return new Contact
         {
-            firstname = "Daniel",
-            lastname = "Nicholson",
-            gendercode = Contact_gendercode.Male,
-            statuscode = Contact_StatusCode.Active,
-            parentcustomerid = Account().ToEntityReference()
+            FirstName = "Daniel",
+            LastName = "Nicholson",
+            GenderCode = Contact_GenderCode.Male,
+            StatusCode = Contact_StatusCode.Active,
+            ParentCustomerId = Account().ToEntityReference()
         };
     }
 

@@ -41,9 +41,9 @@ public class RetrieveTests
         var retrievedContact = (Contact)
             _organizationService.Retrieve("contact", _contactId, new ColumnSet(true));
 
-        retrievedContact.firstname.Should().Be(Arthur.Contact().firstname);
-        retrievedContact.lastname.Should().Be(Arthur.Contact().lastname);
-        retrievedContact.birthdate.Should().Be(Arthur.Contact().birthdate);
+        retrievedContact.FirstName.Should().Be(Arthur.Contact().FirstName);
+        retrievedContact.LastName.Should().Be(Arthur.Contact().LastName);
+        retrievedContact.BirthDate.Should().Be(Arthur.Contact().BirthDate);
     }
 
     [Test]
@@ -51,9 +51,9 @@ public class RetrieveTests
     {
         var retrievedContact =
             _organizationService.Retrieve("contact", _contactId, 
-                new ColumnSet(Contact.Fields.firstname));
+                new ColumnSet(Contact.Fields.FirstName));
 
-        retrievedContact.Attributes["firstname"].Should().Be(Arthur.Contact().firstname);
+        retrievedContact.Attributes["firstname"].Should().Be(Arthur.Contact().FirstName);
 
         var missingAttribute = () => retrievedContact.Attributes["lastname"];
         missingAttribute.Should().Throw<KeyNotFoundException>();
@@ -64,9 +64,9 @@ public class RetrieveTests
     {
         var retrievedContact =
             _organizationService.Retrieve("contact", _contactId, 
-                new ColumnSet(Contact.Fields.firstname));
+                new ColumnSet(Contact.Fields.FirstName));
 
-        retrievedContact.Attributes["firstname"].Should().Be(Arthur.Contact().firstname);
+        retrievedContact.Attributes["firstname"].Should().Be(Arthur.Contact().FirstName);
 
         var missingAttribute = () => retrievedContact.Attributes["contactid"];
         missingAttribute.Should().NotThrow<KeyNotFoundException>();
