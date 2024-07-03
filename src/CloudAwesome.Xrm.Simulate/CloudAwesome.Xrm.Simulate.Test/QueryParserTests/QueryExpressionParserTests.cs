@@ -164,7 +164,7 @@ public class QueryExpressionParserTests
             {
                 Conditions =
                 {
-                    new ConditionExpression(Contact.Fields.BirthDate,
+                    new ConditionExpression(Contact.Fields.Birthdate,
                         ConditionOperator.Equal, new DateTime(1984, 12, 14))
                 }
             }

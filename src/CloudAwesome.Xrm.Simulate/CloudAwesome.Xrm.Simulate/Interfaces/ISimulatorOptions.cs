@@ -11,6 +11,10 @@ public interface ISimulatorOptions
     
     public Entity? AuthenticatedUser { get; set; }
     
+    public Entity? BusinessUnit { get; set; }
+    
+    public Entity? Organization { get; set; }
+    
     public Dictionary<ProcessorType, IEntityProcessor>? EntityProcessors { get; set; }
     
     public PluginExecutionContextMock? PluginExecutionContextMock { get; set; }

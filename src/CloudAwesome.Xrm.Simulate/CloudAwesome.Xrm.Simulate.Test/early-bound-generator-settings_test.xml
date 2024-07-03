@@ -7,10 +7,11 @@
   <CodeWriterMessageFilterService>DLaB.ModelBuilderExtensions.CodeWriterMessageFilterService,DLaB.ModelBuilderExtensions</CodeWriterMessageFilterService>
   <EmitEntityETC>false</EmitEntityETC>
   <EmitVirtualAttributes>true</EmitVirtualAttributes>
-  <EntityTypesFolder>EarlyBoundEntities\</EntityTypesFolder>
+  <EntityTypesFolder>EarlyBoundEntities</EntityTypesFolder>
   <ExtensionConfig>
     <ActionPrefixesWhitelist />
-    <ActionsWhitelist>analyze</ActionsWhitelist>
+    <ActionsWhitelist>analyze|
+whoami</ActionsWhitelist>
     <ActionsToSkip />
     <AddDebuggerNonUserCode>true</AddDebuggerNonUserCode>
     <AddNewFilesToProject>true</AddNewFilesToProject>
@@ -18,20 +19,21 @@
     <AdjustCasingForEnumOptions>true</AdjustCasingForEnumOptions>
     <AttributeBlacklist />
     <BuilderSettingsJsonRelativePath>builderSettings.json</BuilderSettingsJsonRelativePath>
-    <CamelCaseClassNames>false</CamelCaseClassNames>
+    <CamelCaseClassNames>true</CamelCaseClassNames>
     <CamelCaseCustomWords />
-    <CamelCaseMemberNames>false</CamelCaseMemberNames>
+    <CamelCaseMemberNames>true</CamelCaseMemberNames>
     <CamelCaseNamesDictionaryRelativePath>DLaB.EarlyBoundGeneratorV2\DLaB.Dictionary.txt</CamelCaseNamesDictionaryRelativePath>
     <CleanupCrmSvcUtilLocalOptionSets>false</CleanupCrmSvcUtilLocalOptionSets>
     <CreateOneFilePerAction>true</CreateOneFilePerAction>
     <CreateOneFilePerEntity>true</CreateOneFilePerEntity>
     <CreateOneFilePerOptionSet>false</CreateOneFilePerOptionSet>
-    <DeleteFilesFromOutputFolders>true</DeleteFilesFromOutputFolders>
+    <DeleteFilesFromOutputFolders>false</DeleteFilesFromOutputFolders>
     <EntitiesToSkip />
     <EntitiesWhitelist>account|
 businessunit|
 contact|
 lead|
+organization|
 sdkmessageprocessingstep|
 systemuser|
 team</EntitiesWhitelist>
@@ -54,7 +56,7 @@ team</EntitiesWhitelist>
     <GroupMessageRequestWithResponse>true</GroupMessageRequestWithResponse>
     <InvalidCSharpNamePrefix>_</InvalidCSharpNamePrefix>
     <MakeAllFieldsEditable>true</MakeAllFieldsEditable>
-    <MakeReadonlyFieldsEditable>false</MakeReadonlyFieldsEditable>
+    <MakeReadonlyFieldsEditable>true</MakeReadonlyFieldsEditable>
     <MakeResponseActionsEditable>true</MakeResponseActionsEditable>
     <LocalOptionSetFormat>{0}_{1}</LocalOptionSetFormat>
     <MakeReferenceTypesNullable>false</MakeReferenceTypesNullable>
@@ -62,7 +64,6 @@ team</EntitiesWhitelist>
     <OptionSetLanguageCodeOverride
       xsi:nil="true" />
     <OptionSetNames />
-    <OutputRelativeDirectory />
     <ProjectNameForEarlyBoundFiles>CloudAwesome.Xrm.Simulate.Test</ProjectNameForEarlyBoundFiles>
     <PropertyEnumMappings />
     <ReadSerializedMetadata>false</ReadSerializedMetadata>
@@ -121,7 +122,7 @@ VoiceMail</TokenCapitalizationOverrides>
   <MetadataProviderService>DLaB.ModelBuilderExtensions.MetadataProviderService,DLaB.ModelBuilderExtensions</MetadataProviderService>
   <MetadataQueryProviderService>DLaB.ModelBuilderExtensions.MetadataQueryProviderService,DLaB.ModelBuilderExtensions</MetadataQueryProviderService>
   <NamingService>DLaB.ModelBuilderExtensions.NamingService,DLaB.ModelBuilderExtensions</NamingService>
-  <OptionSetsTypesFolder>EarlyBoundEntities/OptionSets.cs</OptionSetsTypesFolder>
+  <OptionSetsTypesFolder>EarlyBoundEntities\OptionSets.cs</OptionSetsTypesFolder>
   <Namespace>CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities</Namespace>
   <ServiceContextName />
   <SuppressGeneratedCodeAttribute>true</SuppressGeneratedCodeAttribute>

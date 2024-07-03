@@ -71,12 +71,6 @@ public static class ConditionHandlerFactory
  * Still to do...
  * --------------
  *
- * older than ... *6
- *
- * next 7 days
- * between
- * not between
- *
  * equal User Id
  * not equal user id
  *

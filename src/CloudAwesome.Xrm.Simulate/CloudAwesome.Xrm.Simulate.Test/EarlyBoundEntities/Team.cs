@@ -29,7 +29,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string AdministratorIdName = "administratoridname";
 			public const string AdministratorIdYomiName = "administratoridyominame";
 			public const string AzureActiveDirectoryObjectId = "azureactivedirectoryobjectid";
-			public const string business_unit_teams = "business_unit_teams";
+			public const string Business_Unit_Teams = "business_unit_teams";
 			public const string BusinessUnitId = "businessunitid";
 			public const string BusinessUnitIdName = "businessunitidname";
 			public const string CreatedBy = "createdby";
@@ -42,21 +42,21 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string DelegatedAuthorizationId = "delegatedauthorizationid";
 			public const string DelegatedAuthorizationIdName = "delegatedauthorizationidname";
 			public const string Description = "description";
-			public const string EMailAddress = "emailaddress";
-			public const string ExchangeRate = "exchangerate";
+			public const string EmailAddress = "emailaddress";
+			public const string ExchangerAte = "exchangerate";
 			public const string ImportSequenceNumber = "importsequencenumber";
 			public const string IsDefault = "isdefault";
 			public const string IsDefaultName = "isdefaultname";
 			public const string IsSasTokenSet = "issastokenset";
-			public const string issastokensetName = "issastokensetname";
-			public const string lead_owning_team = "lead_owning_team";
-			public const string lk_team_createdonbehalfby = "lk_team_createdonbehalfby";
-			public const string lk_team_modifiedonbehalfby = "lk_team_modifiedonbehalfby";
-			public const string lk_teambase_administratorid = "lk_teambase_administratorid";
-			public const string lk_teambase_createdby = "lk_teambase_createdby";
-			public const string lk_teambase_modifiedby = "lk_teambase_modifiedby";
+			public const string IsSasTokenSetName = "issastokensetname";
+			public const string Lead_Owning_Team = "Lead_Owning_Team";
+			public const string Lk_Team_CreatedOnBehalfBy = "lk_team_createdonbehalfby";
+			public const string Lk_Team_ModifiedOnBehalfBy = "lk_team_modifiedonbehalfby";
+			public const string Lk_TeamBase_AdministratorId = "lk_teambase_administratorid";
+			public const string Lk_TeamBase_CreatedBy = "lk_teambase_createdby";
+			public const string Lk_TeamBase_ModifiedBy = "lk_teambase_modifiedby";
 			public const string MembershipType = "membershiptype";
-			public const string membershiptypeName = "membershiptypename";
+			public const string MembershipTypeName = "membershiptypename";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedByName = "modifiedbyname";
 			public const string ModifiedByYomiName = "modifiedbyyominame";
@@ -65,6 +65,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
 			public const string Name = "name";
+			public const string Organization_Teams = "organization_teams";
 			public const string OrganizationId = "organizationid";
 			public const string OrganizationIdName = "organizationidname";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
@@ -77,11 +78,11 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string StageId = "stageid";
 			public const string SystemManaged = "systemmanaged";
 			public const string SystemManagedName = "systemmanagedname";
-			public const string team_accounts = "team_accounts";
-			public const string team_contacts = "team_contacts";
+			public const string Team_Accounts = "Team_Accounts";
+			public const string Team_Contacts = "Team_Contacts";
 			public const string TeamId = "teamid";
 			public const string Id = "teamid";
-			public const string teammembership_association = "teammembership_association";
+			public const string TeamMembership_Association = "teammembership_association";
 			public const string TeamTemplateId = "teamtemplateid";
 			public const string TeamType = "teamtype";
 			public const string TeamTypeName = "teamtypename";
@@ -457,7 +458,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Email address for the team.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress")]
-		public string EMailAddress
+		public string EmailAddress
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -475,7 +476,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Exchange rate for the currency associated with the team with respect to the base currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
-		public System.Nullable<decimal> ExchangeRate
+		public System.Nullable<decimal> ExchangerAte
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -563,7 +564,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("issastokensetname")]
-		public string issastokensetName
+		public string IsSasTokenSetName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -600,7 +601,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("membershiptypename")]
-		public string membershiptypeName
+		public string MembershipTypeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1206,7 +1207,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lead_owning_team
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_owning_team")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> lead_owning_team
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> Lead_Owning_Team
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1224,7 +1225,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N team_accounts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_accounts")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> team_accounts
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> Team_Accounts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1242,7 +1243,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N team_contacts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_contacts")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> team_contacts
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> Team_Contacts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1260,7 +1261,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// N:N teammembership_association
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("teammembership_association")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> teammembership_association
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> TeamMembership_Association
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1279,7 +1280,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_teams")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit business_unit_teams
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit Business_Unit_Teams
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1298,7 +1299,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_team_createdonbehalfby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_team_createdonbehalfby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_Team_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1317,7 +1318,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_team_modifiedonbehalfby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_team_modifiedonbehalfby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_Team_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1336,7 +1337,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("administratorid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_administratorid")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_teambase_administratorid
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_TeamBase_AdministratorId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1355,7 +1356,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_createdby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_teambase_createdby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_TeamBase_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1374,7 +1375,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_modifiedby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_teambase_modifiedby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_TeamBase_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1385,6 +1386,25 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			set
 			{
 				this.SetRelatedEntity<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser>("lk_teambase_modifiedby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 organization_teams
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_teams")]
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization Organization_Teams
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("organization_teams", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("organization_teams", null, value);
 			}
 		}
 		

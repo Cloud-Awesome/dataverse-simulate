@@ -27,7 +27,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		{
 			public const string Address1_AddressId = "address1_addressid";
 			public const string Address1_AddressTypeCode = "address1_addresstypecode";
-			public const string Address1_AddressTypeCodeName = "address1_addresstypecodename";
+			public const string Address1_AddressTypeCodename = "address1_addresstypecodename";
 			public const string Address1_City = "address1_city";
 			public const string Address1_Country = "address1_country";
 			public const string Address1_County = "address1_county";
@@ -39,18 +39,18 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string Address1_Longitude = "address1_longitude";
 			public const string Address1_Name = "address1_name";
 			public const string Address1_PostalCode = "address1_postalcode";
-			public const string Address1_PostOfficeBox = "address1_postofficebox";
+			public const string Address1_PostofficeBox = "address1_postofficebox";
 			public const string Address1_ShippingMethodCode = "address1_shippingmethodcode";
-			public const string Address1_ShippingMethodCodeName = "address1_shippingmethodcodename";
+			public const string Address1_ShippingMethodCodename = "address1_shippingmethodcodename";
 			public const string Address1_StateOrProvince = "address1_stateorprovince";
 			public const string Address1_Telephone1 = "address1_telephone1";
 			public const string Address1_Telephone2 = "address1_telephone2";
 			public const string Address1_Telephone3 = "address1_telephone3";
-			public const string Address1_UPSZone = "address1_upszone";
-			public const string Address1_UTCOffset = "address1_utcoffset";
+			public const string Address1_UpsZone = "address1_upszone";
+			public const string Address1_UtcOffset = "address1_utcoffset";
 			public const string Address2_AddressId = "address2_addressid";
 			public const string Address2_AddressTypeCode = "address2_addresstypecode";
-			public const string Address2_AddressTypeCodeName = "address2_addresstypecodename";
+			public const string Address2_AddressTypeCodename = "address2_addresstypecodename";
 			public const string Address2_City = "address2_city";
 			public const string Address2_Country = "address2_country";
 			public const string Address2_County = "address2_county";
@@ -62,21 +62,21 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string Address2_Longitude = "address2_longitude";
 			public const string Address2_Name = "address2_name";
 			public const string Address2_PostalCode = "address2_postalcode";
-			public const string Address2_PostOfficeBox = "address2_postofficebox";
+			public const string Address2_PostofficeBox = "address2_postofficebox";
 			public const string Address2_ShippingMethodCode = "address2_shippingmethodcode";
-			public const string Address2_ShippingMethodCodeName = "address2_shippingmethodcodename";
+			public const string Address2_ShippingMethodCodename = "address2_shippingmethodcodename";
 			public const string Address2_StateOrProvince = "address2_stateorprovince";
 			public const string Address2_Telephone1 = "address2_telephone1";
 			public const string Address2_Telephone2 = "address2_telephone2";
 			public const string Address2_Telephone3 = "address2_telephone3";
-			public const string Address2_UPSZone = "address2_upszone";
-			public const string Address2_UTCOffset = "address2_utcoffset";
-			public const string business_unit_accounts = "business_unit_accounts";
-			public const string business_unit_contacts = "business_unit_contacts";
-			public const string business_unit_leads = "business_unit_leads";
-			public const string Referencingbusiness_unit_parent_business_unit = "business_unit_parent_business_unit";
-			public const string business_unit_system_users = "business_unit_system_users";
-			public const string business_unit_teams = "business_unit_teams";
+			public const string Address2_UpsZone = "address2_upszone";
+			public const string Address2_UtcOffset = "address2_utcoffset";
+			public const string Business_Unit_Accounts = "Business_Unit_Accounts";
+			public const string Business_Unit_Contacts = "Business_Unit_Contacts";
+			public const string Business_Unit_Leads = "Business_Unit_Leads";
+			public const string ReferencingBusiness_Unit_Parent_Business_Unit = "business_unit_parent_business_unit";
+			public const string Business_Unit_System_Users = "Business_Unit_System_Users";
+			public const string Business_Unit_Teams = "Business_Unit_Teams";
 			public const string BusinessUnitId = "businessunitid";
 			public const string Id = "businessunitid";
 			public const string CalendarId = "calendarid";
@@ -92,18 +92,18 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string Description = "description";
 			public const string DisabledReason = "disabledreason";
 			public const string DivisionName = "divisionname";
-			public const string EMailAddress = "emailaddress";
-			public const string ExchangeRate = "exchangerate";
+			public const string EmailAddress = "emailaddress";
+			public const string ExchangerAte = "exchangerate";
 			public const string FileAsName = "fileasname";
 			public const string FtpSiteUrl = "ftpsiteurl";
 			public const string ImportSequenceNumber = "importsequencenumber";
 			public const string InheritanceMask = "inheritancemask";
 			public const string IsDisabled = "isdisabled";
 			public const string IsDisabledName = "isdisabledname";
-			public const string lk_businessunit_createdonbehalfby = "lk_businessunit_createdonbehalfby";
-			public const string lk_businessunit_modifiedonbehalfby = "lk_businessunit_modifiedonbehalfby";
-			public const string lk_businessunitbase_createdby = "lk_businessunitbase_createdby";
-			public const string lk_businessunitbase_modifiedby = "lk_businessunitbase_modifiedby";
+			public const string Lk_BusinessUnit_CreatedOnBehalfBy = "lk_businessunit_createdonbehalfby";
+			public const string Lk_BusinessUnit_ModifiedOnBehalfBy = "lk_businessunit_modifiedonbehalfby";
+			public const string Lk_BusinessUnitBase_CreatedBy = "lk_businessunitbase_createdby";
+			public const string Lk_BusinessUnitBase_ModifiedBy = "lk_businessunitbase_modifiedby";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedByName = "modifiedbyname";
 			public const string ModifiedByYomiName = "modifiedbyyominame";
@@ -112,21 +112,22 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
 			public const string Name = "name";
+			public const string Organization_Business_Units = "organization_business_units";
 			public const string OrganizationId = "organizationid";
 			public const string OrganizationIdName = "organizationidname";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
 			public const string ParentBusinessUnitId = "parentbusinessunitid";
 			public const string ParentBusinessUnitIdName = "parentbusinessunitidname";
 			public const string Picture = "picture";
-			public const string Referencedbusiness_unit_parent_business_unit = "Referencedbusiness_unit_parent_business_unit";
+			public const string ReferencedBusiness_Unit_Parent_Business_Unit = "ReferencedBusiness_Unit_Parent_Business_Unit";
 			public const string StockExchange = "stockexchange";
 			public const string TickerSymbol = "tickersymbol";
 			public const string TransactionCurrencyId = "transactioncurrencyid";
 			public const string TransactionCurrencyIdName = "transactioncurrencyidname";
 			public const string UserGroupId = "usergroupid";
-			public const string UTCOffset = "utcoffset";
+			public const string UtcOffset = "utcoffset";
 			public const string VersionNumber = "versionnumber";
-			public const string WebSiteUrl = "websiteurl";
+			public const string WebsiteUrl = "websiteurl";
 			public const string WorkflowSuspended = "workflowsuspended";
 			public const string WorkflowSuspendedName = "workflowsuspendedname";
 		}
@@ -207,7 +208,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecodename")]
-		public string Address1_AddressTypeCodeName
+		public string Address1_AddressTypeCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -430,7 +431,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Post office box number for address 1.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postofficebox")]
-		public string Address1_PostOfficeBox
+		public string Address1_PostofficeBox
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -463,7 +464,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcodename")]
-		public string Address1_ShippingMethodCodeName
+		public string Address1_ShippingMethodCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -560,7 +561,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// United Parcel Service (UPS) zone for address 1.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_upszone")]
-		public string Address1_UPSZone
+		public string Address1_UpsZone
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -578,7 +579,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// UTC offset for address 1. This is the difference between local time and standard Coordinated Universal Time.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_utcoffset")]
-		public System.Nullable<int> Address1_UTCOffset
+		public System.Nullable<int> Address1_UtcOffset
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -629,7 +630,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecodename")]
-		public string Address2_AddressTypeCodeName
+		public string Address2_AddressTypeCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -852,7 +853,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Post office box number for address 2.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postofficebox")]
-		public string Address2_PostOfficeBox
+		public string Address2_PostofficeBox
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -885,7 +886,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcodename")]
-		public string Address2_ShippingMethodCodeName
+		public string Address2_ShippingMethodCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -982,7 +983,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// United Parcel Service (UPS) zone for address 2.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_upszone")]
-		public string Address2_UPSZone
+		public string Address2_UpsZone
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1000,7 +1001,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// UTC offset for address 2. This is the difference between local time and standard Coordinated Universal Time.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_utcoffset")]
-		public System.Nullable<int> Address2_UTCOffset
+		public System.Nullable<int> Address2_UtcOffset
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1309,7 +1310,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Email address for the business unit.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress")]
-		public string EMailAddress
+		public string EmailAddress
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1327,7 +1328,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Exchange rate for the currency associated with the businessunit with respect to the base currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
-		public System.Nullable<decimal> ExchangeRate
+		public System.Nullable<decimal> ExchangerAte
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1824,7 +1825,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// UTC offset for the business unit. This is the difference between local time and standard Coordinated Universal Time.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcoffset")]
-		public System.Nullable<int> UTCOffset
+		public System.Nullable<int> UtcOffset
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1860,7 +1861,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Website URL for the business unit.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("websiteurl")]
-		public string WebSiteUrl
+		public string WebsiteUrl
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1918,7 +1919,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N business_unit_accounts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_accounts")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> business_unit_accounts
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> Business_Unit_Accounts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1936,7 +1937,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N business_unit_contacts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_contacts")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> business_unit_contacts
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> Business_Unit_Contacts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1954,7 +1955,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N business_unit_leads
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_leads")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> business_unit_leads
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> Business_Unit_Leads
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1972,7 +1973,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N business_unit_parent_business_unit
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_parent_business_unit", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit> Referencedbusiness_unit_parent_business_unit
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit> ReferencedBusiness_Unit_Parent_Business_Unit
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1990,7 +1991,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N business_unit_system_users
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_system_users")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> business_unit_system_users
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> Business_Unit_System_Users
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2008,7 +2009,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N business_unit_teams
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_teams")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> business_unit_teams
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> Business_Unit_Teams
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2027,7 +2028,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentbusinessunitid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_parent_business_unit", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit Referencingbusiness_unit_parent_business_unit
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit ReferencingBusiness_Unit_Parent_Business_Unit
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2046,7 +2047,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunit_createdonbehalfby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_businessunit_createdonbehalfby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_BusinessUnit_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2065,7 +2066,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunit_modifiedonbehalfby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_businessunit_modifiedonbehalfby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_BusinessUnit_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2084,7 +2085,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunitbase_createdby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_businessunitbase_createdby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_BusinessUnitBase_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2103,7 +2104,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunitbase_modifiedby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_businessunitbase_modifiedby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_BusinessUnitBase_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2114,6 +2115,25 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			set
 			{
 				this.SetRelatedEntity<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser>("lk_businessunitbase_modifiedby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 organization_business_units
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_business_units")]
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization Organization_Business_Units
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("organization_business_units", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("organization_business_units", null, value);
 			}
 		}
 		

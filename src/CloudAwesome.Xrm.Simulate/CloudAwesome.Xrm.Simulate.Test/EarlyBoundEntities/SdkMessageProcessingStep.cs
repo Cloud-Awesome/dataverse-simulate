@@ -28,14 +28,14 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string AsyncAutoDelete = "asyncautodelete";
 			public const string AsyncAutoDeleteName = "asyncautodeletename";
 			public const string CanBeBypassed = "canbebypassed";
-			public const string canbebypassedName = "canbebypassedname";
-			public const string CanUseReadOnlyConnection = "canusereadonlyconnection";
-			public const string CanUseReadOnlyConnectionName = "canusereadonlyconnectionname";
+			public const string CanBeBypassedName = "canbebypassedname";
+			public const string CanUseReadonlyConnection = "canusereadonlyconnection";
+			public const string CanUseReadonlyConnectionName = "canusereadonlyconnectionname";
 			public const string Category = "category";
 			public const string ComponentState = "componentstate";
 			public const string Configuration = "configuration";
 			public const string CreatedBy = "createdby";
-			public const string createdby_sdkmessageprocessingstep = "createdby_sdkmessageprocessingstep";
+			public const string CreatedBy_SdkMessageProcessingStep = "createdby_sdkmessageprocessingstep";
 			public const string CreatedByName = "createdbyname";
 			public const string CreatedOn = "createdon";
 			public const string CreatedOnBehalfBy = "createdonbehalfby";
@@ -44,7 +44,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string CustomizationLevel = "customizationlevel";
 			public const string Description = "description";
 			public const string EnablePluginProfiler = "enablepluginprofiler";
-			public const string enablepluginprofilerName = "enablepluginprofilername";
+			public const string EnablePluginProfilerName = "enablepluginprofilername";
 			public const string EventExpander = "eventexpander";
 			public const string EventHandler = "eventhandler";
 			public const string EventHandlerName = "eventhandlername";
@@ -52,7 +52,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string FxExpressionId = "fxexpressionid";
 			public const string FxExpressionIdName = "fxexpressionidname";
 			public const string ImpersonatingUserId = "impersonatinguserid";
-			public const string impersonatinguserid_sdkmessageprocessingstep = "impersonatinguserid_sdkmessageprocessingstep";
+			public const string ImpersonatingUserId_SdkMessageProcessingStep = "impersonatinguserid_sdkmessageprocessingstep";
 			public const string ImpersonatingUserIdName = "impersonatinguseridname";
 			public const string IntroducedVersion = "introducedversion";
 			public const string InvocationSource = "invocationsource";
@@ -61,24 +61,25 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string IsHidden = "ishidden";
 			public const string IsManaged = "ismanaged";
 			public const string IsManagedName = "ismanagedname";
-			public const string lk_sdkmessageprocessingstep_createdonbehalfby = "lk_sdkmessageprocessingstep_createdonbehalfby";
-			public const string lk_sdkmessageprocessingstep_modifiedonbehalfby = "lk_sdkmessageprocessingstep_modifiedonbehalfby";
+			public const string Lk_SdkMessageProcessingStep_CreatedOnBehalfBy = "lk_sdkmessageprocessingstep_createdonbehalfby";
+			public const string Lk_SdkMessageProcessingStep_ModifiedOnBehalfBy = "lk_sdkmessageprocessingstep_modifiedonbehalfby";
 			public const string Mode = "mode";
 			public const string ModeName = "modename";
 			public const string ModifiedBy = "modifiedby";
-			public const string modifiedby_sdkmessageprocessingstep = "modifiedby_sdkmessageprocessingstep";
+			public const string ModifiedBy_SdkMessageProcessingStep = "modifiedby_sdkmessageprocessingstep";
 			public const string ModifiedByName = "modifiedbyname";
 			public const string ModifiedOn = "modifiedon";
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
 			public const string Name = "name";
+			public const string Organization_SdkMessageProcessingStep = "organization_sdkmessageprocessingstep";
 			public const string OrganizationId = "organizationid";
 			public const string OverwriteTime = "overwritetime";
 			public const string PluginTypeId = "plugintypeid";
 			public const string PluginTypeIdName = "plugintypeidname";
-			public const string PowerfxRuleId = "powerfxruleid";
-			public const string PowerfxRuleIdName = "powerfxruleidname";
+			public const string PowerFxRuleId = "powerfxruleid";
+			public const string PowerFxRuleIdName = "powerfxruleidname";
 			public const string Rank = "rank";
 			public const string RuntimeIntegrationProperties = "runtimeintegrationproperties";
 			public const string SdkMessageFilterId = "sdkmessagefilterid";
@@ -92,9 +93,9 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string Stage = "stage";
 			public const string StageName = "stagename";
 			public const string StateCode = "statecode";
-			public const string StateCodeName = "statecodename";
+			public const string StateCodename = "statecodename";
 			public const string StatusCode = "statuscode";
-			public const string StatusCodeName = "statuscodename";
+			public const string StatusCodename = "statuscodename";
 			public const string SupportedDeployment = "supporteddeployment";
 			public const string SupportedDeploymentName = "supporteddeploymentname";
 			public const string SupportingSolutionId = "supportingsolutionid";
@@ -196,7 +197,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canbebypassedname")]
-		public string canbebypassedName
+		public string CanBeBypassedName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -221,7 +222,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Identifies whether a SDK Message Processing Step type will be ReadOnly or Read Write. false - ReadWrite, true - ReadOnly 
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canusereadonlyconnection")]
-		public System.Nullable<bool> CanUseReadOnlyConnection
+		public System.Nullable<bool> CanUseReadonlyConnection
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -236,7 +237,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canusereadonlyconnectionname")]
-		public string CanUseReadOnlyConnectionName
+		public string CanUseReadonlyConnectionName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -486,7 +487,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablepluginprofilername")]
-		public string enablepluginprofilerName
+		public string EnablePluginProfilerName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1057,7 +1058,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Unique identifier for powerfxrule associated with SdkMessageProcessingStep.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("powerfxruleid")]
-		public Microsoft.Xrm.Sdk.EntityReference PowerfxRuleId
+		public Microsoft.Xrm.Sdk.EntityReference PowerFxRuleId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1072,7 +1073,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("powerfxruleidname")]
-		public string PowerfxRuleIdName
+		public string PowerFxRuleIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1326,12 +1327,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Status of the SDK message processing step.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public virtual sdkmessageprocessingstep_statecode? StateCode
+		public virtual SdkMessageProcessingStep_StateCode? StateCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((sdkmessageprocessingstep_statecode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
+				return ((SdkMessageProcessingStep_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1341,7 +1342,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecodename")]
-		public string StateCodeName
+		public string StateCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1381,7 +1382,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscodename")]
-		public string StatusCodeName
+		public string StatusCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1483,7 +1484,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("createdby_sdkmessageprocessingstep")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser createdby_sdkmessageprocessingstep
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser CreatedBy_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1502,7 +1503,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("impersonatinguserid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("impersonatinguserid_sdkmessageprocessingstep")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser impersonatinguserid_sdkmessageprocessingstep
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser ImpersonatingUserId_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1521,7 +1522,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_sdkmessageprocessingstep_createdonbehalfby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_sdkmessageprocessingstep_createdonbehalfby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_SdkMessageProcessingStep_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1540,7 +1541,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_sdkmessageprocessingstep_modifiedonbehalfby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_sdkmessageprocessingstep_modifiedonbehalfby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_SdkMessageProcessingStep_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1559,7 +1560,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("modifiedby_sdkmessageprocessingstep")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser modifiedby_sdkmessageprocessingstep
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser ModifiedBy_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1570,6 +1571,25 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			set
 			{
 				this.SetRelatedEntity<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser>("modifiedby_sdkmessageprocessingstep", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 organization_sdkmessageprocessingstep
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_sdkmessageprocessingstep")]
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization Organization_SdkMessageProcessingStep
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("organization_sdkmessageprocessingstep", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("organization_sdkmessageprocessingstep", null, value);
 			}
 		}
 		

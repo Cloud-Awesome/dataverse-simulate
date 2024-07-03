@@ -441,7 +441,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	/// Status of the account.
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum account_statecode
+	public enum Account_StateCode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -477,7 +477,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum awe_Benefits
+	public enum AWe_Benefits
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -491,7 +491,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum awe_doyouwanttoaddextrainformation
+	public enum AWe_DoYouWantToAddExtraInformation
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -502,7 +502,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum awe_Floorarea
+	public enum AWe_FloorArea
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -522,7 +522,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum awe_Organisationtype
+	public enum AWe_OrganisationType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -539,7 +539,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum awe_Propertyage
+	public enum AWe_PropertyAge
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -565,7 +565,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum awe_Propertytype
+	public enum AWe_PropertyType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -585,7 +585,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum awe_yesno
+	public enum AWe_YesNo
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -879,7 +879,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_baggageguidancestatus
+	public enum Contact_FCo_BaggageGuidanceStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -887,7 +887,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_CarLoanGuidanceStatus
+	public enum Contact_FCo_CarloAnGuidanceStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -895,7 +895,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_continuityofeducationguidancestatus
+	public enum Contact_FCo_ContinuityOfEducationGuidanceStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -903,7 +903,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_financialguidancestatus
+	public enum Contact_FCo_FinancialGuidanceStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -911,7 +911,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_headofmission
+	public enum Contact_FCo_HeadOfMission
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -922,7 +922,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_howwillyousendyourbaggage
+	public enum Contact_FCo_HowWillYouSendYourBaggage
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -933,7 +933,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_languagetrainingstatus
+	public enum Contact_FCo_LanguageTrainingStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -944,7 +944,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_shippingvehicleguidancestatus
+	public enum Contact_FCo_ShippingVehicleGuidanceStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -952,7 +952,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_fco_visaguidancestatus
+	public enum Contact_FCo_VisaGuidanceStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -999,7 +999,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	/// Indicate buying influence using label
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_msdyn_decisioninfluencetag
+	public enum Contact_Msdyn_DecisionInfluenceTag
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1019,7 +1019,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	/// For Internal Use only
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_msdyn_orgchangestatus
+	public enum Contact_Msdyn_OrgChangeStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1136,7 +1136,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	/// Status of the contact.
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum contact_statecode
+	public enum Contact_StateCode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1172,7 +1172,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum fco_CreatedByProcess
+	public enum FCo_CreatedByProcess
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1189,7 +1189,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum fco_Parentdepartment
+	public enum FCo_ParentDepartment
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1200,7 +1200,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	/// Type of the Contact
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum fco_TypeofPerson
+	public enum FCo_TypeOfPerson
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1434,7 +1434,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Lead_msdyn_salesassignmentresult
+	public enum Lead_Msdyn_SalesAssignmentResult
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1504,7 +1504,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	/// Status of the lead.
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum lead_statecode
+	public enum Lead_StateCode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1547,7 +1547,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum msdyn_LeadGradeOptset
+	public enum Msdyn_LeadGradeOptSet
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1564,7 +1564,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum msdyn_LeadScoreTrendOptset
+	public enum Msdyn_LeadScoreTrendOptSet
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1601,10 +1601,532 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	/// <summary>
+	/// Application Based Access Control Mode. 0 is Disabled, 1 is Enabled, 2 is audit mode, 3 is Enabled for roles
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_ApplicationBasedAccessControlMode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Auditmode = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Disabled = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Enabled = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EnabledForRoles = 3,
+	}
+	
+	/// <summary>
+	/// Indication of whether to display money fields with currency code or currency symbol.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_CurrencyDisplayOption
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CurrencyCode = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CurrencySymbol = 0,
+	}
+	
+	/// <summary>
+	/// Information about how currency symbols are placed throughout Microsoft CRM.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_CurrencyFormatCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		_123_0 = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		_123_1 = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		_123_2 = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		_123_3 = 3,
+	}
+	
+	/// <summary>
+	/// Specifies the default end recurrence range to be used in recurrence dialog.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_DefaultRecurrenceEndRangeType
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EndByDate = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NoEndDate = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NumberOfOccurrences = 2,
+	}
+	
+	/// <summary>
+	/// The status of activation of the Power Automate Desktop Flow Run Action logs.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_DesktopFlowRunActionLogsStatus
+	{
+		
+		/// <summary>
+		/// Power Automate Desktop Flow Run Action Logs are disabled.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Disabled = 2,
+		
+		/// <summary>
+		/// Power Automate Desktop Flow Run Action Logs are enabled.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Enabled = 0,
+		
+		/// <summary>
+		/// Power Automate Desktop Flow Run Action Logs are saved only on failure.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Onfailure = 1,
+	}
+	
+	/// <summary>
+	/// Where the Power Automate Desktop Flow Run Action logs are stored.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_DesktopFlowRunActionLogVersion
+	{
+		
+		/// <summary>
+		/// Power Automate Desktop Flow Run Action Logs are stored in the Additional Context field of the Flow Session.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Additionalcontext = 0,
+		
+		/// <summary>
+		/// Power Automate Desktop Flow Run Action Logs are stored in the Additional Context field of the Flow Session and the Flow Logs Dataverse Entity (Preview).
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Additionalcontextandflowlogs = 2,
+		
+		/// <summary>
+		/// Power Automate Desktop Flow Run Action Logs are stored in the Flow Logs Dataverse Entity (Preview).
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Flowlogs = 1,
+	}
+	
+	/// <summary>
+	/// Discount calculation Method for the QOOI product
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_DiscountCalculationMethod
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LineItem = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PerUnit = 1,
+	}
+	
+	/// <summary>
+	/// Select whether you want to use the Email Router or server-side synchronization for email processing.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_EmailConnectionChannel
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MicrosoftDynamics365EmailRouter = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ServerSideSynchronization = 0,
+	}
+	
+	/// <summary>
+	/// Fiscal Period Format
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_FiscalPeriodFormatPeriod
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		M0 = 5,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Month0 = 4,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MonthName = 7,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		P0 = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Q0 = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Quarter0 = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Semester0 = 6,
+	}
+	
+	/// <summary>
+	/// Fiscal Year Format Prefix
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_FiscalYearFormatPrefix
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		_2 = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Fy = 1,
+	}
+	
+	/// <summary>
+	/// Fiscal Year Format Suffix
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_FiscalYearFormatSuffix
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		_3 = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FiscalYear = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Fy = 1,
+	}
+	
+	/// <summary>
+	/// Fiscal Year Format
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_FiscalYearFormatYear
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Ggyy = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Yy = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Yyyy = 1,
+	}
+	
+	/// <summary>
+	/// Order in which names are to be displayed throughout Microsoft CRM.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_FullNameConventionCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FirstName = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FirstNameMiddleInitialLastName = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FirstNameMiddleNameLastName = 5,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LastNameFirstName = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LastNameFirstNameMiddleInitial = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LastNameFirstNameMiddleName = 4,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LastNameNoSpaceFirstName = 7,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LastNameSpaceFirstName = 6,
+	}
+	
+	/// <summary>
+	/// Select which IP Based SAS URI restriction will be used.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_IpBasedStorageAccessSignatureMode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IpBindingAndIpFirewall = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IpBindingOnly = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IpBindingOrIpFirewall = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IpFirewallOnly = 1,
+	}
+	
+	/// <summary>
+	/// Flag that determines whether or not MSCRM should be loaded in an browser window that does not have address, tool and menu bars.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_IsvIntegrationCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		All = 7,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		None = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Outlook = 6,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OutlookLaptopClient = 4,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OutlookWorkstationClient = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Web = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebOutlookLaptopClient = 5,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		WebOutlookWorkstationClient = 3,
+	}
+	
+	/// <summary>
+	/// Show legacy app for admins
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_LegacyAppToggle
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Auto = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Off = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		On = 1,
+	}
+	
+	/// <summary>
+	/// Information that specifies how negative numbers are displayed throughout Microsoft CRM.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_NegativeFormatCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Brackets = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Dash = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DashPlusSpace = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SpacePlusTrailingDash = 4,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TrailingDash = 3,
+	}
+	
+	/// <summary>
+	/// Organization State, indicates if the org is being created, upgraded, updated or active
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_OrganizationState
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Active = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Creating = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Updating = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Upgrading = 1,
+	}
+	
+	/// <summary>
+	/// Plug-in Trace Log Setting for the Organization.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_PluginTraceLogSetting
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		All = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Exception = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Off = 0,
+	}
+	
+	/// <summary>
+	/// Model app refresh channel
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_ReleaseChannel
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Auto = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MicrosoftInnerChannel = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MonthlyChannel = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SemiAnnualChannel = 3,
+	}
+	
+	/// <summary>
+	/// Picklist for selecting the user preference for reporting scripting errors.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_ReportScripTerrors
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AskMeForPermissionToSendAnErrorReportToMicrosoft = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AutomaticallySendAnErrorReportToMicrosoftWithoutAskingMeForPermission = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NeverSendAnErrorReportToMicrosoftAboutMicrosoftDynamics365 = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NoPreferenceForSendingAnErrorReportToMicrosoftAboutMicrosoftDynamics365 = 0,
+	}
+	
+	/// <summary>
+	/// Samesite mode for Session Cookie: 0 is Default, 1 is None, 2 is Lax , 3 is Strict
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_SameSiteModeForSessionCookie
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Default = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Lax = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		None = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Strict = 3,
+	}
+	
+	/// <summary>
+	/// Scheduling engine for Appointments and Service Activities
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_SchedulingEngine
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		LegacySchedulingEngine = 0,
+	}
+	
+	/// <summary>
+	/// SharePoint Deployment Type
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_SharePointDeploymentType
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Online = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OnPremises = 1,
+	}
+	
+	/// <summary>
+	/// Indicates the status of opt-in or opt-out operations for dynamics 365 azure sync.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_SyncOptInSelectionStatus
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Failed = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Passed = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Processing = 1,
+	}
+	
+	/// <summary>
+	/// Validation mode for apps in this environment
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_ValidationMode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Block = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Off = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Warn = 1,
+	}
+	
+	/// <summary>
+	/// Yammer Post Method
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Organization_YammerPostMethod
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Private = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Public = 0,
+	}
+	
+	/// <summary>
 	/// Power Pages Languages
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum powerpagelanguages
+	public enum PowerPageLanguages
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1865,7 +2387,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	/// Status of the SDK message processing step.
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum sdkmessageprocessingstep_statecode
+	public enum SdkMessageProcessingStep_StateCode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1997,7 +2519,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	/// License type of user. This is used only in the on-premises version of the product. Online licenses are managed through Microsoft 365 Office Portal.
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum SystemUser_CALType
+	public enum SystemUser_CalType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -2124,7 +2646,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum SystemUser_msdyn_AgentType
+	public enum SystemUser_Msdyn_AgentType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -2138,7 +2660,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	/// Indicates the type of bot
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum SystemUser_msdyn_BotProvider
+	public enum SystemUser_Msdyn_BotProvider
 	{
 		
 		/// <summary>
@@ -2161,7 +2683,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum SystemUser_msdyn_UserType
+	public enum SystemUser_Msdyn_UserType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -2271,6 +2793,32 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		SecurityGroup = 2,
+	}
+	
+	/// <summary>
+	/// Options for Template Default View
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum TemplateDefaultView
+	{
+		
+		/// <summary>
+		/// Grid View
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GridView = 2,
+		
+		/// <summary>
+		/// List View
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ListView = 3,
+		
+		/// <summary>
+		/// Tiles View
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		TilesView = 1,
 	}
 }
 #pragma warning restore CS1591

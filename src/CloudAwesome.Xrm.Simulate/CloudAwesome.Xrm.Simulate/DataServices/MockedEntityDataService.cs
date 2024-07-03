@@ -190,8 +190,17 @@ public class MockedEntityDataService
         set => _dataStore.ExecutionContextMock = value?? new PluginExecutionContextMock();
     }
 
-    public Entity BusinessUnit => throw new NotImplementedException();
-    public EntityReference Organization => throw new NotImplementedException();
+    public EntityReference BusinessUnit
+    {
+        get => _dataStore.BusinessUnit;
+        set => _dataStore.BusinessUnit = value;
+    }
+
+    public EntityReference Organization
+    {
+        get => _dataStore.Organization;
+        set => _dataStore.Organization = value;
+    }
 
     public FakeServiceFailureSettings? FakeServiceFailureSettings
     {

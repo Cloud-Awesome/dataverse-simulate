@@ -161,7 +161,7 @@ public class FetchExpressionParserTests
         contacts.Entities.FirstOrDefault()?.Attributes[Contact.Fields.FirstName].Should().Be(Siobhan.Contact().FirstName);
         contacts.Entities.FirstOrDefault()?.Attributes[Contact.Fields.LastName].Should().Be(Siobhan.Contact().LastName);
 
-        var sut = () => contacts.Entities.FirstOrDefault()?.Attributes[Contact.Fields.BirthDate];
+        var sut = () => contacts.Entities.FirstOrDefault()?.Attributes[Contact.Fields.Birthdate];
         sut.Should().Throw<KeyNotFoundException>();
     }
 

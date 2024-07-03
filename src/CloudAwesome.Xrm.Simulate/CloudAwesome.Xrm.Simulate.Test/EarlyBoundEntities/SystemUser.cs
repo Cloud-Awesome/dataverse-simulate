@@ -30,7 +30,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string ActiveDirectoryGuid = "activedirectoryguid";
 			public const string Address1_AddressId = "address1_addressid";
 			public const string Address1_AddressTypeCode = "address1_addresstypecode";
-			public const string Address1_AddressTypeCodeName = "address1_addresstypecodename";
+			public const string Address1_AddressTypeCodename = "address1_addresstypecodename";
 			public const string Address1_City = "address1_city";
 			public const string Address1_Composite = "address1_composite";
 			public const string Address1_Country = "address1_country";
@@ -43,18 +43,18 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string Address1_Longitude = "address1_longitude";
 			public const string Address1_Name = "address1_name";
 			public const string Address1_PostalCode = "address1_postalcode";
-			public const string Address1_PostOfficeBox = "address1_postofficebox";
+			public const string Address1_PostofficeBox = "address1_postofficebox";
 			public const string Address1_ShippingMethodCode = "address1_shippingmethodcode";
-			public const string Address1_ShippingMethodCodeName = "address1_shippingmethodcodename";
+			public const string Address1_ShippingMethodCodename = "address1_shippingmethodcodename";
 			public const string Address1_StateOrProvince = "address1_stateorprovince";
 			public const string Address1_Telephone1 = "address1_telephone1";
 			public const string Address1_Telephone2 = "address1_telephone2";
 			public const string Address1_Telephone3 = "address1_telephone3";
-			public const string Address1_UPSZone = "address1_upszone";
-			public const string Address1_UTCOffset = "address1_utcoffset";
+			public const string Address1_UpsZone = "address1_upszone";
+			public const string Address1_UtcOffset = "address1_utcoffset";
 			public const string Address2_AddressId = "address2_addressid";
 			public const string Address2_AddressTypeCode = "address2_addresstypecode";
-			public const string Address2_AddressTypeCodeName = "address2_addresstypecodename";
+			public const string Address2_AddressTypeCodename = "address2_addresstypecodename";
 			public const string Address2_City = "address2_city";
 			public const string Address2_Composite = "address2_composite";
 			public const string Address2_Country = "address2_country";
@@ -67,30 +67,30 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string Address2_Longitude = "address2_longitude";
 			public const string Address2_Name = "address2_name";
 			public const string Address2_PostalCode = "address2_postalcode";
-			public const string Address2_PostOfficeBox = "address2_postofficebox";
+			public const string Address2_PostofficeBox = "address2_postofficebox";
 			public const string Address2_ShippingMethodCode = "address2_shippingmethodcode";
-			public const string Address2_ShippingMethodCodeName = "address2_shippingmethodcodename";
+			public const string Address2_ShippingMethodCodename = "address2_shippingmethodcodename";
 			public const string Address2_StateOrProvince = "address2_stateorprovince";
 			public const string Address2_Telephone1 = "address2_telephone1";
 			public const string Address2_Telephone2 = "address2_telephone2";
 			public const string Address2_Telephone3 = "address2_telephone3";
-			public const string Address2_UPSZone = "address2_upszone";
-			public const string Address2_UTCOffset = "address2_utcoffset";
+			public const string Address2_UpsZone = "address2_upszone";
+			public const string Address2_UtcOffset = "address2_utcoffset";
 			public const string ApplicationId = "applicationid";
 			public const string ApplicationIdUri = "applicationiduri";
 			public const string AzureActiveDirectoryObjectId = "azureactivedirectoryobjectid";
 			public const string AzureDeletedOn = "azuredeletedon";
 			public const string AzureState = "azurestate";
-			public const string azurestateName = "azurestatename";
-			public const string business_unit_system_users = "business_unit_system_users";
+			public const string AzureStatenAMe = "azurestatename";
+			public const string Business_Unit_System_Users = "business_unit_system_users";
 			public const string BusinessUnitId = "businessunitid";
 			public const string BusinessUnitIdName = "businessunitidname";
 			public const string CalendarId = "calendarid";
-			public const string CALType = "caltype";
-			public const string CALTypeName = "caltypename";
-			public const string contact_owning_user = "contact_owning_user";
+			public const string CalType = "caltype";
+			public const string CalTypeName = "caltypename";
+			public const string Contact_Owning_User = "Contact_Owning_User";
 			public const string CreatedBy = "createdby";
-			public const string createdby_sdkmessageprocessingstep = "createdby_sdkmessageprocessingstep";
+			public const string CreatedBy_SdkMessageProcessingStep = "CreatedBy_SdkMessageProcessingStep";
 			public const string CreatedByName = "createdbyname";
 			public const string CreatedByYomiName = "createdbyyominame";
 			public const string CreatedOn = "createdon";
@@ -102,7 +102,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string DefaultMailboxName = "defaultmailboxname";
 			public const string DefaultOdbFolderName = "defaultodbfoldername";
 			public const string DeletedState = "deletedstate";
-			public const string deletedstateName = "deletedstatename";
+			public const string DeletedStateName = "deletedstatename";
 			public const string DisabledReason = "disabledreason";
 			public const string DisplayInServiceViews = "displayinserviceviews";
 			public const string DisplayInServiceViewsName = "displayinserviceviewsname";
@@ -112,95 +112,100 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string EmployeeId = "employeeid";
 			public const string EntityImage = "entityimage";
 			public const string EntityImage_Timestamp = "entityimage_timestamp";
-			public const string EntityImage_URL = "entityimage_url";
+			public const string EntityImage_Url = "entityimage_url";
 			public const string EntityImageId = "entityimageid";
-			public const string ExchangeRate = "exchangerate";
+			public const string ExchangerAte = "exchangerate";
 			public const string FirstName = "firstname";
 			public const string FullName = "fullname";
 			public const string GovernmentId = "governmentid";
 			public const string HomePhone = "homephone";
 			public const string IdentityId = "identityid";
-			public const string impersonatinguserid_sdkmessageprocessingstep = "impersonatinguserid_sdkmessageprocessingstep";
+			public const string ImpersonatingUserId_SdkMessageProcessingStep = "ImpersonatingUserId_SdkMessageProcessingStep";
 			public const string ImportSequenceNumber = "importsequencenumber";
 			public const string IncomingEmailDeliveryMethod = "incomingemaildeliverymethod";
 			public const string IncomingEmailDeliveryMethodName = "incomingemaildeliverymethodname";
-			public const string InternalEMailAddress = "internalemailaddress";
+			public const string InternalEmailAddress = "internalemailaddress";
 			public const string InviteStatusCode = "invitestatuscode";
-			public const string InviteStatusCodeName = "invitestatuscodename";
+			public const string InviteStatusCodename = "invitestatuscodename";
 			public const string IsActiveDirectoryUser = "isactivedirectoryuser";
 			public const string IsDisabled = "isdisabled";
 			public const string IsDisabledName = "isdisabledname";
 			public const string IsEmailAddressApprovedByO365Admin = "isemailaddressapprovedbyo365admin";
 			public const string IsIntegrationUser = "isintegrationuser";
-			public const string IsIntegrationUserName = "isintegrationusername";
+			public const string IsIntegrationUsername = "isintegrationusername";
 			public const string IsLicensed = "islicensed";
 			public const string IsLicensedName = "islicensedname";
 			public const string IsSyncWithDirectory = "issyncwithdirectory";
 			public const string JobTitle = "jobtitle";
 			public const string LastName = "lastname";
 			public const string LatestUpdateTime = "latestupdatetime";
-			public const string lead_owning_user = "lead_owning_user";
-			public const string lk_accountbase_createdby = "lk_accountbase_createdby";
-			public const string lk_accountbase_createdonbehalfby = "lk_accountbase_createdonbehalfby";
-			public const string lk_accountbase_modifiedby = "lk_accountbase_modifiedby";
-			public const string lk_accountbase_modifiedonbehalfby = "lk_accountbase_modifiedonbehalfby";
-			public const string lk_businessunit_createdonbehalfby = "lk_businessunit_createdonbehalfby";
-			public const string lk_businessunit_modifiedonbehalfby = "lk_businessunit_modifiedonbehalfby";
-			public const string lk_businessunitbase_createdby = "lk_businessunitbase_createdby";
-			public const string lk_businessunitbase_modifiedby = "lk_businessunitbase_modifiedby";
-			public const string lk_contact_createdonbehalfby = "lk_contact_createdonbehalfby";
-			public const string lk_contact_modifiedonbehalfby = "lk_contact_modifiedonbehalfby";
-			public const string lk_contactbase_createdby = "lk_contactbase_createdby";
-			public const string lk_contactbase_modifiedby = "lk_contactbase_modifiedby";
-			public const string lk_lead_createdonbehalfby = "lk_lead_createdonbehalfby";
-			public const string lk_lead_modifiedonbehalfby = "lk_lead_modifiedonbehalfby";
-			public const string lk_leadbase_createdby = "lk_leadbase_createdby";
-			public const string lk_leadbase_modifiedby = "lk_leadbase_modifiedby";
-			public const string lk_sdkmessageprocessingstep_createdonbehalfby = "lk_sdkmessageprocessingstep_createdonbehalfby";
-			public const string lk_sdkmessageprocessingstep_modifiedonbehalfby = "lk_sdkmessageprocessingstep_modifiedonbehalfby";
-			public const string Referencinglk_systemuser_createdonbehalfby = "lk_systemuser_createdonbehalfby";
-			public const string Referencinglk_systemuser_modifiedonbehalfby = "lk_systemuser_modifiedonbehalfby";
-			public const string Referencinglk_systemuserbase_createdby = "lk_systemuserbase_createdby";
-			public const string Referencinglk_systemuserbase_modifiedby = "lk_systemuserbase_modifiedby";
-			public const string lk_team_createdonbehalfby = "lk_team_createdonbehalfby";
-			public const string lk_team_modifiedonbehalfby = "lk_team_modifiedonbehalfby";
-			public const string lk_teambase_administratorid = "lk_teambase_administratorid";
-			public const string lk_teambase_createdby = "lk_teambase_createdby";
-			public const string lk_teambase_modifiedby = "lk_teambase_modifiedby";
+			public const string Lead_Owning_User = "Lead_Owning_User";
+			public const string Lk_AccountBase_CreatedBy = "Lk_AccountBase_CreatedBy";
+			public const string Lk_AccountBase_CreatedOnBehalfBy = "Lk_AccountBase_CreatedOnBehalfBy";
+			public const string Lk_AccountBase_ModifiedBy = "Lk_AccountBase_ModifiedBy";
+			public const string Lk_AccountBase_ModifiedOnBehalfBy = "Lk_AccountBase_ModifiedOnBehalfBy";
+			public const string Lk_BusinessUnit_CreatedOnBehalfBy = "Lk_BusinessUnit_CreatedOnBehalfBy";
+			public const string Lk_BusinessUnit_ModifiedOnBehalfBy = "Lk_BusinessUnit_ModifiedOnBehalfBy";
+			public const string Lk_BusinessUnitBase_CreatedBy = "Lk_BusinessUnitBase_CreatedBy";
+			public const string Lk_BusinessUnitBase_ModifiedBy = "Lk_BusinessUnitBase_ModifiedBy";
+			public const string Lk_Contact_CreatedOnBehalfBy = "Lk_Contact_CreatedOnBehalfBy";
+			public const string Lk_Contact_ModifiedOnBehalfBy = "Lk_Contact_ModifiedOnBehalfBy";
+			public const string Lk_ContactBase_CreatedBy = "Lk_ContactBase_CreatedBy";
+			public const string Lk_ContactBase_ModifiedBy = "Lk_ContactBase_ModifiedBy";
+			public const string Lk_Lead_CreatedOnBehalfBy = "Lk_Lead_CreatedOnBehalfBy";
+			public const string Lk_Lead_ModifiedOnBehalfBy = "Lk_Lead_ModifiedOnBehalfBy";
+			public const string Lk_LeadBase_CreatedBy = "Lk_LeadBase_CreatedBy";
+			public const string Lk_LeadBase_ModifiedBy = "Lk_LeadBase_ModifiedBy";
+			public const string Lk_Organization_CreatedOnBehalfBy = "Lk_Organization_CreatedOnBehalfBy";
+			public const string Lk_Organization_ModifiedOnBehalfBy = "Lk_Organization_ModifiedOnBehalfBy";
+			public const string Lk_OrganizationBase_CreatedBy = "Lk_OrganizationBase_CreatedBy";
+			public const string Lk_OrganizationBase_ModifiedBy = "Lk_OrganizationBase_ModifiedBy";
+			public const string Lk_SdkMessageProcessingStep_CreatedOnBehalfBy = "Lk_SdkMessageProcessingStep_CreatedOnBehalfBy";
+			public const string Lk_SdkMessageProcessingStep_ModifiedOnBehalfBy = "Lk_SdkMessageProcessingStep_ModifiedOnBehalfBy";
+			public const string ReferencingLk_SystemUser_CreatedOnBehalfBy = "lk_systemuser_createdonbehalfby";
+			public const string ReferencingLk_SystemUser_ModifiedOnBehalfBy = "lk_systemuser_modifiedonbehalfby";
+			public const string ReferencingLk_SystemUserBase_CreatedBy = "lk_systemuserbase_createdby";
+			public const string ReferencingLk_SystemUserBase_ModifiedBy = "lk_systemuserbase_modifiedby";
+			public const string Lk_Team_CreatedOnBehalfBy = "Lk_Team_CreatedOnBehalfBy";
+			public const string Lk_Team_ModifiedOnBehalfBy = "Lk_Team_ModifiedOnBehalfBy";
+			public const string Lk_TeamBase_AdministratorId = "Lk_TeamBase_AdministratorId";
+			public const string Lk_TeamBase_CreatedBy = "Lk_TeamBase_CreatedBy";
+			public const string Lk_TeamBase_ModifiedBy = "Lk_TeamBase_ModifiedBy";
 			public const string MiddleName = "middlename";
-			public const string MobileAlertEMail = "mobilealertemail";
+			public const string MobileAlertEmail = "mobilealertemail";
 			public const string MobileOfflineProfileId = "mobileofflineprofileid";
 			public const string MobileOfflineProfileIdName = "mobileofflineprofileidname";
 			public const string MobilePhone = "mobilephone";
 			public const string ModifiedBy = "modifiedby";
-			public const string modifiedby_sdkmessageprocessingstep = "modifiedby_sdkmessageprocessingstep";
+			public const string ModifiedBy_SdkMessageProcessingStep = "ModifiedBy_SdkMessageProcessingStep";
 			public const string ModifiedByName = "modifiedbyname";
 			public const string ModifiedByYomiName = "modifiedbyyominame";
 			public const string ModifiedOn = "modifiedon";
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
-			public const string msdyn_AgentType = "msdyn_agentType";
-			public const string msdyn_agentTypeName = "msdyn_agenttypename";
-			public const string msdyn_BotApplicationId = "msdyn_botapplicationid";
-			public const string msdyn_BotDescription = "msdyn_botdescription";
-			public const string msdyn_BotEndpoint = "msdyn_botendpoint";
-			public const string msdyn_bothandle = "msdyn_bothandle";
-			public const string msdyn_BotProvider = "msdyn_botprovider";
-			public const string msdyn_botproviderName = "msdyn_botprovidername";
-			public const string msdyn_BotSecretKeys = "msdyn_botsecretkeys";
-			public const string msdyn_Capacity = "msdyn_capacity";
-			public const string msdyn_DefaultPresenceIdUser = "msdyn_defaultpresenceiduser";
-			public const string msdyn_DefaultPresenceIdUserName = "msdyn_defaultpresenceidusername";
-			public const string msdyn_gdproptout = "msdyn_gdproptout";
-			public const string msdyn_gdproptoutName = "msdyn_gdproptoutname";
-			public const string msdyn_gridwrappercontrolfield = "msdyn_gridwrappercontrolfield";
-			public const string msdyn_isexpertenabledforswarm = "msdyn_isexpertenabledforswarm";
-			public const string msdyn_isexpertenabledforswarmName = "msdyn_isexpertenabledforswarmname";
-			public const string msdyn_OwningEnvironmentId = "msdyn_owningenvironmentid";
-			public const string msdyn_UserType = "msdyn_usertype";
-			public const string msdyn_usertypeName = "msdyn_usertypename";
-			public const string NickName = "nickname";
+			public const string Msdyn_AgentType = "msdyn_agentType";
+			public const string Msdyn_AgentTypeName = "msdyn_agenttypename";
+			public const string Msdyn_BotApplicationId = "msdyn_botapplicationid";
+			public const string Msdyn_BotDescription = "msdyn_botdescription";
+			public const string Msdyn_BotEndpoint = "msdyn_botendpoint";
+			public const string Msdyn_BotHandle = "msdyn_bothandle";
+			public const string Msdyn_BotProvider = "msdyn_botprovider";
+			public const string Msdyn_BotProviderName = "msdyn_botprovidername";
+			public const string Msdyn_BotSecretKeys = "msdyn_botsecretkeys";
+			public const string Msdyn_Capacity = "msdyn_capacity";
+			public const string Msdyn_DefaultPresenceIdUser = "msdyn_defaultpresenceiduser";
+			public const string Msdyn_DefaultPresenceIdUsername = "msdyn_defaultpresenceidusername";
+			public const string Msdyn_GdPrOptOut = "msdyn_gdproptout";
+			public const string Msdyn_GdPrOptOutName = "msdyn_gdproptoutname";
+			public const string Msdyn_GridWrapperControlField = "msdyn_gridwrappercontrolfield";
+			public const string Msdyn_IsExpertEnabledForSwarm = "msdyn_isexpertenabledforswarm";
+			public const string Msdyn_IsExpertEnabledForSwarmName = "msdyn_isexpertenabledforswarmname";
+			public const string Msdyn_OwningEnvironmentId = "msdyn_owningenvironmentid";
+			public const string Msdyn_UserType = "msdyn_usertype";
+			public const string Msdyn_UserTypeName = "msdyn_usertypename";
+			public const string Nickname = "nickname";
+			public const string Organization_System_Users = "organization_system_users";
 			public const string OrganizationId = "organizationid";
 			public const string OrganizationIdName = "organizationidname";
 			public const string OutgoingEmailDeliveryMethod = "outgoingemaildeliverymethod";
@@ -211,37 +216,37 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string ParentSystemUserIdYomiName = "parentsystemuseridyominame";
 			public const string PassportHi = "passporthi";
 			public const string PassportLo = "passportlo";
-			public const string PersonalEMailAddress = "personalemailaddress";
+			public const string PersonalEmailAddress = "personalemailaddress";
 			public const string PhotoUrl = "photourl";
 			public const string PositionId = "positionid";
 			public const string PositionIdName = "positionidname";
 			public const string PreferredAddressCode = "preferredaddresscode";
-			public const string PreferredAddressCodeName = "preferredaddresscodename";
+			public const string PreferredAddressCodename = "preferredaddresscodename";
 			public const string PreferredEmailCode = "preferredemailcode";
-			public const string PreferredEmailCodeName = "preferredemailcodename";
+			public const string PreferredEmailCodename = "preferredemailcodename";
 			public const string PreferredPhoneCode = "preferredphonecode";
-			public const string PreferredPhoneCodeName = "preferredphonecodename";
+			public const string PreferredPhoneCodename = "preferredphonecodename";
 			public const string ProcessId = "processid";
 			public const string QueueId = "queueid";
 			public const string QueueIdName = "queueidname";
-			public const string Referencedlk_systemuser_createdonbehalfby = "Referencedlk_systemuser_createdonbehalfby";
-			public const string Referencedlk_systemuser_modifiedonbehalfby = "Referencedlk_systemuser_modifiedonbehalfby";
-			public const string Referencedlk_systemuserbase_createdby = "Referencedlk_systemuserbase_createdby";
-			public const string Referencedlk_systemuserbase_modifiedby = "Referencedlk_systemuserbase_modifiedby";
-			public const string Referenceduser_parent_user = "Referenceduser_parent_user";
+			public const string ReferencedLk_SystemUser_CreatedOnBehalfBy = "ReferencedLk_SystemUser_CreatedOnBehalfBy";
+			public const string ReferencedLk_SystemUser_ModifiedOnBehalfBy = "ReferencedLk_SystemUser_ModifiedOnBehalfBy";
+			public const string ReferencedLk_SystemUserBase_CreatedBy = "ReferencedLk_SystemUserBase_CreatedBy";
+			public const string ReferencedLk_SystemUserBase_ModifiedBy = "ReferencedLk_SystemUserBase_ModifiedBy";
+			public const string ReferencedUser_Parent_User = "ReferencedUser_Parent_User";
 			public const string Salutation = "salutation";
 			public const string SetupUser = "setupuser";
-			public const string SetupUserName = "setupusername";
+			public const string SetupUsername = "setupusername";
 			public const string SharePointEmailAddress = "sharepointemailaddress";
 			public const string SiteId = "siteid";
 			public const string SiteIdName = "siteidname";
 			public const string Skills = "skills";
 			public const string StageId = "stageid";
-			public const string system_user_accounts = "system_user_accounts";
-			public const string system_user_contacts = "system_user_contacts";
+			public const string System_User_Accounts = "System_User_Accounts";
+			public const string System_User_Contacts = "System_User_Contacts";
 			public const string SystemUserId = "systemuserid";
 			public const string Id = "systemuserid";
-			public const string teammembership_association = "teammembership_association";
+			public const string TeamMembership_Association = "teammembership_association";
 			public const string TerritoryId = "territoryid";
 			public const string TerritoryIdName = "territoryidname";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
@@ -249,13 +254,13 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string TransactionCurrencyId = "transactioncurrencyid";
 			public const string TransactionCurrencyIdName = "transactioncurrencyidname";
 			public const string TraversedPath = "traversedpath";
-			public const string user_accounts = "user_accounts";
-			public const string Referencinguser_parent_user = "user_parent_user";
+			public const string User_Accounts = "User_Accounts";
+			public const string ReferencingUser_Parent_User = "user_parent_user";
 			public const string UserLicenseType = "userlicensetype";
 			public const string UserPuid = "userpuid";
-			public const string UTCConversionTimeZoneCode = "utcconversiontimezonecode";
+			public const string UtcConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
-			public const string WindowsLiveID = "windowsliveid";
+			public const string WindowsLiveId = "windowsliveid";
 			public const string YammerEmailAddress = "yammeremailaddress";
 			public const string YammerUserId = "yammeruserid";
 			public const string YomiFirstName = "yomifirstname";
@@ -400,7 +405,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecodename")]
-		public string Address1_AddressTypeCodeName
+		public string Address1_AddressTypeCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -641,7 +646,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Post office box number for address 1.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postofficebox")]
-		public string Address1_PostOfficeBox
+		public string Address1_PostofficeBox
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -674,7 +679,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcodename")]
-		public string Address1_ShippingMethodCodeName
+		public string Address1_ShippingMethodCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -771,7 +776,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// United Parcel Service (UPS) zone for address 1.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_upszone")]
-		public string Address1_UPSZone
+		public string Address1_UpsZone
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -789,7 +794,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// UTC offset for address 1. This is the difference between local time and standard Coordinated Universal Time.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_utcoffset")]
-		public System.Nullable<int> Address1_UTCOffset
+		public System.Nullable<int> Address1_UtcOffset
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -840,7 +845,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecodename")]
-		public string Address2_AddressTypeCodeName
+		public string Address2_AddressTypeCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1081,7 +1086,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Post office box number for address 2.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postofficebox")]
-		public string Address2_PostOfficeBox
+		public string Address2_PostofficeBox
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1114,7 +1119,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcodename")]
-		public string Address2_ShippingMethodCodeName
+		public string Address2_ShippingMethodCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1211,7 +1216,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// United Parcel Service (UPS) zone for address 2.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_upszone")]
-		public string Address2_UPSZone
+		public string Address2_UpsZone
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1229,7 +1234,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// UTC offset for address 2. This is the difference between local time and standard Coordinated Universal Time.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_utcoffset")]
-		public System.Nullable<int> Address2_UTCOffset
+		public System.Nullable<int> Address2_UtcOffset
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1334,7 +1339,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("azurestatename")]
-		public string azurestateName
+		public string AzureStatenAMe
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1417,12 +1422,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// License type of user. This is used only in the on-premises version of the product. Online licenses are managed through Microsoft 365 Office Portal
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("caltype")]
-		public virtual SystemUser_CALType? CALType
+		public virtual SystemUser_CalType? CalType
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((SystemUser_CALType?)(EntityOptionSetEnum.GetEnum(this, "caltype")));
+				return ((SystemUser_CalType?)(EntityOptionSetEnum.GetEnum(this, "caltype")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1432,7 +1437,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("caltypename")]
-		public string CALTypeName
+		public string CalTypeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1690,7 +1695,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("deletedstatename")]
-		public string deletedstateName
+		public string DeletedStateName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1879,7 +1884,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage_url")]
-		public string EntityImage_URL
+		public string EntityImage_Url
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1915,7 +1920,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Exchange rate for the currency associated with the systemuser with respect to the base currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
-		public System.Nullable<decimal> ExchangeRate
+		public System.Nullable<decimal> ExchangerAte
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2081,7 +2086,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Internal email address for the user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("internalemailaddress")]
-		public string InternalEMailAddress
+		public string InternalEmailAddress
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2114,7 +2119,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("invitestatuscodename")]
-		public string InviteStatusCodeName
+		public string InviteStatusCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2230,7 +2235,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isintegrationusername")]
-		public string IsIntegrationUserName
+		public string IsIntegrationUsername
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2385,7 +2390,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Mobile alert email address for the user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mobilealertemail")]
-		public string MobileAlertEMail
+		public string MobileAlertEmail
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2603,12 +2608,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Type of user - Application user or Bot application user
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_agentType")]
-		public virtual SystemUser_msdyn_AgentType? msdyn_AgentType
+		public virtual SystemUser_Msdyn_AgentType? Msdyn_AgentType
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((SystemUser_msdyn_AgentType?)(EntityOptionSetEnum.GetEnum(this, "msdyn_agentType")));
+				return ((SystemUser_Msdyn_AgentType?)(EntityOptionSetEnum.GetEnum(this, "msdyn_agentType")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -2618,7 +2623,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_agenttypename")]
-		public string msdyn_agentTypeName
+		public string Msdyn_AgentTypeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2643,7 +2648,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Application ID of the bot.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_botapplicationid")]
-		public string msdyn_BotApplicationId
+		public string Msdyn_BotApplicationId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2661,7 +2666,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// BOT User Description
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_botdescription")]
-		public string msdyn_BotDescription
+		public string Msdyn_BotDescription
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2679,7 +2684,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Bot User Endpoint
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_botendpoint")]
-		public string msdyn_BotEndpoint
+		public string Msdyn_BotEndpoint
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2697,7 +2702,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Bot handle
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_bothandle")]
-		public string msdyn_bothandle
+		public string Msdyn_BotHandle
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2715,12 +2720,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Indicates the type of bot
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_botprovider")]
-		public virtual SystemUser_msdyn_BotProvider? msdyn_BotProvider
+		public virtual SystemUser_Msdyn_BotProvider? Msdyn_BotProvider
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((SystemUser_msdyn_BotProvider?)(EntityOptionSetEnum.GetEnum(this, "msdyn_botprovider")));
+				return ((SystemUser_Msdyn_BotProvider?)(EntityOptionSetEnum.GetEnum(this, "msdyn_botprovider")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -2730,7 +2735,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_botprovidername")]
-		public string msdyn_botproviderName
+		public string Msdyn_BotProviderName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2755,7 +2760,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Bot User Secret Keys
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_botsecretkeys")]
-		public string msdyn_BotSecretKeys
+		public string Msdyn_BotSecretKeys
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2773,7 +2778,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Capacity associated with the User.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_capacity")]
-		public System.Nullable<int> msdyn_Capacity
+		public System.Nullable<int> Msdyn_Capacity
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2791,7 +2796,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Unique identifier for Presence associated with User.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_defaultpresenceiduser")]
-		public Microsoft.Xrm.Sdk.EntityReference msdyn_DefaultPresenceIdUser
+		public Microsoft.Xrm.Sdk.EntityReference Msdyn_DefaultPresenceIdUser
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2806,7 +2811,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_defaultpresenceidusername")]
-		public string msdyn_DefaultPresenceIdUserName
+		public string Msdyn_DefaultPresenceIdUsername
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2831,7 +2836,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Describes whether user is opted out or not
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_gdproptout")]
-		public System.Nullable<bool> msdyn_gdproptout
+		public System.Nullable<bool> Msdyn_GdPrOptOut
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2846,7 +2851,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_gdproptoutname")]
-		public string msdyn_gdproptoutName
+		public string Msdyn_GdPrOptOutName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2871,7 +2876,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Field to bind grid wrapper control
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_gridwrappercontrolfield")]
-		public string msdyn_gridwrappercontrolfield
+		public string Msdyn_GridWrapperControlField
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2889,7 +2894,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Check if swarm is enabled for the experts.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_isexpertenabledforswarm")]
-		public System.Nullable<bool> msdyn_isexpertenabledforswarm
+		public System.Nullable<bool> Msdyn_IsExpertEnabledForSwarm
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2904,7 +2909,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_isexpertenabledforswarmname")]
-		public string msdyn_isexpertenabledforswarmName
+		public string Msdyn_IsExpertEnabledForSwarmName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2929,7 +2934,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Environment Id of the CDS environment that owns the bot user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_owningenvironmentid")]
-		public string msdyn_OwningEnvironmentId
+		public string Msdyn_OwningEnvironmentId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2947,12 +2952,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Type of user - CRM or BOT user
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_usertype")]
-		public virtual SystemUser_msdyn_UserType? msdyn_UserType
+		public virtual SystemUser_Msdyn_UserType? Msdyn_UserType
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((SystemUser_msdyn_UserType?)(EntityOptionSetEnum.GetEnum(this, "msdyn_usertype")));
+				return ((SystemUser_Msdyn_UserType?)(EntityOptionSetEnum.GetEnum(this, "msdyn_usertype")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -2962,7 +2967,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_usertypename")]
-		public string msdyn_usertypeName
+		public string Msdyn_UserTypeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2987,7 +2992,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Nickname of the user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("nickname")]
-		public string NickName
+		public string Nickname
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3201,7 +3206,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Personal email address of the user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("personalemailaddress")]
-		public string PersonalEMailAddress
+		public string PersonalEmailAddress
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3292,7 +3297,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredaddresscodename")]
-		public string PreferredAddressCodeName
+		public string PreferredAddressCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3332,7 +3337,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredemailcodename")]
-		public string PreferredEmailCodeName
+		public string PreferredEmailCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3372,7 +3377,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredphonecodename")]
-		public string PreferredPhoneCodeName
+		public string PreferredPhoneCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3488,7 +3493,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("setupusername")]
-		public string SetupUserName
+		public string SetupUsername
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3818,7 +3823,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Time zone code that was in use when the record was created.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
-		public System.Nullable<int> UTCConversionTimeZoneCode
+		public System.Nullable<int> UtcConversionTimeZoneCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3854,7 +3859,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Windows Live ID
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("windowsliveid")]
-		public string WindowsLiveID
+		public string WindowsLiveId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3980,7 +3985,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N contact_owning_user
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_owning_user")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> contact_owning_user
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> Contact_Owning_User
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3998,7 +4003,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N createdby_sdkmessageprocessingstep
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("createdby_sdkmessageprocessingstep")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep> createdby_sdkmessageprocessingstep
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep> CreatedBy_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4016,7 +4021,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N impersonatinguserid_sdkmessageprocessingstep
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("impersonatinguserid_sdkmessageprocessingstep")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep> impersonatinguserid_sdkmessageprocessingstep
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep> ImpersonatingUserId_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4034,7 +4039,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lead_owning_user
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_owning_user")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> lead_owning_user
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> Lead_Owning_User
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4052,7 +4057,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_accountbase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_createdby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> lk_accountbase_createdby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> Lk_AccountBase_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4070,7 +4075,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_accountbase_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> lk_accountbase_createdonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> Lk_AccountBase_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4088,7 +4093,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_accountbase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_modifiedby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> lk_accountbase_modifiedby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> Lk_AccountBase_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4106,7 +4111,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_accountbase_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> lk_accountbase_modifiedonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> Lk_AccountBase_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4124,7 +4129,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_businessunit_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunit_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit> lk_businessunit_createdonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit> Lk_BusinessUnit_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4142,7 +4147,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_businessunit_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunit_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit> lk_businessunit_modifiedonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit> Lk_BusinessUnit_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4160,7 +4165,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_businessunitbase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunitbase_createdby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit> lk_businessunitbase_createdby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit> Lk_BusinessUnitBase_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4178,7 +4183,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_businessunitbase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunitbase_modifiedby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit> lk_businessunitbase_modifiedby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit> Lk_BusinessUnitBase_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4196,7 +4201,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_contact_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contact_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> lk_contact_createdonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> Lk_Contact_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4214,7 +4219,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_contact_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contact_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> lk_contact_modifiedonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> Lk_Contact_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4232,7 +4237,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_contactbase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contactbase_createdby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> lk_contactbase_createdby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> Lk_ContactBase_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4250,7 +4255,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_contactbase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contactbase_modifiedby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> lk_contactbase_modifiedby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> Lk_ContactBase_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4268,7 +4273,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_lead_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_lead_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> lk_lead_createdonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> Lk_Lead_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4286,7 +4291,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_lead_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_lead_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> lk_lead_modifiedonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> Lk_Lead_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4304,7 +4309,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_leadbase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_leadbase_createdby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> lk_leadbase_createdby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> Lk_LeadBase_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4322,7 +4327,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_leadbase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_leadbase_modifiedby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> lk_leadbase_modifiedby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> Lk_LeadBase_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4337,10 +4342,82 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		/// <summary>
+		/// 1:N lk_organization_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_organization_createdonbehalfby")]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization> Lk_Organization_CreatedOnBehalfBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("lk_organization_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("lk_organization_createdonbehalfby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_organization_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_organization_modifiedonbehalfby")]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization> Lk_Organization_ModifiedOnBehalfBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("lk_organization_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("lk_organization_modifiedonbehalfby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_organizationbase_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_organizationbase_createdby")]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization> Lk_OrganizationBase_CreatedBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("lk_organizationbase_createdby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("lk_organizationbase_createdby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_organizationbase_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_organizationbase_modifiedby")]
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization> Lk_OrganizationBase_ModifiedBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("lk_organizationbase_modifiedby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("lk_organizationbase_modifiedby", null, value);
+			}
+		}
+		
+		/// <summary>
 		/// 1:N lk_sdkmessageprocessingstep_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_sdkmessageprocessingstep_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep> lk_sdkmessageprocessingstep_createdonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep> Lk_SdkMessageProcessingStep_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4358,7 +4435,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_sdkmessageprocessingstep_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_sdkmessageprocessingstep_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep> lk_sdkmessageprocessingstep_modifiedonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep> Lk_SdkMessageProcessingStep_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4376,7 +4453,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_systemuser_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuser_createdonbehalfby", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> Referencedlk_systemuser_createdonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> ReferencedLk_SystemUser_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4394,7 +4471,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_systemuser_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuser_modifiedonbehalfby", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> Referencedlk_systemuser_modifiedonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> ReferencedLk_SystemUser_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4412,7 +4489,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_systemuserbase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuserbase_createdby", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> Referencedlk_systemuserbase_createdby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> ReferencedLk_SystemUserBase_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4430,7 +4507,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_systemuserbase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuserbase_modifiedby", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> Referencedlk_systemuserbase_modifiedby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> ReferencedLk_SystemUserBase_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4448,7 +4525,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_team_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_team_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> lk_team_createdonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> Lk_Team_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4466,7 +4543,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_team_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_team_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> lk_team_modifiedonbehalfby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> Lk_Team_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4484,7 +4561,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_teambase_administratorid
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_administratorid")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> lk_teambase_administratorid
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> Lk_TeamBase_AdministratorId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4502,7 +4579,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_teambase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_createdby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> lk_teambase_createdby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> Lk_TeamBase_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4520,7 +4597,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lk_teambase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_modifiedby")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> lk_teambase_modifiedby
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> Lk_TeamBase_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4538,7 +4615,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N modifiedby_sdkmessageprocessingstep
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("modifiedby_sdkmessageprocessingstep")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep> modifiedby_sdkmessageprocessingstep
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SdkMessageProcessingStep> ModifiedBy_SdkMessageProcessingStep
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4556,7 +4633,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N system_user_accounts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_accounts")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> system_user_accounts
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> System_User_Accounts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4574,7 +4651,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N system_user_contacts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_contacts")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> system_user_contacts
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> System_User_Contacts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4592,7 +4669,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N user_accounts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_accounts")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> user_accounts
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> User_Accounts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4610,7 +4687,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N user_parent_user
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_parent_user", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> Referenceduser_parent_user
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser> ReferencedUser_Parent_User
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4628,7 +4705,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// N:N teammembership_association
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("teammembership_association")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> teammembership_association
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team> TeamMembership_Association
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4647,7 +4724,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_system_users")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit business_unit_system_users
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit Business_Unit_System_Users
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4666,7 +4743,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuser_createdonbehalfby", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Referencinglk_systemuser_createdonbehalfby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser ReferencingLk_SystemUser_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4685,7 +4762,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuser_modifiedonbehalfby", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Referencinglk_systemuser_modifiedonbehalfby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser ReferencingLk_SystemUser_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4704,7 +4781,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuserbase_createdby", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Referencinglk_systemuserbase_createdby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser ReferencingLk_SystemUserBase_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4723,7 +4800,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuserbase_modifiedby", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Referencinglk_systemuserbase_modifiedby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser ReferencingLk_SystemUserBase_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4738,11 +4815,30 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		/// <summary>
+		/// N:1 organization_system_users
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_system_users")]
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization Organization_System_Users
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("organization_system_users", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Organization>("organization_system_users", null, value);
+			}
+		}
+		
+		/// <summary>
 		/// N:1 user_parent_user
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentsystemuserid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_parent_user", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Referencinguser_parent_user
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser ReferencingUser_Parent_User
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get

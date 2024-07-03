@@ -12,6 +12,10 @@ public class SimulatorOptions: ISimulatorOptions
     
     public Entity? AuthenticatedUser { get; set; }
     
+    public Entity? BusinessUnit { get; set; }
+    
+    public Entity? Organization { get; set; }
+    
     public Dictionary<ProcessorType, IEntityProcessor>? EntityProcessors { get; set; }
     
     public PluginExecutionContextMock? PluginExecutionContextMock { get; set; }
@@ -19,6 +23,5 @@ public class SimulatorOptions: ISimulatorOptions
     public FakeServiceFailureSettings? FakeServiceFailureSettings { get; set; }
     
     public Dictionary<string, List<Entity>>? InitialiseData { get; set; }
-
-    // TODO - Inject things like business unit and organisation etc.
+    
 }

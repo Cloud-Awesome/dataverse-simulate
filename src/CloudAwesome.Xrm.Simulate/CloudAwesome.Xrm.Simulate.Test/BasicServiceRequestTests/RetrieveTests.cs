@@ -43,7 +43,7 @@ public class RetrieveTests
 
         retrievedContact.FirstName.Should().Be(Arthur.Contact().FirstName);
         retrievedContact.LastName.Should().Be(Arthur.Contact().LastName);
-        retrievedContact.BirthDate.Should().Be(Arthur.Contact().BirthDate);
+        retrievedContact.Birthdate.Should().Be(Arthur.Contact().Birthdate);
     }
 
     [Test]

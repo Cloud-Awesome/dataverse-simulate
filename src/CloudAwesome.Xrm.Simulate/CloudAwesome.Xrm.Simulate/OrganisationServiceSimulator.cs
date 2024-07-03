@@ -36,6 +36,8 @@ public static class OrganisationServiceSimulator
         new OrganisationRequestExecutor(_dataService, AuditService, organizationRequestRegistry).MockRequest(Service, options);
         
         InitialiseMockedData(options);
+        ConfigureUsersBusinessUnit(options);
+        ConfigureOrganization(options);
         ConfigureAuthenticatedUser(options);
         SetSystemTime(options);
         
@@ -71,6 +73,53 @@ public static class OrganisationServiceSimulator
         }
     }
 
+    public static EntityReference ConfigureUsersBusinessUnit(ISimulatorOptions? options)
+    {
+        if (options?.BusinessUnit is not null)
+        {
+            _dataService.Add(options.BusinessUnit);
+            _dataService.BusinessUnit = options.BusinessUnit.ToEntityReference();
+            return options.BusinessUnit.ToEntityReference();
+        }
+
+        var businessUnit = new Entity("businessunit")
+        {
+            Id = Guid.NewGuid(),
+            Attributes =
+            {
+                ["name"] = "Simulated Root Business Unit"
+            }
+        };
+        
+        _dataService.Add(businessUnit);
+        _dataService.BusinessUnit = businessUnit.ToEntityReference();
+        return businessUnit.ToEntityReference();
+    }
+    
+    public static EntityReference ConfigureOrganization(ISimulatorOptions? options)
+    {
+        if (options?.Organization is not null)
+        {
+            _dataService.Add(options.Organization);
+            _dataService.Organization = options.Organization.ToEntityReference();
+            return options.Organization.ToEntityReference();
+        }
+
+        var organization = new Entity("organization")
+        {
+            Id = Guid.NewGuid(),
+            Attributes =
+            {
+                ["name"] = "Simulated Organization"
+            }
+        };
+        
+        _dataService.Add(organization);
+        _dataService.Organization = organization.ToEntityReference();
+        return organization.ToEntityReference();
+    }
+    
+
     private static EntityReference ConfigureAuthenticatedUser(ISimulatorOptions? options)
     {
         if (options?.AuthenticatedUser is not null)
@@ -85,7 +134,9 @@ public static class OrganisationServiceSimulator
             Id = Guid.NewGuid(),
             Attributes =
             {
-                ["fullname"] = "Simulated User"
+                ["fullname"] = "Simulated User",
+                ["businessunitid"] = _dataService.BusinessUnit,
+                ["OrganizationId"] = _dataService.Organization
             }
         };
         
@@ -101,6 +152,7 @@ public static class OrganisationServiceSimulator
         handlerRegistry.RegisterHandler<CreateRequest>(new CreateRequestHandler());
         handlerRegistry.RegisterHandler<AssignRequest>(new AssignRequestHandler());
         handlerRegistry.RegisterHandler<RetrieveMultipleRequest>(new RetrieveMultipleHandler());
+        handlerRegistry.RegisterHandler<WhoAmIRequest>(new WhoAmIRequestHandler());
         
         return handlerRegistry;
     }

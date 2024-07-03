@@ -19,7 +19,7 @@ public static class Arthur
             ContactId = Guid.Parse("22c4ba07-5df0-4bed-aacf-276270b75f2f"),
             FirstName = "Arthur",
             LastName = "Nicholson-Gumula",
-            BirthDate = new DateTime(1984, 12, 14),
+            Birthdate = new DateTime(1984, 12, 14),
             ParentCustomerId = Account().ToEntityReference(),
             GenderCode = Contact_GenderCode.Male,
             StatusCode = Contact_StatusCode.Active,

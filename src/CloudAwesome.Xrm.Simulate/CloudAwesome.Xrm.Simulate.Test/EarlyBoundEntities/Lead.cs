@@ -25,14 +25,14 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		public partial class Fields
 		{
-			public const string account_originating_lead = "account_originating_lead";
+			public const string Account_Originating_Lead = "Account_Originating_Lead";
 			public const string AccountId = "accountid";
 			public const string AccountIdName = "accountidname";
 			public const string AccountIdYomiName = "accountidyominame";
-			public const string accountleads_association = "accountleads_association";
+			public const string AccountLeads_Association = "accountleads_association";
 			public const string Address1_AddressId = "address1_addressid";
 			public const string Address1_AddressTypeCode = "address1_addresstypecode";
-			public const string Address1_AddressTypeCodeName = "address1_addresstypecodename";
+			public const string Address1_AddressTypeCodename = "address1_addresstypecodename";
 			public const string Address1_City = "address1_city";
 			public const string Address1_Composite = "address1_composite";
 			public const string Address1_Country = "address1_country";
@@ -45,18 +45,18 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string Address1_Longitude = "address1_longitude";
 			public const string Address1_Name = "address1_name";
 			public const string Address1_PostalCode = "address1_postalcode";
-			public const string Address1_PostOfficeBox = "address1_postofficebox";
+			public const string Address1_PostofficeBox = "address1_postofficebox";
 			public const string Address1_ShippingMethodCode = "address1_shippingmethodcode";
-			public const string Address1_ShippingMethodCodeName = "address1_shippingmethodcodename";
+			public const string Address1_ShippingMethodCodename = "address1_shippingmethodcodename";
 			public const string Address1_StateOrProvince = "address1_stateorprovince";
 			public const string Address1_Telephone1 = "address1_telephone1";
 			public const string Address1_Telephone2 = "address1_telephone2";
 			public const string Address1_Telephone3 = "address1_telephone3";
-			public const string Address1_UPSZone = "address1_upszone";
-			public const string Address1_UTCOffset = "address1_utcoffset";
+			public const string Address1_UpsZone = "address1_upszone";
+			public const string Address1_UtcOffset = "address1_utcoffset";
 			public const string Address2_AddressId = "address2_addressid";
 			public const string Address2_AddressTypeCode = "address2_addresstypecode";
-			public const string Address2_AddressTypeCodeName = "address2_addresstypecodename";
+			public const string Address2_AddressTypeCodename = "address2_addresstypecodename";
 			public const string Address2_City = "address2_city";
 			public const string Address2_Composite = "address2_composite";
 			public const string Address2_Country = "address2_country";
@@ -69,32 +69,32 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string Address2_Longitude = "address2_longitude";
 			public const string Address2_Name = "address2_name";
 			public const string Address2_PostalCode = "address2_postalcode";
-			public const string Address2_PostOfficeBox = "address2_postofficebox";
+			public const string Address2_PostofficeBox = "address2_postofficebox";
 			public const string Address2_ShippingMethodCode = "address2_shippingmethodcode";
-			public const string Address2_ShippingMethodCodeName = "address2_shippingmethodcodename";
+			public const string Address2_ShippingMethodCodename = "address2_shippingmethodcodename";
 			public const string Address2_StateOrProvince = "address2_stateorprovince";
 			public const string Address2_Telephone1 = "address2_telephone1";
 			public const string Address2_Telephone2 = "address2_telephone2";
 			public const string Address2_Telephone3 = "address2_telephone3";
-			public const string Address2_UPSZone = "address2_upszone";
-			public const string Address2_UTCOffset = "address2_utcoffset";
-			public const string awe_Benefits = "awe_benefits";
-			public const string awe_benefitsName = "awe_benefitsname";
-			public const string awe_floorarea = "awe_floorarea";
-			public const string awe_floorareaName = "awe_floorareaname";
-			public const string awe_namedonbill = "awe_namedonbill";
-			public const string awe_namedonbillName = "awe_namedonbillname";
-			public const string awe_pensioncredit = "awe_pensioncredit";
-			public const string awe_pensioncreditName = "awe_pensioncreditname";
-			public const string awe_propertyage = "awe_propertyage";
-			public const string awe_propertyageName = "awe_propertyagename";
-			public const string awe_propertytype = "awe_propertytype";
-			public const string awe_propertytypeName = "awe_propertytypename";
+			public const string Address2_UpsZone = "address2_upszone";
+			public const string Address2_UtcOffset = "address2_utcoffset";
+			public const string AWe_Benefits = "awe_benefits";
+			public const string AWe_BenefitsName = "awe_benefitsname";
+			public const string AWe_FloorArea = "awe_floorarea";
+			public const string AWe_FloorAreaName = "awe_floorareaname";
+			public const string AWe_NamedOnBill = "awe_namedonbill";
+			public const string AWe_NamedOnBillName = "awe_namedonbillname";
+			public const string AWe_PensionCredit = "awe_pensioncredit";
+			public const string AWe_PensionCreditName = "awe_pensioncreditname";
+			public const string AWe_PropertyAge = "awe_propertyage";
+			public const string AWe_PropertyAgeName = "awe_propertyagename";
+			public const string AWe_PropertyType = "awe_propertytype";
+			public const string AWe_PropertyTypeName = "awe_propertytypename";
 			public const string BudgetAmount = "budgetamount";
 			public const string BudgetAmount_Base = "budgetamount_base";
 			public const string BudgetStatus = "budgetstatus";
 			public const string BudgetStatusName = "budgetstatusname";
-			public const string business_unit_leads = "business_unit_leads";
+			public const string Business_Unit_Leads = "business_unit_leads";
 			public const string BusinessCard = "businesscard";
 			public const string BusinessCardAttributes = "businesscardattributes";
 			public const string CampaignId = "campaignid";
@@ -102,11 +102,11 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string CompanyName = "companyname";
 			public const string ConfirmInterest = "confirminterest";
 			public const string ConfirmInterestName = "confirminterestname";
-			public const string contact_originating_lead = "contact_originating_lead";
+			public const string Contact_Originating_Lead = "Contact_Originating_Lead";
 			public const string ContactId = "contactid";
 			public const string ContactIdName = "contactidname";
 			public const string ContactIdYomiName = "contactidyominame";
-			public const string contactleads_association = "contactleads_association";
+			public const string ContactLeads_Association = "contactleads_association";
 			public const string CreatedBy = "createdby";
 			public const string CreatedByName = "createdbyname";
 			public const string CreatedByYomiName = "createdbyyominame";
@@ -120,10 +120,10 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string DecisionMaker = "decisionmaker";
 			public const string DecisionMakerName = "decisionmakername";
 			public const string Description = "description";
-			public const string DoNotBulkEMail = "donotbulkemail";
-			public const string DoNotBulkEMailName = "donotbulkemailname";
-			public const string DoNotEMail = "donotemail";
-			public const string DoNotEMailName = "donotemailname";
+			public const string DoNotBulkEmail = "donotbulkemail";
+			public const string DoNotBulkEmailName = "donotbulkemailname";
+			public const string DoNotEmail = "donotemail";
+			public const string DoNotEmailName = "donotemailname";
 			public const string DoNotFax = "donotfax";
 			public const string DoNotFaxName = "donotfaxname";
 			public const string DoNotPhone = "donotphone";
@@ -131,21 +131,21 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string DoNotPostalMail = "donotpostalmail";
 			public const string DoNotPostalMailName = "donotpostalmailname";
 			public const string DoNotSendMarketingMaterialName = "donotsendmarketingmaterialname";
-			public const string DoNotSendMM = "donotsendmm";
-			public const string EMailAddress1 = "emailaddress1";
-			public const string EMailAddress2 = "emailaddress2";
-			public const string EMailAddress3 = "emailaddress3";
+			public const string DoNotSendMm = "donotsendmm";
+			public const string EmailAddress1 = "emailaddress1";
+			public const string EmailAddress2 = "emailaddress2";
+			public const string EmailAddress3 = "emailaddress3";
 			public const string EntityImage = "entityimage";
 			public const string EntityImage_Timestamp = "entityimage_timestamp";
-			public const string EntityImage_URL = "entityimage_url";
+			public const string EntityImage_Url = "entityimage_url";
 			public const string EntityImageId = "entityimageid";
 			public const string EstimatedAmount = "estimatedamount";
 			public const string EstimatedAmount_Base = "estimatedamount_base";
-			public const string EstimatedCloseDate = "estimatedclosedate";
+			public const string EstimatedClosedAte = "estimatedclosedate";
 			public const string EstimatedValue = "estimatedvalue";
 			public const string EvaluateFit = "evaluatefit";
 			public const string EvaluateFitName = "evaluatefitname";
-			public const string ExchangeRate = "exchangerate";
+			public const string ExchangerAte = "exchangerate";
 			public const string Fax = "fax";
 			public const string FirstName = "firstname";
 			public const string FollowEmail = "followemail";
@@ -153,34 +153,34 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string FullName = "fullname";
 			public const string ImportSequenceNumber = "importsequencenumber";
 			public const string IndustryCode = "industrycode";
-			public const string IndustryCodeName = "industrycodename";
+			public const string IndustryCodename = "industrycodename";
 			public const string InitialCommunication = "initialcommunication";
 			public const string InitialCommunicationName = "initialcommunicationname";
-			public const string IsAutoCreate = "isautocreate";
-			public const string isautocreateName = "isautocreatename";
+			public const string IsaUtOcreate = "isautocreate";
+			public const string IsaUtOcreateName = "isautocreatename";
 			public const string IsPrivate = "isprivate";
 			public const string IsPrivateName = "isprivatename";
 			public const string JobTitle = "jobtitle";
 			public const string LastName = "lastname";
 			public const string LastOnHoldTime = "lastonholdtime";
 			public const string LastUsedInCampaign = "lastusedincampaign";
-			public const string lead_customer_accounts = "lead_customer_accounts";
-			public const string lead_customer_contacts = "lead_customer_contacts";
-			public const string Referencinglead_master_lead = "lead_master_lead";
-			public const string lead_owning_team = "lead_owning_team";
-			public const string lead_owning_user = "lead_owning_user";
-			public const string lead_parent_account = "lead_parent_account";
-			public const string lead_parent_contact = "lead_parent_contact";
+			public const string Lead_Customer_Accounts = "lead_customer_accounts";
+			public const string Lead_Customer_Contacts = "lead_customer_contacts";
+			public const string ReferencingLead_Master_Lead = "lead_master_lead";
+			public const string Lead_Owning_Team = "lead_owning_team";
+			public const string Lead_Owning_User = "lead_owning_user";
+			public const string Lead_Parent_Account = "lead_parent_account";
+			public const string Lead_Parent_Contact = "lead_parent_contact";
 			public const string LeadId = "leadid";
 			public const string Id = "leadid";
 			public const string LeadQualityCode = "leadqualitycode";
-			public const string LeadQualityCodeName = "leadqualitycodename";
+			public const string LeadQualityCodename = "leadqualitycodename";
 			public const string LeadSourceCode = "leadsourcecode";
-			public const string LeadSourceCodeName = "leadsourcecodename";
-			public const string lk_lead_createdonbehalfby = "lk_lead_createdonbehalfby";
-			public const string lk_lead_modifiedonbehalfby = "lk_lead_modifiedonbehalfby";
-			public const string lk_leadbase_createdby = "lk_leadbase_createdby";
-			public const string lk_leadbase_modifiedby = "lk_leadbase_modifiedby";
+			public const string LeadSourceCodename = "leadsourcecodename";
+			public const string Lk_Lead_CreatedOnBehalfBy = "lk_lead_createdonbehalfby";
+			public const string Lk_Lead_ModifiedOnBehalfBy = "lk_lead_modifiedonbehalfby";
+			public const string Lk_LeadBase_CreatedBy = "lk_leadbase_createdby";
+			public const string Lk_LeadBase_ModifiedBy = "lk_leadbase_modifiedby";
 			public const string MasterId = "masterid";
 			public const string MasterLeadIdName = "masterleadidname";
 			public const string MasterLeadIdYomiName = "masterleadidyominame";
@@ -195,29 +195,29 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
-			public const string msdyn_gdproptout = "msdyn_gdproptout";
-			public const string msdyn_gdproptoutName = "msdyn_gdproptoutname";
-			public const string msdyn_LeadGrade = "msdyn_leadgrade";
-			public const string msdyn_leadgradeName = "msdyn_leadgradename";
-			public const string msdyn_leadkpiid = "msdyn_leadkpiid";
-			public const string msdyn_leadkpiidName = "msdyn_leadkpiidname";
-			public const string msdyn_LeadScore = "msdyn_leadscore";
-			public const string msdyn_LeadScoreTrend = "msdyn_leadscoretrend";
-			public const string msdyn_leadscoretrendName = "msdyn_leadscoretrendname";
-			public const string msdyn_PredictiveScoreId = "msdyn_predictivescoreid";
-			public const string msdyn_PredictiveScoreIdName = "msdyn_predictivescoreidname";
-			public const string msdyn_salesassignmentresult = "msdyn_salesassignmentresult";
-			public const string msdyn_salesassignmentresultName = "msdyn_salesassignmentresultname";
-			public const string msdyn_ScoreHistory = "msdyn_scorehistory";
-			public const string msdyn_ScoreReasons = "msdyn_scorereasons";
-			public const string msdyn_segmentid = "msdyn_segmentid";
-			public const string msdyn_segmentidName = "msdyn_segmentidname";
+			public const string Msdyn_GdPrOptOut = "msdyn_gdproptout";
+			public const string Msdyn_GdPrOptOutName = "msdyn_gdproptoutname";
+			public const string Msdyn_LeadGrade = "msdyn_leadgrade";
+			public const string Msdyn_LeadGradeName = "msdyn_leadgradename";
+			public const string Msdyn_LeadKPiId = "msdyn_leadkpiid";
+			public const string Msdyn_LeadKPiIdName = "msdyn_leadkpiidname";
+			public const string Msdyn_LeadScore = "msdyn_leadscore";
+			public const string Msdyn_LeadScoreTrend = "msdyn_leadscoretrend";
+			public const string Msdyn_LeadScoreTrendName = "msdyn_leadscoretrendname";
+			public const string Msdyn_PredictiveScoreId = "msdyn_predictivescoreid";
+			public const string Msdyn_PredictiveScoreIdName = "msdyn_predictivescoreidname";
+			public const string Msdyn_SalesAssignmentResult = "msdyn_salesassignmentresult";
+			public const string Msdyn_SalesAssignmentResultName = "msdyn_salesassignmentresultname";
+			public const string Msdyn_ScoreHistory = "msdyn_scorehistory";
+			public const string Msdyn_ScoreReasons = "msdyn_scorereasons";
+			public const string Msdyn_SegmentId = "msdyn_segmentid";
+			public const string Msdyn_SegmentIdName = "msdyn_segmentidname";
 			public const string Need = "need";
 			public const string NeedName = "needname";
 			public const string NumberOfEmployees = "numberofemployees";
 			public const string OnHoldTime = "onholdtime";
 			public const string OriginatingCaseId = "originatingcaseid";
-			public const string OriginatingCaseIdName = "originatingcaseidname";
+			public const string OriginatingCaseiDnaMe = "originatingcaseidname";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
 			public const string OwnerId = "ownerid";
 			public const string OwnerIdName = "owneridname";
@@ -236,9 +236,9 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string ParticipatesInWorkflow = "participatesinworkflow";
 			public const string ParticipatesInWorkflowName = "participatesinworkflowname";
 			public const string PreferredContactMethodCode = "preferredcontactmethodcode";
-			public const string PreferredContactMethodCodeName = "preferredcontactmethodcodename";
+			public const string PreferredContactMethodCodename = "preferredcontactmethodcodename";
 			public const string PriorityCode = "prioritycode";
-			public const string PriorityCodeName = "prioritycodename";
+			public const string PriorityCodename = "prioritycodename";
 			public const string ProcessId = "processid";
 			public const string PurchaseProcess = "purchaseprocess";
 			public const string PurchaseProcessName = "purchaseprocessname";
@@ -247,28 +247,28 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string QualificationComments = "qualificationcomments";
 			public const string QualifyingOpportunityId = "qualifyingopportunityid";
 			public const string QualifyingOpportunityIdName = "qualifyingopportunityidname";
-			public const string Referencedlead_master_lead = "Referencedlead_master_lead";
+			public const string ReferencedLead_Master_Lead = "ReferencedLead_Master_Lead";
 			public const string RelatedObjectId = "relatedobjectid";
 			public const string RelatedObjectIdName = "relatedobjectidname";
 			public const string Revenue = "revenue";
 			public const string Revenue_Base = "revenue_base";
 			public const string SalesStage = "salesstage";
 			public const string SalesStageCode = "salesstagecode";
-			public const string SalesStageCodeName = "salesstagecodename";
+			public const string SalesStageCodename = "salesstagecodename";
 			public const string SalesStageName = "salesstagename";
 			public const string Salutation = "salutation";
-			public const string ScheduleFollowUp_Prospect = "schedulefollowup_prospect";
-			public const string ScheduleFollowUp_Qualify = "schedulefollowup_qualify";
-			public const string SIC = "sic";
-			public const string SLAId = "slaid";
-			public const string SLAInvokedId = "slainvokedid";
-			public const string SLAInvokedIdName = "slainvokedidname";
-			public const string SLAName = "slaname";
+			public const string ScheduleFollowup_Prospect = "schedulefollowup_prospect";
+			public const string ScheduleFollowup_Qualify = "schedulefollowup_qualify";
+			public const string Sic = "sic";
+			public const string SlaId = "slaid";
+			public const string SlaInvokedId = "slainvokedid";
+			public const string SlaInvokedIdName = "slainvokedidname";
+			public const string SlaName = "slaname";
 			public const string StageId = "stageid";
 			public const string StateCode = "statecode";
-			public const string StateCodeName = "statecodename";
+			public const string StateCodename = "statecodename";
 			public const string StatusCode = "statuscode";
-			public const string StatusCodeName = "statuscodename";
+			public const string StatusCodename = "statuscodename";
 			public const string Subject = "subject";
 			public const string TeamsFollowed = "teamsfollowed";
 			public const string Telephone1 = "telephone1";
@@ -279,9 +279,9 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 			public const string TransactionCurrencyId = "transactioncurrencyid";
 			public const string TransactionCurrencyIdName = "transactioncurrencyidname";
 			public const string TraversedPath = "traversedpath";
-			public const string UTCConversionTimeZoneCode = "utcconversiontimezonecode";
+			public const string UtcConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
-			public const string WebSiteUrl = "websiteurl";
+			public const string WebsiteUrl = "websiteurl";
 			public const string YomiCompanyName = "yomicompanyname";
 			public const string YomiFirstName = "yomifirstname";
 			public const string YomiFullName = "yomifullname";
@@ -427,7 +427,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecodename")]
-		public string Address1_AddressTypeCodeName
+		public string Address1_AddressTypeCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -668,7 +668,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Type the post office box number of the primary address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postofficebox")]
-		public string Address1_PostOfficeBox
+		public string Address1_PostofficeBox
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -701,7 +701,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcodename")]
-		public string Address1_ShippingMethodCodeName
+		public string Address1_ShippingMethodCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -798,7 +798,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Type the UPS zone of the primary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_upszone")]
-		public string Address1_UPSZone
+		public string Address1_UpsZone
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -816,7 +816,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_utcoffset")]
-		public System.Nullable<int> Address1_UTCOffset
+		public System.Nullable<int> Address1_UtcOffset
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -867,7 +867,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecodename")]
-		public string Address2_AddressTypeCodeName
+		public string Address2_AddressTypeCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1108,7 +1108,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Type the post office box number of the secondary address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postofficebox")]
-		public string Address2_PostOfficeBox
+		public string Address2_PostofficeBox
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1141,7 +1141,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcodename")]
-		public string Address2_ShippingMethodCodeName
+		public string Address2_ShippingMethodCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1238,7 +1238,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Type the UPS zone of the secondary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_upszone")]
-		public string Address2_UPSZone
+		public string Address2_UpsZone
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1256,7 +1256,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_utcoffset")]
-		public System.Nullable<int> Address2_UTCOffset
+		public System.Nullable<int> Address2_UtcOffset
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1271,12 +1271,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_benefits")]
-		public virtual System.Collections.Generic.IEnumerable<awe_Benefits> awe_Benefits
+		public virtual System.Collections.Generic.IEnumerable<AWe_Benefits> AWe_Benefits
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return EntityOptionSetEnum.GetMultiEnum<awe_Benefits>(this, "awe_benefits");
+				return EntityOptionSetEnum.GetMultiEnum<AWe_Benefits>(this, "awe_benefits");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1286,7 +1286,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_benefitsname")]
-		public string awe_benefitsName
+		public string AWe_BenefitsName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1308,12 +1308,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_floorarea")]
-		public virtual awe_Floorarea? awe_floorarea
+		public virtual AWe_FloorArea? AWe_FloorArea
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((awe_Floorarea?)(EntityOptionSetEnum.GetEnum(this, "awe_floorarea")));
+				return ((AWe_FloorArea?)(EntityOptionSetEnum.GetEnum(this, "awe_floorarea")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1323,7 +1323,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_floorareaname")]
-		public string awe_floorareaName
+		public string AWe_FloorAreaName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1345,12 +1345,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_namedonbill")]
-		public virtual awe_yesno? awe_namedonbill
+		public virtual AWe_YesNo? AWe_NamedOnBill
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((awe_yesno?)(EntityOptionSetEnum.GetEnum(this, "awe_namedonbill")));
+				return ((AWe_YesNo?)(EntityOptionSetEnum.GetEnum(this, "awe_namedonbill")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1360,7 +1360,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_namedonbillname")]
-		public string awe_namedonbillName
+		public string AWe_NamedOnBillName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1382,12 +1382,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_pensioncredit")]
-		public virtual awe_yesno? awe_pensioncredit
+		public virtual AWe_YesNo? AWe_PensionCredit
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((awe_yesno?)(EntityOptionSetEnum.GetEnum(this, "awe_pensioncredit")));
+				return ((AWe_YesNo?)(EntityOptionSetEnum.GetEnum(this, "awe_pensioncredit")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1397,7 +1397,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_pensioncreditname")]
-		public string awe_pensioncreditName
+		public string AWe_PensionCreditName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1419,12 +1419,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_propertyage")]
-		public virtual awe_Propertyage? awe_propertyage
+		public virtual AWe_PropertyAge? AWe_PropertyAge
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((awe_Propertyage?)(EntityOptionSetEnum.GetEnum(this, "awe_propertyage")));
+				return ((AWe_PropertyAge?)(EntityOptionSetEnum.GetEnum(this, "awe_propertyage")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1434,7 +1434,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_propertyagename")]
-		public string awe_propertyageName
+		public string AWe_PropertyAgeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1456,12 +1456,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_propertytype")]
-		public virtual awe_Propertytype? awe_propertytype
+		public virtual AWe_PropertyType? AWe_PropertyType
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((awe_Propertytype?)(EntityOptionSetEnum.GetEnum(this, "awe_propertytype")));
+				return ((AWe_PropertyType?)(EntityOptionSetEnum.GetEnum(this, "awe_propertytype")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1471,7 +1471,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("awe_propertytypename")]
-		public string awe_propertytypeName
+		public string AWe_PropertyTypeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2030,7 +2030,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Select whether the lead accepts bulk email sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the lead can be added to marketing lists, but will be excluded from the email.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotbulkemail")]
-		public System.Nullable<bool> DoNotBulkEMail
+		public System.Nullable<bool> DoNotBulkEmail
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2045,7 +2045,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotbulkemailname")]
-		public string DoNotBulkEMailName
+		public string DoNotBulkEmailName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2070,7 +2070,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Select whether the lead allows direct email sent from Microsoft Dynamics 365.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotemail")]
-		public System.Nullable<bool> DoNotEMail
+		public System.Nullable<bool> DoNotEmail
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2085,7 +2085,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotemailname")]
-		public string DoNotEMailName
+		public string DoNotEmailName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2252,7 +2252,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Select whether the lead accepts marketing materials, such as brochures or catalogs. Leads that opt out can be excluded from marketing initiatives.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotsendmm")]
-		public System.Nullable<bool> DoNotSendMM
+		public System.Nullable<bool> DoNotSendMm
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2270,7 +2270,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Type the primary email address for the lead.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress1")]
-		public string EMailAddress1
+		public string EmailAddress1
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2288,7 +2288,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Type the secondary email address for the lead.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress2")]
-		public string EMailAddress2
+		public string EmailAddress2
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2306,7 +2306,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Type a third email address for the lead.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress3")]
-		public string EMailAddress3
+		public string EmailAddress3
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2354,7 +2354,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage_url")]
-		public string EntityImage_URL
+		public string EntityImage_Url
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2423,7 +2423,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Enter the expected close date for the lead, so that the sales team can schedule timely follow-up meetings to move the prospect to the next sales stage.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("estimatedclosedate")]
-		public System.Nullable<System.DateTime> EstimatedCloseDate
+		public System.Nullable<System.DateTime> EstimatedClosedAte
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2499,7 +2499,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
-		public System.Nullable<decimal> ExchangeRate
+		public System.Nullable<decimal> ExchangerAte
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2644,7 +2644,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("industrycodename")]
-		public string IndustryCodeName
+		public string IndustryCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2709,7 +2709,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Information about whether the contact was auto-created when promoting an email or an appointment.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isautocreate")]
-		public System.Nullable<bool> IsAutoCreate
+		public System.Nullable<bool> IsaUtOcreate
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2724,7 +2724,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isautocreatename")]
-		public string isautocreateName
+		public string IsaUtOcreateName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2917,7 +2917,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("leadqualitycodename")]
-		public string LeadQualityCodeName
+		public string LeadQualityCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2957,7 +2957,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("leadsourcecodename")]
-		public string LeadSourceCodeName
+		public string LeadSourceCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3262,7 +3262,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Describes whether lead is opted out or not
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_gdproptout")]
-		public System.Nullable<bool> msdyn_gdproptout
+		public System.Nullable<bool> Msdyn_GdPrOptOut
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3277,7 +3277,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_gdproptoutname")]
-		public string msdyn_gdproptoutName
+		public string Msdyn_GdPrOptOutName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3299,12 +3299,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_leadgrade")]
-		public virtual msdyn_LeadGradeOptset? msdyn_LeadGrade
+		public virtual Msdyn_LeadGradeOptSet? Msdyn_LeadGrade
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((msdyn_LeadGradeOptset?)(EntityOptionSetEnum.GetEnum(this, "msdyn_leadgrade")));
+				return ((Msdyn_LeadGradeOptSet?)(EntityOptionSetEnum.GetEnum(this, "msdyn_leadgrade")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -3314,7 +3314,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_leadgradename")]
-		public string msdyn_leadgradeName
+		public string Msdyn_LeadGradeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3339,7 +3339,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// LeadKPIId
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_leadkpiid")]
-		public Microsoft.Xrm.Sdk.EntityReference msdyn_leadkpiid
+		public Microsoft.Xrm.Sdk.EntityReference Msdyn_LeadKPiId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3354,7 +3354,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_leadkpiidname")]
-		public string msdyn_leadkpiidName
+		public string Msdyn_LeadKPiIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3376,7 +3376,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_leadscore")]
-		public System.Nullable<int> msdyn_LeadScore
+		public System.Nullable<int> Msdyn_LeadScore
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3391,12 +3391,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_leadscoretrend")]
-		public virtual msdyn_LeadScoreTrendOptset? msdyn_LeadScoreTrend
+		public virtual Msdyn_LeadScoreTrendOptSet? Msdyn_LeadScoreTrend
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((msdyn_LeadScoreTrendOptset?)(EntityOptionSetEnum.GetEnum(this, "msdyn_leadscoretrend")));
+				return ((Msdyn_LeadScoreTrendOptSet?)(EntityOptionSetEnum.GetEnum(this, "msdyn_leadscoretrend")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -3406,7 +3406,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_leadscoretrendname")]
-		public string msdyn_leadscoretrendName
+		public string Msdyn_LeadScoreTrendName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3431,7 +3431,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Predictive score
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_predictivescoreid")]
-		public Microsoft.Xrm.Sdk.EntityReference msdyn_PredictiveScoreId
+		public Microsoft.Xrm.Sdk.EntityReference Msdyn_PredictiveScoreId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3446,7 +3446,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_predictivescoreidname")]
-		public string msdyn_PredictiveScoreIdName
+		public string Msdyn_PredictiveScoreIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3471,12 +3471,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Result of the assignment rule process
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_salesassignmentresult")]
-		public virtual Lead_msdyn_salesassignmentresult? msdyn_salesassignmentresult
+		public virtual Lead_Msdyn_SalesAssignmentResult? Msdyn_SalesAssignmentResult
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((Lead_msdyn_salesassignmentresult?)(EntityOptionSetEnum.GetEnum(this, "msdyn_salesassignmentresult")));
+				return ((Lead_Msdyn_SalesAssignmentResult?)(EntityOptionSetEnum.GetEnum(this, "msdyn_salesassignmentresult")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -3486,7 +3486,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_salesassignmentresultname")]
-		public string msdyn_salesassignmentresultName
+		public string Msdyn_SalesAssignmentResultName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3508,7 +3508,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_scorehistory")]
-		public string msdyn_ScoreHistory
+		public string Msdyn_ScoreHistory
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3523,7 +3523,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_scorereasons")]
-		public string msdyn_ScoreReasons
+		public string Msdyn_ScoreReasons
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3541,7 +3541,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Unique identifier for Segment associated with Lead.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_segmentid")]
-		public Microsoft.Xrm.Sdk.EntityReference msdyn_segmentid
+		public Microsoft.Xrm.Sdk.EntityReference Msdyn_SegmentId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3556,7 +3556,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_segmentidname")]
-		public string msdyn_segmentidName
+		public string Msdyn_SegmentIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3672,7 +3672,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("originatingcaseidname")]
-		public string OriginatingCaseIdName
+		public string OriginatingCaseiDnaMe
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4056,7 +4056,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredcontactmethodcodename")]
-		public string PreferredContactMethodCodeName
+		public string PreferredContactMethodCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4096,7 +4096,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycodename")]
-		public string PriorityCodeName
+		public string PriorityCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4386,7 +4386,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("salesstagecodename")]
-		public string SalesStageCodeName
+		public string SalesStageCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4451,7 +4451,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Enter the date and time of the prospecting follow-up meeting with the lead.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("schedulefollowup_prospect")]
-		public System.Nullable<System.DateTime> ScheduleFollowUp_Prospect
+		public System.Nullable<System.DateTime> ScheduleFollowup_Prospect
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4469,7 +4469,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Enter the date and time of the qualifying follow-up meeting with the lead.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("schedulefollowup_qualify")]
-		public System.Nullable<System.DateTime> ScheduleFollowUp_Qualify
+		public System.Nullable<System.DateTime> ScheduleFollowup_Qualify
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4487,7 +4487,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Type the Standard Industrial Classification (SIC) code that indicates the lead's primary industry of business for use in marketing segmentation and demographic analysis.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sic")]
-		public string SIC
+		public string Sic
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4505,7 +4505,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Choose the service level agreement (SLA) that you want to apply to the Lead record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
-		public Microsoft.Xrm.Sdk.EntityReference SLAId
+		public Microsoft.Xrm.Sdk.EntityReference SlaId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4523,7 +4523,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Last SLA that was applied to this case. This field is for internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
-		public Microsoft.Xrm.Sdk.EntityReference SLAInvokedId
+		public Microsoft.Xrm.Sdk.EntityReference SlaInvokedId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4538,7 +4538,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedidname")]
-		public string SLAInvokedIdName
+		public string SlaInvokedIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4560,7 +4560,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaname")]
-		public string SLAName
+		public string SlaName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4603,12 +4603,12 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Shows whether the lead is open, qualified, or disqualified. Qualified and disqualified leads are read-only and can't be edited unless they are reactivated.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public virtual lead_statecode? StateCode
+		public virtual Lead_StateCode? StateCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((lead_statecode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
+				return ((Lead_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -4618,7 +4618,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecodename")]
-		public string StateCodeName
+		public string StateCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4658,7 +4658,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscodename")]
-		public string StatusCodeName
+		public string StatusCodename
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4867,7 +4867,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Time zone code that was in use when the record was created.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
-		public System.Nullable<int> UTCConversionTimeZoneCode
+		public System.Nullable<int> UtcConversionTimeZoneCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4903,7 +4903,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// Type the website URL for the company associated with this lead.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("websiteurl")]
-		public string WebSiteUrl
+		public string WebsiteUrl
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5011,7 +5011,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N account_originating_lead
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_originating_lead")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> account_originating_lead
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> Account_Originating_Lead
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5029,7 +5029,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N contact_originating_lead
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_originating_lead")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> contact_originating_lead
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> Contact_Originating_Lead
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5047,7 +5047,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// 1:N lead_master_lead
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_master_lead", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> Referencedlead_master_lead
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead> ReferencedLead_Master_Lead
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5065,7 +5065,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// N:N accountleads_association
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("accountleads_association")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> accountleads_association
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account> AccountLeads_Association
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5083,7 +5083,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// N:N contactleads_association
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contactleads_association")]
-		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> contactleads_association
+		public System.Collections.Generic.IEnumerable<CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact> ContactLeads_Association
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5102,7 +5102,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_leads")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit business_unit_leads
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.BusinessUnit Business_Unit_Leads
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5121,7 +5121,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customerid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_customer_accounts")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account lead_customer_accounts
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account Lead_Customer_Accounts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5140,7 +5140,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customerid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_customer_contacts")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact lead_customer_contacts
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact Lead_Customer_Contacts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5159,7 +5159,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("masterid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_master_lead", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead Referencinglead_master_lead
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Lead ReferencingLead_Master_Lead
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5178,7 +5178,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_owning_team")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team lead_owning_team
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Team Lead_Owning_Team
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5197,7 +5197,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_owning_user")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lead_owning_user
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lead_Owning_User
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5216,7 +5216,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentaccountid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_parent_account")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account lead_parent_account
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Account Lead_Parent_Account
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5235,7 +5235,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentcontactid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_parent_contact")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact lead_parent_contact
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.Contact Lead_Parent_Contact
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5254,7 +5254,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_lead_createdonbehalfby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_lead_createdonbehalfby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_Lead_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5273,7 +5273,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_lead_modifiedonbehalfby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_lead_modifiedonbehalfby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_Lead_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5292,7 +5292,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_leadbase_createdby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_leadbase_createdby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_LeadBase_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5311,7 +5311,7 @@ namespace CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_leadbase_modifiedby")]
-		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser lk_leadbase_modifiedby
+		public CloudAwesome.Xrm.Simulate.Test.EarlyBoundEntities.SystemUser Lk_LeadBase_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
