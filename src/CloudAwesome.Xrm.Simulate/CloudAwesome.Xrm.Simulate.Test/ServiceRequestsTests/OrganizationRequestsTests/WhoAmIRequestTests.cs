@@ -13,7 +13,7 @@ public class WhoAmIRequestTests
 {
 	private IOrganizationService _organizationService = null!;
 	
-	private SimulatorOptions _options = new()
+	private readonly SimulatorOptions _options = new()
 	{
 		AuthenticatedUser = new SystemUser
 		{

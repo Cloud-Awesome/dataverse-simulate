@@ -1,6 +1,7 @@
 ﻿using CloudAwesome.Xrm.Simulate.DataServices;
 using CloudAwesome.Xrm.Simulate.DataStores;
 using CloudAwesome.Xrm.Simulate.Interfaces;
+using CloudAwesome.Xrm.Simulate.SecurityModel;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using NSubstitute;
@@ -25,6 +26,12 @@ public sealed class EntityCreator
 
     internal Guid Create(Entity e, ISimulatorOptions? options)
     {
+        if (!PermissionsCalculator.ValidateEntityPermission(e.LogicalName, RequestMessage, options))
+        {
+            // Exactly which type of error is thrown by crm?
+            throw new Exception("Tester...");
+        }
+        
         /*
          * Validate the entity first... (And decide on the correct Exception to throw if not)
          * Set state and status
