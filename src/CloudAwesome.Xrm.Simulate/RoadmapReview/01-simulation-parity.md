@@ -17,12 +17,13 @@ The goal should be "Dataverse-compatible enough that a failing simulated test is
 
 ### CRUD and direct methods
 
-- `EntityRetriever` has a parity bug for partial-column retrieves. The all-columns branch filters by id, but the selected-column branch projects all rows and then returns `FirstOrDefault()`, so it can return the wrong record.
-- `EntityUpdater` currently finds the existing entity, removes it, sets `modifiedon` on the incoming entity, then adds the old entity back. This means updates do not persist incoming attributes. It also uses `ProcessorMessage.Create` rather than update and can dereference a missing entity before throwing the intended error.
-- `EntityDisassociator` is not implemented beyond failure injection.
-- `EntityCreator` needs duplicate id validation, required system field behavior, state/status defaults, relationship handling, and real Dataverse exception behavior.
-- `EntityDeleter` needs missing-table and missing-row behavior that matches live Dataverse and should account for cascading behavior once metadata exists.
-- `Associate` currently stores resolved related entities in `RelatedEntities`; Dataverse does not simply mutate the target entity payload this way. The roadmap should move relationships into a relationship store driven by relationship metadata.
+- [x] `EntityRetriever` has a parity bug for partial-column retrieves. The all-columns branch filters by id, but the selected-column branch projects all rows and then returns `FirstOrDefault()`, so it can return the wrong record.
+- [x] `EntityUpdater` currently finds the existing entity, removes it, sets `modifiedon` on the incoming entity, then adds the old entity back. This means updates do not persist incoming attributes. It also uses `ProcessorMessage.Create` rather than update and can dereference a missing entity before throwing the intended error.
+- [x] `EntityDisassociator` is not implemented beyond failure injection.
+- [x] `EntityCreator` needs duplicate id validation, required system field behavior, state/status defaults, relationship handling, and real Dataverse exception behavior.
+  - `EntityCreator` delaying metadata behaviour and validation until the simulated metadata layer exists (c.f. [05-metadata-simulation](05-metadata-simulation.md)) 
+- [x] `EntityDeleter` needs missing-table and missing-row behavior that matches live Dataverse and should account for cascading behavior once metadata exists.
+- [x] `Associate` currently stores resolved related entities in `RelatedEntities`; Dataverse does not simply mutate the target entity payload this way. The roadmap should move relationships into a relationship store driven by relationship metadata.
 
 ### OrganizationRequest execution
 
@@ -30,20 +31,26 @@ Only these built-in request handlers are registered today:
 
 - `CreateRequest`
 - `AssignRequest`
+- `RetrieveRequest`
+- `UpdateRequest`
+- `DeleteRequest`
+- `AssociateRequest`
+- `DisassociateRequest`
 - `RetrieveMultipleRequest`
 - `WhoAmIRequest`
 
 This leaves a large surface uncovered. Priority requests:
 
-- Direct-method equivalents: `RetrieveRequest`, `UpdateRequest`, `DeleteRequest`, `AssociateRequest`, `DisassociateRequest`.
-- Batch/transaction: `ExecuteMultipleRequest`, `ExecuteTransactionRequest`.
-- Upsert/key behavior: `UpsertRequest`, `UpsertMultipleRequest` where SDK support is available, alternate key resolution.
-- State and ownership: `SetStateRequest`, `AssignRequest` hardening.
-- Access/security: `GrantAccessRequest`, `ModifyAccessRequest`, `RevokeAccessRequest`, `RetrievePrincipalAccessRequest`, `RetrieveSharedPrincipalsAndAccessRequest`.
-- Teams: `AddMembersTeamRequest`, `RemoveMembersTeamRequest`, owner/access-team scenarios.
-- Queues and activities: `AddToQueueRequest`, `RemoveFromQueueRequest`, `PickFromQueueRequest`, `ReleaseToQueueRequest`, `SendEmailRequest`, close/cancel activity requests.
-- Metadata: `RetrieveEntityRequest`, `RetrieveAttributeRequest`, `RetrieveAllEntitiesRequest`, `RetrieveOptionSetRequest`, `RetrieveRelationshipRequest`.
-- Common platform helpers: `CalculateRollupFieldRequest`, `InitializeFromRequest`, duplicate detection requests, and environment/user requests used by plugins.
+- [x] Direct-method equivalents: `RetrieveRequest`, `UpdateRequest`, `DeleteRequest`, `AssociateRequest`, `DisassociateRequest`.
+- [ ] Upsert/key behavior: `UpsertRequest`, `UpsertMultipleRequest` where SDK support is available, alternate key resolution.
+- [ ] State and ownership: `SetStateRequest`, `AssignRequest` hardening.
+- [ ] Access/security: `GrantAccessRequest`, `ModifyAccessRequest`, `RevokeAccessRequest`, `RetrievePrincipalAccessRequest`, `RetrieveSharedPrincipalsAndAccessRequest`.
+- [ ] Teams: `AddMembersTeamRequest`, `RemoveMembersTeamRequest`, owner/access-team scenarios.
+- [ ] Queues and activities: `AddToQueueRequest`, `RemoveFromQueueRequest`, `PickFromQueueRequest`, `ReleaseToQueueRequest`, `SendEmailRequest`, close/cancel activity requests.
+- [ ] Common platform helpers: `CalculateRollupFieldRequest`, `InitializeFromRequest`, duplicate detection requests, and environment/user requests used by plugins.
+- [ ] Batch/transaction: `ExecuteMultipleRequest`, `ExecuteTransactionRequest`.
+- [ ] Metadata: `RetrieveEntityRequest`, `RetrieveAttributeRequest`, `RetrieveAllEntitiesRequest`, `RetrieveOptionSetRequest`, `RetrieveRelationshipRequest`.
+
 
 Unsupported requests should not fall through to a raw dictionary lookup. Add one of these behaviors:
 

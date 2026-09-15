@@ -34,6 +34,7 @@ public static class OrganisationServiceSimulator
         new OrganisationRequestExecutor(localDataService, auditService, organizationRequestRegistry).MockRequest(service, options);
         
         SimulatorOptionsProcessor.InitialiseMockedData(localDataService, options);
+        SimulatorOptionsProcessor.InitialiseMockedRelationships(localDataService, options);
         SimulatorOptionsProcessor.ConfigureUsersBusinessUnit(localDataService, options);
         SimulatorOptionsProcessor.ConfigureOrganization(localDataService, options);
         SimulatorOptionsProcessor.ConfigureAuthenticatedUser(localDataService, options);
@@ -58,8 +59,13 @@ public static class OrganisationServiceSimulator
         var handlerRegistry = new RequestHandlerRegistry();
 
         handlerRegistry.RegisterHandler<CreateRequest>(new CreateRequestHandler());
+        handlerRegistry.RegisterHandler<AssociateRequest>(new AssociateRequestHandler());
         handlerRegistry.RegisterHandler<AssignRequest>(new AssignRequestHandler());
+        handlerRegistry.RegisterHandler<DeleteRequest>(new DeleteRequestHandler());
+        handlerRegistry.RegisterHandler<DisassociateRequest>(new DisassociateRequestHandler());
+        handlerRegistry.RegisterHandler<RetrieveRequest>(new RetrieveRequestHandler());
         handlerRegistry.RegisterHandler<RetrieveMultipleRequest>(new RetrieveMultipleHandler());
+        handlerRegistry.RegisterHandler<UpdateRequest>(new UpdateRequestHandler());
         handlerRegistry.RegisterHandler<WhoAmIRequest>(new WhoAmIRequestHandler());
         
         return handlerRegistry;
