@@ -22,7 +22,7 @@ The goal should be "Dataverse-compatible enough that a failing simulated test is
 - [x] `EntityDisassociator` is not implemented beyond failure injection.
 - [x] `EntityCreator` needs duplicate id validation, required system field behavior, state/status defaults, relationship handling, and real Dataverse exception behavior.
   - `EntityCreator` delaying metadata behaviour and validation until the simulated metadata layer exists (c.f. [05-metadata-simulation](05-metadata-simulation.md)) 
-- [ ] `EntityDeleter` needs missing-table and missing-row behavior that matches live Dataverse and should account for cascading behavior once metadata exists.
+- [x] `EntityDeleter` needs missing-table and missing-row behavior that matches live Dataverse and should account for cascading behavior once metadata exists.
 - [x] `Associate` currently stores resolved related entities in `RelatedEntities`; Dataverse does not simply mutate the target entity payload this way. The roadmap should move relationships into a relationship store driven by relationship metadata.
 
 ### OrganizationRequest execution
