@@ -21,12 +21,17 @@ public sealed class EntityDeleter(MockedEntityDataService dataService) : IEntity
                 var entityName = x.Arg<string>();
                 var id = x.Arg<Guid>();
              
-                RequestFailureHandler.Handle(options, RequestMessage, id);
-
-                this.ValidateExists(entityName, id);
-                
-                dataService.Delete(entityName, id);
+                this.Delete(entityName, id, options);
             });
+    }
+
+    internal void Delete(string logicalName, Guid id, ISimulatorOptions? options)
+    {
+        RequestFailureHandler.Handle(options, RequestMessage, id);
+
+        this.ValidateExists(logicalName, id);
+                
+        dataService.Delete(logicalName, id);
     }
 
     private void ValidateExists(string logicalName, Guid id)

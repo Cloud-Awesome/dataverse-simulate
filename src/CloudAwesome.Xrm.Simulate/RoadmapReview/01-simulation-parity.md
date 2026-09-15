@@ -31,20 +31,26 @@ Only these built-in request handlers are registered today:
 
 - `CreateRequest`
 - `AssignRequest`
+- `RetrieveRequest`
+- `UpdateRequest`
+- `DeleteRequest`
+- `AssociateRequest`
+- `DisassociateRequest`
 - `RetrieveMultipleRequest`
 - `WhoAmIRequest`
 
 This leaves a large surface uncovered. Priority requests:
 
-- Direct-method equivalents: `RetrieveRequest`, `UpdateRequest`, `DeleteRequest`, `AssociateRequest`, `DisassociateRequest`.
-- Batch/transaction: `ExecuteMultipleRequest`, `ExecuteTransactionRequest`.
-- Upsert/key behavior: `UpsertRequest`, `UpsertMultipleRequest` where SDK support is available, alternate key resolution.
-- State and ownership: `SetStateRequest`, `AssignRequest` hardening.
-- Access/security: `GrantAccessRequest`, `ModifyAccessRequest`, `RevokeAccessRequest`, `RetrievePrincipalAccessRequest`, `RetrieveSharedPrincipalsAndAccessRequest`.
-- Teams: `AddMembersTeamRequest`, `RemoveMembersTeamRequest`, owner/access-team scenarios.
-- Queues and activities: `AddToQueueRequest`, `RemoveFromQueueRequest`, `PickFromQueueRequest`, `ReleaseToQueueRequest`, `SendEmailRequest`, close/cancel activity requests.
-- Metadata: `RetrieveEntityRequest`, `RetrieveAttributeRequest`, `RetrieveAllEntitiesRequest`, `RetrieveOptionSetRequest`, `RetrieveRelationshipRequest`.
-- Common platform helpers: `CalculateRollupFieldRequest`, `InitializeFromRequest`, duplicate detection requests, and environment/user requests used by plugins.
+- [x] Direct-method equivalents: `RetrieveRequest`, `UpdateRequest`, `DeleteRequest`, `AssociateRequest`, `DisassociateRequest`.
+- [ ] Upsert/key behavior: `UpsertRequest`, `UpsertMultipleRequest` where SDK support is available, alternate key resolution.
+- [ ] State and ownership: `SetStateRequest`, `AssignRequest` hardening.
+- [ ] Access/security: `GrantAccessRequest`, `ModifyAccessRequest`, `RevokeAccessRequest`, `RetrievePrincipalAccessRequest`, `RetrieveSharedPrincipalsAndAccessRequest`.
+- [ ] Teams: `AddMembersTeamRequest`, `RemoveMembersTeamRequest`, owner/access-team scenarios.
+- [ ] Queues and activities: `AddToQueueRequest`, `RemoveFromQueueRequest`, `PickFromQueueRequest`, `ReleaseToQueueRequest`, `SendEmailRequest`, close/cancel activity requests.
+- [ ] Common platform helpers: `CalculateRollupFieldRequest`, `InitializeFromRequest`, duplicate detection requests, and environment/user requests used by plugins.
+- [ ] Batch/transaction: `ExecuteMultipleRequest`, `ExecuteTransactionRequest`.
+- [ ] Metadata: `RetrieveEntityRequest`, `RetrieveAttributeRequest`, `RetrieveAllEntitiesRequest`, `RetrieveOptionSetRequest`, `RetrieveRelationshipRequest`.
+
 
 Unsupported requests should not fall through to a raw dictionary lookup. Add one of these behaviors:
 

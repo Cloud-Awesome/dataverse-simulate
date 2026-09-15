@@ -25,27 +25,31 @@ public class EntityUpdater(MockedEntityDataService dataService) : IEntityUpdater
             .Do(x =>
             {
                 var entity = x.Arg<Entity>();
-                
-                var e = dataService.Get(entity.LogicalName)
-                    .SingleOrDefault(z => z.Id == entity.Id);
-                
-                RequestFailureHandler.Handle(options, RequestMessage, entity.Id);
-
-                if (e == null)
-                {
-                    // TODO - Handle if the entity doesn't exist in memory
-                    //      - Check the exact exception that would be thrown in .gather
-                    throw new InvalidOperationException("Record not found in database ...");
-                }
-                
-                var processorType = new ProcessorType(entity.LogicalName, ProcessorMessage.Update);
-                if (options?.EntityProcessors?.TryGetValue(processorType, out var processor) == true)
-                {
-                    entity = processor.Process(entity);
-                }
-
-                dataService.Update(entity);
+                this.Update(entity, options);
             });
         
+    }
+
+    internal void Update(Entity entity, ISimulatorOptions? options)
+    {
+        var e = dataService.Get(entity.LogicalName)
+            .SingleOrDefault(z => z.Id == entity.Id);
+                
+        RequestFailureHandler.Handle(options, RequestMessage, entity.Id);
+
+        if (e == null)
+        {
+            // TODO - Handle if the entity doesn't exist in memory
+            //      - Check the exact exception that would be thrown in .gather
+            throw new InvalidOperationException("Record not found in database ...");
+        }
+                
+        var processorType = new ProcessorType(entity.LogicalName, ProcessorMessage.Update);
+        if (options?.EntityProcessors?.TryGetValue(processorType, out var processor) == true)
+        {
+            entity = processor.Process(entity);
+        }
+
+        dataService.Update(entity);
     }
 }
